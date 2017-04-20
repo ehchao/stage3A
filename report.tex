@@ -1,0 +1,41 @@
+\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{bbold}
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+%\newcommand{\cref}[1]{Eq.(\ref{#1})}
+\newcommand{\ie}{\textit{i.e., }}
+\newcommand{\wrt}{w.r.t. }
+\newcommand{\rhs}{r.h.s. }
+\newcommand{\lhs}{l.h.s. }
+\newcommand{\eval}[1]{\bigg\rvert_{#1}}
+\newcommand{\dd}{\textrm{d}}
+\newcommand{\ran}{\mathrm{Ran}}
+
+\newtheorem{theorem}{Theorem}
+
+\title{2-dimensional vacuum polarisation in presence of a delta-Kondo potential}
+\author{}
+%\date{}							% Activate to display a given date or no date
+\begin{document}
+\maketitle
+
+\include{data/sect-nef}  %no electric field
+\include{data/sect-ef}  %with electric field
+\include{data/sect-nbnef}  %no boundary no electric field
+\include{data/sect-sa}  %self-adjointness
+
+\begin{thebibliography}{9}
+\bibitem{Zahn2015} Jan Schlemmer, Jochen Zahn, \textit{The current density in quantum electrodynamics in external potentials}, arXiv:1501.05912v2[hep-th], 2015
+\bibitem{Reed1981} M. Reed, B. Simon, \textit{Methods of modern mathematical physics I: functional analysis}, revised and enlarged edition, Academic Press, 1981
+\bibitem{Reed1975} M. Reed, B. Simon, \textit{Methods of modern mathematical physics II: Fourier analysis, self-adjointness}, Academic Press, 1975
+\end{thebibliography}
+\end{document}

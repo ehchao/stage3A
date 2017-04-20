@@ -1,0 +1,84 @@
+\section{Self-adjointness of the Hamiltonian}
+In this section, we study the self-adjointness of the Hamiltonian in which the Kondo potential is involved. The Hilbert space in which we are going to work is $L^{2}(I_+ \cup I_-) \times L^{2}(I_+ \cup I_-)$,  where $I_- = [-\frac{L}{2}, 0)$ and $I_+ = (0, \frac{L}{2}]$, with $I = [-\frac{L}{2}, \frac{L}{2}]$. The Hamiltonian as an operator on this space is defined as
+\begin{equation}
+H \phi = \begin{pmatrix}
+1  &  0 \\
+0  &  -1  \end{pmatrix} \phi + \begin{pmatrix}
+v_3  &  v_-  \\
+v_+  &  -v_3  \end{pmatrix} \delta(x) \phi
+\end{equation}
+To start, we choose for the domain of $H$ as $\mathrm{Dom}(H) = \Big \{\phi  \mid \bar{\phi}_{| I_-} \in \mathcal{C}^1(I_-) \times \mathcal{C}^1(I_-), \enskip \bar{\phi}_{| I_+}\mathcal{C}^1(I_+) \times \mathcal{C}^1(I_+), \enskip -i \gamma^1 \phi\vert_{\pm \frac{L}{2}} = \pm \phi \vert_{ \pm \frac{L}{2} } \Big \}$ where $\bar{\phi}$ is the extension of $\phi$ by continuity at 0 from the given interval. $H$ is symmetric because of the boundary conditions and the fact that the elements in its domain possess right and left limits at $x=0$.\\\\
+A basic criterion of self-adjointness is given in~\cite{Reed1981}
+\begin{theorem}
+Let $T$ be a symmetric operator on a Hilbert space $ \mathcal{H}$. The 3 following statement are equivalent 
+\begin{enumerate}
+\item $T$ is self-adjoint
+\item $T$ is closed and $\ker(T^* \pm i) = \{0\}$
+\item $\ran(T \pm i ) = \mathcal{H}$
+\end{enumerate} 
+\end{theorem}
+We denote  $\mathcal{K}_{\pm} = \ker (i \mp H^*)$ for the deficiency subspaces of $H$. The corollary of the Theorem X.2 of~\cite{Reed1975} states that $\dim \mathcal{K}_+ = \dim \mathcal{K}_-$ is a necessary and sufficient condition such that $H$ possesses an self-adjoint extension (all closed extension of $H$ is self-adjoint if this two numbers are equal to zero). \\
+We start by calculate $\mathcal{K}_+$. Let $\phi \in \mathcal{K}_+$. Then $i \phi = H^* \phi$. As $H$ is symmetric, this implies, for $\phi = \begin{pmatrix} \phi_L \\  \phi_R \end{pmatrix}$, 
+\begin{equation}
+i \begin{pmatrix} \phi_L \\ \phi_R \end{pmatrix} = 
+i \begin{pmatrix} v_3  &  v_-  \\ v_+  &  -v_3 \end{pmatrix} \delta(x)
+\begin{pmatrix}  \phi_L  \\  \phi_R \end{pmatrix}
+\end{equation} 
+Thus, $\phi$ could be written as
+\begin{equation}
+\begin{pmatrix} \phi_L \\ \phi_R \end{pmatrix} = 
+\Theta(-x) \begin{pmatrix} f_- e^x  \\ g_-  e^{-x} \end{pmatrix} + 
+\Theta(x) \begin{pmatrix} f_+ e^x  \\ g_+  e^{-x} \end{pmatrix}
+\end{equation}
+The boundary conditions give
+\begin{equation}
+\begin{cases}
+-i g_- e^{\frac{L}{2}} = - f_- e^{-\frac{L}{2}} \\
+-ig_+e^{-\frac{L}{2}} = f_+ e^{\frac{L}{2}}
+\end{cases} \quad \Leftrightarrow
+\begin{cases}
+g_- = -i f_- e^{-L} \\
+g_+ = i f_+ e^L
+\end{cases}
+\end{equation}
+We have found that the matching condition at $x=0$ gives a linear transformation, namely, $\phi(0^+) = T\phi(0^-)$ with $T$ a certain matrix depending on $v_i$. With the boundary conditions, this implies
+\begin{equation}
+f_+ \begin{pmatrix} 1 \\ ie^L \end{pmatrix}
+= f_- T \begin{pmatrix} 1 \\ -ie^L \end{pmatrix}
+= f_- \begin{pmatrix} \frac{A}{D} - i\frac{C}{D} e^{-L}  \\
+\frac{C^*}{D} - i \frac{A}{D} e^{-L} \end{pmatrix}
+\end{equation}
+$f_+$ and $f_-$ are non-vanishing if and only if 
+\begin{equation}
+\begin{split}
+& ie^L = \frac{C^* - iA e^{-L}}{A - iC e^{-L}} \\
+\Leftrightarrow \quad & 1 = \frac{C^* e^L - iA}{iA + C e^{-L}} \\
+\Leftrightarrow \quad & 2i A = -C e^{-L} + C^*e^L
+\end{split}
+\end{equation}
+For $C = -iv_- = -iv_1 - v_2$ and $A = 1 + \frac{1}{4}(v_1^2 + v_2^2 + v_3^2)$, this requires
+\begin{equation}
+\begin{cases}
+v_2 = 0 \\
+v_1 \cosh L = 1 + \frac{1}{4}(v_1^2 + v_3^2)
+\end{cases}
+\end{equation}
+This condition is not verified in general, as the $v_i$ do not depend on $L$, in which case we get $\dim \mathcal{K}_+ = 0$. \\
+For $\mathcal{K}_-$, it suffices to replace $L$ by $-L$ in the above calculation. Therefore, besides certain specific potentials, $H$ is essentially self-adjoint.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

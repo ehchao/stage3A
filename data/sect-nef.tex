@@ -1,0 +1,429 @@
+\paragraph{Convention}
+The signature of our space-time is $(+, -)$
+\begin{equation*}
+\gamma^0 = \begin{pmatrix}
+0 & 1 \\
+1 & 0 \end{pmatrix}  \quad  \gamma^1 = \begin{pmatrix}
+0  & 1 \\
+-1 & 0
+\end{pmatrix}
+\end{equation*}
+\section{Massless spin-1/2 particle, without extra electric field}\label{sect-nef}
+With the same notation as in~\cite{Zahn2015}, we can write down the Dirac equation of the problem as following
+\begin{equation}\label{nef-Dirac}
+i \partial \phi = 
+\begin{pmatrix} 
+-1 & 0 \\
+0 & 1 
+\end{pmatrix} i \partial \phi +
+\begin{pmatrix}
+v_3 & v_- \\
+v_+ & -v_3
+\end{pmatrix} \delta(x_1) \phi
+\end{equation}
+By noting $\phi =
+\begin{pmatrix}
+\phi_L \\
+\phi_R
+\end{pmatrix}$
+, \cref{nef-Dirac} leads to
+
+\begin{equation}
+\begin{cases}
+i \partial_0 \phi_L = -i\partial_1 \phi_L + (v_3 \phi_L + v_- \phi_R) \delta(x_1) \\
+i \partial_0 \phi_R = i\partial_1 \phi_R + (v_+ \phi_L - v_3 \phi_R) \delta(x_1)
+\end{cases}
+\end{equation}
+By considering the right-hand side of \cref{nef-Dirac} as a Hamiltonian (verifying that it is self-adjoint), 
+\begin{equation}\label{nef-basisSol}
+\phi_{L,k} = 
+\begin{pmatrix}
+1 \\
+0
+\end{pmatrix} e^{ikx^1} \quad \textrm{and} \quad
+\phi_{R,k} = 
+\begin{pmatrix}
+0 \\
+1
+\end{pmatrix} e^{-ikx^1}
+\end{equation}
+form a basis of solutions for \cref{nef-Dirac} for an eigenvalue of the Hamiltonian $k$.
+Let's consider now the matching conditions at $x^1=0$, given by
+\begin{equation}\label{nef-matching}
+\begin{cases}
+-i(\phi_L(0^+) - \phi_L(0^-)) + \frac{1}{2}(v_3 (\phi_L(0^+) + \phi_L(0^-))+ v_- (\phi_R(0+) + \phi_R(0^-))) = 0 \\
+i(\phi_R(0^+) - \phi_R(0^-)) + \frac{1}{2}(v_+ (\phi_L(0^+) + \phi_L(0^-)) - v_3 (\phi_R(0^+) + \phi_R(0^-))) = 0
+\end{cases}
+\end{equation}
+After the operations $L_1 \leftarrow L_1 \times (i - \frac{1}{2} v_3) - L_2 \times \frac{1}{2} v_-$ and $L_2 \leftarrow L_2 \times (-i + \frac{1}{2} v_3) - L_1 \times \frac{1}{2} v_+$, we have 
+\begin{equation}
+\begin{pmatrix}
+1- \frac{1}{4}\Sigma + i v_3  & 0 \\
+0  &  1- \frac{1}{4} \Sigma + i v_3 
+\end{pmatrix}\begin{pmatrix}
+\phi_L(0^+) \\
+\phi_R(0^+)
+\end{pmatrix} = \begin{pmatrix}
+1+\frac{1}{4} \Sigma  & -iv_-  \\
+iv_+  &  1+\frac{1}{4} \Sigma
+\end{pmatrix}\begin{pmatrix}
+\phi_L(0^-) \\
+\phi_R(0^-)
+\end{pmatrix}
+\end{equation}
+where $\Sigma = v_1 ^ 2 + v_2 ^ 2 + v_3 ^ 2$
+
+One can notice that this system does not have unique solution for certain values of $v_i$, namely, when the matrix on the left-hand side vanishes, \ie when $1 - \frac{1}{4}\Sigma + iv_3 = 0$. This case will be excluded in the following.
+
+Therefore, the matching condition \cref{nef-matching} implies 
+\begin{equation}\label{nef-matching2}
+\begin{pmatrix}
+\phi_L(0^+) \\
+\phi_R(0^+)
+\end{pmatrix} = \begin{pmatrix}
+\frac{A}{D}  & \frac{C}{D} \\
+\frac{C^*}{D} & \frac{A}{D}
+\end{pmatrix}\begin{pmatrix}
+\phi_L(0^-) \\
+\phi_R(0^-)
+\end{pmatrix}
+\end{equation}
+where $A = 1+ \frac{1}{4}\Sigma$, $C = -iv_-$, $D = 1-\frac{1}{4}\Sigma + iv_3$.
+
+\subsection{Verification of the consistency of the solution}
+Let us justify the consistency of \cref{nef-matching2}. From \cref{nef-basisSol}, we can consider $\phi_{L,k}$ ($\phi_{R,k}$) in the region $x^1 < 0$ ($x^1 > 0 $) as an "in-coming" wave \wrt the origin and $\phi_{R,k}$ ($\phi_{L,k}$) in the region $x^1 > 0$ ($x^1 < 0 $) as an "out-coming" wave \wrt the origin. In the stationary regime, the total density of probability of the in-coming waves should be equal to the total density of probability of the out-coming waves. 
+One can re-write \cref{nef-matching2} in the following way
+\begin{equation}\label{nef-consistency}
+\begin{pmatrix}
+\phi_L(0^+) \\
+\phi_R(0^-)
+\end{pmatrix}=\begin{pmatrix}
+\frac{A}{D} - \frac{| C |^2}{DA} & \frac{C}{A}  \\
+-\frac{C^*}{A}  &  \frac{D}{A}
+\end{pmatrix}\begin{pmatrix}
+\phi_L(0^-) \\
+\phi_R(0^+)
+\end{pmatrix}
+\end{equation} 
+Since $|A|^2 = |C|^2 + |D|^2$, the matrix on the \rhs is an unitary matrix. It follows that the norm of the vector on the \lhs is equal to the norm of the vector on the \rhs, which is indeed what we try to prove.
+
+\subsection{Two-point Hadamard form of the spatially bounded case}
+Consider now a system confined in $[-\frac{L}{2}, \frac{L}{2}]$. We apply the procedure given in~\cite{Zahn2015} in order to calculate the vacuum polarisation. 
+The boundary conditions are given by 
+\begin{equation*}
+i\gamma^1 \psi \eval{\pm \frac{L}{2}} = \pm \psi \eval{\pm \frac{L}{2}}
+\end{equation*}
+Suppose that the the solution takes the form $\phi = \begin{pmatrix} \phi_L \\ \phi_R \end{pmatrix}$.
+In terms of $\phi = \gamma^0 \psi$, the boundary conditions become
+\begin{equation*}
+\begin{pmatrix}
+-i \phi_R \\
+i \phi_L
+\end{pmatrix} \eval{\pm \frac{L}{2}} = \pm \begin{pmatrix}
+\phi_L \\
+\phi_R
+\end{pmatrix} \eval{\pm \frac{L}{2}}
+\end{equation*}
+For $k$ an eigenvalue of the Hamiltonian, we can write down the solution for the region $x^1<0$ with $\phi_L = f e^{ikx}$ and $\phi_R = g e^{-ikx}$, where $f$ and $g$ are complex numbers that we have to determine. According to \cref{nef-matching2}, the components of the solution in the region $x > 0$ should be $\phi_L = \frac{1}{D} (Af+Cg) e^{ikx^1}$ and $\phi_R = \frac{1}{D}(C^* f + Ag ) e^{-ikx^1}$. 
+Note that the solution on the whole space $x^1 \in [-\frac{L}{2}, \frac{L}{2}] - \{0\}$ is totally determined by $f$ and $g$ due to the matching condition \cref{nef-matching}. 
+The boundary conditions imply
+\begin{equation}
+\begin{cases}
+-i e^{ik \frac{L}{2}} g = -f e^{-ik \frac{L}{2}}  \quad \textrm{, at $ x^1 = -\frac{L}{2}$}  \\
+\frac{A}{D} f e^{ik \frac{L}{2}} + \frac{C}{D} g e^{ik \frac{L}{2}} = -i (\frac{C^*}{D} f e^{-ik \frac{L}{2}} + \frac{A}{D} g e^{-ik \frac{L}{2}})   \quad \textrm{, at $x^1 = \frac{L}{2}$}
+\end{cases}
+\end{equation}
+which can be re-arranged as
+\footnote{We can verify that, as $|A|^2 - |C|^2 = |D|^2 > 0$ by assumption, $iA + C$ is always non-vanishing.} 
+\begin{equation}\label{nef-boundCond}
+\begin{cases}
+g = f e^{-i(kL+ \frac{\pi}{2})}  \\
+g = \frac{A + iC^* e^{-ikL}}{- C e^{ikL} - iA} f e^{ikL}
+\end{cases}
+\end{equation}
+For a non-vanishing solution, this implies
+\begin{equation}\label{nef-boundCond1}
+e^{-i(kL + \frac{\pi}{2})} = \frac{A + iC^* e^{-ikL}}{(A + iC^* e^{-ikL})^*} e^{i(kL + \frac{\pi}{2})}
+\end{equation}
+and 
+\begin{equation}\label{nef-boundCond2}
+| f | = | g |
+\end{equation}
+Thus, according to \cref{nef-boundCond1}, $k$ has to take specific values such that
+\begin{equation}\label{nef-kn1}
+kL =  \textrm{Arg}(A - iC e^{ikL}) + \big(n+\frac{1}{2} \big)\pi   \quad \textrm{for n $\in \mathbb{Z}$}
+\end{equation}
+The case $|C| =0$ is relatively easy to deal with. Let us focus on the cases where $|C| \neq 0$. We should consider separately \cref{nef-kn1} for $n$ odd and $n$ even. 
+The motivation of this distinction is due to the $2\pi$-periodicity of the exponential term. \\\\
+Let us start with the case where $n$ is even. 
+For $C = |C| e^{i\eta} \neq 0 $, it follows\footnote{
+For $\alpha, \beta, \theta \in \mathbb{R}$, assuming that $\alpha + \beta \cos \theta > 0$, $\alpha + \beta e^{i \theta} = \alpha + \beta \cos \theta + i\beta \sin \theta = (\alpha^2 + \beta^2 + 2\alpha \beta \cos \theta) e^{i \delta}$ with $\delta = \arctan \frac{\beta\sin\theta}{\alpha + \beta\cos\theta}$  
+} 
+\begin{equation}
+\begin{split}
+&\textrm{Arg}(A - iC e^{ikL}) \\
+= &\textrm{Arg}(A + |C| e^{i(kL - \frac{\pi}{2} + \eta)}) \\
+= & \arctan \bigg( \frac{|C| \sin(kL - \frac{\pi}{2} + \eta)}{A + | C| \cos(kL - \frac{\pi}{2} + \eta) }\bigg)
+\end{split}
+\end{equation}
+We want to find $k$ such that $kL \in [0, \pi]$ in order to coincide with the allowed values of $\arctan$.
+Therefore, by \cref{nef-kn1}, $k$ must satisfy
+\begin{equation}\label{nef-arctan}
+\begin{split}
+& \frac{|C| \sin(kL - \frac{\pi}{2} + \eta)}{A + | C| \cos(kL - \frac{\pi}{2} + \eta) } =  - \cot kL  \\
+\Leftrightarrow \quad & A \cot kL = |C| \cos(kL + \eta) - |C| \cot kL \sin(kL + \eta)  \\
+\end{split}
+\end{equation}
+As $k$ should satisfy  
+\begin{equation}
+A \cos kL + |C| \sin\eta= 0
+\end{equation}
+$kL = \arccos \big(-\frac{|C|}{A}\big)$.
+Other solutions for the case where $n$ is even are equal to this value modulo $2 \pi$. \\
+For the case where $n$ is odd, the calculation is similar.
+We try to find $k$ such that $kL - \pi \in [0, \pi]$, which gives $kL = 2\pi - \arccos \big(-\frac{|C|}{A}\big)$. 
+Other solutions for the case where $n$ is odd are equal to this value modulo $2 \pi$.\\
+To sum up, the possible values of $k$ are given by
+\begin{equation}
+k_{n} = \frac{1}{L} \big(\theta + (\pi - \theta)(1- (-1)^n)\big) + \frac{\pi}{L}n 
+\quad \textrm{where $\theta = \arccos\bigg( \frac{-|C| \sin \eta}{A} \bigg)$}
+\end{equation}
+The coefficients $f_{n}$ and $g_{n}$ for the mode $k_{ n}$ can be determined by using the normalisation condition  $\int_{[-\frac{L}{2}, \frac{L}{2}]}\phi^\dagger \phi = 1$. 
+In the region $[-\frac{L}{2}, 0)$ , $\phi^\dagger \phi = | f |^2 + | g |^2$. Whereas in the region $(0, \frac{L}{2}]$, 
+\begin{equation}\label{nef-norm1}
+\begin{split}
+\phi^\dagger \phi & = \begin{pmatrix}
+\frac{1}{D^*}(Af^* +  C^*g^*)e^{-ikx^1}  & \frac{1}{D^*}(C f^* + Ag^*)e^{ikx^1} 
+\end{pmatrix}\begin{pmatrix}
+\frac{1}{D}(Af +  Cg)e^{ikx^1}  \\
+ \frac{1}{D}(C^* f + Ag)e^{-ikx^1} 
+\end{pmatrix}  \\
+ & =
+\frac{A^2 + | C|^2}{| D |^2}(|f|^2 + |g|^2) + 4\frac{A}{|D|^2}\Re \{C f^* g\}
+\end{split}
+\end{equation}
+By the first equation of \cref{nef-boundCond}, the last term of the last expression is 
+\begin{equation*}
+4\frac{A |C|}{|D|^2}| f|^2\Re\{e ^{-i(kL + \frac{\pi}{2} - \eta)}\} = 
+- 4\frac{A |C|}{|D|^2}| f|^2\sin( kL - \eta) 
+\end{equation*}
+Hence, the normalisation condition and \cref{nef-boundCond2} imply
+\begin{equation}
+\begin{split}
+ | f_{n} | =  \sqrt{\frac{1}{L(\alpha - \beta \sin (k_{n} L - \eta))}}  \quad  \textrm{where } & \textrm{$\alpha = 1+\frac{A^2 + |C|^2}{|D|^2}$} \\ 
+ & \textrm{$\beta = \frac{2 A |C|}{|D|^2}$}
+\end{split}
+\end{equation}
+Therefore, for the mode $k_n > 0$, the solution space is spanned by 
+\begin{equation}
+\begin{split}
+\phi_{k_{n}} = 
+& \sqrt{\frac{1}{L(\alpha - \beta \sin (k_{n}L - \eta))}} \Bigg( 
+\begin{pmatrix}
+1 & 0 \\
+0  & e^{-i(kL + \frac{\pi}{2})}
+\end{pmatrix}
+\Theta(-x^1) + \\
+& \begin{pmatrix}
+\frac{A}{D}  +  \frac{C}{D} e^{-i(kL + \frac{\pi}{2})} & 0 \\
+0  & \frac{C^*}{D}  + \frac{A}{D}e^{-i(kL + \frac{\pi}{2})}
+\end{pmatrix}\Theta(x^1)\Bigg)
+\begin{pmatrix}
+e^{ik_{n} x^1} \\
+e^{- ik_{n} x^1}
+\end{pmatrix}
+\end{split}
+\end{equation}
+where $\Theta$ is the Heaviside step function.\\\\
+%%%%%%%%%%%
+We take the Hadamard state defined in~\cite{Zahn2015} to calculate the vacuum polarisation of this configuration, given by the two-point function
+\begin{equation}
+\omega(\psi^B(x) \bar{\psi_A}(y)) = \int_{E_k > 0} \psi^B(x) \bar{\psi_A}(y) e^{-i(x^0 - y^0) E_k} \dd k
+\end{equation}
+As we will multiply these two-point functions by $\gamma^i$ to get observables (current and charge density), only the following terms should be considered in terms of $\phi$ \footnote{
+The summation of Einstein is not applied here.}
+\begin{equation}
+\omega(\psi^B(x) \bar{\psi_A}(y)) = 
+\gamma^B_A \omega(\phi^A(x) \phi^\dagger_A(y)) = 
+\int_{E_k > 0} \phi^A(x) \phi^\dagger_A(y) e^{-i(x^0 - y^0) E_k} \dd k
+\quad \textrm{for $A = 1,2$}
+\end{equation}
+Firstly, consider $x^1, y^1 < 0$. The integral term for $A =1$, with $z =x^0 - y^0 - x^1 +y^1$ becomes
+\begin{equation}
+\sum_{2p \geq 0} \frac{e^{-i(\theta + 2p\pi)\frac{z}{L}}}{L(\alpha - \beta \sin (\theta - \eta))} 
++ \sum_{2p+1 \geq 0} \frac{e^{-i(- \theta + (2p+2)\pi)\frac{z}{L}}}{L(\alpha + \beta \sin (\theta + \eta))}\\
+\end{equation}
+The above sum can be written as
+\begin{equation}
+\frac{1}{2i L\sin\frac{\pi}{L}z} \bigg( \frac{e^{i(-\theta + \pi)\frac{z}{L}}}{\alpha - \beta \sin (\theta - \eta)}
++ \frac{e^{i(\theta - \pi) \frac{z}{L}}}{\alpha + \beta \sin (\theta + \eta)}
+\bigg)
+\end{equation}
+Developping the term in the parenthesis up to $\mathcal{O}(1)$, we get
+\begin{equation}
+\begin{split}
+& \frac{1}{\alpha - \beta \sin (\theta - \eta)}
+   + \frac{1}{\alpha + \beta \sin (\theta + \eta)} \\
+= & \frac{2(\alpha + \beta \sin \eta \cos \theta)}{(\alpha + \beta \sin \eta \cos \theta)^2 - \beta^2 \sin^2 \theta \cos^2 \eta} \\
+= & \frac{2(\alpha - \beta \frac{|C|}{A} \sin^2 \eta)}{\alpha^2 - \beta^2 + \beta^2 \sin^2 \eta (1 + \frac{|C|^2}{A^2}) - 2 \alpha \beta \frac{|C|}{A} \sin^2 \eta} \\
+\end{split}
+\end{equation}
+As
+\begin{equation*}
+\begin{split}
+& \alpha^2 - \beta ^ 2 = 2 \alpha \\
+&  \beta^2 \big(1 + \frac{|C|^2}{A^2} \big) - 2 \alpha \beta \frac{|C|}{A} \\
+= & \big(2\frac{A |C|}{|D|^2} \big)^2 \big( 1+ \frac{|C|^2}{A^2} \big) - 4\big( 1+ \frac{|C|^2}{D^2}))\big(2\frac{A |C|}{|D|^2} \big) \frac{|C|}{A}  \\
+= & 4 \frac{A^2 |C|^2}{|D|^4} + 4\frac{|C|^4}{|D|^4} - 8\frac{|C|^2}{|D|^2} - 8\frac{|C|^4}{|D|^4} \\
+= & -2 \beta \frac{|C|}{A}
+\end{split}
+\end{equation*}
+we have
+\begin{equation}\label{nef-lourdeur}
+\frac{1}{\alpha - \beta \sin (\theta - \eta)}
+   + \frac{1}{\alpha + \beta \sin (\theta + \eta)} 
+= 1
+\end{equation}
+Therefore, the singularity of $\mathcal{O}(z^{-1})$ is the same as for the Hadamard parametrix of the vacuum case.\\\\
+We calculate now the vacuum polarization in the region $[-\frac{L}{2}, 0)$. Since
+\begin{equation*}
+\frac{1}{2i \sin \frac{\pi}{L}z } = \frac{-iL}{2 \pi z} - \frac{i \pi z}{12L} + \mathcal{O}(z^3) 
+\end{equation*}
+using \cref{nef-lourdeur} and denoting
+\begin{equation}\label{nef-xi}
+\begin{split}
+\xi(z) = & \Big( \frac{-i}{2 \pi z} - \frac{i \pi z}{12L^2} + \mathcal{O}(z^3) \Big)
+\Big( 1 + \frac{i(-\theta + \pi)\frac{z}{L}}{\alpha - \beta\sin(\theta - \eta)} + \frac{i(\theta - \pi)\frac{z}{L}}{\alpha + \beta\sin(\theta + \eta)}  \\
+& - \frac{1}{2}\Big(\frac{(-\theta + \pi)^2}{\alpha - \beta \sin (\theta - \eta)}  
++ \frac{(\theta - \pi)^2}{\alpha + \beta \sin (\theta + \eta)} \Big)\frac{z^2}{L^2}
++  \mathcal{O}(z^3) \Big)  \\
+= & \frac{-i}{2 \pi z} + \frac{1}{2\pi L}\Big( \frac{-\theta + \pi}{\alpha - \beta\sin(\theta - \eta)} + \frac{\theta - \pi}{\alpha + \beta\sin(\theta + \eta)} \Big)  
+ + \frac{i\pi}{4 L^2}z \big( -\frac{1}{3} + \frac{(\theta - \pi)^2}{\pi^2}\big) + \mathcal{O}(z^2) \\
+= &  \frac{-i}{2 \pi z} 
++ \frac{1}{2\pi L}\Big( \frac{\beta \sin \theta \cos \eta}{\alpha + \beta \sin \eta \cos \theta}\Big) (-\theta + \pi) 
++ \frac{i\pi}{4 L^2}\big( -\frac{1}{3} + \frac{(\theta - \pi)^2}{\pi^2}\big)z+ \mathcal{O}(z^2)
+\end{split}
+\end{equation}
+we thus have
+\begin{equation*}
+\omega(\psi^2(x) \bar{\psi_1}(y)) = \omega(\phi^1(x) \phi^\dagger_1(y)) 
+= \xi( x^0 - y^0 - x^1 +y^1)
+\end{equation*}
+\begin{equation*}
+\omega(\psi^1(x) \bar{\psi_2}(y)) =  \omega(\phi^2(x) \phi^\dagger_2(y)) 
+= \xi(x^0 - y^0 + x^1 -y^1)
+\end{equation*}
+The off-diagonal components of the Hadamard parametrix of our problem are~\cite{Zahn2015}
+\begin{equation*}
+\begin{split}
+H^{+} (x,y)^2_1 = \frac{-i}{2\pi (x^0 - y^0 - x^1 + y^1 -i\epsilon)} + \textrm{terms vanishing at coinciding point limit}  \\
+H^{+} (x,y)^1_2 = \frac{-i}{2\pi (x^0 - y^0 + x^1 - y^1 -i\epsilon)} + \textrm{terms vanishing at coinciding point limit} 
+\end{split}
+\end{equation*}
+Hence, in the region $[-\frac{L}{2}, 0)$, the charge density is
+\begin{equation}
+\rho(x) = \frac{e}{\pi L}\Big( \frac{\beta \sin \theta \cos \eta}{\alpha + \beta \sin \eta \cos \theta}\Big) (-\theta + \pi)
+\end{equation}
+The same calculation allows us to get the two points functions and the Hadamard parametrix (which is the same) in the region $(0, \frac{L}{2}]$. By denoting
+\begin{equation*}
+\begin{split} 
+\chi(z) = & \omega(\phi^1(x) \phi^\dagger_1(y)) \\
+= & \Big(  \frac{-i}{2 \pi z} - \frac{i \pi z}{12L^2} + \mathcal{O}(z^3) \Big)  \bigg( 1 + \frac{i(-\theta + \pi)\frac{z}{L}}{\alpha + \beta\sin(\theta + \eta)}  
++ \frac{ i (\theta - \pi) \frac{z}{L}}{\alpha - \beta\sin(\theta - \eta)}   \\
+& - \frac{1}{2}\Big(\frac{(-\theta + \pi)^2}{\alpha + \beta \sin (\theta + \eta)}  
++ \frac{(\theta - \pi)^2}{\alpha - \beta \sin (\theta - \eta)} \Big)\frac{z^2}{L^2}
++ \mathcal{O}(z^3) \bigg)  \\
+= & \frac{-i}{2 \pi z} - \frac{1}{2\pi L} \Big( \frac{\beta \sin \theta \cos \eta}{\alpha + \beta \sin \eta \cos \theta}\Big) (-\theta + \pi) 
++ \frac{i\pi}{4 L^2}\big( -\frac{1}{3} + \frac{(\theta - \pi)^2}{\pi^2}\big)z
++ \mathcal{O}(z^2)
+\end{split}
+\end{equation*}
+we find
+\begin{equation*}
+\omega(\psi^2(x) \bar{\psi_1}(y)) = \chi(x^0 - y^0 - x^1 + y^1)
+\end{equation*}
+\begin{equation*}
+\omega(\psi^1(x) \bar{\psi_2}(y)) = \chi(x^0 - y^0 + x^1 - y^1)
+\end{equation*}
+Hence, the charge density in the whole space $[-\frac{L}{2}, \frac{L}{2}] - \{0\}$ is
+\begin{equation}
+\begin{split}
+\rho(x) = \frac{e}{\pi L}\Big( \frac{\beta \sin \theta \cos \eta}{\alpha + \beta \sin \eta \cos \theta}\Big) (-\theta + \pi) \Big( \Theta(-x^1) - \Theta(x^1)\Big)
+\end{split}
+\end{equation}
+and the current density is zero. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Stress-energy tensor}
+It is also worthy to compute the stress-energy tensor of the system in order to see how it is related to the vacuum polarization that we have calculated.
+With its classical form, one can write down the components of stress-energy tensor as
+\begin{equation}
+\begin{split}
+& T_{00} = \frac{i}{2} (\bar{\psi} \gamma_1 \nabla_1 \psi - \nabla_1 \bar{\psi}\gamma_1 \psi)  \\
+& T_{11} = \frac{i}{2} (\bar{\psi} \gamma_0 \nabla_0 \psi - \nabla_0 \bar{\psi}\gamma_0 \psi)  \\
+& T_{01} = \frac{i}{4} (\bar{\psi} \gamma_1 \nabla_0 \psi +\bar{\psi} \gamma_0 \nabla_1 \psi - \nabla_1 \bar{\psi}\gamma_0 \psi - \nabla_0 \bar{\psi}\gamma_1 \psi)  
+\end{split}
+\end{equation}
+In the two-point function formulation, the expectation value of $T_{ab}$ corresponds to the regular part of the state $\omega$ previously defined. For example\footnote{Normal ordering is applied here when calculating the two-point function. The anti-commutation relation of the state is involved.},
+\begin{equation}
+\begin{split}
+T_{00}(x,y) = &
+- \frac{i}{2}\big(\omega( \nabla_1 \psi^B(x) \bar{\psi}_A(y))(\gamma_1)^A_B - \omega( \psi^B(x) \nabla_1 \bar{\psi}_A(y))(\gamma_1)^A_B \big) - \textrm{singular part}  \\
+\end{split}
+\end{equation}
+Practically, the singular part corresponds to the covariant derivatives of the Hadamard parametrix. In terms of $\phi = \gamma^0 \psi$, 
+\begin{equation*}
+\bar{\psi} \gamma_1 \nabla \psi = - \phi^\dagger \gamma^1 \gamma^0 \nabla \phi
+\end{equation*}
+As usual, we start with the region $[-\frac{L}{2}, 0)$. By denoting
+\begin{equation*}
+\zeta = \gamma^1 \gamma^0 = \begin{pmatrix}
+1 & 0 \\
+0 & -1
+\end{pmatrix}
+\end{equation*}
+using the function $\xi$ that we have introduced in \cref{nef-xi}, the states evaluated at the components of the stress-energy tensor can be written as
+\begin{equation}
+\begin{split}
+T_{00}(x,y) = 
+& \frac{i}{2}\Big(\nabla_{x^1} \big( \omega(\phi^B(x) \phi^\dagger_A(y))\zeta^A_C - H^+(x,y) \big)
+- \nabla_{y^1} \big( \omega( \phi^B(x) \bar{\phi}_A(y))\zeta^A_C - H^+(x,y) \big)
+\Big)\delta_B^C  \\
+= & \frac{i}{2} \big( (-\xi'(z) - \xi'(w)) - \xi'(z) - \xi'(w) + \frac{i}{\pi z} + \frac{i}{\pi w} \big)   \\
+T_{11}(x,y) =
+& - \frac{i}{2}\big( \xi'(z) + \xi'(w) + \xi'(z) + \xi'(w) - \frac{i}{\pi z} - \frac{i}{\pi w}\big) \\
+T_{01}(x,y) = 
+& \frac{i}{4}\Big(\nabla_{x^0} \big( \omega(\phi^B(x) \phi^\dagger_A(y))(\zeta_1)^A_C - H^+(x,y) \big) + \nabla_{x^1} \big( \omega(\phi^B(x) \phi^\dagger_A(y))\delta^A_C - H^+(x,y) \big)  \\
+& - \nabla_{y^0} \big( \omega( \phi^B(x) \bar{\phi}_A(y))\zeta^A_C - H^+(x,y) \big)
+- \nabla_{y^1} \big( \omega( \phi^B(x) \bar{\phi}_A(y))\delta^A_C - H^+(x,y) \big)
+\Big)\delta_B^C \\
+= & \frac{i}{4}\Big( \big( \xi'(z) - \xi'(w) \big) + \big(- \xi'(z) + \xi'(w) \big) - \big( - \xi'(z) + \xi'(w) \big) - \big( \xi'(z) - \xi'(w) \big) \Big) \\
+= & 0
+\end{split}
+\end{equation}
+where $z = x^0 - y^0 - x^1 + y^1$ and $w = x^0 - y^0 + x^1 - y^1$ \\
+Taking the coinciding point limit, we find
+\begin{equation}
+T_{ab} = \frac{ \pi}{2 L^2} \big( -\frac{1}{3} + \frac{(\theta - \pi)^2}{\pi^2}\big)\begin{pmatrix}
+1  & 0 \\ 0  &  1
+\end{pmatrix}
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
