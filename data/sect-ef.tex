@@ -32,37 +32,37 @@ $}
 for $f, g\in \mathbb{C}$. The matching condition at $x^1 = 0$ is the same as \cref{nef-matching2}. With the same boundary conditions, we can derive a relation similar to \cref{nef-boundCond}
 \begin{equation}
 \begin{cases}
-g = fe^{i(kL + \frac{\pi}{2}) - i\frac{eE}{4}L^2}  \\
-g = \frac{A + iC^* e^{-ikL + i\frac{eE}{4}L^2 }}{A - iC e^{ikL - i\frac{eE}{4}L^2}} fe^{ikL - i\frac{eE}{4}L^2 + i\frac{\pi}{2}}
+g = fe^{i(kL + \frac{\pi}{2}) - i\frac{eE}{8}L^2}  \\
+g = \frac{A + iC^* e^{-ikL + i\frac{eE}{8}L^2 }}{A - iC e^{ikL - i\frac{eE}{8}L^2}} fe^{ikL - i\frac{eE}{8}L^2 + i\frac{\pi}{2}}
 \end{cases}
-\end{equation}
+\end{equation}ß
 which implies $|f| = |g|$ and
 \begin{equation}
-kL = \textrm{Arg}(A - iC e^{ikL -i\frac{eE}{4}L^2}) + (n + \frac{1}{2}) \quad n\in \mathbb{Z}
+kL = \textrm{Arg}(A - iC e^{ikL -i\frac{eE}{8}L^2}) + (n + \frac{1}{2}) \quad n\in \mathbb{Z}
 \end{equation}
 This equation can be solved in the same way which has been done for \cref{nef-boundCond1} by replacing $C$ by $Ce^{-i\frac{eE}{4}L^2}$. \\
-Thus, by denoting $\eta = \textrm{Arg } C - \frac{eE}{4}L^2 $, an eigenvalue $k$ of the Hamiltonian can take the following values
+Thus, by denoting $\eta = \textrm{Arg } C - \frac{eE}{8}L^2 $, an eigenvalue $k$ of the Hamiltonian can take the following values
 \begin{equation}
 k_{n} = \frac{(-1)^n}{L} \theta+ \frac{2\pi}{L}n 
 \quad \textrm{where $\theta = \arccos\bigg( \frac{-|C| \sin \eta}{A} \bigg)$}
 \end{equation}
-The solution space is therefor spanned by
+The solution space is therefore spanned by
 \begin{equation} 
 \begin{split}
 \phi_{k_{n}} = 
 & \sqrt{\frac{1}{L(\alpha - \beta \sin (k_{n}L - \eta))}} \Bigg( 
 \begin{pmatrix}
 1 & 0 \\
-0  & e^{-i(kL + \frac{\pi}{2}) + i\frac{eE}{4}L^2}
+0  & e^{-i(kL + \frac{\pi}{2}) + i\frac{eE}{8}L^2}
 \end{pmatrix}
 \Theta(-x^1) + \\
 & \begin{pmatrix}
-\frac{A}{D}  +  \frac{C}{D} e^{-i(kL + \frac{\pi}{2})+ i\frac{eE}{4}L^2} & 0 \\
-0  & \frac{C^*}{D}  + \frac{A}{D}e^{-i(kL + \frac{\pi}{2} ) + i\frac{eE}{4}L^2}
+\frac{A}{D}  +  \frac{C}{D} e^{-i(kL + \frac{\pi}{2})+ i\frac{eE}{8}L^2} & 0 \\
+0  & \frac{C^*}{D}  + \frac{A}{D}e^{-i(kL + \frac{\pi}{2} ) + i\frac{eE}{8}L^2}
 \end{pmatrix}\Theta(x^1)\Bigg)
 \begin{pmatrix}
-e^{ik_{n} x^1 -  i\frac{eE}{4}(x^1)^2} \\
-e^{- ik_{n} x^1 + i\frac{eE}{4}(x^1)^2}
+e^{ik_{n} x^1 -  i\frac{eE}{2}(x^1)^2} \\
+e^{- ik_{n} x^1 + i\frac{eE}{2}(x^1)^2}
 \end{pmatrix}
 \end{split}
 \end{equation}
