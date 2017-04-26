@@ -53,7 +53,7 @@ Thus, $\phi$ could be written as
 \Theta(-x) \begin{pmatrix} f_- e^x  \\ g_-  e^{-x} \end{pmatrix} + 
 \Theta(x) \begin{pmatrix} f_+ e^x  \\ g_+  e^{-x} \end{pmatrix}
 \end{equation}
-The boundary conditions give
+The boundary condition gives
 \begin{equation}
 \begin{cases}
 -i g_- e^{\frac{L}{2}} = - f_- e^{-\frac{L}{2}} \\
@@ -64,7 +64,8 @@ g_- = -i f_- e^{-L} \\
 g_+ = i f_+ e^L
 \end{cases}
 \end{equation}
-We have found that the matching condition at $x=0$ gives a linear transformation, namely, $\phi(0^+) = T\phi(0^-)$ with $T$ a certain matrix depending on $v_i$. With the boundary conditions, this implies
+We have found that the matching condition at $x=0$ gives a linear transformation, namely, $\phi(0^+) = T\phi(0^-)$ with $T = \frac{1}{D}\begin{pmatrix} A & C \\ C^* & A \end{pmatrix}$. 
+With the boundary conditions, this implies
 \begin{equation}
 f_+ \begin{pmatrix} 1 \\ ie^L \end{pmatrix}
 = f_- T \begin{pmatrix} 1 \\ -ie^L \end{pmatrix}
@@ -75,17 +76,11 @@ $f_+$ and $f_-$ are non-vanishing if and only if
 \begin{equation}
 \begin{split}
 & ie^L = \frac{C^* - iA e^{-L}}{A - iC e^{-L}} \\
-\Leftrightarrow \quad & 1 = \frac{C^* e^L - iA}{iA + C e^{-L}} \\
-\Leftrightarrow \quad & 2i A = -C e^{-L} + C^*e^L
+\Leftrightarrow \quad & 1 = \frac{C^* - iA e^{-L}}{iA + C e^{-L}} \\
+\Leftrightarrow \quad & 2i A \cosh L = -C + C^*
 \end{split}
 \end{equation}
-For $C = -iv_- = -iv_1 - v_2$ and $A = 1 + \frac{1}{4}(v_1^2 + v_2^2 + v_3^2)$, this requires
-\begin{equation}
-\begin{cases}
-v_2 = 0 \\
-v_1 \cosh L = 1 + \frac{1}{4}(v_1^2 + v_3^2)
-\end{cases}
-\end{equation}
+%For $C = -iv_- = -iv_1 - v_2$ and $A = 1 + \frac{1}{4}(v_1^2 + v_2^2 + v_3^2)$, this requires
 This condition is not verified in general, as the $v_i$ do not depend on $L$, in which case we get $\dim \mathcal{K}_- = 0$. \\
 For $\mathcal{K}_+$, it suffices to replace $L$ by $-L$ in the above calculation. Therefore, besides certain specific potentials, $H$ is essentially self-adjoint.
 
