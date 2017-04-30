@@ -1,0 +1,56 @@
+\section{Introduction}
+The main goal of this work is to general the bag boundary condition %TODO add reference
+by introducing the derivatives of the wave function in the boundary condition for any Lorentzian manifold $M$. 
+For this purpose, we introduce the following action
+\begin{equation}
+\mathcal{S} = \frac{1}{2}i\int_M \bar{\psi} \gamma^\mu \partial_\mu \psi - \partial_\mu \bar{\psi} \gamma^\mu \psi 
++ \frac{1}{2}\int_{\partial M} ic \bar{\psi} \gamma^\bot \gamma^\alpha \partial_\alpha (1 - i \gamma^\bot) \psi
++ \frac{1}{2} \bar{\psi} \psi
+\end{equation}
+for a certain constant $c$. 
+$\gamma^\bot$ here represents the component perpendicular to $\partial M$ in the incoming direction. \\
+Remark that there is a problem on the dimensionality because of the $\gamma$-matrices, as the generators of a Clifford Algebra does not always have representation space of the same dimension when we reduce its dimension by one. 
+This motivates the choice of $M$ with dimension $2k+3$
+When $c \rightarrow 0$, the boundary condition becomes the bag condition. 
+Furthermore, we suppose that $\psi$ and $\partial_\mu \psi$ vanish at $\partial(\partial M)$. 
+By variational method, we can derive the equations of motion in the bulk and on the boundary
+\begin{equation}\label{wen-motion}
+\begin{cases}
+i \gamma^\mu \partial_\mu \psi = 0  \quad \textrm{in $M$}\\
+\gamma^a \partial_a (1 - i\gamma^\bot) \psi = -c^{-1}(1 - i\gamma^{\bot}) \psi \quad \textrm{on $\partial M$}
+\end{cases}
+\end{equation}
+We define $\phi = \gamma^0 \psi$. 
+\cref{wen-motion} can be written as 
+\begin{equation}
+\begin{cases}
+i \partial_0 \phi = i \gamma^0 \gamma^j \partial_j \phi   \quad \textrm{in $M$}\\
+i \partial_0(1 - i\gamma^\bot) \phi = i \big(\gamma^0 \gamma^a \partial_a (1- i\gamma^\bot)\phi + c^{-1}\gamma^0 (1-i \gamma^{\bot})\phi \big)  \quad \textrm{on $\partial M$}
+\end{cases}
+\end{equation}
+Where Latin letters are used to enumerate the spatial components.\\
+One can notice that the boundary condition implies constraints on only a part of components of $\psi$. 
+For instance, for $\dim M = 3$, we can construct the following generator of Clifford Algebra %TODO add reference
+\begin{equation*}
+\gamma^0 = i\begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}  \quad
+\gamma^1 = i\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}  \quad
+\gamma^2 = i\begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}  
+\end{equation*}
+Suppose that the normal vector of $\partial M$ is $e_2$ at all point.
+We have
+\begin{equation*}
+1 - i\gamma^\bot = 
+\begin{pmatrix} 2 & 0 \\ 0 & 0\end{pmatrix} = 2 \mathcal{P}
+\end{equation*}
+where $\mathcal{P}$ is one of the chiral projectors.
+In order to define the domain of the Hamiltonian of the problem, the following lemma is needed 
+\begin{lemma}
+For $\dim M = 2k+ 3$, the operator $\mathcal{P_\pm} = \frac{1}{2}(1 \pm i\gamma^\bot) $ satifies $\rank (\mathcal{P}) = 2^k$
+\end{lemma}
+Thus, one can define an operator $\Delta$ on the     %TODO On what?
+\begin{equation}
+\Delta = \begin{pmatrix}
+i \gamma^0 \gamma^j \partial_j  & 0 \\
+-c^{-1} \gamma^0 \mathcal{P}_- &  i\gamma^0 \gamma^a \partial_a \mathcal{P}_-
+\end{pmatrix}
+\end{equation}

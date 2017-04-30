@@ -1,0 +1,27 @@
+\section{Self-adjointness of the Hamiltonian operator}
+We define the inner product for our Hilbert space $\mathcal{H}$
+\begin{equation}
+\langle \cdot, \cdot \rangle _\mathcal{H} = \langle \cdot, \cdot \rangle _{L^2(M)} + c \langle \cdot, \cdot \rangle _{L^2(\partial M)}
+\end{equation}
+For $\Phi, \Psi \in \mathcal{H}$, 
+\begin{equation}
+\begin{split}
+\langle \Phi, \Delta \Psi \rangle _\mathcal{H}
+& = \int_M \phi^* i \gamma^0 \gamma^j \partial_j \psi 
++ \int_{\partial M} \phi^\dagger( - \gamma^0 \mathcal{P}_- \psi + i \gamma^0 \gamma^a \partial_a \mathcal{P}_- \psi)   \\
+& = - \int_M \partial_j \phi^\dagger i \gamma^0 \gamma^j \psi 
++ \int_{\partial M} \phi^\dagger( - \gamma^0 \mathcal{P}_- \psi + i \gamma^0 \gamma^a \partial_a \mathcal{P}_- \psi) 
++ i\phi^\dagger \gamma^0 \gamma^\bot \psi   \\
+& \underset{\gamma^\bot + \mathcal{P}_- = \mathcal{P}_+}{=} 
+- \int_M \partial_j \phi^\dagger i \gamma^0 \gamma^j \psi 
++ \int_{\partial M} \phi^\dagger( - \gamma^0 \mathcal{P}_+ \psi + i \gamma^0 \gamma^a \partial_a \mathcal{P}_- \psi) \\
+& \underset{(\mathcal{P}_+)^\dagger = \mathcal{P}_+}{=}
+- \int_M \partial_j \phi^\dagger i \gamma^0 \gamma^j \psi 
++ \int_{\partial M} -(\gamma^0 \mathcal{P}_- \phi)^\dagger  \psi + i \phi^\dagger \gamma^0 \gamma^a \partial_a \mathcal{P}_- \psi \\
+& =
+- \int_M \partial_j \phi^\dagger i \gamma^0 \gamma^j \psi 
++ \int_{\partial M} -(\gamma^0 \mathcal{P}_- \phi)^\dagger  \psi - i \partial_a \phi^\dagger (\mathcal{P}_-)^\dagger (\gamma^a)^\dagger (\gamma^0)^\dagger \psi \\
+& = \langle \Delta\Psi, \Phi \rangle_\mathcal{H}
+\end{split}
+\end{equation}
+Thus, $\Delta$ is symmetric. 
