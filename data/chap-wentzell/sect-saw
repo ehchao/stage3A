@@ -1,27 +1,100 @@
-\section{Self-adjointness of the Hamiltonian operator}
-We define the inner product for our Hilbert space $\mathcal{H}$
+\section{Well-posedness of the problem}
+We define the inner product for our Hilbert space $\mathcal{H} = W^{1,2}(M)\times W^{1,2}(\partial M)$, where $W^{1,2}$ is the Sobolev space,
 \begin{equation}
 \langle \cdot, \cdot \rangle _\mathcal{H} = \langle \cdot, \cdot \rangle _{L^2(M)} + c \langle \cdot, \cdot \rangle _{L^2(\partial M)}
 \end{equation}
-For $\Phi, \Psi \in \mathcal{H}$, 
+In order to have a self-adjoint operator, we define $\Delta$ on the domain
+\begin{equation*}
+\dom( \Delta) = \{ \Phi = (\phi, \phi_|) \in \mathcal{H} \enskip | \enskip \mathcal{P}_-\big(\phi \vert_{\partial M} - \phi_|\big) = 0
+\end{equation*}  
+For $\Phi = (\phi, \phi_|), \Psi = (\psi, \psi_|) \in \mathcal{H}$, 
 \begin{equation}
 \begin{split}
 \langle \Phi, \Delta \Psi \rangle _\mathcal{H}
-& = \int_M \phi^* i \gamma^0 \gamma^j \partial_j \psi 
-+ \int_{\partial M} \phi^\dagger( - \gamma^0 \mathcal{P}_- \psi + i \gamma^0 \gamma^a \partial_a \mathcal{P}_- \psi)   \\
-& = - \int_M \partial_j \phi^\dagger i \gamma^0 \gamma^j \psi 
-+ \int_{\partial M} \phi^\dagger( - \gamma^0 \mathcal{P}_- \psi + i \gamma^0 \gamma^a \partial_a \mathcal{P}_- \psi) 
-+ i\phi^\dagger \gamma^0 \gamma^\bot \psi   \\
-& \underset{\gamma^\bot + \mathcal{P}_- = \mathcal{P}_+}{=} 
+ = & \int_M \phi^\dagger i \gamma^0 \gamma^j \partial_j \psi 
++ \int_{\partial M} \phi^\dagger_|( \gamma^0 \mathcal{P}_- \psi\vert_{\partial M} + ic \gamma^0 \gamma^a \partial_a \mathcal{P}_- \psi_|)   \\
+ = & - \int_M \partial_j \phi^\dagger i \gamma^0 \gamma^j \psi 
++ \int_{\partial M} \phi^\dagger_|( \gamma^0 \mathcal{P}_- \psi\vert_{\partial M} + ic \gamma^0 \gamma^a \partial_a \mathcal{P}_- \psi_|) 
++ i\phi_|^\dagger \gamma^0 \gamma^\bot \psi_|   \\
+ \underset{i\gamma^\bot + \mathcal{P}_- = \mathcal{P}_+}{=} &
 - \int_M \partial_j \phi^\dagger i \gamma^0 \gamma^j \psi 
-+ \int_{\partial M} \phi^\dagger( - \gamma^0 \mathcal{P}_+ \psi + i \gamma^0 \gamma^a \partial_a \mathcal{P}_- \psi) \\
-& \underset{(\mathcal{P}_+)^\dagger = \mathcal{P}_+}{=}
++ \int_{\partial M} \phi_|^\dagger( \gamma^0 \mathcal{P}_+ \psi\vert_{\partial M} + ic \gamma^0 \gamma^a \partial_a \mathcal{P}_- \psi_|)  \\
+& + i \phi_|^\dagger \gamma^0 \gamma^\bot \psi_| 
+- i \phi_|^\dagger \gamma^0 \gamma^\bot \psi\vert_{\partial M} \\
+ \underset{(\mathcal{P}_+)^\dagger = \mathcal{P}_+}{=} &
 - \int_M \partial_j \phi^\dagger i \gamma^0 \gamma^j \psi 
-+ \int_{\partial M} -(\gamma^0 \mathcal{P}_- \phi)^\dagger  \psi + i \phi^\dagger \gamma^0 \gamma^a \partial_a \mathcal{P}_- \psi \\
-& =
++ \int_{\partial M} (\gamma^0 \mathcal{P}_- \phi_|)^\dagger  \psi\vert_{\partial M} + ic \phi_|^\dagger \gamma^0 \gamma^a \partial_a \mathcal{P}_- \psi_| \\
+& + i \phi_|^\dagger \gamma^0 \gamma^\bot \psi_| 
+- i \phi_|^\dagger \gamma^0 \gamma^\bot \psi\vert_{\partial M} \\
+ = &
 - \int_M \partial_j \phi^\dagger i \gamma^0 \gamma^j \psi 
-+ \int_{\partial M} -(\gamma^0 \mathcal{P}_- \phi)^\dagger  \psi - i \partial_a \phi^\dagger (\mathcal{P}_-)^\dagger (\gamma^a)^\dagger (\gamma^0)^\dagger \psi \\
-& = \langle \Delta\Psi, \Phi \rangle_\mathcal{H}
++ \int_{\partial M} (\gamma^0 \mathcal{P}_- \phi\vert_{\partial M})^\dagger  \psi_| - ic \partial_a \phi_|^\dagger (\mathcal{P}_-)^\dagger (\gamma^a)^\dagger (\gamma^0)^\dagger \psi_| \\
+& + i \phi_|^\dagger \gamma^0 \gamma^\bot \psi_| 
+- i \phi_|^\dagger \gamma^0 \gamma^\bot \psi\vert_{\partial M} 
++ \phi^\dagger_| \mathcal{P}_- \gamma^0 \psi\vert_{\partial M}
+-  \phi^\dagger\vert_{\partial M} \mathcal{P}_- \gamma^0 \psi_| \\
+ = & \langle \Delta\Psi, \Phi \rangle_\mathcal{H}
++i\phi_|^\dagger \gamma^0\gamma^\bot \psi_|
++ \phi_|^\dagger \gamma^0\mathcal{P}_- \psi\vert_{\partial M} 
+- \phi^\dagger\vert_{\partial M} \gamma^0\mathcal{P}_+ \psi_| \\
+= & \langle \Delta\Psi, \Phi \rangle_\mathcal{H}
++ (\phi_|^\dagger - \phi^\dagger\vert_{\partial M})  \gamma^0\mathcal{P}_+ \psi\vert_{\partial M}  \\
+= & \langle \Delta\Psi, \Phi \rangle_\mathcal{H}
++ \big(\mathcal{P}_-(\phi_| - \phi\vert_{\partial M})\big)^\dagger  \gamma^0 \psi\vert_{\partial M} 
 \end{split}
 \end{equation}
-Thus, $\Delta$ is symmetric. 
+The residual term of the last line vanishes if and only if $\mathcal{P}_-\big(\psi \vert_{\partial M} - \psi_|\big) = 0$, which shows the self-adjointness of $\Delta$. 
+The following proposition holds.
+\begin{proposition}
+$\Delta$ is a self-adjoint operator with spectrum $\mathbb{R}$
+\end{proposition}
+\begin{proof}
+The self-adjointness being proven, let us find the eigenvectors and eigenvalues of $\Delta$. Let $k$ an eigenvalue of $\Delta$ and $\Phi_k = (\phi_k, \phi_{| k})$. Then
+\begin{equation}\label{wen-motion2}
+\begin{cases}
+i \gamma^0 \gamma^j \partial_j \phi_k = k \phi_k \\
+c^{-1} \gamma^0 \mathcal{P}_- \phi\vert_{\partial M} + i \gamma^0 \gamma^a \partial_a \mathcal{P}_- \phi_{| k} = k \phi_{| k}
+\end{cases}
+\end{equation}
+As proposed in~\cite{Snygg1997}, we can suppose that $\phi_{| k} = (1 + \gamma^m \gamma^l c_{ml}) e^{-ip_j x^j}$ with $m < l$, where $c_{m l} \in \mathbb{C}$, $p_j \in \mathbb{R}$.
+This choice results from the fact that there are only even-vectors (products of even number of gamma matrices) in the first equation of \cref{wen-motion2}.
+The first equation of \cref{wen-motion2} implies
+\begin{equation*}
+\gamma^0 \gamma^j (1+ \gamma^m \gamma^l c_{m l}) p_j = k (1+ \gamma^m \gamma^l c_{m l})
+\end{equation*} 
+By identifying the 2-vector term, one gets
+\begin{equation*}
+p_j = kc_{0j}
+\end{equation*}
+Then, by identifying the 0-vector term, one gets
+\begin{equation*}
+\gamma^0\gamma^j\gamma^0 \gamma^j p_j c_{0j}= k \quad \Rightarrow \quad p^j p_j = k^2
+\end{equation*}
+Finally, considering the second equation and the condition that an element of $\dom(\Delta)$ should satisfy, one gets
+\begin{equation*}
+\begin{split}
+\mathcal{P}_-\phi\vert_{\partial M} = \mathcal{P}_- \phi_|
+c^{-1} \gamma^0 \mathcal{P}_- \phi\vert_{\partial M} = k \mathcal{P}_+ \phi_| 
+\end{split}
+\end{equation*}
+The form of an eigenvector $\Phi_k$ is found by the above discussion.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

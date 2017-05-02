@@ -4,8 +4,8 @@ by introducing the derivatives of the wave function in the boundary condition fo
 For this purpose, we introduce the following action
 \begin{equation}
 \mathcal{S} = \frac{1}{2}i\int_M \bar{\psi} \gamma^\mu \partial_\mu \psi - \partial_\mu \bar{\psi} \gamma^\mu \psi 
-+ \frac{1}{2}\int_{\partial M} ic \bar{\psi} \gamma^\bot \gamma^\alpha \partial_\alpha (1 - i \gamma^\bot) \psi
-+ \frac{1}{2} \bar{\psi} \psi
++ \frac{1}{2}\int_{\partial M} ic \bar{\psi} \gamma^\alpha \partial_\alpha (1 + i \gamma^\bot) \psi
+- \bar{\psi} \psi
 \end{equation}
 for a certain constant $c$. 
 $\gamma^\bot$ here represents the component perpendicular to $\partial M$ in the incoming direction. \\
@@ -17,7 +17,7 @@ By variational method, we can derive the equations of motion in the bulk and on 
 \begin{equation}\label{wen-motion}
 \begin{cases}
 i \gamma^\mu \partial_\mu \psi = 0  \quad \textrm{in $M$}\\
-\gamma^a \partial_a (1 - i\gamma^\bot) \psi = -c^{-1}(1 - i\gamma^{\bot}) \psi \quad \textrm{on $\partial M$}
+i \gamma^\alpha \partial_\alpha (1 + i\gamma^\bot) \psi = c^{-1}(1 + i\gamma^{\bot}) \psi \quad \textrm{on $\partial M$}
 \end{cases}
 \end{equation}
 We define $\phi = \gamma^0 \psi$. 
@@ -44,13 +44,69 @@ We have
 \end{equation*}
 where $\mathcal{P}$ is one of the chiral projectors.
 In order to define the domain of the Hamiltonian of the problem, the following lemma is needed 
-\begin{lemma}
-For $\dim M = 2k+ 3$, the operator $\mathcal{P_\pm} = \frac{1}{2}(1 \pm i\gamma^\bot) $ satifies $\rank (\mathcal{P}) = 2^k$
+\begin{lemma}\label{wen-proj}
+For $\dim M = 2k+ 3$, $\mathcal{P_\pm} = \frac{1}{2}(1 \pm i\gamma^\bot) $ is a projector and $\rank (\mathcal{P}) = 2^k$
 \end{lemma}
+\begin{proof}
+It is clear that $(\mathcal{P}_\pm)^{2} = \frac{1}{4}(2\pm 2i \gamma^\bot) = \mathcal{P}_\pm$.
+Let us prove the rank by induction over $k$. 
+We use the machinery presented in~\cite{Polchinski1998} in order to construct a set of gamma matrices for signature $(-, +, \ldots, +)$ (not the one of our convention). 
+To avoid confusion, the gamma matrices denoted by capital Greek letters are taken in this signature, rather than our convention. For $k = 0$ ($\dim M = 3$), we construct the three gamma matrices 
+\begin{equation*}
+\Gamma^0 = \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}  \quad
+\Gamma^1 = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}  \quad
+\Gamma^\bot = \Gamma^2 = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}  
+\end{equation*} 
+For a given even-dimensional vector space of dimension $d = 2k + 3$, we can construct a set of gamma matrices $\Gamma^j$ by using the set of gamma matrices $\Sigma^j$ constructed for dimension $2(k-1) + 3$
+\begin{equation*}
+\begin{split}
+& \Gamma^\mu = \Sigma^\mu \otimes \begin{pmatrix} -1 & 0 \\ 0 & 1\end{pmatrix} \quad 
+{\textrm{for }\mu = 0, \ldots, d-4} \\
+& \Gamma^{d-3} = \mathbb{1}_{2^k \times 2^k}  \otimes \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \quad \textrm{, }
+\Gamma^{d-2} = \mathbb{1}_{2^k \times 2^k} \otimes \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix} \quad \textrm{, }
+\Gamma^{\bot} = \Gamma^{d-1} = i^{-k}\Gamma^0 \ldots \Gamma^{d-2}
+\end{split}
+\end{equation*}
+It suffices to multiply each gamma matrix by $i$ to go back to our convention. 
+Hence, it is equivalent to prove that matrix $\Gamma^\bot$ satisfies $\rank(1 \pm \Gamma^\bot) = 2^k$ in $(2k + 3)$-dimension.
+For $k = 0$, the claim obviously holds. 
+Suppose that the claim holds for $k - 1$ for a set of gamma matrices $\Sigma^j$. Using the machinery previously presented, we can write $ \Gamma^\bot$ in terms of $\Sigma$
+\begin{equation*}
+\begin{split}
+\Gamma^\bot  & = i^{-k} \Gamma^0 \ldots \Gamma^{d-1} \\
+& = i^{-k} \bigg(\Big( \Sigma^0 \ldots \Sigma^{d-3} \Big) \otimes \begin{pmatrix} -1 & 0 \\ 0 & 1\end{pmatrix}\bigg) \times
+\bigg(\mathbb{1} \otimes \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} \bigg) \\
+& = i^{-k} \Big( \Sigma^0 \ldots \Sigma^{d-3} \Big) \otimes \begin{pmatrix} -i & 0 \\ 0 & -i \end{pmatrix}
+\end{split}
+\end{equation*}
+Therefore
+\begin{equation*}
+\begin{split}
+\rank(1 \pm \Gamma^\bot) & = 
+\rank\bigg(1 \pm I^{-(k+1)} \Big(\Sigma^0 \ldots \Sigma^{d-3} \Big) \otimes \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}\bigg) \\
+& = \rank\bigg( \Big(\mathbb{1}_{2^{k} \times 2^{k}}  \mp i^{-(k-1)}\Sigma^0 \ldots \Sigma^{d-3}\Big) \otimes \mathbb{1}_{2 \times 2} \bigg) \\
+& = \rank\bigg( 
+\underbrace{\Big(\mathbb{1}_{2^{k} \times 2^{k}} \mp \Sigma^\bot \Big)}_{\textrm{of rank $2^{k-1}$ by hypothesis}}
+ \otimes \mathbb{1}_{2 \times 2} \bigg)\\
+& = 2^k
+\end{split}
+\end{equation*}
+The lemma is thus proven by induction.
+\end{proof}
+As a result, \cref{wen-proj} ensures that the projectors $\mathcal{P}_\pm$ are not identically null and that the projection spaces by both projectors are of equal dimension. 
 Thus, one can define an operator $\Delta$ on the     %TODO On what?
 \begin{equation}
 \Delta = \begin{pmatrix}
 i \gamma^0 \gamma^j \partial_j  & 0 \\
--c^{-1} \gamma^0 \mathcal{P}_- &  i\gamma^0 \gamma^a \partial_a \mathcal{P}_-
+c^{-1} \gamma^0 \mathcal{P}_- \cdot \vert_{\partial M}&  i\gamma^0 \gamma^a \partial_a \mathcal{P}_-
 \end{pmatrix}
 \end{equation}
+
+
+
+
+
+
+
+
+
