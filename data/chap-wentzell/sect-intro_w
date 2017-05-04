@@ -9,8 +9,8 @@ For this purpose, we introduce the following action
 \end{equation}
 for a certain constant $c$. 
 $\gamma^\bot$ here represents the component perpendicular to $\partial M$ in the incoming direction. \\
-Remark that there is a problem on the dimensionality because of the $\gamma$-matrices, as the generators of a Clifford Algebra does not always have representation space of the same dimension when we reduce its dimension by one. 
-This motivates the choice of $M$ with dimension $2k+3$
+%Remark that there is a problem on the dimensionality because of the $\gamma$-matrices, as the generators of a Clifford Algebra does not always have representation space of the same dimension when we reduce its dimension by one. 
+%This motivates the choice of $M$ with dimension $2k+3$
 When $c \rightarrow 0$, the boundary condition becomes the bag condition. 
 Furthermore, we suppose that $\psi$ and $\partial_\mu \psi$ vanish at $\partial(\partial M)$. 
 By variational method, we can derive the equations of motion in the bulk and on the boundary
@@ -44,56 +44,53 @@ We have
 \end{equation*}
 where $\mathcal{P}$ is one of the chiral projectors.
 In order to define the domain of the Hamiltonian of the problem, the following lemma is needed 
-\begin{lemma}\label{wen-proj}
-For $\dim M = 2k+ 3$, $\mathcal{P_\pm} = \frac{1}{2}(1 \pm i\gamma^\bot) $ is a projector and $\rank (\mathcal{P}) = 2^k$
+\begin{lemma}
+Let $\gamma^\mu$ a set of generator of a Clifford Algebra in $d$-dimension. 
+Then, for all spatial component $j \in \llbracket 1, d-1 \rrbracket$
+\begin{equation*}
+\mathcal{P}_\pm = \frac{1}{2}(1 \pm i\gamma^j) 
+\end{equation*}
+Are orthogonal Hermitian projectors.
 \end{lemma}
 \begin{proof}
+In the usual case, we require the current $j^\mu = \bar{\psi} \gamma^\mu \psi $, where $\psi$ is the solution of the Dirac equation (the equation in the bulk of \cref{wen-motion}) to be Hermitian.
+\ie 
+\begin{equation*}
+j^\mu 
+= \bar{\psi}\gamma^\mu\psi 
+= \psi^\dagger\gamma^0 \gamma^\mu \psi
+= \psi^\dagger(\gamma^\mu)^\dagger (\gamma^0)^\dagger \psi
+=  (j^\mu)^\dagger
+\end{equation*}
+%TODO to be continued for the hermiticity
+For any spatial component $j$, we define $\mathcal{P}_\pm = \frac{1}{2}(1 \pm i\gamma^j)$.
+Obviously, $\mathcal{P}_\pm$ are Hermitian since
+\begin{equation*}
+\mathcal{P}_\pm^\dagger = 
+\frac{1}{2}(1 \mp i (\gamma^j)^\dagger)=
+\frac{1}{2}(1 \pm i \gamma^j)
+\end{equation*}
 It is clear that $(\mathcal{P}_\pm)^{2} = \frac{1}{4}(2\pm 2i \gamma^\bot) = \mathcal{P}_\pm$.
-Let us prove the rank by induction over $k$. 
-We use the machinery presented in~\cite{Polchinski1998} in order to construct a set of gamma matrices for signature $(-, +, \ldots, +)$ (not the one of our convention). 
-To avoid confusion, the gamma matrices denoted by capital Greek letters are taken in this signature, rather than our convention. For $k = 0$ ($\dim M = 3$), we construct the three gamma matrices 
+Furthermore, they have the same rank (equal to the half of the $n$-dimension of the representation space) since $\gamma^0$ is of maximal rank and
 \begin{equation*}
-\Gamma^0 = \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}  \quad
-\Gamma^1 = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}  \quad
-\Gamma^\bot = \Gamma^2 = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}  
-\end{equation*} 
-For a given even-dimensional vector space of dimension $d = 2k + 3$, we can construct a set of gamma matrices $\Gamma^j$ by using the set of gamma matrices $\Sigma^j$ constructed for dimension $2(k-1) + 3$
+\gamma^0\mathcal{P}_\pm = \mathcal{P}_\mp\gamma^0
+\end{equation*}
+Finally, by Grassman's formula
 \begin{equation*}
 \begin{split}
-& \Gamma^\mu = \Sigma^\mu \otimes \begin{pmatrix} -1 & 0 \\ 0 & 1\end{pmatrix} \quad 
-{\textrm{for }\mu = 0, \ldots, d-4} \\
-& \Gamma^{d-3} = \mathbb{1}_{2^k \times 2^k}  \otimes \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \quad \textrm{, }
-\Gamma^{d-2} = \mathbb{1}_{2^k \times 2^k} \otimes \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix} \quad \textrm{, }
-\Gamma^{\bot} = \Gamma^{d-1} = i^{-k}\Gamma^0 \ldots \Gamma^{d-2}
+n & =
+\rank (\mathcal{P}_+) + \rank(\mathcal{P}_-) =
+\dim \ran \mathcal{P}_+ + \dim \ran \mathcal{P}_- \\&= 
+\dim(\ran\mathcal{P}_+ \cap \ran\mathcal{P}_-) + \dim (\ran \mathcal{P}_+ + \ran \mathcal{P}_- ) =
+\dim(\ran\mathcal{P}_+ \cap \ran\mathcal{P}_-) + n
 \end{split}
 \end{equation*}
-It suffices to multiply each gamma matrix by $i$ to go back to our convention. 
-Hence, it is equivalent to prove that matrix $\Gamma^\bot$ satisfies $\rank(1 \pm \Gamma^\bot) = 2^k$ in $(2k + 3)$-dimension.
-For $k = 0$, the claim obviously holds. 
-Suppose that the claim holds for $k - 1$ for a set of gamma matrices $\Sigma^j$. Using the machinery previously presented, we can write $ \Gamma^\bot$ in terms of $\Sigma$
+Implies 
 \begin{equation*}
-\begin{split}
-\Gamma^\bot  & = i^{-k} \Gamma^0 \ldots \Gamma^{d-1} \\
-& = i^{-k} \bigg(\Big( \Sigma^0 \ldots \Sigma^{d-3} \Big) \otimes \begin{pmatrix} -1 & 0 \\ 0 & 1\end{pmatrix}\bigg) \times
-\bigg(\mathbb{1} \otimes \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} \bigg) \\
-& = i^{-k} \Big( \Sigma^0 \ldots \Sigma^{d-3} \Big) \otimes \begin{pmatrix} -i & 0 \\ 0 & -i \end{pmatrix}
-\end{split}
+\ran\mathcal{P}_+ \cap \ran\mathcal{P}_- = \{0\}
 \end{equation*}
-Therefore
-\begin{equation*}
-\begin{split}
-\rank(1 \pm \Gamma^\bot) & = 
-\rank\bigg(1 \pm I^{-(k+1)} \Big(\Sigma^0 \ldots \Sigma^{d-3} \Big) \otimes \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}\bigg) \\
-& = \rank\bigg( \Big(\mathbb{1}_{2^{k} \times 2^{k}}  \mp i^{-(k-1)}\Sigma^0 \ldots \Sigma^{d-3}\Big) \otimes \mathbb{1}_{2 \times 2} \bigg) \\
-& = \rank\bigg( 
-\underbrace{\Big(\mathbb{1}_{2^{k} \times 2^{k}} \mp \Sigma^\bot \Big)}_{\textrm{of rank $2^{k-1}$ by hypothesis}}
- \otimes \mathbb{1}_{2 \times 2} \bigg)\\
-& = 2^k
-\end{split}
-\end{equation*}
-The lemma is thus proven by induction.
+Which shows that they are orthogonal.
 \end{proof}
-Noticing that the 
 As a result, \cref{wen-proj} ensures that the projectors $\mathcal{P}_\pm$ are not identically null and that the projection spaces by both projectors are of equal dimension. 
 Thus, one can define an operator $\Delta$ on the     %TODO On what?
 \begin{equation}
