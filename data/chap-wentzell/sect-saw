@@ -5,47 +5,33 @@ We define the inner product for our Hilbert space $\mathcal{H} = W^{1,2}(M)\time
 \end{equation}
 In order to have a self-adjoint operator, we define $\Delta$ on the domain
 \begin{equation*}
-\dom( \Delta) = \{ \Phi = (\phi, \phi_|) \in \mathcal{H} \enskip | \enskip \mathcal{P}_+\big(\phi \vert_{\partial M} - \phi_|\big) = 0 \}
+\dom( \Delta) = \{ \Phi = (\phi, \phi_|) \in \mathcal{H} \enskip | \enskip \mathcal{P}_-\big(\phi \vert_{\partial M} - \phi_|\big) = 0 \}
 \end{equation*}  
 For $\Phi = (\phi, \phi_|), \Psi = (\psi, \psi_|) \in \mathcal{H}$, 
 \begin{equation}
 \begin{split}
 \langle \Phi, \Delta \Psi \rangle _\mathcal{H}
  = & \int_M \phi^\dagger i \gamma^0 \gamma^j \partial_j \psi 
-+ \int_{\partial M} \phi^\dagger_|( \mathcal{P}_- \psi\vert_{\partial M} + ic \gamma^0 \gamma^a \partial_a \mathcal{P}_- \psi_|)   \\
++ \int_{\partial M} \phi^\dagger_|(  -\gamma^0\mathcal{P}_+ \psi\vert_{\partial M} + ic \gamma^0 \gamma^a \partial_a \mathcal{P}_- \psi_|)   \\
  = & - \int_M \partial_j \phi^\dagger i \gamma^0 \gamma^j \psi 
-+ \int_{\partial M} \phi^\dagger_|( \mathcal{P}_- \psi\vert_{\partial M} + ic \gamma^0 \gamma^a \partial_a \mathcal{P}_- \psi_|) 
++ \int_{\partial M} \phi^\dagger_|(-\gamma^0 \mathcal{P}_+ \psi\vert_{\partial M} + ic \gamma^0 \gamma^a \partial_a \mathcal{P}_- \psi_|) 
 + i\phi\vert_{\partial M}^\dagger \gamma^0 \gamma^\bot \psi\vert_{\partial M}   \\
- \underset{i\gamma^\bot + \mathcal{P}_- = \mathcal{P}_+}{=} &
+= &
 - \int_M \partial_j \phi^\dagger i \gamma^0 \gamma^j \psi 
-+ \int_{\partial M} \phi_|^\dagger( \mathcal{P}_+ \psi\vert_{\partial M} + ic \gamma^0 \gamma^a \partial_a \mathcal{P}_- \psi_|)  \\
++ \int_{\partial M} - \phi^\dagger\vert_{\partial M}\mathcal{P}_+ \gamma^0 \psi_| + ic \phi^\dagger_|\gamma^0 \gamma^a \partial_a \mathcal{P}_- \psi_|  \\
 & + i \phi\vert_{\partial M}^\dagger \gamma^0 \gamma^\bot \psi\vert_{\partial M} 
-- i \phi_|^\dagger \gamma^0 \gamma^\bot \psi\vert_{\partial M} \\
- \underset{(\mathcal{P}_+)^\dagger = \mathcal{P}_+}{=} &
-- \int_M \partial_j \phi^\dagger i \gamma^0 \gamma^j \psi 
-+ \int_{\partial M} (\gamma^0 \mathcal{P}_- \phi_|)^\dagger  \psi\vert_{\partial M} + ic \phi_|^\dagger \gamma^0 \gamma^a \partial_a \mathcal{P}_- \psi_| \\
-& + i \phi\vert_{\partial M}^\dagger \gamma^0 \gamma^\bot \psi\vert_{\partial M} 
-- i \phi_|^\dagger \gamma^0 \gamma^\bot \psi\vert_{\partial M} \\
- = &
-- \int_M \partial_j \phi^\dagger i \gamma^0 \gamma^j \psi 
-+ \int_{\partial M} (\gamma^0 \mathcal{P}_- \phi\vert_{\partial M})^\dagger  \psi_| - ic \partial_a \phi_|^\dagger (\mathcal{P}_-)^\dagger (\gamma^a)^\dagger (\gamma^0)^\dagger \psi_| \\
-& + i \phi\vert_{\partial M}^\dagger \gamma^0 \gamma^\bot \psi\vert_{\partial M} 
-- i \phi_|^\dagger \gamma^0 \gamma^\bot \psi\vert_{\partial M} 
-+ \phi^\dagger_| \mathcal{P}_- \gamma^0 \psi\vert_{\partial M}
--  \phi^\dagger\vert_{\partial M} \mathcal{P}_- \gamma^0 \psi_| \\
- = & \langle \Delta\Psi, \Phi \rangle_\mathcal{H}
-+i\phi\vert_{\partial M}^\dagger \gamma^0\gamma^\bot \psi\vert_{\partial M}
-+ \phi_|^\dagger \gamma^0\mathcal{P}_- \psi\vert_{\partial M} 
-- \phi^\dagger\vert_{\partial M} \gamma^0\mathcal{P}_+ \psi_| \\
+-\phi_|^\dagger \gamma^0 \mathcal{P}_+ \psi_{\partial M} 
++ \phi^\dagger\vert_{\partial M}\mathcal{P}_+ \gamma^0 \psi_| \\
+\underset{(\mathcal{P}_+)^\dagger = \mathcal{P}}{=} 
+& \langle \Delta\Psi, \Phi \rangle_\mathcal{H}
++\phi^\dagger\vert_{\partial M} \gamma^0 (i \gamma^\bot \psi\vert_{\partial M} + \mathcal{P}_- \psi_|)
+- \phi_|^\dagger \gamma^0 \mathcal{P}_+ \psi\vert_{\partial M} \\
 = & \langle \Delta\Psi, \Phi \rangle_\mathcal{H}
-+ (\phi_|^\dagger - \phi^\dagger\vert_{\partial M})  \gamma^0\mathcal{P}_- \psi\vert_{\partial M}  \\
-= & \langle \Delta\Psi, \Phi \rangle_\mathcal{H}
-+ \big(\mathcal{P}_+(\phi_| - \phi\vert_{\partial M})\big)^\dagger  \gamma^0 \psi\vert_{\partial M} 
++ (\phi^\dagger\vert_{\partial M} - \phi_|^\dagger)\mathcal{P}_- \gamma^0 \psi\vert_{\partial M}
 \end{split}
 \end{equation}
-The residual term of the last line vanishes if and only if $\mathcal{P}_+\big(\psi \vert_{\partial M} - \psi_|\big) = 0$, which shows the self-adjointness of $\Delta$. \\
-%One can notice that the above proof remains valid if $\mathcal{P}$ is replaced by an arbitrary Hermitian projector $\mathcal{P}$ satisfying $2\mathcal{P} + i\gamma^\bot = 1$. 
-%We can thus extend the definition of $\Delta$ for even-dimensional bulk by the following lemma.
+The residual term of the last line vanishes if and only if $\mathcal{P}_-\big(\psi \vert_{\partial M} - \psi_|\big) = 0$, which shows the self-adjointness of $\Delta$. \\
+%ok till here
 We will discuss two simple cases, $M = \mathbb{R}^{d-1} \times \mathbb{R}_+$ at first and $M = \mathbb{R}^{d-1} \times [-L, L]$ later in this section. 
 %TODO proposition should be redone
 \begin{proposition}
