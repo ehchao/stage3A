@@ -1,4 +1,5 @@
 \section{Introduction}
+%The action should be rebuilt
 The main goal of this work is to generalize the bag boundary condition proposed in~\cite{Chodos1974}
 by introducing the derivatives of the wave function in the boundary condition for any Lorentzian manifold $M$. 
 For this purpose, we introduce the following action
@@ -9,15 +10,13 @@ For this purpose, we introduce the following action
 \end{equation}
 for a certain constant $c$. 
 $\gamma^\bot$ here represents the component perpendicular to $\partial M$ in the incoming direction. \\
-%Remark that there is a problem on the dimensionality because of the $\gamma$-matrices, as the generators of a Clifford Algebra does not always have representation space of the same dimension when we reduce its dimension by one. 
-%This motivates the choice of $M$ with dimension $2k+3$
 When $c \rightarrow 0$, the boundary condition becomes the bag condition. 
 Furthermore, we suppose that $\psi$ and $\partial_\mu \psi$ vanish at $\partial(\partial M)$. 
 By variational method, we can derive the equations of motion in the bulk and on the boundary
 \begin{equation}\label{wen-motion}
 \begin{cases}
 i \gamma^\mu \partial_\mu \psi = 0  \quad \textrm{in $M$}\\
-i \gamma^\alpha \partial_\alpha (1 + i\gamma^\bot) \psi = c^{-1}(1 + i\gamma^{\bot}) \psi \quad \textrm{on $\partial M$}
+i \gamma^\alpha \partial_\alpha (1 + i\gamma^\bot) \psi = c^{-1}\gamma^0(1 + i\gamma^{\bot}) \psi \quad \textrm{on $\partial M$}
 \end{cases}
 \end{equation}
 We define $\phi = \gamma^0 \psi$. 
@@ -25,7 +24,7 @@ We define $\phi = \gamma^0 \psi$.
 \begin{equation}
 \begin{cases}
 i \partial_0 \phi = i \gamma^0 \gamma^j \partial_j \phi   \quad \textrm{in $M$}\\
-i \partial_0(1 - i\gamma^\bot) \phi = i \big(\gamma^0 \gamma^a \partial_a (1- i\gamma^\bot)\phi + c^{-1}\gamma^0 (1-i \gamma^{\bot})\phi \big)  \quad \textrm{on $\partial M$}
+i \partial_0(1 - i\gamma^\bot) \phi = i \big(\gamma^0 \gamma^a \partial_a (1- i\gamma^\bot)\phi + c^{-1} (1-i \gamma^{\bot})\phi \big)  \quad \textrm{on $\partial M$}
 \end{cases}
 \end{equation}
 Where Latin letters are used to enumerate the spatial components.\\
@@ -96,7 +95,7 @@ Thus, one can define an operator $\Delta$ on the     %TODO On what?
 \begin{equation}
 \Delta = \begin{pmatrix}
 i \gamma^0 \gamma^j \partial_j  & 0 \\
-c^{-1} \gamma^0 \mathcal{P}_- \cdot \vert_{\partial M}&  i\gamma^0 \gamma^a \partial_a \mathcal{P}_-
+c^{-1} \mathcal{P}_- \cdot \vert_{\partial M}&  i\gamma^0 \gamma^a \partial_a \mathcal{P}_-
 \end{pmatrix}
 \end{equation}
 

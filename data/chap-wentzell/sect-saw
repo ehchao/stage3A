@@ -12,13 +12,13 @@ For $\Phi = (\phi, \phi_|), \Psi = (\psi, \psi_|) \in \mathcal{H}$,
 \begin{split}
 \langle \Phi, \Delta \Psi \rangle _\mathcal{H}
  = & \int_M \phi^\dagger i \gamma^0 \gamma^j \partial_j \psi 
-+ \int_{\partial M} \phi^\dagger_|( \gamma^0 \mathcal{P}_- \psi\vert_{\partial M} + ic \gamma^0 \gamma^a \partial_a \mathcal{P}_- \psi_|)   \\
++ \int_{\partial M} \phi^\dagger_|( \mathcal{P}_- \psi\vert_{\partial M} + ic \gamma^0 \gamma^a \partial_a \mathcal{P}_- \psi_|)   \\
  = & - \int_M \partial_j \phi^\dagger i \gamma^0 \gamma^j \psi 
-+ \int_{\partial M} \phi^\dagger_|( \gamma^0 \mathcal{P}_- \psi\vert_{\partial M} + ic \gamma^0 \gamma^a \partial_a \mathcal{P}_- \psi_|) 
++ \int_{\partial M} \phi^\dagger_|( \mathcal{P}_- \psi\vert_{\partial M} + ic \gamma^0 \gamma^a \partial_a \mathcal{P}_- \psi_|) 
 + i\phi\vert_{\partial M}^\dagger \gamma^0 \gamma^\bot \psi\vert_{\partial M}   \\
  \underset{i\gamma^\bot + \mathcal{P}_- = \mathcal{P}_+}{=} &
 - \int_M \partial_j \phi^\dagger i \gamma^0 \gamma^j \psi 
-+ \int_{\partial M} \phi_|^\dagger( \gamma^0 \mathcal{P}_+ \psi\vert_{\partial M} + ic \gamma^0 \gamma^a \partial_a \mathcal{P}_- \psi_|)  \\
++ \int_{\partial M} \phi_|^\dagger( \mathcal{P}_+ \psi\vert_{\partial M} + ic \gamma^0 \gamma^a \partial_a \mathcal{P}_- \psi_|)  \\
 & + i \phi\vert_{\partial M}^\dagger \gamma^0 \gamma^\bot \psi\vert_{\partial M} 
 - i \phi_|^\dagger \gamma^0 \gamma^\bot \psi\vert_{\partial M} \\
  \underset{(\mathcal{P}_+)^\dagger = \mathcal{P}_+}{=} &
@@ -125,7 +125,7 @@ c^{-1}\gamma^0 \mathcal{P}_- ( \phi \vert_{\partial M}) \Big)
 \end{equation*}
 Continuing the calculation of \cref{wen-deltak}, we get
 \begin{equation*}
-\Delta^2 \Phi = \begin{pmatrix} (i \gamma^0 \gamma^j)^2 & 0 \\ 
+\Delta^2 \Phi = \begin{pmatrix} (i \gamma^0 \gamma^j\partial_j)^2 & 0 \\ 
 c^{-1}\gamma^0\mathcal{P}_-( i\gamma^0 \gamma^a \cdot\vert_{\partial M} ) & 
 (i \gamma^0 \gamma^a \partial_a) \mathcal{P}_-  i\gamma^0 \gamma^a \partial_a \end{pmatrix}
 \begin{pmatrix} \phi \\ \phi_| \end{pmatrix}
@@ -134,7 +134,7 @@ We have the following proposition for $\Delta^k$ and $\dom \Delta^k$
 \begin{proposition}
 Let $k \in \mathbb{N}^*, k\leq 2$. Then 
 \begin{equation}
-\Delta^k \Phi = \begin{pmatrix} (i \gamma^0 \gamma^j)^k & 0 \\ 
+\Delta^k \Phi = \begin{pmatrix} (i \gamma^0 \gamma^j\partial_j)^k & 0 \\ 
 c^{-1}\gamma^0\mathcal{P}_-\big( (i\gamma^0 \gamma^a \cdot\vert_{\partial M} )^{k-1} \big)& 
  \mathcal{P}_- ( i\gamma^0 \gamma^a \partial_a )^k 
 \end{pmatrix}
@@ -150,19 +150,44 @@ Proof by induction. We have already seen that the proposition holds for $k = 2$.
 \begin{split}
 \Delta^k = & \begin{pmatrix} i \gamma^0 \gamma^j \partial_j & 0 \\
 c^{-1} \gamma^0 \mathcal{P}_- \cdot \vert_{\partial M} & i \gamma^0 \gamma^a \partial_a \mathcal{P}_- \end{pmatrix}
- \begin{pmatrix} (i\gamma^0\gamma^j)^{k-1} \phi \\
+ \begin{pmatrix} (i\gamma^0\gamma^j\partial_j)^{k-1} \phi \\
 c^{-1}\gamma^0 \mathcal{P}_- \big((i \gamma^0\gamma^j\partial_j)^{k-2} \phi  \vert_{\partial M}\big)
 +  \mathcal{P}_-(i \gamma^0 \gamma^a \partial_a)^{k-1}\phi _| 
 \end{pmatrix}
 \\ 
-=&  \begin{pmatrix} (i\gamma^0\gamma^j)^k \phi \\
+=&  \begin{pmatrix} (i\gamma^0\gamma^j\partial_j)^k \phi \\
 c^{-1}\gamma^0 \mathcal{P}_- \big((i \gamma^0\gamma^j\partial_j)^{k-1} \phi  \vert_{\partial M}\big)
 +  \mathcal{P}_-(i \gamma^0 \gamma^a \partial_a)^{k}\phi _| 
 \end{pmatrix}
 \end{split}
 \end{equation*}
 \end{proof}
-
+The time evolution of the system is give by
+\begin{equation*}
+i \frac{\partial }{\partial t} \Phi = \Delta \Phi
+\end{equation*}
+The norm of the $m$-times time derivative in $\mathcal{H}$ can be calculated in terms of $\Delta$
+\begin{equation}
+\begin{split}
+\big\| \frac{\partial^m }{\partial t^m} \Phi \big\|^2_\mathcal{H}  
+= & \big\| \Delta^m \Phi\big\|^2_\mathcal{H} \\
+=& \big\|(i\gamma^0\gamma^j\partial_j)^k \phi \big\|^2_{L^2(M)} 
++ c^{-1}\big\| \gamma^0 \mathcal{P}_- \big((i \gamma^0\gamma^j\partial_j)^{k-1} \phi  \vert_{\partial M}\big) \big\|^2_{L(\partial M)}  \\
+& + c \big\| \mathcal{P}_-(i \gamma^0 \gamma^a \partial_a)^{k}\phi _| \big\|_{L^2(\partial M)}
+\end{split}
+\end{equation}
+For $m=1$, since
+\begin{equation*}
+\begin{split}
+\int \big((i \gamma^0 \gamma^a \partial_a)\phi \big)^\dagger (i \gamma^0 \gamma^a \partial_a) \phi 
+= &
+\int \partial_j\phi^\dagger(\gamma^j)^\dagger(\gamma^0)^\dagger\gamma^0\gamma^l\partial_l\phi \\
+= & 
+\int\partial_j\phi^\dagger(\gamma^j)^\dagger \gamma^l\partial_l\phi \\
+= & \int \frac{1}{2}\{\gamma^l, (\gamma^j)^\dagger \} \partial_j\phi^\dagger\partial_l \phi \\
+= & \int \partial^j \phi^\dagger \partial_j \phi
+\end{split}
+\end{equation*}
 
 
 
