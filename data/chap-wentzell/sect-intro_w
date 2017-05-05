@@ -16,7 +16,7 @@ By variational method, we can derive the equations of motion in the bulk and on 
 \begin{equation}\label{wen-motion}
 \begin{cases}
 i \gamma^\mu \partial_\mu \psi = 0  \quad \textrm{in $M$}\\
-i \gamma^\alpha \partial_\alpha (1 + i\gamma^\bot) \psi = c^{-1}\gamma^0(1 + i\gamma^{\bot}) \psi \quad \textrm{on $\partial M$}
+i \gamma^\alpha \partial_\alpha (1 + i\gamma^\bot) \psi = - c^{-1}(1 - i\gamma^{\bot}) \psi \quad \textrm{on $\partial M$}
 \end{cases}
 \end{equation}
 We define $\phi = \gamma^0 \psi$. 
@@ -24,7 +24,7 @@ We define $\phi = \gamma^0 \psi$.
 \begin{equation}
 \begin{cases}
 i \partial_0 \phi = i \gamma^0 \gamma^j \partial_j \phi   \quad \textrm{in $M$}\\
-i \partial_0(1 - i\gamma^\bot) \phi = i \big(\gamma^0 \gamma^a \partial_a (1- i\gamma^\bot)\phi + c^{-1} (1-i \gamma^{\bot})\phi \big)  \quad \textrm{on $\partial M$}
+i \partial_0(1 - i\gamma^\bot) \phi = i\gamma^0 \gamma^a \partial_a (1- i\gamma^\bot)\phi - c^{-1} \gamma^0(1 + i \gamma^{\bot})\phi \quad \textrm{on $\partial M$}
 \end{cases}
 \end{equation}
 Where Latin letters are used to enumerate the spatial components.\\
@@ -95,7 +95,7 @@ Thus, one can define an operator $\Delta$ on the     %TODO On what?
 \begin{equation}
 \Delta = \begin{pmatrix}
 i \gamma^0 \gamma^j \partial_j  & 0 \\
-c^{-1} \mathcal{P}_- \cdot \vert_{\partial M}&  i\gamma^0 \gamma^a \partial_a \mathcal{P}_-
+-c^{-1} \gamma^0 \mathcal{P}_+ \cdot \vert_{\partial M}&  i\gamma^0 \gamma^a \partial_a \mathcal{P}_-
 \end{pmatrix}
 \end{equation}
 
