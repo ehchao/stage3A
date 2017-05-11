@@ -1,14 +1,13 @@
 \section{Introduction}
-%The action should be rebuilt
 The main goal of this work is to generalize the bag boundary condition proposed in~\cite{Chodos1974}
 by introducing the derivatives of the wave function in the boundary condition for any Lorentzian manifold $M$. 
 For this purpose, we introduce the following action
 \begin{equation}
 \mathcal{S} = \frac{1}{2}i\int_M \bar{\psi} \gamma^\mu \partial_\mu \psi - \partial_\mu \bar{\psi} \gamma^\mu \psi 
-+ \frac{1}{2}\int_{\partial M} ic \bar{\psi} \gamma^\alpha \partial_\alpha (1 + i \gamma^\bot) \psi
-- \bar{\psi} \psi
++ \frac{1}{2}\int_{\partial M} ic \bar{\psi} \gamma^\alpha \partial_\alpha (1 - i \gamma^\bot) \psi
++ \bar{\psi} \psi
 \end{equation}
-for a certain constant $c$. 
+for a certain constant $c >0$. 
 $\gamma^\bot$ here represents the component perpendicular to $\partial M$ in the incoming direction. \\
 When $c \rightarrow 0$, the boundary condition becomes the bag condition. 
 Furthermore, we suppose that $\psi$ and $\partial_\mu \psi$ vanish at $\partial(\partial M)$. 
@@ -16,7 +15,7 @@ By variational method, we can derive the equations of motion in the bulk and on 
 \begin{equation}\label{wen-motion}
 \begin{cases}
 i \gamma^\mu \partial_\mu \psi = 0  \quad \textrm{in $M$}\\
-i \gamma^\alpha \partial_\alpha (1 + i\gamma^\bot) \psi = - c^{-1}(1 - i\gamma^{\bot}) \psi \quad \textrm{on $\partial M$}
+i \gamma^\alpha \partial_\alpha (1 - i\gamma^\bot) \psi = - c^{-1}(1 + i\gamma^{\bot}) \psi \quad \textrm{on $\partial M$}
 \end{cases}
 \end{equation}
 We define $\phi = \gamma^0 \psi$. 
@@ -24,7 +23,7 @@ We define $\phi = \gamma^0 \psi$.
 \begin{equation}
 \begin{cases}
 i \partial_0 \phi = i \gamma^0 \gamma^j \partial_j \phi   \quad \textrm{in $M$}\\
-i \partial_0(1 - i\gamma^\bot) \phi = i\gamma^0 \gamma^a \partial_a (1- i\gamma^\bot)\phi - c^{-1} \gamma^0(1 + i \gamma^{\bot})\phi \quad \textrm{on $\partial M$}
+i \partial_0(1 + i\gamma^\bot) \phi = i\gamma^0 \gamma^a \partial_a (1+ i\gamma^\bot)\phi - c^{-1} \gamma^0(1 - i \gamma^{\bot})\phi \quad \textrm{on $\partial M$}
 \end{cases}
 \end{equation}
 Where Latin letters are used to enumerate the spatial components.\\
@@ -43,13 +42,13 @@ We have
 \end{equation*}
 where $\mathcal{P}$ is one of the chiral projectors.
 In order to define the domain of the Hamiltonian of the problem, the following lemma is needed 
-\begin{lemma}
+\begin{lemma}\label{wen-proj}
 Let $\gamma^\mu$ a set of generator of a Clifford Algebra in $d$-dimension. 
 Then, for all spatial component $j \in \llbracket 1, d-1 \rrbracket$
 \begin{equation*}
 \mathcal{P}_\pm = \frac{1}{2}(1 \pm i\gamma^j) 
 \end{equation*}
-Are orthogonal Hermitian projectors.
+are orthogonal Hermitian projectors for the usual inner product $\langle \cdot, \cdot \rangle _{L^2(\Omega)}$, where $\Omega$ is a Hilbert space.
 \end{lemma}
 \begin{proof}
 In the usual case, we require the current $j^\mu = \bar{\psi} \gamma^\mu \psi $, where $\psi$ is the solution of the Dirac equation (the equation in the bulk of \cref{wen-motion}) to be Hermitian.
@@ -74,31 +73,23 @@ Furthermore, they have the same rank (equal to the half of the $n$-dimension of 
 \begin{equation*}
 \gamma^0\mathcal{P}_\pm = \mathcal{P}_\mp\gamma^0
 \end{equation*}
-Finally, by Grassman's formula
+Finally, by the Hermicity of $\mathcal{P}_{\pm}$, we have
 \begin{equation*}
-\begin{split}
-n & =
-\rank (\mathcal{P}_+) + \rank(\mathcal{P}_-) =
-\dim \ran \mathcal{P}_+ + \dim \ran \mathcal{P}_- \\&= 
-\dim(\ran\mathcal{P}_+ \cap \ran\mathcal{P}_-) + \dim (\ran \mathcal{P}_+ + \ran \mathcal{P}_- ) =
-\dim(\ran\mathcal{P}_+ \cap \ran\mathcal{P}_-) + n
-\end{split}
+\langle \mathcal{P}_- \phi, \mathcal{P}_+ \psi \rangle = 
+\langle \phi, \mathcal{P}_-\mathcal{P}_+ \psi \rangle = 0
 \end{equation*}
-Implies 
-\begin{equation*}
-\ran\mathcal{P}_+ \cap \ran\mathcal{P}_- = \{0\}
-\end{equation*}
-Which shows that they are orthogonal.
+which shows the two projectors are orthogonal.
 \end{proof}
 As a result, \cref{wen-proj} ensures that the projectors $\mathcal{P}_\pm$ are not identically null and that the projection spaces by both projectors are of equal dimension. 
 Thus, one can define an operator $\Delta$ on the     %TODO On what?
 \begin{equation}
 \Delta = \begin{pmatrix}
 i \gamma^0 \gamma^j \partial_j  & 0 \\
--c^{-1} \gamma^0 \mathcal{P}_+ \cdot \vert_{\partial M}&  i\gamma^0 \gamma^a \partial_a \mathcal{P}_-
+-c^{-1} \gamma^0 \mathcal{P}_- \cdot \vert_{\partial M}&  i\gamma^0 \gamma^a \partial_a \mathcal{P}_+
 \end{pmatrix}
 \end{equation}
-
+where $j \in \llbracket 1 , d-1 \rrbracket$ and $a \in \llbracket 1 , d-2 \rrbracket$. 
+This notation will be adopted in the following.
 
 
 

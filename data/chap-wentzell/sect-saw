@@ -5,81 +5,140 @@ We define the inner product for our Hilbert space $\mathcal{H} = W^{1,2}(M)\time
 \end{equation}
 In order to have a self-adjoint operator, we define $\Delta$ on the domain
 \begin{equation*}
-\dom( \Delta) = \{ \Phi = (\phi, \phi_|) \in \mathcal{H} \enskip | \enskip \mathcal{P}_-\big(\phi \vert_{\partial M} - \phi_|\big) = 0 \}
+\dom( \Delta) = \{ \Phi = (\phi, \phi_|) \in \mathcal{H} \enskip | \enskip \mathcal{P}_+\big(\phi \vert_{\partial M} - \phi_|\big) = 0 \}
 \end{equation*}  
 For $\Phi = (\phi, \phi_|), \Psi = (\psi, \psi_|) \in \mathcal{H}$, 
 \begin{equation}
 \begin{split}
 \langle \Phi, \Delta \Psi \rangle _\mathcal{H}
  = & \int_M \phi^\dagger i \gamma^0 \gamma^j \partial_j \psi 
-+ \int_{\partial M} \phi^\dagger_|(  -\gamma^0\mathcal{P}_+ \psi\vert_{\partial M} + ic \gamma^0 \gamma^a \partial_a \mathcal{P}_- \psi_|)   \\
++ \int_{\partial M} \phi^\dagger_|(  -\gamma^0\mathcal{P}_- \psi\vert_{\partial M} + ic \gamma^0 \gamma^a \partial_a \mathcal{P}_+ \psi_|)   \\
  = & - \int_M \partial_j \phi^\dagger i \gamma^0 \gamma^j \psi 
-+ \int_{\partial M} \phi^\dagger_|(-\gamma^0 \mathcal{P}_+ \psi\vert_{\partial M} + ic \gamma^0 \gamma^a \partial_a \mathcal{P}_- \psi_|) 
-+ i\phi\vert_{\partial M}^\dagger \gamma^0 \gamma^\bot \psi\vert_{\partial M}   \\
++ \int_{\partial M} \phi^\dagger_|(-\gamma^0 \mathcal{P}_- \psi\vert_{\partial M} + ic \gamma^0 \gamma^a \partial_a \mathcal{P}_+ \psi_|) 
+- i\phi\vert_{\partial M}^\dagger \gamma^0 \gamma^\bot \psi\vert_{\partial M}   \\
 = &
 - \int_M \partial_j \phi^\dagger i \gamma^0 \gamma^j \psi 
-+ \int_{\partial M} - \phi^\dagger\vert_{\partial M}\mathcal{P}_+ \gamma^0 \psi_| + ic \phi^\dagger_|\gamma^0 \gamma^a \partial_a \mathcal{P}_- \psi_|  \\
-& + i \phi\vert_{\partial M}^\dagger \gamma^0 \gamma^\bot \psi\vert_{\partial M} 
--\phi_|^\dagger \gamma^0 \mathcal{P}_+ \psi_{\partial M} 
-+ \phi^\dagger\vert_{\partial M}\mathcal{P}_+ \gamma^0 \psi_| \\
-\underset{(\mathcal{P}_+)^\dagger = \mathcal{P}}{=} 
++ \int_{\partial M} - \phi^\dagger\vert_{\partial M}\mathcal{P}_- \gamma^0 \psi_| + ic \phi^\dagger_|\gamma^0 \gamma^a \partial_a \mathcal{P}_+ \psi_|  \\
+& - i \phi\vert_{\partial M}^\dagger \gamma^0 \gamma^\bot \psi\vert_{\partial M} 
+-\phi_|^\dagger \gamma^0 \mathcal{P}_- \psi_{\partial M} 
++ \phi^\dagger\vert_{\partial M}\mathcal{P}_- \gamma^0 \psi_| \\
+\underset{(\mathcal{P}_-)^\dagger = \mathcal{P}_-}{=} 
 & \langle \Delta\Psi, \Phi \rangle_\mathcal{H}
-+\phi^\dagger\vert_{\partial M} \gamma^0 (i \gamma^\bot \psi\vert_{\partial M} + \mathcal{P}_- \psi_|)
-- \phi_|^\dagger \gamma^0 \mathcal{P}_+ \psi\vert_{\partial M} \\
++\phi^\dagger\vert_{\partial M} \gamma^0 (-i \gamma^\bot \psi\vert_{\partial M} + \mathcal{P}_+ \psi_|)
+- \phi_|^\dagger \gamma^0 \mathcal{P}_- \psi\vert_{\partial M} \\
 = & \langle \Delta\Psi, \Phi \rangle_\mathcal{H}
-+ (\phi^\dagger\vert_{\partial M} - \phi_|^\dagger)\mathcal{P}_- \gamma^0 \psi\vert_{\partial M}
++ (\phi^\dagger\vert_{\partial M} - \phi_|^\dagger)\mathcal{P}_+ \gamma^0 \psi\vert_{\partial M}
 \end{split}
 \end{equation}
 The residual term of the last line vanishes if and only if $\mathcal{P}_-\big(\psi \vert_{\partial M} - \psi_|\big) = 0$, which shows the self-adjointness of $\Delta$. \\
-%ok till here
 We will discuss two simple cases, $M = \mathbb{R}^{d-1} \times \mathbb{R}_+$ at first and $M = \mathbb{R}^{d-1} \times [-L, L]$ later in this section. 
-%TODO proposition should be redone
 \begin{proposition}
-Let $M = \mathbb{R}^{d-1} \times \mathbb{R}_+$. $\Delta$ is a self-adjoint operator with spectrum $\mathbb{R}^*$
+Let $M = \mathbb{R}^{d-1} \times \mathbb{R}_+$. $\Delta$ is a self-adjoint operator with spectrum $\mathbb{R}$
 \end{proposition}
 \begin{proof}
 The self-adjointness being proven, let us find the eigenvectors and eigenvalues of $\Delta$. Let $k$ an eigenvalue of $\Delta$ and $\Phi_k = (\phi_k, \phi_{| k})$. Then
 \begin{equation}\label{wen-motion2}
 \begin{cases}
 i \gamma^0 \gamma^j \partial_j \phi_k = k \phi_k \\
-c^{-1} \gamma^0 \mathcal{P}_- \phi\vert_{\partial M} + i \gamma^0 \gamma^a \partial_a \mathcal{P}_- \phi_{| k} = k \phi_{| k}
+-c^{-1} \gamma^0 \mathcal{P}_- \phi\vert_{\partial M} + i \gamma^0 \gamma^a \partial_a \mathcal{P}_+ \phi_{| k} = k \phi_{| k}
 \end{cases}
 \end{equation}
-As proposed in~\cite{Snygg1997}, we can suppose that $\phi_{| k} = (1 + \gamma^m \gamma^l c_{ml}) e^{-ip_j x^j}$ with $m < l$, where $c_{m l} \in \mathbb{C}$, $p_j \in \mathbb{R}$.
-This choice results from the fact that there are only even-vectors (products of even number of gamma matrices) in the first equation of \cref{wen-motion2}.
-The first equation of \cref{wen-motion2} implies
+Since for all vector $\psi$,
 \begin{equation*}
-\gamma^0 \gamma^j (1+ \gamma^m \gamma^l c_{m l}) p_j = k (1+ \gamma^m \gamma^l c_{m l})
-\end{equation*} 
-By identifying the 2-vector term, one gets
-\begin{equation*}
-p_j \delta_{m, 0}= kc_{mj}  
+(i\gamma^0 \gamma^j\partial_j - k )(i\gamma^0 \gamma^j\partial_j + k )\psi = 
+(- \partial^j\partial_j - k^2) \psi = 0
 \end{equation*}
-Then, by identifying the 0-vector term, one gets
+has plane wave solutions, 
+the family
 \begin{equation*}
-\gamma^0\gamma^j\gamma^0 \gamma^j p_j c_{0j}= k \quad \Rightarrow \quad p^j p_j = k^2
+\begin{split}
+\phi_n = & (i\gamma^0\partial_j + k \mathbb{1}) e^{-ip_a x^a }(A\cos p_\bot x^\bot + B \sin p_\bot x^\bot) \psi_n \\
+ = &\gamma^0\gamma^a p_a (A \cos p_\bot x^\bot + B \sin p_\bot x^\bot)
++ i\gamma^0\gamma^\bot p_\bot (-A \sin p_\bot x^\bot + B \cos p_\bot x^\bot) e^{-ip_a x^a} \\
+& + k \mathbb{1} e^{-ip_a x^a}(A\cos p_\bot x^\bot + B \sin p_\bot x^\bot)  \\
+\end{split}
 \end{equation*}
-Finally, considering the second equation and the condition that an element of $\dom(\Delta)$ should satisfy, one gets
+with $p_j$ satisfying
+\begin{equation*}
+- p^j p_j = k^2
+\end{equation*}
+forms a basis for the solution of the first equation of \cref{wen-motion}. 
+The constants $A$ and $B$ will be determined by the second equation of \cref{wen-motion} and the boundary condition. 
+The only constraint on $\psi_n$ is that $\psi_n$ should not be in $\ker( \gamma^0 \gamma^j p_j + k \mathbb{1})$. 
+\footnote{
+As 
+$(\gamma^0\gamma^j p_j + k \mathbb{1})^2 = (\gamma^j p_j + k\mathbb{1})^2 
+= k^2 - (p_j)^2= 0$, 
+$\gamma^0 \gamma^j p_j + k \mathbb{1}$
+is nilpotent and its kernel is not reduced to $\{ 0 \}$
+} 
+Since we have projectors $\mathcal{P}_\pm$, 
+it is natural to take the basis of the representation space as the union of an orthonormal basis $\mathfrak{B}_+$ of $\ran(\mathcal{P}_+)$ and an orthonormal basis $\mathfrak{B}_-$ of $\ran(\mathcal{P}_-)$. \\\\
+Considering the second equation and the condition that an element of $\dom(\Delta)$ should satisfy, one gets
 \begin{equation}\label{wen-boundary}
 \begin{split}
-& \mathcal{P}_-\phi\vert_{\partial M} = \mathcal{P}_- \phi_| \\
-& c^{-1} \gamma^0 \mathcal{P}_- \phi\vert_{\partial M} = k \mathcal{P}_+ \phi_| 
+& \mathcal{P}_+\phi\vert_{\partial M} = \mathcal{P}_+ \phi_| \\
+& -c^{-1} \gamma^0 \mathcal{P}_- \phi\vert_{\partial M} + i\gamma^0\gamma^a\partial_a \mathcal{P}_+\phi\vert_{\partial M} = k \mathcal{P}_+ \phi_| 
 \end{split}
 \end{equation}
-For $k = 0$, the first equation of \cref{wen-motion2} shows that $\phi_k$ is a constant Clifford number. 
-Then, by \cref{wen-boundary}, $\Phi_k$ is identically null. 
-Therefore, $0$ is not an eigenvalue of $\Delta$. \\
-The form of an eigenvector $\Phi_k$ is found by the above discussion, \ie 
-\begin{equation}
-\begin{split}
-\Phi_k =  \bigg( 
-(1 + \gamma^0\gamma^j k^{-1} p_j)
-& e^{-i p_j x^j} e^{-i p_\bot x^{d-1}},  \\
-& \mathcal{P}_-(1 + \gamma^0\gamma^j k^{-1} p_j) e^{-i p_j x^j} 
-+ c^{-1} k^{-1}\mathcal{P}_+ \gamma^0 (1 + \gamma^0\gamma^j k^{-1} p_j) e^{-i p_j x^j} \bigg) 
-\end{split}  
+which implies
+\begin{equation}\label{wen-boundary2}
+-c^{-1} \gamma^0 \mathcal{P}_-(\phi\vert_{\partial M}) = 
+\mathcal{P}_+(k\phi\vert_{\partial M} - i\gamma^0\gamma^a\partial_a\mathcal{P}_+(\phi\vert_{\partial M})) = 
+i\gamma^0\mathcal{P}_-(\gamma^\bot\partial_\bot \phi\vert_{\partial M})
 \end{equation}
-Where $j = 1, \ldots , d-2$, $p_\bot = p_{d-1}$ and $p^j p_j + p_\bot p^\bot = k^2$
+We compute
+\begin{equation*}
+\begin{split}
+\partial_\bot \phi \vert_{\partial M} = 
+\big(\gamma^0\gamma^a p_a e^{-i_a x^a} p_\bot B - i\gamma^0\gamma^\bot p_\bot^2 A + k\mathbb{1}e^{-ip_a x^a}\big) \psi
+\end{split}
+\end{equation*}
+Hence, \cref{wen-boundary} implies
+\begin{equation}\label{wen-projected}
+\mathcal{P}_- \Big( (\gamma^0 \gamma^a p_a + k\mathbb{1})(c^{-1} A - p_\bot B)
+-\gamma^0 p_\bot(c^{-1} B + p_\bot A) \Big) \psi = 0
+\end{equation}
+Let $\psi = e_+ + e_-$ where $e_\pm \in \ran({P}_\pm)$.
+\cref{wen-projected} implies
+\begin{equation}\label{wen-projected2}
+(\gamma^a p_a + k\mathbb{1})(c^{-1}A - p_\bot B) e_- - \gamma^0 p_\bot(c^{-1}B + p_\bot A) e_+ = 0
+\end{equation}
+As previously mentioned,
+one can naturally consider the elements of the basis $\mathfrak{B}_+ \cap \mathfrak{B}_-$.
+The four possible cases are discussed
+\paragraph{Case 1 : $\psi \in \mathfrak{B}_-$ and $p_\bot \neq 0$} 
+By \cref{wen-projected2}
+\begin{equation*}
+(\gamma^a p_a + k\gamma^0)(c^{-1}A - p_\bot B) \psi = 0
+\end{equation*}
+Now, since 
+\begin{equation*}
+(\gamma^a p_a + k\gamma^0)^2 = ( k^2 - p^a p_a ) \mathbb{1}= p^\bot p_\bot \mathbb{1} \neq 0
+\end{equation*}
+we must have 
+\begin{equation*}
+c^{-1} A = p_\bot B
+\end{equation*}
+\paragraph{Case 2 : $\psi \in \mathfrak{B}_-$ and $p_\bot = 0$}
+In order to have non-trivial solution, 
+we must have $A \neq 0$. 
+In this case, 
+\cref{wen-projected2} implies 
+\begin{equation*}
+(\gamma^a p_a + k \mathbb{1})\psi = 0
+\end{equation*}
+which again leads to trivial solution. 
+This case should thus be discarded.
+\paragraph{Case 3 : $\psi \in \mathfrak{B}_+$ and $p_\bot \neq 0$}
+We get 
+\begin{equation*}
+c^{-1} B + p_\bot A = 0
+\end{equation*}
+\paragraph{Case 4 : $\psi \in \mathfrak{B}_+$ and $p_\bot = 0$}
+The constants $A$ and $B$ can be chosen arbitarily in this case. \\\\
+The above discussion indicates that for any $k \in \mathbb{R}$, 
+we can find normalisable eigenvectors of $\Delta$ with eigenvalue $k$.
 \end{proof}
 One can wonder if the problem has unique smooth solution which propagates casually, \ie depending only on the initial data of a Cauchy surface. \\
 Let us determine $\dom (\Delta^k)$ now. 
@@ -88,26 +147,28 @@ To start, for $k =2$,
 \begin{split}
 \Delta^2 \Phi & =  
 \begin{pmatrix} i \gamma^0 \gamma^j \partial_j & 0 \\
-- c^{-1} \gamma^0 \mathcal{P}_+ \cdot \vert_{\partial M} & i \gamma^0 \gamma^a \partial_a \mathcal{P}_- \end{pmatrix}
+- c^{-1} \gamma^0 \mathcal{P}_- \cdot \vert_{\partial M} & i \gamma^0 \gamma^a \partial_a \mathcal{P}_+ \end{pmatrix}
 \begin{pmatrix}   i \gamma^0 \gamma^j \partial_j \phi \\
-- c^{-1} \gamma^0 \mathcal{P}_+ \phi\vert_{\partial M} + i \gamma^0 \gamma^a \partial_a \mathcal{P}_- \phi_| \end{pmatrix} \\
+- c^{-1} \gamma^0 \mathcal{P}_- \phi\vert_{\partial M} + i \gamma^0 \gamma^a \partial_a \mathcal{P}_+ \phi_| \end{pmatrix} \\
 &= 
 \begin{pmatrix} (i\gamma^0\gamma^j\partial_j)^2 \phi \\
--c^{-1}\gamma^0\mathcal{P}_+ \big( (i\gamma^0\gamma^j\partial_j \phi)\vert_{\partial M}\big)
--c^{-1}i \gamma^0\gamma^a\partial_a \mathcal{P}_- \gamma^0 \mathcal{P}_+(\phi\vert+{\partial M})
-+ (i\gamma^0\gamma^a\partial_a\mathcal{P}_-)^2\phi_| \end{pmatrix}
+-c^{-1}\gamma^0\mathcal{P}_- \big( (i\gamma^0\gamma^j\partial_j \phi)\vert_{\partial M}\big)
+-c^{-1}i \gamma^0\gamma^a\partial_a \mathcal{P}_+ \gamma^0 \mathcal{P}_-(\phi\vert_{\partial M})
++ (i\gamma^0\gamma^a\partial_a\mathcal{P}_+)^2\phi_| \end{pmatrix}
 \\
 \end{split}
 \end{equation}
 One finds that for $\Phi \in \dom(\Delta)$, $\Delta \Phi \in \dom \Delta$ if and only if
 \begin{equation*}
 \begin{split}
-&\mathcal{P}_-\Big( ( i\gamma^0\gamma^j \partial_j \phi ) \vert_{\partial M} +
- c^{-1}\gamma^0 \mathcal{P}_+ ( \phi \vert_{\partial M})
-- i \gamma^0 \gamma^a \partial_a \mathcal{P}_-\phi _| \Big) \\
+&\mathcal{P}_+\Big( ( i\gamma^0\gamma^j \partial_j \phi ) \vert_{\partial M} +
+ c^{-1}\gamma^0 \mathcal{P}_- ( \phi \vert_{\partial M})
+- i \gamma^0 \gamma^a \partial_a \mathcal{P}_+\phi _| \Big) \\
 \underset{\Phi\in \dom(\Delta)}{ = }& 
-\mathcal{P}_-\Big( (i\gamma^0\gamma^\bot \partial_\bot\phi)\vert_{\partial M} +
-c^{-1}\gamma^0 \mathcal{P}_+ ( \phi \vert_{\partial M}) \Big)
+\mathcal{P}_+\Big( (i\gamma^0\gamma^\bot \partial_\bot\phi)\vert_{\partial M} +
+c^{-1}\gamma^0 \mathcal{P}_- ( \phi \vert_{\partial M}) \Big) \\ 
+= & 
+\gamma^0\mathcal{P}_-\big(- \partial_\bot \phi \vert_{\partial M} + c^{-1} \phi\vert_{\partial M}\big)
 \\ = & 0
 \end{split}
 \end{equation*}
@@ -115,109 +176,114 @@ The fact that $\partial M = \{x^\bot = 0\}$ is used to coincide the tangential d
 Continuing the calculation of \cref{wen-deltak}, we get
 \begin{equation*}
 \Delta^2 \Phi = \begin{pmatrix} (i \gamma^0 \gamma^j\partial_j)^2 & 0 \\ 
-c^{-2}\mathcal{P}_+ \cdot\vert_{\partial M}  & 
-(i \gamma^0 \gamma^a \partial_a) \mathcal{P}_-  i\gamma^0 \gamma^a \partial_a \end{pmatrix}
+- c^{-1}\mathcal{P}_+( \partial_\bot \cdot\vert_{\partial M} ) & 
+(i \gamma^0 \gamma^a \partial_a)^2 \mathcal{P}_+ \end{pmatrix}
 \begin{pmatrix} \phi \\ \phi_| \end{pmatrix}
 \end{equation*}
-Let us do the same computation for $\Delta^3$. One finds that for $\Phi \in \dom \Delta^2$, $\Delta^2 \Phi \in \dom\Delta$ if and only if
+with domain 
+\begin{equation*}
+\dom(\Delta^2) = \Big\{ (\phi, \phi_|) \in W^{2,2}(M)\times W^{2,2}(\partial M) \big\vert\enskip \mathcal{P}_- \Big(\partial_\bot\phi\vert_{\partial M} - c^{-1} (\phi\vert_{\partial M}) \Big) = 0 \Big\} \cap \dom(\Delta)
+\end{equation*}
+For $k = 3$, 
+we check the domain
+\begin{equation*}
+\dom(\Delta^3) = \big\{ (\phi, \phi_|)\in W^{3,2}(M)\times W^{3,2}(\partial M) \big\vert \enskip \mathcal{P}_+(\partial_\bot^2 \phi\vert_{\partial M} - c^{-1}\partial_\bot \phi\vert_{\partial M} ) = 0 \big\} 
+\cap \dom(\Delta^2)
+\end{equation*}
+We compute (with our signature convention)
 \begin{equation*}
 \begin{split}
-\mathcal{P}_- \Big( \big( (i\gamma^0\gamma^j\partial_j)^2 \phi \big)\vert_{\partial M}
--c^{-2} \mathcal{P}_+(\phi\vert_{\partial M}) + (i\gamma^0\gamma^a\partial_a\mathcal{P}_-)^2 \phi_| \Big)
-& = \mathcal{P}_-\big((i\gamma^0\gamma^\bot\partial_\bot)^2\phi\vert_{\partial M}) = 0
+\Delta^3 \Phi  = &
+\begin{pmatrix} i\gamma^0\gamma^j\partial_j & 0 \\ 
+-c^{-1}\gamma^0 \mathcal{P}_- \cdot \vert_{\partial M} & i\gamma^0\gamma^a\partial_a \mathcal{P}_+ \end{pmatrix} 
+\begin{pmatrix} (i\gamma^0\gamma^j\partial_j)^2 \phi \\
+-c^{-1}\mathcal{P}_+ (\partial_\bot \phi\vert_{\partial M}) + (i\gamma^0\gamma^a\partial_a)^2 \mathcal{P}_+ \phi_| \end{pmatrix} \\ 
+= & \begin{pmatrix} i\gamma^0\gamma^j \partial_j& 0 \\ 
+-c^{-1}\gamma^0 \mathcal{P}_- \cdot \vert_{\partial M} & i\gamma^0\gamma^a\partial_a \mathcal{P}_+ \end{pmatrix} 
+\begin{pmatrix} -(\partial_j)^2 \phi \\
+-c^{-1}\mathcal{P}_+ (\partial_\bot \phi\vert_{\partial M}) - (\partial_a)^2 \mathcal{P}_+ \phi_| \end{pmatrix} \\ 
+= &
+\begin{pmatrix} -  i\gamma^0\gamma^j\partial_j(\partial_l^2 \phi ) \\
+c^{-1}\gamma^0\mathcal{P}_-(\partial_j^2\phi\vert_{\partial M}) - ic^{-1}\gamma^0\gamma^a\partial_a \mathcal{P}_+(\partial_\bot \phi\vert_{\partial M})  -i\gamma^0\gamma^a\partial_a(\partial_b^2 \mathcal{P}_+\phi_| )\end{pmatrix} \\ 
+\underset{\Phi \in \dom(\Delta^3)}{= }&
+ \begin{pmatrix} - i\gamma^0\gamma^j\partial_j(\partial_l^2 \phi ) \\
+c^{-1}\gamma^0\mathcal{P}_-(\partial_j^2\phi\vert_{\partial M}) 
+- i\gamma^0\gamma^a\partial_a \mathcal{P}_+(\partial^2_\bot \phi\vert_{\partial M}) - i\gamma^0\gamma^a\partial_a(\partial_b^2 \mathcal{P}_+\phi_| )\end{pmatrix} \\ 
+& = \begin{pmatrix} -i\gamma^0\gamma^j\partial_j (\partial_l)^2  & 0\\
+c^{-1}\gamma^0 \mathcal{P}_- \big( (\partial_j^2 \cdot\vert_{\partial M}) - i\gamma^0\gamma^a\partial_a\partial_\bot\cdot\vert_{\partial M} \big)
+ & -i\gamma^0\gamma^a\partial_a(\partial_b^2 \mathcal{P}_+)\end{pmatrix}
+\begin{pmatrix}
+\phi \\ \phi_|
+\end{pmatrix}
 \end{split}
 \end{equation*}
-and
+For $k = 4$, 
+one finds
 \begin{equation*}
-\Delta^3 = \begin{pmatrix}
-(i\gamma^0\gamma^j\partial_j)^3 & 0 \\
--c^{-1}\gamma^0\mathcal{P}_+\big((i\gamma^0\gamma^j\gamma_j)^2 \cdot \vert_{\partial M}\big) &
-(i\gamma^0\gamma^a\partial_a\mathcal{P}_-)^3
-\end{pmatrix}
+\dom (\Delta^4)  = \big\{ (\phi, \phi_|)\in W^{4,2}(M)\times W^{4,2}(\partial M) \big\vert \enskip \mathcal{P}_-\big( \partial_\bot^3\phi\vert_{\partial M} - c^{-1}\partial_\bot^2\phi\vert_{\partial M}\big) \big\} 
+\cap \dom(\Delta^3)
 \end{equation*}
-We have the following proposition for $\Delta^k$ and $\dom \Delta^k$
+and 
+\begin{equation*}
+\begin{split}
+\Delta^4 \Phi = & 
+\begin{pmatrix} i\gamma^0\gamma^j\partial_j & 0 \\ 
+-c^{-1}\gamma^0 \mathcal{P}_- \cdot \vert_{\partial M} & i\gamma^0\gamma^a\partial_a \mathcal{P}_+ \end{pmatrix} 
+\begin{pmatrix} i\gamma^0\gamma^j\partial_j(\partial_l^2 \phi ) \\
+-c^{-1}\gamma^0\mathcal{P}_-(\partial_j^2\phi\vert_{\partial M}) 
++ i\gamma^0\gamma^a\partial_a \mathcal{P}_+(\partial^2_\bot \phi\vert_{\partial M}) + i\gamma^0\gamma^a\partial_a(\partial_b^2 \mathcal{P}_+\phi_| )\end{pmatrix} \\ 
+\underset{\Phi\in\dom(\Delta^3)}= & \begin{pmatrix} (\partial_j^2)^2 \phi \\
+-c^{-1}\mathcal{P}_+ (i\gamma^j\partial_j\partial_l^2\phi\vert_{\partial M})
++ c^{-1}\mathcal{P}_+(i\gamma^a\partial_a \partial_j^2 \phi\vert_{\partial M})
++(i\gamma^0\gamma^a\partial_a)^2 \mathcal{P}_+(\partial_\bot^2\phi\vert_{\partial M})
++(\partial_a^2)^2 \phi_| \end{pmatrix} \\ 
+\underset{\Phi \in \dom(\Delta^3)}{=}& 
+\begin{pmatrix}(\partial_j^2)^2 \phi \\
+-c^{-1}\mathcal{P}_+(\partial_\bot\partial_l^2\phi\vert_{\partial M}) + c^{-1} \partial_a^2\mathcal{P}_+(\partial_\bot \phi\vert_{\partial M}) + (\partial_a^2)^2 \phi_| \end{pmatrix} \\
+= & \begin{pmatrix}(\partial_j^2)^2 & 0 \\
+-c^{-1}\mathcal{P}_+(\partial^3_\bot \cdot \vert_{\partial M}) & (\partial_a^2)^2 \end{pmatrix}
+\begin{pmatrix} \phi \\ \phi_| \end{pmatrix}
+\end{split}
+\end{equation*}
+Therefore, we can conjecture the following proposition
 \begin{proposition}
-Let $k \in \mathbb{N}^*$. Then 
-\begin{equation}
-\Delta^{2k} = \begin{pmatrix}
-(i\gamma^0\gamma^j)^{2k} & 0\\
-c^{-2}\mathcal{P}_+\big((i\gamma^0\gamma^j\partial_j)^{2k-2} \cdot \vert_{\partial M}\big)
-& (i\gamma^0\gamma^a\partial_a)^{2k}\mathcal{P}_-
-\end{pmatrix}
-\end{equation}
-\begin{equation}
-\Delta^{2k+1} = \begin{pmatrix}
-(i\gamma^0\gamma^j)^{2k+1} & 0\\
--c^{-1}\gamma^0\mathcal{P}_+\big((i\gamma^0\gamma^j\partial_j)^{2k} \cdot \vert_{\partial M}\big)
-& (i\gamma^0\gamma^a\partial_a)^{2k+1}\mathcal{P}_-
-\end{pmatrix}
-\end{equation}
-with domain of self-adjointness
+Let $k \in \mathbb{N}^*$. Then
 \begin{equation*}
-\dom(\Delta^{2k}) = \dom^{2k-1} \cap \Big \{ 
-(\phi, \phi_|) \in W^{2k,2}\times W^{2k,2} \big\vert\enskip
-\mathcal{P}_-\big((i\gamma^0\gamma^\bot\partial_\bot)^{2k-1} \phi\vert_{\partial M} +
-c^{-1}\gamma^0(i\gamma^0\gamma^j\partial_j)^{2k-2}\phi\vert_{\partial M} = 0\Big\}
-\end{equation*}
-\begin{equation*}
-\dom(\Delta^{2k+1}) = \dom^{2k} \cap \Big \{ 
-(\phi, \phi_|) \in W^{2k+1,2}\times W^{2k+1,2} \big\vert\enskip
-\mathcal{P}_-\big((i\gamma^0\gamma^\bot\partial_\bot)^{2k}\big)=0 \Big\}
+\begin{split}
+& \Delta^{2k}  = 
+\begin{pmatrix} (-\partial_j^2)^k & 0 \\
+-c^{-1}\mathcal{P}_+(\partial_\bot^{2k-1} \cdot \vert_{\partial M}) & (-\partial_a^2)^k \end{pmatrix}
+\\
+& \Delta^{2k+1}  = 
+\begin{pmatrix} (-\partial_j^2)^k i\gamma^0\gamma^j\partial_j & 0 \\
+c^{-1}\mathcal{P}_+\big( (-\partial_\bot^2)^k \phi\vert_{\partial M} - i\gamma^0\gamma^a(-\partial_\bot)^{2k} \partial_\bot \cdot \vert_{\partial M} &
+(-\partial_a^2)^k i\gamma^0\gamma^a\partial_a \end{pmatrix} \\
+& \dom (\Delta^{2k} )  =
+\big\{ (\phi, \phi_|)\in W^{2k,2}(M)\times W^{2k,2}(\partial M) \big\vert \enskip \mathcal{P}_-\big( \partial_\bot^{2k-1}\phi\vert_{\partial M} - c^{-1}\partial_\bot^{2k-2}\phi\vert_{\partial M}\big) \big\} 
+\cap \dom(\Delta^{2k - 1})  \\
+& \dom (\Delta^{2k+1} )  =
+\big\{ (\phi, \phi_|)\in W^{2k+1,2}(M)\times W^{2k+1,2}(\partial M) \big\vert \enskip \mathcal{P}_+\big( \partial_\bot^{2k}\phi\vert_{\partial M} - c^{-1}\partial_\bot^{2k-1}\phi\vert_{\partial M}\big) \big\}  \cap \dom(\Delta^{2k })
+\end{split}
 \end{equation*}
 \end{proposition}
 \begin{proof}
-Proof by induction. We have already seen that the proposition holds for $k = 1$. Let $k \leq 1$. Suppose that the proposition holds for $k$. 
-It is straightforward to verify the domain once one has the expression of $\Delta^k$.
-Let $\Phi\in\dom(\Delta^{2k+2})$. Then 
-\begin{equation*}
-\begin{split}
-\Delta^{2k+2}\Phi & = 
-\begin{pmatrix}
-(i\gamma^0\gamma^j\partial_j)^{2k+2} \phi \\
-- c^{-1}\gamma^0\mathcal{P}_+\big( (i\gamma^0\gamma^j\partial_j)^{2k+1} \phi\vert_{\partial M}\big)
-+c^{-1}i\gamma^0\gamma^a\partial_a\gamma^0\mathcal{P}_+\big((i\gamma^0\gamma^j\partial_j)^{2k} \phi\vert_{\partial M}\big)
-+ (i\gamma^0\gamma^a\partial_a)^{2k+2}\mathcal{P}_- \phi_|
-\end{pmatrix} \\ 
-& \underset{\Phi \in \dom(\Delta^{2k+1})}{=}
-\begin{pmatrix}
-(i\gamma^0\gamma^j\partial_j)^{2k+2} \phi \\
--c^{-1}\mathcal{P}_+\big( (i\gamma^0\gamma^\bot\partial_\bot)^{2k+1} \phi\vert_{\partial M}\big)
-+ (i\gamma^0\gamma^a\partial_a)^{2k+2}\mathcal{P}_- \phi_|
-\end{pmatrix} \\ 
-& \underset{\Phi \in \dom(\Delta^{2k+2})}{=}
-\begin{pmatrix}
-(i\gamma^0\gamma^j\partial_j)^{2k+2} \phi \\
-c^{-2}\mathcal{P}_+\big( (i\gamma^0\gamma^j\partial_j)^{2k} \phi\vert_{\partial M}\big)
-+ (i\gamma^0\gamma^a\partial_a)^{2k+2}\mathcal{P}_- \phi_|
-\end{pmatrix} 
-\end{split}
-\end{equation*}
-%the other case
-and one gets easily
-\begin{equation*}
-\Delta^{2k+3}\Phi  = 
-\begin{pmatrix}
-(i\gamma^0\gamma^j\partial_j)^{2k+3} \phi \\
-- c^{-1}\gamma^0\mathcal{P}_+\big( (i\gamma^0\gamma^j\partial_j)^{2k+2} \phi\vert_{\partial M}\big)
-+ (i\gamma^0\gamma^a\partial_a)^{2k+3}\mathcal{P}_- \phi_|
-\end{pmatrix} 
-\end{equation*}
+The proposition could be proven by induction.
 \end{proof}
 The time evolution of the system is give by
 \begin{equation*}
-i \frac{\partial }{\partial t} \Phi = \Delta \Phi = 
+i \frac{\partial }{\partial t} \Phi = \Delta \Phi 
 \end{equation*}
-The norm of the $m$-times time derivative in $\mathcal{H}$ can be calculated in terms of $\Delta$
+The norm of the time derivative in $\mathcal{H}$ can be expressed as
 \begin{equation}
 \begin{split}
-\big\| \frac{\partial^m }{\partial t^m} \Phi \big\|^2_\mathcal{H}  
-= & \big\| \Delta^m \Phi\big\|^2_\mathcal{H} \\
-=& \big\|(i\gamma^0\gamma^j\partial_j)^k \phi \big\|^2_{L^2(M)} 
-+ c^{-1}\big\| \gamma^0 \mathcal{P}_- \big((i \gamma^0\gamma^j\partial_j)^{k-1} \phi  \vert_{\partial M}\big) \big\|^2_{L(\partial M)}  \\
-& + c \big\| \mathcal{P}_-(i \gamma^0 \gamma^a \partial_a)^{k}\phi _| \big\|_{L^2(\partial M)}
+\big\| \frac{\partial }{\partial t} \Phi \big\|^2_\mathcal{H}  
+= & \big\| \Delta \Phi\big\|^2_\mathcal{H} \\
+=& \big\|(i\gamma^0\gamma^j\partial_j) \phi \big\|^2_{L^2(M)} 
++ c^{-1}\big\| \gamma^0 \mathcal{P}_- \big(i \gamma^\bot\partial_\bot \phi  \vert_{\partial M}\big) \big\|^2_{L(\partial M)}  \\
+& + c \big\| \mathcal{P}_-(i \gamma^0 \gamma^a \partial_a\phi _| ) \big\|^2_{L^2(\partial M)}
 \end{split}
 \end{equation}
-For $m=1$, since
+Since
 \begin{equation*}
 \begin{split}
 \int \big((i \gamma^0 \gamma^a \partial_a)\phi \big)^\dagger (i \gamma^0 \gamma^a \partial_a) \phi 
@@ -229,7 +295,12 @@ For $m=1$, since
 = & \int \partial^j \phi^\dagger \partial_j \phi
 \end{split}
 \end{equation*}
-
+taking into account the fact that $\Phi\in\dom(\Delta^2)$one gets
+\begin{equation*}
+\| \Delta \Phi \|^2_{\mathcal{H}} = \int_M \partial^j \phi^\dagger \partial_j \phi
++c^{-1}\int (\mathcal{P}_+ \phi\vert_{\partial M})^\dagger \mathcal{P}_+ \phi\vert_{\partial M} 
++c\int_{\partial M} \partial^j \phi^\dagger_| \partial_j \phi_|
+\end{equation*}
 
 
 
