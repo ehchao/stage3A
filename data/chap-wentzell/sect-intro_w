@@ -20,7 +20,7 @@ i \gamma^\alpha \partial_\alpha (1 - i\gamma^\bot) \psi = - c^{-1}(1 + i\gamma^{
 \end{equation}
 We define $\phi = \gamma^0 \psi$. 
 \cref{wen-motion} can be written as 
-\begin{equation}
+\begin{equation}\label{wen-maineq}
 \begin{cases}
 i \partial_0 \phi = i \gamma^0 \gamma^j \partial_j \phi   \quad \textrm{in $M$}\\
 i \partial_0(1 + i\gamma^\bot) \phi = i\gamma^0 \gamma^a \partial_a (1+ i\gamma^\bot)\phi - c^{-1} \gamma^0(1 - i \gamma^{\bot})\phi \quad \textrm{on $\partial M$}

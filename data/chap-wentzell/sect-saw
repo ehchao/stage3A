@@ -52,8 +52,8 @@ has plane wave solutions,
 the family
 \begin{equation*}
 \begin{split}
-\phi_n = & (i\gamma^0\partial_j + k \mathbb{1}) e^{-ip_a x^a }(A\cos p_\bot x^\bot + B \sin p_\bot x^\bot) \psi_n \\
- = &\gamma^0\gamma^a p_a (A \cos p_\bot x^\bot + B \sin p_\bot x^\bot)
+\phi_n = & (i\gamma^0\gamma^j\partial_j + k \mathbb{1}) e^{-ip_a x^a }(A\cos p_\bot x^\bot + B \sin p_\bot x^\bot) \psi_n \\
+ = &\gamma^0\gamma^a p_a (A \cos p_\bot x^\bot + B \sin p_\bot x^\bot)e^{-ip_a x^a}
 + i\gamma^0\gamma^\bot p_\bot (-A \sin p_\bot x^\bot + B \cos p_\bot x^\bot) e^{-ip_a x^a} \\
 & + k \mathbb{1} e^{-ip_a x^a}(A\cos p_\bot x^\bot + B \sin p_\bot x^\bot)  \\
 \end{split}
@@ -229,19 +229,19 @@ and
 \Delta^4 \Phi = & 
 \begin{pmatrix} i\gamma^0\gamma^j\partial_j & 0 \\ 
 -c^{-1}\gamma^0 \mathcal{P}_- \cdot \vert_{\partial M} & i\gamma^0\gamma^a\partial_a \mathcal{P}_+ \end{pmatrix} 
-\begin{pmatrix} i\gamma^0\gamma^j\partial_j(\partial_l^2 \phi ) \\
--c^{-1}\gamma^0\mathcal{P}_-(\partial_j^2\phi\vert_{\partial M}) 
-+ i\gamma^0\gamma^a\partial_a \mathcal{P}_+(\partial^2_\bot \phi\vert_{\partial M}) + i\gamma^0\gamma^a\partial_a(\partial_b^2 \mathcal{P}_+\phi_| )\end{pmatrix} \\ 
+\begin{pmatrix} - i\gamma^0\gamma^j\partial_j(\partial_l^2 \phi ) \\
+c^{-1}\gamma^0\mathcal{P}_-(\partial_j^2\phi\vert_{\partial M}) 
+- i\gamma^0\gamma^a\partial_a \mathcal{P}_+(\partial^2_\bot \phi\vert_{\partial M}) + i\gamma^0\gamma^a\partial_a(\partial_b^2 \mathcal{P}_+\phi_| )\end{pmatrix} \\ 
 \underset{\Phi\in\dom(\Delta^3)}= & \begin{pmatrix} (\partial_j^2)^2 \phi \\
 -c^{-1}\mathcal{P}_+ (i\gamma^j\partial_j\partial_l^2\phi\vert_{\partial M})
 + c^{-1}\mathcal{P}_+(i\gamma^a\partial_a \partial_j^2 \phi\vert_{\partial M})
 +(i\gamma^0\gamma^a\partial_a)^2 \mathcal{P}_+(\partial_\bot^2\phi\vert_{\partial M})
-+(\partial_a^2)^2 \phi_| \end{pmatrix} \\ 
++(\partial_a^2)^2 \mathcal{P}_+ \phi_| \end{pmatrix} \\ 
 \underset{\Phi \in \dom(\Delta^3)}{=}& 
 \begin{pmatrix}(\partial_j^2)^2 \phi \\
--c^{-1}\mathcal{P}_+(\partial_\bot\partial_l^2\phi\vert_{\partial M}) + c^{-1} \partial_a^2\mathcal{P}_+(\partial_\bot \phi\vert_{\partial M}) + (\partial_a^2)^2 \phi_| \end{pmatrix} \\
+-c^{-1}\mathcal{P}_+(\partial_\bot\partial_l^2\phi\vert_{\partial M}) + c^{-1} \partial_a^2\mathcal{P}_+(\partial_\bot \phi\vert_{\partial M}) + (\partial_a^2)^2 \mathcal{P}_+ \phi_| \end{pmatrix} \\
 = & \begin{pmatrix}(\partial_j^2)^2 & 0 \\
--c^{-1}\mathcal{P}_+(\partial^3_\bot \cdot \vert_{\partial M}) & (\partial_a^2)^2 \end{pmatrix}
+-c^{-1}\mathcal{P}_+(\partial^3_\bot \cdot \vert_{\partial M}) & (\partial_a^2)^2 \mathcal{P}_+ \end{pmatrix}
 \begin{pmatrix} \phi \\ \phi_| \end{pmatrix}
 \end{split}
 \end{equation*}
@@ -250,14 +250,6 @@ Therefore, we can conjecture the following proposition
 Let $k \in \mathbb{N}^*$. Then
 \begin{equation*}
 \begin{split}
-& \Delta^{2k}  = 
-\begin{pmatrix} (-\partial_j^2)^k & 0 \\
--c^{-1}\mathcal{P}_+(\partial_\bot^{2k-1} \cdot \vert_{\partial M}) & (-\partial_a^2)^k \end{pmatrix}
-\\
-& \Delta^{2k+1}  = 
-\begin{pmatrix} (-\partial_j^2)^k i\gamma^0\gamma^j\partial_j & 0 \\
-c^{-1}\mathcal{P}_+\big( (-\partial_\bot^2)^k \phi\vert_{\partial M} - i\gamma^0\gamma^a(-\partial_\bot)^{2k} \partial_\bot \cdot \vert_{\partial M} &
-(-\partial_a^2)^k i\gamma^0\gamma^a\partial_a \end{pmatrix} \\
 & \dom (\Delta^{2k} )  =
 \big\{ (\phi, \phi_|)\in W^{2k,2}(M)\times W^{2k,2}(\partial M) \big\vert \enskip \mathcal{P}_-\big( \partial_\bot^{2k-1}\phi\vert_{\partial M} - c^{-1}\partial_\bot^{2k-2}\phi\vert_{\partial M}\big) \big\} 
 \cap \dom(\Delta^{2k - 1})  \\
@@ -267,42 +259,102 @@ c^{-1}\mathcal{P}_+\big( (-\partial_\bot^2)^k \phi\vert_{\partial M} - i\gamma^0
 \end{equation*}
 \end{proposition}
 \begin{proof}
-The proposition could be proven by induction.
+Prove the proposition by induction.
+The claim holds for $k =1$ as we have already shown. 
+Let $k \in \mathbb{N}$ and suppose that the claim holds for $\forall n \in \llbracket 1, k-1 \rrbracket $. 
+It is easy to show that $\Delta^{2m}$ takes the form
+\begin{equation*}
+ \Delta^{2m}  = 
+\begin{pmatrix} (-\partial_j^2)^m & 0 \\
+\star & (-\partial_a^2)^m\mathcal{P}_+ \end{pmatrix}
+\end{equation*}
+For $\Phi = (\phi, \phi_|)$
+\begin{equation*}
+\begin{split}
+\Phi \in \dom(\Delta^{2k}) \quad &\Leftrightarrow \quad
+\Phi \in W^{2k,2}(M)\times W^{2k,2}(\partial M) \enskip \mathrm{and}\enskip \Delta^{2k-2}\Phi \in \dom(\Delta^{2}) \\
+&\Leftrightarrow \quad 
+\mathcal{P}_{-}\big(\partial_\bot(-\partial_j^2)^{k-1}\phi\vert_{\partial M} - c^{-1}(-\partial_j^2)^{k-1}\phi\vert_{\partial M} \big) = 0
+\end{split}
+\end{equation*}
+and
+\begin{equation*}
+\begin{split}
+\Phi \in \dom(\Delta^{2k+1}) \quad &\Leftrightarrow \quad
+\Phi \in W^{2k+1,2}(M)\times W^{2k+1,2}(\partial M) \enskip \mathrm{and}\enskip \Delta^{2k-2}\Phi \in \dom(\Delta^{3}) \\
+&\Leftrightarrow \quad 
+\mathcal{P}_{+}\big(\partial_\bot^2(-\partial_j^2)^{k-1}\phi\vert_{\partial M} - c^{-1}\partial^\bot(-\partial_j^2)^{k-1}\phi\vert_{\partial M} \big) = 0
+\end{split}
+\end{equation*}
+As the lower powers coincide by hypothesis, 
+the claim still holds for $k$.
 \end{proof}
+Consider the Hilbert space
+\begin{equation*}
+\mathcal{K} = \cap_{k\in \mathbb{N}^*} \dom(\Delta^k)
+\end{equation*}
+and an element $\Phi \in \mathcal{K}$.
 The time evolution of the system is give by
 \begin{equation*}
 i \frac{\partial }{\partial t} \Phi = \Delta \Phi 
 \end{equation*}
-The norm of the time derivative in $\mathcal{H}$ can be expressed as
-\begin{equation}
-\begin{split}
-\big\| \frac{\partial }{\partial t} \Phi \big\|^2_\mathcal{H}  
-= & \big\| \Delta \Phi\big\|^2_\mathcal{H} \\
-=& \big\|(i\gamma^0\gamma^j\partial_j) \phi \big\|^2_{L^2(M)} 
-+ c^{-1}\big\| \gamma^0 \mathcal{P}_- \big(i \gamma^\bot\partial_\bot \phi  \vert_{\partial M}\big) \big\|^2_{L(\partial M)}  \\
-& + c \big\| \mathcal{P}_-(i \gamma^0 \gamma^a \partial_a\phi _| ) \big\|^2_{L^2(\partial M)}
-\end{split}
-\end{equation}
-Since
+Taking into account the fact that $\Phi\in\dom(\Delta^2)$ one gets
 \begin{equation*}
 \begin{split}
-\int \big((i \gamma^0 \gamma^a \partial_a)\phi \big)^\dagger (i \gamma^0 \gamma^a \partial_a) \phi 
-= &
-\int \partial_j\phi^\dagger(\gamma^j)^\dagger(\gamma^0)^\dagger\gamma^0\gamma^l\partial_l\phi \\
-= & 
-\int\partial_j\phi^\dagger(\gamma^j)^\dagger \gamma^l\partial_l\phi \\
-= & \int \frac{1}{2}\{\gamma^l, (\gamma^j)^\dagger \} \partial_j\phi^\dagger\partial_l \phi \\
-= & \int \partial^j \phi^\dagger \partial_j \phi
+\big\| \frac{\partial }{\partial t} \Phi \big\|^2_\mathcal{H} = 
+\| \Delta \Phi \|^2_{\mathcal{H}} 
+= & - \int_M \partial^j \phi^\dagger \partial_j \phi
++c^{-1}\int (\mathcal{P}_- \phi\vert_{\partial M})^\dagger \mathcal{P}_- \phi\vert_{\partial M} 
+- c\int_{\partial M} \partial^a \mathcal{P}_+ \phi^\dagger_| \partial_a \phi_| \\
+= & \|\partial_j \phi \|^2_{L^2 (M)} + c^{-1} \| \mathcal{P}_- \phi\vert_{\partial M} \|^2_{L^2(\partial M)}
++ c \| \mathcal{P}_+ \partial_a \phi\vert_{\partial M} \|^2_{L^2(\partial M)}
 \end{split}
 \end{equation*}
-taking into account the fact that $\Phi\in\dom(\Delta^2)$one gets
+and
 \begin{equation*}
-\| \Delta \Phi \|^2_{\mathcal{H}} = \int_M \partial^j \phi^\dagger \partial_j \phi
-+c^{-1}\int (\mathcal{P}_+ \phi\vert_{\partial M})^\dagger \mathcal{P}_+ \phi\vert_{\partial M} 
-+c\int_{\partial M} \partial^j \phi^\dagger_| \partial_j \phi_|
+\begin{split}
+\big\| \frac{\partial^2 }{\partial t^2} \Phi \big\|^2_\mathcal{H} = 
+\| \Delta^2 \Phi \|^2_{\mathcal{H}} 
+= &  \int_M (\partial_j^2) \phi^\dagger (\partial_j^2) \phi
++ c \int_{\partial M} \big| -c^{-1} \mathcal{P}_+\partial_\bot \phi\vert_{\partial M} - (\partial_a^2) \mathcal{P}_+\phi_| \big|^2  \\
+\underset{\Phi \in \dom(\Delta^3)}{=} & \int_M (\partial_j^2) \phi^\dagger (\partial_j^2) \phi
++ c \int_{\partial M} \big|  \mathcal{P}_+\partial^2_\bot \phi\vert_{\partial M} + (\partial_a^2) \mathcal{P}_+\phi_| \big|^2 \\
+= & \|(\partial^2_j) \phi \|^2_{L^2 (M)} 
++ c \| \mathcal{P}_+ (\partial_j^2) \phi\vert_{\partial M} \|^2_{L^2(\partial M)}
+\end{split}
 \end{equation*}
-
-
+Hence, we have the following relation for high order time derivatives for $m\in \mathbb{N}^*$
+\begin{equation*}
+\begin{split}
+& \big\|\frac{\partial^{2m+1}}{\partial t^{2m+1}} \Phi \big\|^2 = 
+\|\partial_j (\partial_l^2)^{m}\phi \|^2_{L^2 (M)} 
++ c^{-1} \| \mathcal{P}_- (\partial_l^2)^{m}\phi\vert_{\partial M} \|^2_{L^2(\partial M)}
++ c \| \mathcal{P}_+ \partial_a (\partial_l^2)^{m}\phi\vert_{\partial M} \|^2_{L^2(\partial M)}
+\\
+& \big\|\frac{\partial^{2m+2}}{\partial t^{2m+2}} \Phi \big\|^2 = 
+ \|(\partial^2_j)(\partial_l^2)^{m} \phi \|^2_{L^2 (M)} 
++ c \| \mathcal{P}_+ (\partial_j^2) (\partial_l^2)^{m}\phi\vert_{\partial M} \|^2_{L^2(\partial M)}
+\end{split}
+\end{equation*}
+Noticing that
+\begin{equation*}
+\big\|\partial_t^m \Phi(t) \big\|= 
+\big\|\Delta^m\Phi(t) \big\| =
+\big\|\Delta^m \Phi(0) \big\|
+\end{equation*}
+we can give the following proposition
+\begin{proposition}
+Let $m \in \mathbb{N}^*$ and $\Phi = (\phi, \phi_|) \in\mathcal{K}$ a solution of \cref{wen-maineq} for $(\phi_0, \phi_{|0})$ a set of initial data on the zero-time Cauchy surface.
+Then
+\begin{equation*}
+\begin{split}
+\big\|\partial_t^m \Phi(t) \big\| \leq &
+\sum_{s_1 + \ldots + s_{d-1} \leq m} \big\| \partial_1^{s_1}\ldots\partial_{d-1}^{s_{d-1}} \phi_0 \big\|^2_{L^2{(M)}}
++ c \big\| \partial_1^{s_1}\ldots\partial_{d-1}^{s_{d-1}} \mathcal{P}_+\phi_0\vert_{\partial M} \big\|^2_{L^2{(\partial M)}}
+\\ & + \sum_{s_1 + \ldots + s_{d-1} \leq m-1}c^{-1}\big\| \partial_1^{s_1}\ldots\partial_{d-1}^{s_{d-1}} \mathcal{P}_-\phi_0\vert_{\partial M} \big\|^2_{L^2{(\partial M)}}
+\end{split}
+\end{equation*}
+\end{proposition}
 
 
 
