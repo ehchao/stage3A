@@ -174,12 +174,12 @@ c^{-1}\gamma^0 \mathcal{P}_- ( \phi \vert_{\partial M}) \Big) \\
 \end{equation*}
 The fact that $\partial M = \{x^\bot = 0\}$ is used to coincide the tangential derivatives evaluated on the boundary.
 Continuing the calculation of \cref{wen-deltak}, we get
-\begin{equation*}
+\begin{equation}\label{wen-delta2}
 \Delta^2 \Phi = \begin{pmatrix} (i \gamma^0 \gamma^j\partial_j)^2 & 0 \\ 
 - c^{-1}\mathcal{P}_+( \partial_\bot \cdot\vert_{\partial M} ) & 
 (i \gamma^0 \gamma^a \partial_a)^2 \mathcal{P}_+ \end{pmatrix}
 \begin{pmatrix} \phi \\ \phi_| \end{pmatrix}
-\end{equation*}
+\end{equation}
 with domain 
 \begin{equation*}
 \dom(\Delta^2) = \Big\{ (\phi, \phi_|) \in W^{2,2}(M)\times W^{2,2}(\partial M) \big\vert\enskip \mathcal{P}_- \Big(\partial_\bot\phi\vert_{\partial M} - c^{-1} (\phi\vert_{\partial M}) \Big) = 0 \Big\} \cap \dom(\Delta)
@@ -342,19 +342,95 @@ Noticing that
 \big\|\Delta^m\Phi(t) \big\| =
 \big\|\Delta^m \Phi(0) \big\|
 \end{equation*}
-we can give the following proposition
+we would like to prove the following proposition as in~\cite{Zahn2016}
+%TODO define new inner products
 \begin{proposition}
-Let $m \in \mathbb{N}^*$ and $\Phi = (\phi, \phi_|) \in\mathcal{K}$ a solution of \cref{wen-maineq} for $(\phi_0, \phi_{|0})$ a set of initial data on the zero-time Cauchy surface.
-Then
+Let $\Sigma_0$ and $\Sigma_1$ two equal-time surfaces. 
+Then, for $\Phi = (\phi, \phi_|) \in \mathcal{K}$ any solution of \cref{wen-maineq} for the initial data $(\phi_0, \phi_{|0})$ on a Cauchy surface $\mathcal{S}_0 \in \Sigma_0$,
+the following relation holds
+\begin{equation}\label{wen-causal}
+\big\| \frac{\partial}{\partial t} \Phi \big\|_{\mathcal{H}(\mathcal{S}_1)}^2
+\leq 
+\big\| \frac{\partial}{\partial t} \Phi \big\|_{\mathcal{H}(\mathcal{S}_0)}^2
+\end{equation}
+for any $\mathcal{S}_1 \in D^+(\mathcal{S}_0)\cap\Sigma_1$, where $D^+(\mathcal{S}_0)$ is the future domain of dependence of $\mathcal{S}_0$.
+\end{proposition}
+\begin{proof}
+As in~\cite{Zahn2016} we introduce the following tensors
+\footnote{
+Here we treat componentwisely $\phi$ instead of considering it as a spinor field. 
+Hence, $\phi$ is treated as a scalar field in the tensor expressions. 
+In effect, this could be proven pertinent as we only use d'Alembertian operators in the following computation, which do not mix the components of $\phi$.
+}
 \begin{equation*}
 \begin{split}
-\big\|\partial_t^m \Phi(t) \big\| \leq &
-\sum_{s_1 + \ldots + s_{d-1} \leq m} \big\| \partial_1^{s_1}\ldots\partial_{d-1}^{s_{d-1}} \phi_0 \big\|^2_{L^2{(M)}}
-+ c \big\| \partial_1^{s_1}\ldots\partial_{d-1}^{s_{d-1}} \mathcal{P}_+\phi_0\vert_{\partial M} \big\|^2_{L^2{(\partial M)}}
-\\ & + \sum_{s_1 + \ldots + s_{d-1} \leq m-1}c^{-1}\big\| \partial_1^{s_1}\ldots\partial_{d-1}^{s_{d-1}} \mathcal{P}_-\phi_0\vert_{\partial M} \big\|^2_{L^2{(\partial M)}}
+& T_{\mu\nu} = \partial_{(\mu} \phi^\dagger \partial_{\nu)} \phi - \frac{1}{2}g_{\mu\nu} \partial_\lambda\phi^\dagger\partial^\lambda\phi  \\
+& T_{|\alpha\beta} = c\Big( \partial_{(\alpha}\mathcal{P}_+\phi^\dagger_| \partial_{\beta)}\mathcal{P}_+\phi^\dagger_| - 
+\frac{1}{2}h_{\alpha\beta}\big( \partial_\gamma\mathcal{P}_+\phi^\dagger_| \partial^\gamma\mathcal{P}_+\phi_|
+ - c^{-2}|\mathcal{P}_- \phi\vert_{\partial M}|^2 \big)\Big) 
 \end{split}
 \end{equation*}
-\end{proposition}
+As $\phi$ is a solution for the first equation of \cref{wen-maineq},
+\begin{equation*}
+(i\partial_0 + i\gamma^0\gamma^j\partial_j)( i\partial_0 -i\gamma^0\gamma^j\partial_j)\phi  = 
+\Box \phi= 0
+\end{equation*}
+where $\Box = \partial^\mu\partial_\mu$ is the d'Alembertian.
+On the other hand, 
+\begin{equation*}
+\begin{split}
+&0 = (i\gamma^0\gamma^\mu\partial_\mu\phi)^\dagger
+= i\partial_j\phi^\dagger\gamma^j\gamma^0 - i\partial_0\phi^\dagger. \\
+\Rightarrow \quad &
+\phi^\dagger(i\overleftarrow{\partial}_j\gamma^j\gamma^0 - i\overleftarrow{\partial}_0)
+(i\overleftarrow{\partial}_j\gamma^j\gamma^0 + i\overleftarrow{\partial}_0)
+= \phi^\dagger \overleftarrow{\Box} = 0
+\end{split}
+\end{equation*}
+$T_{\mu\nu}$ is thus conserved on shell. \\\\
+From the expression of $\Delta^2$ \cref{wen-delta2}, 
+\begin{equation*}
+\Box\mathcal{P}_+ \phi_| = c^{-1}\mathcal{P}_+\phi\vert_{\partial M}
+\end{equation*}
+which leads to
+\begin{equation*}
+\begin{split}
+\partial^\alpha T_{|\alpha \beta} = & 
+ \mathcal{P}_+(\partial_{(\bot} \phi^\dagger\vert_{\partial M})\partial_{\beta)}\mathcal{P}_+ \phi_| + 
+c^{-1}(\mathcal{P}_-\phi^\dagger\vert_{\partial M}) \partial_\beta\mathcal{P}_- \phi\vert_{\partial M}
++c^{-1}(\mathcal{P}_-\partial_\beta\phi^\dagger\vert_{\partial M}) \mathcal{P}_- \phi\vert_{\partial M} \\ 
+\underset{\Phi \in \dom(\Delta^2)}{=} & 
+\partial_{(\bot}\phi^\dagger\vert_{\partial M} \partial_{\beta)}\phi\vert_{\partial M} \\
+= & T\vert_{\partial M,{\bot\beta}}
+\end{split}
+\end{equation*}
+on-shell. \\\\
+One can easily verify that $T_{\mu\nu}$ and $T_{| \alpha\beta}$ satisfy the dominant energy condition, \ie for a time-like vector $\xi$
+\begin{equation*}
+\begin{split}
+T_{\mu\nu} \xi^\mu \xi^\nu \geq 0 \quad \mathrm{ and }\quad
+T_{\alpha\beta} \xi^\mu \xi^\nu \geq 0 
+\end{split}
+\end{equation*}
+Let $\xi = e_0$, which is a Killing vector field in the static case.
+Then we have $\partial^\mu T_{\mu\nu}\xi^\nu = 0$.
+Using Stokes' theorem, the integral of this quantity over (cf.~\cite{Zahn2016} for the figure for the moment) %TODO add picture
+gives
+\begin{equation*}
+\begin{split}
+0 \underset{\partial^\bot = -\partial_\bot}{=} &
+- \int_{\mathcal{S}_0}T_{00} + \int_{\mathcal{S}_1} T_{00} + \int_{\mathcal{S}_2} n^\mu T_{\mu 0} + \int_{\partial M} T \vert_{\partial M, \bot 0}   \\
+= & - \int_{\mathcal{S}_0} T_{00} + \int_{\mathcal{S}_1} T_{00} + 
+ \int_{\mathcal{S}_2} n^\mu T_{\mu 0} -
+  \int_{\partial M \cap \mathcal{S}_0} T_{|00}  +\int_{\partial M \cap \mathcal{S}_1} T_{|00}
+ + \int_{\partial M \cap \mathcal{S}_2} s^\alpha T_{\alpha 0}
+\end{split}
+\end{equation*}
+where $n^\mu$ and $s^\alpha$ are future-directed unit vectors normal to $\mathcal{S}_2$ and $\partial M \cap \mathcal{S}_2$ respectively.
+By the dominant energy condition, 
+$T_{\mu 0 }\geq 0$ and $T_{\alpha 0 }\geq 0$. 
+We obtain \cref{wen-causal} by replacing $T_{00}$ and $T_{| 00}$ by their expression in terms of $\phi$
+\end{proof}
 
 
 
