@@ -2,7 +2,7 @@
 The main goal of this work is to generalize the bag boundary condition proposed in~\cite{Chodos1974}
 by introducing the derivatives of the wave function in the boundary condition for any Lorentzian manifold $M$. 
 For this purpose, we introduce the following action
-\begin{equation}
+\begin{equation}\label{wen-action}
 \mathcal{S} = \frac{1}{2}i\int_M \bar{\psi} \gamma^\mu \partial_\mu \psi - \partial_\mu \bar{\psi} \gamma^\mu \psi 
 + \frac{1}{2}\int_{\partial M} ic \bar{\psi} \gamma^\alpha \partial_\alpha (1 - i \gamma^\bot) \psi
 + \bar{\psi} \psi

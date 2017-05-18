@@ -1,0 +1,19 @@
+\subsection{Bulk $M = \mathbb{R}^{d-1} \times [-L, L]$ }
+The subtlety that one should beware of in this case is the projectors $\mathcal{P}_+$.
+Since $\mathcal{P}_+$ is defined by considering a set of generators of Clifford Algebra on the tangent bundle $T_{ M}$, 
+if we would like to fixe the system of coordinates once for all,
+we should also take into account the transformation of these generators. \\
+We denote $(\gamma^\mu)_\mu$ the set of gamma matrices chosen on $\{x^d  = - L \}$. 
+We will have then $\mathcal{P}_+\vert_{\{x^d = L\}} = \mathcal{P}_-\vert_{\{x^d = -L\}}$ and $\gamma^\mu\vert_{\{x^d = L\}}=\gamma^\mu\vert_{\{x^d = -L\}}$ for $\mu\in\llbracket 0, d-1 \rrbracket$
+When it is not specified, we refer to the gamma matrices and the projectors on $\{x^d = -L\}$ \\
+Now, for $\Phi = (\phi, \phi_|)$ the boundary condition becomes
+\begin{equation*}
+\begin{split}
+\begin{cases}
+\mathcal{P}_+ \phi\vert_{\{x^d = -L\}} = \mathcal{P}_+\phi_| \\
+c^{-1}\mathcal{P}_-\phi\vert_{\{x^d = -L\}} = \mathcal{P}_-(\partial_d \phi\vert_{x^d = -L}) \\
+\mathcal{P}_- \phi\vert_{\{x^d = L\}} = \mathcal{P}_-\phi_| \\
+-c^{-1}\mathcal{P}_+\phi\vert_{\{x^d = -L\}} = \mathcal{P}_+(\partial_d \phi\vert_{x^d = -L}) \\
+\end{cases}
+\end{split}
+\end{equation*}

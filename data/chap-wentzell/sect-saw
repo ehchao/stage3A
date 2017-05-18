@@ -1,6 +1,6 @@
-\section{Well-posedness of the problem}
+\section{Well-posedness of the problem}\label{wen-sect-saw}
 We define the inner product for our Hilbert space $\mathcal{H} = W^{1,2}(M)\times W^{1,2}(\partial M)$, where $W^{1,2}$ is the Sobolev space,
-\begin{equation}
+\begin{equation}\label{wen-innerpdt}
 \langle \cdot, \cdot \rangle _\mathcal{H} = \langle \cdot, \cdot \rangle _{L^2(M)} + c \langle \cdot, \cdot \rangle _{L^2(\partial M)}
 \end{equation}
 In order to have a self-adjoint operator, we define $\Delta$ on the domain
@@ -30,116 +30,7 @@ For $\Phi = (\phi, \phi_|), \Psi = (\psi, \psi_|) \in \mathcal{H}$,
 + (\phi^\dagger\vert_{\partial M} - \phi_|^\dagger)\mathcal{P}_+ \gamma^0 \psi\vert_{\partial M}
 \end{split}
 \end{equation}
-The residual term of the last line vanishes if and only if $\mathcal{P}_-\big(\psi \vert_{\partial M} - \psi_|\big) = 0$, which shows the self-adjointness of $\Delta$. \\
-We will discuss two simple cases, $M = \mathbb{R}^{d-1} \times \mathbb{R}_+$ at first and $M = \mathbb{R}^{d-1} \times [-L, L]$ later in this section. 
-\begin{proposition}
-Let $M = \mathbb{R}^{d-1} \times \mathbb{R}_+$. $\Delta$ is a self-adjoint operator with spectrum $\mathbb{R}$
-\end{proposition}
-\begin{proof}
-The self-adjointness being proven, let us find the eigenvectors and eigenvalues of $\Delta$. Let $k$ an eigenvalue of $\Delta$ and $\Phi_k = (\phi_k, \phi_{| k})$. Then
-\begin{equation}\label{wen-motion2}
-\begin{cases}
-i \gamma^0 \gamma^j \partial_j \phi_k = k \phi_k \\
--c^{-1} \gamma^0 \mathcal{P}_- \phi\vert_{\partial M} + i \gamma^0 \gamma^a \partial_a \mathcal{P}_+ \phi_{| k} = k \phi_{| k}
-\end{cases}
-\end{equation}
-Since for all vector $\psi$,
-\begin{equation*}
-(i\gamma^0 \gamma^j\partial_j - k )(i\gamma^0 \gamma^j\partial_j + k )\psi = 
-(- \partial^j\partial_j - k^2) \psi = 0
-\end{equation*}
-has plane wave solutions, 
-the family
-\begin{equation*}
-\begin{split}
-\phi_n = & (i\gamma^0\gamma^j\partial_j + k \mathbb{1}) e^{-ip_a x^a }(A\cos p_\bot x^\bot + B \sin p_\bot x^\bot) \psi_n \\
- = &\gamma^0\gamma^a p_a (A \cos p_\bot x^\bot + B \sin p_\bot x^\bot)e^{-ip_a x^a}
-+ i\gamma^0\gamma^\bot p_\bot (-A \sin p_\bot x^\bot + B \cos p_\bot x^\bot) e^{-ip_a x^a} \\
-& + k \mathbb{1} e^{-ip_a x^a}(A\cos p_\bot x^\bot + B \sin p_\bot x^\bot)  \\
-\end{split}
-\end{equation*}
-with $p_j$ satisfying
-\begin{equation*}
-- p^j p_j = k^2
-\end{equation*}
-forms a basis for the solution of the first equation of \cref{wen-motion}. 
-The constants $A$ and $B$ will be determined by the second equation of \cref{wen-motion} and the boundary condition. 
-The only constraint on $\psi_n$ is that $\psi_n$ should not be in $\ker( \gamma^0 \gamma^j p_j + k \mathbb{1})$. 
-\footnote{
-As 
-$(\gamma^0\gamma^j p_j + k \mathbb{1})^2 = (\gamma^j p_j + k\mathbb{1})^2 
-= k^2 - (p_j)^2= 0$, 
-$\gamma^0 \gamma^j p_j + k \mathbb{1}$
-is nilpotent and its kernel is not reduced to $\{ 0 \}$
-} 
-Since we have projectors $\mathcal{P}_\pm$, 
-it is natural to take the basis of the representation space as the union of an orthonormal basis $\mathfrak{B}_+$ of $\ran(\mathcal{P}_+)$ and an orthonormal basis $\mathfrak{B}_-$ of $\ran(\mathcal{P}_-)$. \\\\
-Considering the second equation and the condition that an element of $\dom(\Delta)$ should satisfy, one gets
-\begin{equation}\label{wen-boundary}
-\begin{split}
-& \mathcal{P}_+\phi\vert_{\partial M} = \mathcal{P}_+ \phi_| \\
-& -c^{-1} \gamma^0 \mathcal{P}_- \phi\vert_{\partial M} + i\gamma^0\gamma^a\partial_a \mathcal{P}_+\phi\vert_{\partial M} = k \mathcal{P}_+ \phi_| 
-\end{split}
-\end{equation}
-which implies
-\begin{equation}\label{wen-boundary2}
--c^{-1} \gamma^0 \mathcal{P}_-(\phi\vert_{\partial M}) = 
-\mathcal{P}_+(k\phi\vert_{\partial M} - i\gamma^0\gamma^a\partial_a\mathcal{P}_+(\phi\vert_{\partial M})) = 
-i\gamma^0\mathcal{P}_-(\gamma^\bot\partial_\bot \phi\vert_{\partial M})
-\end{equation}
-We compute
-\begin{equation*}
-\begin{split}
-\partial_\bot \phi \vert_{\partial M} = 
-\big(\gamma^0\gamma^a p_a e^{-i_a x^a} p_\bot B - i\gamma^0\gamma^\bot p_\bot^2 A + k\mathbb{1}e^{-ip_a x^a}\big) \psi
-\end{split}
-\end{equation*}
-Hence, \cref{wen-boundary} implies
-\begin{equation}\label{wen-projected}
-\mathcal{P}_- \Big( (\gamma^0 \gamma^a p_a + k\mathbb{1})(c^{-1} A - p_\bot B)
--\gamma^0 p_\bot(c^{-1} B + p_\bot A) \Big) \psi = 0
-\end{equation}
-Let $\psi = e_+ + e_-$ where $e_\pm \in \ran({P}_\pm)$.
-\cref{wen-projected} implies
-\begin{equation}\label{wen-projected2}
-(\gamma^a p_a + k\mathbb{1})(c^{-1}A - p_\bot B) e_- - \gamma^0 p_\bot(c^{-1}B + p_\bot A) e_+ = 0
-\end{equation}
-As previously mentioned,
-one can naturally consider the elements of the basis $\mathfrak{B}_+ \cap \mathfrak{B}_-$.
-The four possible cases are discussed
-\paragraph{Case 1 : $\psi \in \mathfrak{B}_-$ and $p_\bot \neq 0$} 
-By \cref{wen-projected2}
-\begin{equation*}
-(\gamma^a p_a + k\gamma^0)(c^{-1}A - p_\bot B) \psi = 0
-\end{equation*}
-Now, since 
-\begin{equation*}
-(\gamma^a p_a + k\gamma^0)^2 = ( k^2 - p^a p_a ) \mathbb{1}= p^\bot p_\bot \mathbb{1} \neq 0
-\end{equation*}
-we must have 
-\begin{equation*}
-c^{-1} A = p_\bot B
-\end{equation*}
-\paragraph{Case 2 : $\psi \in \mathfrak{B}_-$ and $p_\bot = 0$}
-In order to have non-trivial solution, 
-we must have $A \neq 0$. 
-In this case, 
-\cref{wen-projected2} implies 
-\begin{equation*}
-(\gamma^a p_a + k \mathbb{1})\psi = 0
-\end{equation*}
-which again leads to trivial solution. 
-This case should thus be discarded.
-\paragraph{Case 3 : $\psi \in \mathfrak{B}_+$ and $p_\bot \neq 0$}
-We get 
-\begin{equation*}
-c^{-1} B + p_\bot A = 0
-\end{equation*}
-\paragraph{Case 4 : $\psi \in \mathfrak{B}_+$ and $p_\bot = 0$}
-The constants $A$ and $B$ can be chosen arbitarily in this case. \\\\
-The above discussion indicates that for any $k \in \mathbb{R}$, 
-we can find normalisable eigenvectors of $\Delta$ with eigenvalue $k$.
-\end{proof}
+The residual term of the last line vanishes if and only if $\mathcal{P}_+\big(\psi \vert_{\partial M} - \psi_|\big) = 0$, which shows the self-adjointness of $\Delta$. \\\\
 One can wonder if the problem has unique smooth solution which propagates casually, \ie depending only on the initial data of a Cauchy surface. \\
 Let us determine $\dom (\Delta^k)$ now. 
 To start, for $k =2$, 
@@ -343,10 +234,9 @@ Noticing that
 \big\|\Delta^m \Phi(0) \big\|
 \end{equation*}
 we would like to prove the following proposition as in~\cite{Zahn2016}
-%TODO define new inner products
-\begin{proposition}
+\begin{proposition}\label{wen-propcau}
 Let $\Sigma_0$ and $\Sigma_1$ two equal-time surfaces. 
-Then, for $\Phi = (\phi, \phi_|) \in \mathcal{K}$ any solution of \cref{wen-maineq} for the initial data $(\phi_0, \phi_{|0})$ on a Cauchy surface $\mathcal{S}_0 \in \Sigma_0$,
+Then, for $\Phi = (\phi, \phi_|) \in \mathcal{K}$ any smooth solution of \cref{wen-maineq} for smooth initial data $(\phi_0, \phi_{|0}) \in C^\infty(M) \times C^\infty(\partial M)$ on a Cauchy surface $\mathcal{S}_0 \in \Sigma_0$,
 the following relation holds
 \begin{equation}\label{wen-causal}
 \big\| \frac{\partial}{\partial t} \Phi \big\|_{\mathcal{H}(\mathcal{S}_1)}^2
@@ -356,11 +246,16 @@ the following relation holds
 for any $\mathcal{S}_1 \in D^+(\mathcal{S}_0)\cap\Sigma_1$, where $D^+(\mathcal{S}_0)$ is the future domain of dependence of $\mathcal{S}_0$.
 \end{proposition}
 \begin{proof}
-As in~\cite{Zahn2016} we introduce the following tensors
+As in~\cite{Zahn2016} we introduce the following quantities
 \footnote{
-Here we treat componentwisely $\phi$ instead of considering it as a spinor field. 
-Hence, $\phi$ is treated as a scalar field in the tensor expressions. 
-In effect, this could be proven pertinent as we only use d'Alembertian operators in the following computation, which do not mix the components of $\phi$.
+These quantities are not tensors because the $\phi$s are spinor fields. 
+Under all change of frame of reference
+\begin{equation*}
+T_{\mu'\nu'} \neq \Lambda^\mu_{\enskip \mu'}\Lambda^\nu_{\enskip \nu'}T_{\mu \nu} 
+\end{equation*}
+where $\Lambda$ is the element of the Lorentz group corresponding to the change of frame.
+However, 
+this will not affect our proof since we are not going to use tensor properties directly in the following.
 }
 \begin{equation*}
 \begin{split}
@@ -405,7 +300,9 @@ c^{-1}(\mathcal{P}_-\phi^\dagger\vert_{\partial M}) \partial_\beta\mathcal{P}_- 
 \end{split}
 \end{equation*}
 on-shell. \\\\
-One can easily verify that $T_{\mu\nu}$ and $T_{| \alpha\beta}$ satisfy the dominant energy condition, \ie for a time-like vector $\xi$
+One can easily verify that $T_{\mu\nu}$ and $T_{| \alpha\beta}$ satisfy the dominant energy condition, \ie for a time-like vector $\xi$ \footnote{
+Even though these are not tensors, their positivities could still be ensured by the presence of the products of conjugate quantities.
+}
 \begin{equation*}
 \begin{split}
 T_{\mu\nu} \xi^\mu \xi^\nu \geq 0 \quad \mathrm{ and }\quad
@@ -431,10 +328,27 @@ By the dominant energy condition,
 $T_{\mu 0 }\geq 0$ and $T_{\alpha 0 }\geq 0$. 
 We obtain \cref{wen-causal} by replacing $T_{00}$ and $T_{| 00}$ by their expression in terms of $\phi$
 \end{proof}
-
-
-
-
+We introduce the norm
+\begin{equation*}
+\| \cdot \|_{\mathcal{H}^k(M)} = \| \Delta^k \cdot \|_{\mathcal{H}(M)}
+\end{equation*}
+which enables us to conclude on the causal propagation.
+\begin{proposition}
+Let $k \in \mathbb{N}^*$
+With the same notations and the same conditions as in \cref{wen-propcau}, 
+%the smooth solution $\Phi$ exists and is unique. 
+%In addition, 
+the smooth solution $\Phi$ depends continuously on the initial data $(\phi, \phi_|)$ in the sense that
+\begin{equation*}
+\big\| \frac{\partial^k}{\partial t^k} \Phi\big\|_{\mathcal{H}(\mathcal{S}_1)}
+\leq
+\big\| \Phi\big\|_{\mathcal{H}^{k}(\mathcal{S}_0)}
+\end{equation*}
+\end{proposition}
+We will discuss two simple cases, $M = \mathbb{R}^{d-1} \times \mathbb{R}_+$ at first and $M = \mathbb{R}^{d-1} \times [-L, L]$ later in this section. 
+%%%%%%%
+\input{data/chap-wentzell/subsect-saw1}
+\input{data/chap-wentzell/subsect-saw2}
 
 
 
