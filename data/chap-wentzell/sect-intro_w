@@ -81,7 +81,8 @@ Finally, by the Hermicity of $\mathcal{P}_{\pm}$, we have
 which shows the two projectors are orthogonal.
 \end{proof}
 As a result, \cref{wen-proj} ensures that the projectors $\mathcal{P}_\pm$ are not identically null and that the projection spaces by both projectors are of equal dimension. 
-Thus, one can define an operator $\Delta$ on the     %TODO On what?
+Thus, one can define an operator $\Delta$ 
+%TODO specify the bundle structure in which \phi_| lives (\phi_|: \partial M \rightarrow 
 \begin{equation}
 \Delta = \begin{pmatrix}
 i \gamma^0 \gamma^j \partial_j  & 0 \\
