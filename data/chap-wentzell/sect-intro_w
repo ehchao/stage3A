@@ -40,7 +40,8 @@ We have
 1 - i\gamma^\bot = 
 \begin{pmatrix} 2 & 0 \\ 0 & 0\end{pmatrix} = 2 \mathcal{P}
 \end{equation*}
-where $\mathcal{P}$ is one of the chiral projectors.
+where $\mathcal{P}$ is one of the chiral projectors. 
+It seems pertinent to chose an Hermitian representation for $\gamma^0$ to ensure the Hermiticity of the Hamiltonian~\cref{wen-maineq} as proposed in~\cite{Pal2015}.
 In order to define the domain of the Hamiltonian of the problem, the following lemma is needed 
 \begin{lemma}\label{wen-proj}
 Let $\gamma^\mu$ a set of generator of a Clifford Algebra in $d$-dimension. 
@@ -60,7 +61,10 @@ j^\mu
 = \psi^\dagger(\gamma^\mu)^\dagger (\gamma^0)^\dagger \psi
 =  (j^\mu)^\dagger
 \end{equation*}
-%TODO to be continued for the hermiticity
+which implies, for $j \neq 0$
+\begin{equation*}
+(\gamma^j)^\dagger = \gamma^0\gamma^j\gamma^0 = -\gamma^j
+\end{equation*}
 For any spatial component $j$, we define $\mathcal{P}_\pm = \frac{1}{2}(1 \pm i\gamma^j)$.
 Obviously, $\mathcal{P}_\pm$ are Hermitian since
 \begin{equation*}
@@ -82,7 +86,6 @@ which shows the two projectors are orthogonal.
 \end{proof}
 As a result, \cref{wen-proj} ensures that the projectors $\mathcal{P}_\pm$ are not identically null and that the projection spaces by both projectors are of equal dimension. 
 Thus, one can define an operator $\Delta$ 
-%TODO specify the bundle structure in which \phi_| lives (\phi_|: \partial M \rightarrow 
 \begin{equation}
 \Delta = \begin{pmatrix}
 i \gamma^0 \gamma^j \partial_j  & 0 \\
