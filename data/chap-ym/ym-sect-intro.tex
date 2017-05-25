@@ -1,0 +1,19 @@
+\section{Motivation}
+It is curious to know if the system studied in~\cref{chap-wentzell} can be coupled with a gauge field by Yang-Mills theory. 
+We start by investigate the equations of motion (field part) derived from the following action
+\begin{equation*}
+\mathcal{S}_{YM} = -\frac 1 4 \int_M F^{\mu\nu} F_{\mu\nu} 
+-\int_{\partial M} \frac 1 4 c\ \bar{F}^{\alpha\beta} \bar{F}_{\alpha\beta} - \bar{A}_\alpha \grad^\alpha A^{\bot} 
+\end{equation*}
+As suggested in the litterature, 
+%TODO +ref
+we choose to work with the temporal gauge ($A_0 = 0$). 
+We get the following system of linearized equations by applying variational method to the action
+\begin{equation}
+\begin{split}
+& \partial_0 A = E, \quad \partial_0 E = \delta A_{df} \\
+& \partial_0 \bar{A} = \bar{E} , \quad \partial \bar{E} = \delta \bar{A}_{df} - c^{-1}\partial_\bot A\vert_{\partial M}
+\end{split}
+\end{equation}
+where the Helmholtz-Hodge decomposition is used and $df$ means the divergence-free part.
+%TODO add reference and more precisions.
