@@ -1,0 +1,54 @@
+\section{Equation of motion}
+Let us now derive the equations of motion from the action~\cref{ym-action}.
+A variation $A \rightarrow A + \delta A$ leads to $\mathcal{S}_{YM} \rightarrow \mathcal{S}_{YM} + \delta\mathcal{S}_{YM}$ where
+%
+\begin{equation*}
+\begin{split}
+\delta \mathcal S_{YM} = & -\frac 1 2 \Big(
+ \langle \dd \delta A, \dd A \rangle_{L^2(M)} + 
+ \langle \dd \delta A , A\wedge A \rangle_{L^2(M)} + 
+ \langle \dd A , \delta A\wedge A \rangle_{L^2(M)} + 
+ \langle \dd A , A\wedge \delta A \rangle_{L^2(M)}  \\ & + 
+ c (\langle \dd \delta A, \dd A \rangle_{L^2(\partial M)}+
+ \langle \dd \delta A , A\wedge A \rangle_{L^2(\partial M)} + 
+ \langle \dd A , \delta A\wedge A \rangle_{L^2(\partial M)} + 
+ \langle \dd A , A\wedge \delta A \rangle_{L^2(\partial M)}  
+ )
+ \Big) \\
+ %
+ \underset{\textrm{\cref{ym-stokes}}}{=} & - \frac{1}{2} \Big(
+ \langle \delta A_t, \dd A_n \rangle_{L^2(\partial M)} -
+ \langle \delta A, \dd^c (\dd A + A\wedge A) \rangle_{L^2(M)} + 
+ \langle \dd A + A \wedge A, \delta A \wedge A \rangle_{L^2(M)} \\ & -
+ \langle \delta A, \dd^c (\dd A + A\wedge A) \rangle_{L^2(\partial M)} + 
+ \langle \dd A + A \wedge A, \delta A \wedge A \rangle_{L^2(\partial M)}
+ \Big) \\
+ %
+\underset{\textrm{\cref{ym-wedge}}}{=} & \frac 1 2 \Big(
+\langle \delta A, (\dd^c + [A, \cdot ])(\dd A+ A \wedge A) \rangle_{L^2(M)} \\ &+
+c \big(- c^{-1}\langle \delta A_t, \dd A_n \rangle_{L^2(\partial M)} +
+\langle \delta A, (\dd^c + [A, \cdot ])(\dd A+ A \wedge A) \rangle_{L^2(\partial M)} \big)
+\Big)
+\end{split}
+\end{equation*}
+Motivated by this computation, we propose to study the following system of equations of motion
+\begin{equation}\label{ym-motion1}
+\begin{cases}
+\partial^\mu F_{\mu\nu} + [A^\mu, F_{\mu\nu}] = 0 \quad\textrm{ in $M$}\\
+%
+\partial^\alpha \bar F_{\alpha\beta} + [\bar A^\alpha, \bar F_{\alpha\beta}] =  
+ -c^{-1} \bar F_{\nu\beta} n^\nu
+\quad\textrm{ on $\partial M$}
+\end{cases}
+\end{equation}
+where the quantities with bar live on the boundary and $n$ is the unit in-coming vector normal to $\partial M$\\
+Compared to the original work of C.N. Yang and R. L. Mills~\cite{Yang1954}, there is a supplementary source term for the equation of motion on the boundary due to the field of the bulk.\\
+Let us now choose a 
+
+
+
+
+
+
+
+
