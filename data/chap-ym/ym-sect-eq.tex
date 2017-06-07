@@ -37,15 +37,15 @@ To compute the codifferential of 2-forms, the dimension of the space should be t
 \begin{split}
 \dd^c F_{\mu\nu} \dd x^\mu \wedge \dd x^\nu = & (-1)^{d+3} \star \dd \star (F_{\mu\nu} \dd x^\mu \wedge \dd x^\nu ) \\
 %
-= & \frac{(-1)^{d+3}}{2 d!} \star \dd \Big( F_{\mu\nu} \varepsilon^{\mu\nu}_{\enskip \lambda_1\cdots \lambda_{d}} \bigwedge_{i} \dd x^{\lambda_i} \Big) \\
+= & \frac{(-1)^{d+3}}{2 (d-1)!} \star \dd \Big( F_{\mu\nu} \varepsilon^{\mu\nu}_{\enskip \lambda_1\cdots \lambda_{d-1}} \bigwedge_{i} \dd x^{\lambda_i} \Big) \\
 %
-= & \frac{(-1)^{d+1}}{2d !} \star \Big( \partial_\sigma F_{\mu\nu} \varepsilon^{\mu\nu}_{\enskip \lambda_1\cdots \lambda_{d}} \enskip \dd x^\sigma\wedge \big(\bigwedge_{i} \dd x^{\lambda_i} \big)  \Big) \\
+= & \frac{(-1)^{d+1}}{2 (d-1)!} \star \Big( \partial_\sigma F_{\mu\nu} \varepsilon^{\mu\nu}_{\enskip \lambda_1\cdots \lambda_{d-1}} \enskip \dd x^\sigma\wedge \big(\bigwedge_{i} \dd x^{\lambda_i} \big)  \Big) \\
 %
-= & \frac{1}{2d !} \star \Big( \partial_\sigma F_{\mu\nu} \varepsilon^{\mu\nu}_{\enskip \lambda_1\cdots \lambda_{d}} \enskip \big(\bigwedge_{i} \dd x^{\lambda_i} \big) \wedge \dd x^\sigma \Big) \\
+= & \frac{1}{2(d-1)!} \star \Big( \partial_\sigma F_{\mu\nu} \varepsilon^{\mu\nu}_{\enskip \lambda_1\cdots \lambda_{d-1}} \enskip \big(\bigwedge_{i} \dd x^{\lambda_i} \big) \wedge \dd x^\sigma \Big) \\
 %
-= & \frac{1}{2(d+1)!d !} \enskip  \partial^\sigma F_{\mu\nu} \varepsilon^{\mu\nu}_{\enskip \lambda_1\cdots \lambda_{d}} \varepsilon^{\lambda_1 \cdots\lambda_d}_{\enskip\enskip\enskip\enskip \sigma\eta} \enskip \dd x^\eta \\
+= & \frac{1}{2(d-1)!d !} \enskip  \partial^\sigma F_{\mu\nu} \varepsilon^{\mu\nu}_{\enskip \lambda_1\cdots \lambda_{d-1}} \varepsilon^{\lambda_1 \cdots\lambda_d}_{\enskip\enskip\enskip\enskip \sigma\eta} \enskip \dd x^\eta \\
 %
-= & \partial^\mu F_{\mu\nu} \dd x^\nu
+= & - \partial^\mu F_{\mu\nu} \dd x^\nu
 \end{split}
 \end{equation*}
 Motivated by this computation, we propose to study the following system of equations of motion
@@ -54,7 +54,7 @@ Motivated by this computation, we propose to study the following system of equat
 \partial^\mu F_{\mu\nu} +  [A^\mu, F_{\mu\nu}] = 0 \quad\textrm{ in $M$}\\
 %
 \partial^\alpha \bar F_{\alpha\beta} +  [\bar A^\alpha, \bar F_{\alpha\beta}] = 
- c^{-1} F_{\nu\beta}n^\nu
+ - c^{-1} F_{\nu\beta}n^\nu
 \quad\textrm{ on $\partial M$}
 \end{cases}
 \end{equation}
@@ -68,14 +68,14 @@ We can split~\cref{ym-motion1} into the dynamical system
 \partial_0 A_i = E_i \\
 \partial_0 E_i =  \partial_j F_{ji} - [A_j, F_{ji}] \\
 \partial_0 \bar A_a = \bar E_a \\
-\partial_0 \bar E_a =  \partial_b \bar F_{ba} -  [\bar A_b, \bar F_{ba}] + c^{-1} F_{\nu a} n^\nu \\
+\partial_0 \bar E_a =  \partial_b \bar F_{ba} -  [\bar A_b, \bar F_{ba}] - c^{-1} F_{\nu a} n^\nu \\
 \end{cases}
 \end{equation}
 and the constraint equation
 \begin{equation}\label{ym-const}
 \begin{cases}
 \partial_i E_i  = - [A^i, E_i] \\
-\partial_a \bar E_a = - [\bar A_a , \bar E_a]  + c^{-1} E_{b}n^b
+\partial_a \bar E_a = - [\bar A_a , \bar E_a]  - c^{-1} E_{b}n^b
 \end{cases}
 \end{equation}
 Before defining the Hamiltonian of the system, we have to ensure that if a data $(A, E, \bar A, \bar E)$ satisfies~\cref{ym-const} at a given moment and is a solution of~\cref{ym-dyn}, then its evolution will always satisfy~\cref{ym-const}.
