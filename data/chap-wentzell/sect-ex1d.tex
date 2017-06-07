@@ -1,0 +1,68 @@
+\section{Solution for $M = \mathbb R \times [-L, L]$ }
+We give an explicit example to see how this boundary condition can affect the solution. 
+In particular, we calculte the vacuum polarization by using the method introduced in~\cref{chap-vacuum}\\\\
+We choose for this example
+\begin{equation*}
+\gamma^0 = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \quad
+\gamma^1 = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}
+\end{equation*}
+We then have 
+\begin{equation*}
+\mathcal{P}_\pm = \begin{pmatrix} 1 & \mp i \\ \pm i & 1 \end{pmatrix}
+\end{equation*}
+Let $\Phi = (\phi, \phi_|)$ where $\phi = \begin{pmatrix} \phi_L \\ \phi_R \end{pmatrix}$ be a solution of~\cref{wen-maineq}. 
+It is easy to verify that $\phi_L$ and $\phi_R$ are of form
+\begin{equation*}
+\phi_L = f e^{ik(x^0 - x^1)} \quad
+\phi_R = g e^{ik(x^0 + x^1)}
+\end{equation*}
+where $f, g\in\mathbb C$ are constants which have to be determined. \\\\
+By the discussion in~\cref{wen-subsect-saw2} and~\cref{wen-saw2bound}, $\phi$ must satisfy
+\begin{equation*}
+\begin{cases}
+\begin{pmatrix} 1 & i \\ -i & 1 \end{pmatrix}(c^{-1} \phi - \partial_1 \phi)\vert_{x^1 = -L} = 0 \\
+%
+\begin{pmatrix} 1 & -i \\ i & 1 \end{pmatrix}(c^{-1} \phi + \partial_1 \phi)\vert_{x^1 = L} = 0
+\end{cases}
+\end{equation*}
+In terms of components, this system of equations is equivalent to
+\begin{equation*}
+\begin{cases}
+f(c^{-1} + ik)e^{ikL} + ig(c^{-1} - ik)e^{-ikL} = 0 \\
+f(c^{-1} - ik)e^{-ikL} - ig(c^{-1}+ ik) e^{ikL} = 0
+\end{cases}
+\end{equation*}
+\ie
+\begin{equation}\label{wen-bound1d}
+\begin{cases}
+f = -ig \frac{(c^{-1} - ik)e^{-ikL}}{(c^{-1} + ik) e^{ikL}} \\
+%
+(c^{-1} - ik)^2 e^{-2ikL} + (c^{-1}+ik)^2 e^{2ikL} = 0
+\end{cases}
+\end{equation}
+The second equation of~\cref{wen-bound1d} implies
+\begin{equation}\label{wen-k1d1}
+2kL + 2\arctan{ck} = \big( n +\frac 1 2 \big) \pi \quad\textrm{for $n \in \mathbb Z$}
+\end{equation}
+A solution of~\cref{wen-k1d1} should satisfy
+\begin{equation}\label{wen-mode1d}
+\exists n\in \mathbb{Z}\quad
+kL - \big(\frac{n}{2} + \frac 1 4 \big) \pi \in \big[-\frac{\pi}{2}, \frac{\pi}{2}\big] \quad
+\tan\Big( \big(\frac{n}{2}+\frac 1 4 \big)\pi -kL \Big) = ck
+\end{equation}
+It is easy to show that this correspond to~\cref{wen-tan}.
+Since for a given $n$, we can prove that there exists a unique $k$ verifying~\cref{wen-mode1d}\footnote{
+For a given $n$, 
+\begin{equation*}
+\tan \theta = \frac c L \Big( -\theta + \big( \frac n 2 + \frac 1 4 \big)\Big)
+\end{equation*}
+has a unique solution for $\theta \in \enskip] -\frac{\pi}{2}, \frac{\pi}{2}[$
+}
+, we denote $k_n$ for the mode corresponding to $n$.
+
+
+
+
+
+
+

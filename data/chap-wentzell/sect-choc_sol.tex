@@ -5,8 +5,8 @@ In addition, the sign of $c$ makes some solutions of \cref{wen-maineq} physicall
 The example that we are going to examine here is a shock wave solution of \cref{wen-maineq} in a $2+1$-dimensional bulk $M = \mathbb{R}^{1,1}\times\mathbb{R}_+$, given by
 \begin{equation}\label{wen-shock}
 \phi = \begin{pmatrix}
-i \big(\delta(x^0 - x^2) + \delta(x^0 + x^2) + 4c^{-1}\Theta(x^0-x^2)e^{- \frac{x^0-x^2}{c}} \big) \\
-\delta({x^0 - x^2}) - \delta(x^0 + x^2) + 4c^{-1}\Theta(x^0-x^2)e^{- \frac{x^0-x^2}{c}} \end{pmatrix}
+i \big(\delta(x^0 - x^2) + \delta(x^0 + x^2) - 4c^{-1}\Theta(x^0-x^2)e^{- \frac{x^0-x^2}{c}} \big) \\
+\delta({x^0 - x^2}) - \delta(x^0 + x^2) - 4c^{-1}\Theta(x^0-x^2)e^{- \frac{x^0-x^2}{c}} \end{pmatrix}
 \end{equation}
 The boundary is given by $\partial M = \{x^2 = 0\}$ \\
 In this section, we choose the following representation for the Clifford Algebra
@@ -22,7 +22,7 @@ In order to specify in which sense \cref{wen-shock} is a solution of \cref{wen-m
 Specifically to this discussion, 
 we take
 \begin{equation*}
-\mathcal{D} = \Big\{\eta \in C^{\infty}_0(M, \mathbb{C}^2) \enskip\big\vert \enskip c^{-1}\gamma^0\mathcal{P}_-\eta\vert_{\partial M} + i\gamma^0\gamma^1\partial_1\mathcal{P}_+\eta\vert_{\partial M}= i\gamma^ 0\partial_0\mathcal{P}_+\eta\vert_{\partial M} \Big\}
+\mathcal{D} = \Big\{\eta \in C^{\infty}_0(M, \mathbb{C}^2) \enskip\big\vert \enskip -c^{-1}\gamma^0\mathcal{P}_-\eta\vert_{\partial M} + i\gamma^0\gamma^1\partial_1\mathcal{P}_+\eta\vert_{\partial M}= i\partial_0\mathcal{P}_+\eta\vert_{\partial M} \Big\}
 \end{equation*}
 for the space of test functions. 
 Then, for any function $f \in W^{0,2}(M, \mathbb{C}^2)$, we define the corresponding distribution $T_f$ by
@@ -53,7 +53,7 @@ Let
 \begin{split}
 & \psi = \big(\Theta(x^0 - x^2) + \Theta(x^0 + x^2) \big) 
 \begin{pmatrix} 1 \\ 0 \end{pmatrix} 
-- 4\big(-1+ e^{-\frac{x^0 - x^2}{c}}\big)\Theta(x^0-x^2)\begin{pmatrix} 1 \\ i \end{pmatrix}. \\
++ 4\big(-1+ e^{-\frac{x^0 - x^2}{c}}\big)\Theta(x^0-x^2)\begin{pmatrix} 1 \\ i \end{pmatrix}. \\
 \end{split}
 \end{equation*}
 $\psi$ being a solution of the wave equation $\Box \psi = 0$,
@@ -66,12 +66,12 @@ Then, by taking $\phi = i(\partial_0 + \gamma^0\gamma^j\partial_j)\psi$, we have
 i\Bigg(\mathbb{1}\partial_0 + \begin{pmatrix} 0 &-i \\ i &0\end{pmatrix}\partial_2  \Bigg)\psi \\
 \underset{\textrm{\cref{wen-lem}}}{=}&
 i\Bigg( \delta(x^0 + x^2)\begin{pmatrix} 1 & -i \\ i & 1 \end{pmatrix} \begin{pmatrix}1 \\ 0 \end{pmatrix}
-+ \big( \delta(x^0 - x^2) + 4c^{-1} e^{-\frac{x^0-x^2}{c}}\Theta(x^0-x^2)\big)
++ \big( \delta(x^0 - x^2) - 4c^{-1} e^{-\frac{x^0-x^2}{c}}\Theta(x^0-x^2)\big)
 \begin{pmatrix} 1 & i \\ -i & 1 \end{pmatrix} \begin{pmatrix}1 \\ 0 \end{pmatrix} \Bigg) \\
 = &
 \begin{pmatrix}
-i \big(\delta(x^0 - x^2) + \delta(x^0 + x^2) + 4c^{-1}e^{- \frac{x^0-x^2}{c}}\Theta(x^0-x^2) \big) \\
-\delta({x^0 - x^2}) - \delta(x^0 + x^2) + 4c^{-1}e^{- \frac{x^0-x^2}{c}}\Theta(x^0-x^2) \end{pmatrix}
+i \big(\delta(x^0 - x^2) + \delta(x^0 + x^2) - 4c^{-1}e^{- \frac{x^0-x^2}{c}}\Theta(x^0-x^2) \big) \\
+\delta({x^0 - x^2}) - \delta(x^0 + x^2) - 4c^{-1}e^{- \frac{x^0-x^2}{c}}\Theta(x^0-x^2) \end{pmatrix}
 \end{split}
 \end{equation*}
 where the derivatives here are taken in the usual weak sense.
@@ -80,9 +80,9 @@ $\int_M \phi^\dagger (i \mathbb{1}\partial_0 + i\gamma^0\gamma^j\partial_j)\eta 
 Let $\eta = \begin{pmatrix} \eta_1 \\ \eta_2\end{pmatrix} \in \mathcal{D}$. 
 Then
 \begin{equation*}
-c^{-1 }\gamma^0\mathcal{P}_-\eta\vert_{\partial M} + i\gamma^0\gamma^1\partial_1\mathcal{P}_+\eta\vert_{\partial M } = i\partial_0\eta\vert_{\partial M}
+-c^{-1 }\gamma^0\mathcal{P}_-\eta\vert_{\partial M} + i\gamma^0\gamma^1\partial_1\mathcal{P}_+\eta\vert_{\partial M } = i\mathcal{P}_+\partial_0\eta\vert_{\partial M}
 \quad\Leftrightarrow\quad
-c^{-1}\eta_1\vert_{x^2 = 0} = i\partial_t\eta_2\vert_{x^2 = 0}
+-c^{-1}\eta_1\vert_{x^2 = 0} = i\partial_t\eta_2\vert_{x^2 = 0}
 \end{equation*}
 Since
 \begin{equation*}
@@ -95,29 +95,29 @@ we have
 \begin{split}
  \int_M \phi^\dagger (i \mathbb{1}\partial_0 + i\gamma^0\gamma^j\partial_j)\eta = & 
  %
-\int_{\mathbb{R}^2\times\mathbb{R}_+}\Big( (\delta(x^0 - x^2) + \delta(x^0+x^2)+4c^{-1}e^{-\frac{x^0-x^2}{c}}\Theta(x^0-x^2)) (\partial_0\eta_1 + i\partial_2\eta_2) \\
-&+ i(\delta(x^0 - x^2) - \delta(x^0+x^2)+4c^{-1}e^{-\frac{x^0-x^2}{c}}\Theta(x^0-x^2)) \big( (\partial_0\eta_2 - i\partial_2\eta_1)\Big) \\
+\int_{\mathbb{R}^2\times\mathbb{R}_+}\Big( (\delta(x^0 - x^2) + \delta(x^0+x^2)-4c^{-1}e^{-\frac{x^0-x^2}{c}}\Theta(x^0-x^2)) (\partial_0\eta_1 + i\partial_2\eta_2) \\
+&+ i(\delta(x^0 - x^2) - \delta(x^0+x^2)-4c^{-1}e^{-\frac{x^0-x^2}{c}}\Theta(x^0-x^2)) \big( (\partial_0\eta_2 - i\partial_2\eta_1)\Big) \\
 %
 \underset{u = \frac{1}{2}(x^0 + x^2), v= \frac{1}{2}(x^0 - x^2)}= &
-2 \int_{\mathbb{R}, -\infty<v<u <\infty} \Big( (\delta(v) + \delta(u)+4c^{-1}e^{-\frac{v}{c}}\Theta(v)) \big( \frac12(\partial_u + \partial_v)\eta_1 + \frac i 2(\partial_u - \partial_v)\eta_2\big) \\
-&+ i(\delta(v) - \delta(u)+4c^{-1}e^{-\frac{v}{c}}\Theta(v)) \big( \frac12(\partial_u + \partial_v)\eta_2 - \frac i 2(\partial_u - \partial_v)\eta_1\big)\Big) \\
+2 \int_{\mathbb{R}, -\infty<v<u <\infty} \Big( (\delta(v) + \delta(u)-4c^{-1}e^{-\frac{v}{c}}\Theta(v)) \big( \frac12(\partial_u + \partial_v)\eta_1 + \frac i 2(\partial_u - \partial_v)\eta_2\big) \\
+&+ i(\delta(v) - \delta(u)-4c^{-1}e^{-\frac{v}{c}}\Theta(v)) \big( \frac12(\partial_u + \partial_v)\eta_2 - \frac i 2(\partial_u - \partial_v)\eta_1\big)\Big) \\
 %
-= &2 \int_{\mathbb{R}, -\infty<v<u <\infty}\Big( \big(\delta(v) \partial_u + \delta(u)\partial_v +4c^{-1}e^{-\frac{v}{c}}\Theta(v)\partial_u)\eta_1 \big)\\
-&+ i (-\delta(u)\partial_v + \delta(v)\partial_u+4c^{-1}e^{-\frac{v}{c}}\Theta(v)\partial_u)\eta_2
+= &2 \int_{\mathbb{R}, -\infty<v<u <\infty}\Big( \big(\delta(v) \partial_u + \delta(u)\partial_v -4c^{-1}e^{-\frac{v}{c}}\Theta(v)\partial_u)\eta_1 \big)\\
+&+ i (-\delta(u)\partial_v + \delta(v)\partial_u-4c^{-1}e^{-\frac{v}{c}}\Theta(v)\partial_u)\eta_2
 \Big)\\ 
 %
-=& 2\int_{\mathbb{R}}\Big( -2i\eta_2 (0,0) - 4c^{-1}\int_{\mathbb{R}_+}e^{-\frac v c }(\eta_1\vert_{x^2 = 0} +\eta_2\vert_{x^2 = 0}) \dd v\Big) \\ 
+=& 2\int_{\mathbb{R}}\Big( -2i\eta_2 (0,0) + 4c^{-1}\int_{\mathbb{R}_+}e^{-\frac v c }(\eta_1\vert_{x^2 = 0} +i \eta_2\vert_{x^2 = 0}) \dd v\Big) \\ 
 %
-\underset{\eta\in \mathcal{D}} =& 2\int_{\mathbb{R}}\Big( -2i\eta_2 (0,0) - 4c^{-1}\int_{\mathbb{R}_+}e^{-\frac v c }(ic \partial_0\eta_2\vert_{x^2 = 0} +\eta_2\vert_{x^2 = 0}) \dd v\Big) \\ 
+\underset{\eta\in \mathcal{D}} =& 2\int_{\mathbb{R}}\Big( -2i\eta_2 (0,0) + 4c^{-1}\int_{\mathbb{R}_+}e^{-\frac v c }(-ic \partial_0\eta_2\vert_{x^2 = 0} +i\eta_2\vert_{x^2 = 0}) \dd v\Big) \\ 
 % 
-=& 2\int_{\mathbb{R}}\Big( -2i\eta_2 (0,0) - 2c^{-1}\int_{\mathbb{R}^2_+}e^{-\frac{x^0-x^2} {c} }\big(ic \partial_0\eta_2 +\eta_2\big)\delta(x^2 = 0) \dd x^0 \dd x^2\Big) \\ 
+=& 2\int_{\mathbb{R}}\Big( -2i\eta_2 (0,0) + 2c^{-1}\int_{\mathbb{R}^2_+}e^{-\frac{x^0-x^2} {c} }\big(-ic \partial_0\eta_2 +i\eta_2\big)\delta(x^2 = 0) \dd x^0 \dd x^2\Big) \\ 
 =& 0
 \end{split}
 \end{equation*}
 \end{proof}
 As a result, 
 \begin{equation*}\Phi = (\phi, \phi_|) \quad \mathrm{with}\quad \phi_| = \mathcal{P}_+ \phi\vert_{\partial M} = 
-\begin{pmatrix} 0 \\ 4c^{-1}e^{- \frac{x^0}{c} \Theta(x^0)} \end{pmatrix}
+\begin{pmatrix} 0 \\ -4c^{-1}e^{- \frac{x^0}{c} \Theta(x^0)} \end{pmatrix}
 \end{equation*}
  is a solution of \cref{wen-maineq} in the sense of distribution extended naturally from \cref{wen-distr}. \\\\
 %The solution in the bulk \cref{wen-shock} can be understood as a prop

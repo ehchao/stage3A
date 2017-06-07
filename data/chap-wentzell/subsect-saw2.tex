@@ -1,4 +1,4 @@
-\subsection{Bulk $M = \mathbb{R}^{d-1} \times [-L, L]$ }
+\subsection{Bulk $M = \mathbb{R}^{d-1} \times [-L, L]$ }\label{wen-subsect-saw2}
 The subtlety that one should beware of in this case is the projectors $\mathcal{P}_+$.
 Since $\mathcal{P}_+$ is defined by considering a set of generators of Clifford Algebra on the tangent bundle $T_{ \partial M}$, 
 if we would like to fixe the system of coordinates once for all,
@@ -12,7 +12,7 @@ We denote $(\gamma^\mu)_\mu$ the set of gamma matrices chosen on $\{x^d  = - L \
 We will have then $\mathcal{P}_+\vert_{\{x^d = L\}} = \mathcal{P}_-\vert_{\{x^d = -L\}}$ and $\gamma^\mu\vert_{\{x^d = L\}}=\gamma^\mu\vert_{\{x^d = -L\}}$ for $\mu\in\llbracket 0, d-1 \rrbracket$
 When it is not specified, we refer to the gamma matrices and the projectors on $\{x^d = -L\}$ \\
 Now, for $\Phi = (\phi, \phi_|)$ the boundary condition becomes
-\begin{equation*}
+\begin{equation}\label{wen-saw2bound}
 \begin{split}
 \begin{cases}
 \mathcal{P}_+ \phi\vert_{\{x^d = -L\}} = \mathcal{P}_+\phi_| \\
@@ -21,7 +21,7 @@ c^{-1}\mathcal{P}_-\phi\vert_{\{x^d = -L\}} = \mathcal{P}_-(\partial_d \phi\vert
 -c^{-1}\mathcal{P}_+\phi\vert_{\{x^d = L\}} = \mathcal{P}_+(\partial_d \phi\vert_{x^d = L}) \\
 \end{cases}
 \end{split}
-\end{equation*}
+\end{equation}
 As \cref{wen-subsect1}, the general solution $\phi$ in the bulk can be written as
 \begin{equation*}
 \phi 
@@ -87,12 +87,12 @@ Idem as in sub-case 1.
 \tan p_d L = \frac{p_d A + c^{-1} B }{p_d B - c^{-1} A} = 
 \frac{p_d B + c^{-1}A}{p_d A- c^{-1} B}
 \quad\Rightarrow\quad
-(p_d ^2 + c^{-2})(A - B )= 0
+(p_d ^2 + c^{-2})(A^2 - B^2 )= 0
 \end{equation*}
 One can easily verify that $p_d = \pm c^{-1}$ can not be solution of the equation. 
-Hence, we have $A = B$ and
+Hence, we have $A = \pm B$ and
 \begin{equation}\label{wen-tan}
-\tan p_d L = \frac{p_d +c^{-1}}{p_d - c^{-1}}
+\tan p_d L = \frac{p_d \pm c^{-1}}{p_d \mp c^{-1}}
 \end{equation}
 Show that
 \begin{equation*}
@@ -132,7 +132,7 @@ This case implies $A = 0$, which is forbidden because it leads to the trivial so
 \cref{wen-tan} becomes
 \begin{equation*}
 \begin{cases}
-(-p_d A - c^{-1} B)\cos p_d L + (p_d B - c^{-1}A)\cos p_d L = 0  \\
+(-p_d A - c^{-1} B)\cos p_d L + (p_d B - c^{-1}A)\sin p_d L = 0  \\
 (-p_d A + c^{-1}B)\sin p_d L + (p_d B + c^{-1} A)\cos p_d L = 0 
 \end{cases}
 \end{equation*}

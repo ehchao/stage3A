@@ -1,6 +1,13 @@
 \section{Introduction}
 The main goal of this work is to generalize the bag boundary condition proposed in~\cite{Chodos1974}
-by introducing the derivatives of the wave function in the boundary condition for any Lorentzian manifold $M$. 
+by introducing the derivatives of the wave function in the boundary condition for a Lorentzian manifold $M$. 
+The boundary $\partial M$ is supposed to be static and we use the Minkowski space-time with signature $(+, -,\ldots, -)$.\footnote{
+The generators of the corresponding Clifford Algebra satisfy 
+\begin{equation*}
+\{ \gamma^\mu, \gamma^\nu \} = \eta^{\mu\nu}
+\end{equation*} 
+where $\eta = \mathrm{diag}(1, -1 ,\ldots, -1)$
+}
 For this purpose, we introduce the following action
 \begin{equation}\label{wen-action}
 \mathcal{S} = \frac{1}{2}i\int_M \bar{\psi} \gamma^\mu \partial_\mu \psi - \partial_\mu \bar{\psi} \gamma^\mu \psi 
@@ -27,29 +34,29 @@ i \partial_0(1 + i\gamma^\bot) \phi = i\gamma^0 \gamma^a \partial_a (1+ i\gamma^
 \end{cases}
 \end{equation}
 Where Latin letters are used to enumerate the spatial components.\\
-One can notice that the boundary condition implies constraints on only a part of components of $\psi$. 
+One can notice that the boundary condition implies constraints on only a part of the components of $\psi$. 
 For instance, for $\dim M = 3$, we can construct the following generator of Clifford Algebra as suggested in~\cite{Polchinski1998}
 \begin{equation*}
 \gamma^0 = i\begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}  \quad
 \gamma^1 = i\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}  \quad
 \gamma^2 = i\begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}  
 \end{equation*}
-Suppose that the normal vector of $\partial M$ is $e_2$ at all point.
+Suppose that the inward normal vector of $\partial M$ is $e_2$ at all point.
 We have
 \begin{equation*}
 1 - i\gamma^\bot = 
 \begin{pmatrix} 2 & 0 \\ 0 & 0\end{pmatrix} = 2 \mathcal{P}
 \end{equation*}
-where $\mathcal{P}$ is one of the chiral projectors. 
-It seems pertinent to chose an Hermitian representation for $\gamma^0$ to ensure the Hermiticity of the Hamiltonian~\cref{wen-maineq} as proposed in~\cite{Pal2015}.
+where $\mathcal{P}$ is one of the chiral projectors on the boundary. 
+It seems pertinent to chose a Hermitian representation for $\gamma^0$ to ensure the Hermiticity of the Hamiltonian~\cref{wen-maineq} as proposed in~\cite{Pal2015}.
 In order to define the domain of the Hamiltonian of the problem, the following lemma is needed 
 \begin{lemma}\label{wen-proj}
-Let $\gamma^\mu$ a set of generator of a Clifford Algebra in $d$-dimension. 
-Then, for all spatial component $j \in \llbracket 1, d-1 \rrbracket$
+Let $\gamma^\mu$ a set of generators of a Clifford Algebra in $d$-dimension and $n_j$ an unit space-like vector.
+Then
 \begin{equation*}
-\mathcal{P}_\pm = \frac{1}{2}(1 \pm i\gamma^j) 
+\mathcal{P}_\pm = \frac{1}{2}(1 \pm i n_j\gamma^j) 
 \end{equation*}
-are orthogonal Hermitian projectors for the usual inner product $\langle \cdot, \cdot \rangle _{L^2(\Omega)}$, where $\Omega$ is a Hilbert space.
+are Hermitian projectors (so orthogonal) for the usual inner product $\langle \cdot, \cdot \rangle _{L^2(\Omega)}$, where $\Omega\subseteq M$.
 \end{lemma}
 \begin{proof}
 In the usual case, we require the current $j^\mu = \bar{\psi} \gamma^\mu \psi $, where $\psi$ is the solution of the Dirac equation (the equation in the bulk of \cref{wen-motion}) to be Hermitian.
@@ -69,34 +76,43 @@ For any spatial component $j$, we define $\mathcal{P}_\pm = \frac{1}{2}(1 \pm i\
 Obviously, $\mathcal{P}_\pm$ are Hermitian since
 \begin{equation*}
 \mathcal{P}_\pm^\dagger = 
-\frac{1}{2}(1 \mp i (\gamma^j)^\dagger)=
-\frac{1}{2}(1 \pm i \gamma^j)
+\frac{1}{2}(1 \mp i (n_j \gamma^j)^\dagger)=
+\frac{1}{2}(1 \pm i n_j \gamma^j)
 \end{equation*}
 It is clear that $(\mathcal{P}_\pm)^{2} = \frac{1}{4}(2\pm 2i \gamma^\bot) = \mathcal{P}_\pm$.
 Furthermore, they have the same rank (equal to the half of the $n$-dimension of the representation space) since $\gamma^0$ is of maximal rank and
 \begin{equation*}
 \gamma^0\mathcal{P}_\pm = \mathcal{P}_\mp\gamma^0
 \end{equation*}
-Finally, by the Hermicity of $\mathcal{P}_{\pm}$, we have
-\begin{equation*}
-\langle \mathcal{P}_- \phi, \mathcal{P}_+ \psi \rangle = 
-\langle \phi, \mathcal{P}_-\mathcal{P}_+ \psi \rangle = 0
-\end{equation*}
-which shows the two projectors are orthogonal.
+%Finally, by the Hermicity of $\mathcal{P}_{\pm}$, we have
+%\begin{equation*}
+%\langle \mathcal{P}_- \phi, \mathcal{P}_+ \psi \rangle = 
+%\langle \phi, \mathcal{P}_-\mathcal{P}_+ \psi \rangle = 0
+%\end{equation*}
+%which shows the two projectors are orthogonal.
 \end{proof}
 As a result, \cref{wen-proj} ensures that the projectors $\mathcal{P}_\pm$ are not identically null and that the projection spaces by both projectors are of equal dimension. 
-Thus, one can define an operator $\Delta$ 
+Thus, one can define an operator $\Delta$ for the problem for $d+1$-dimensional bulk case
 \begin{equation}
 \Delta = \begin{pmatrix}
-i \gamma^0 \gamma^j \partial_j  & 0 \\
--c^{-1} \gamma^0 \mathcal{P}_- \cdot \vert_{\partial M}&  i\gamma^0 \gamma^a \partial_a \mathcal{P}_+
+i \gamma^0 \slashed{\partial}  & 0 \\
+-c^{-1} \gamma^0 \mathcal{P}_- \cdot \vert_{\partial M}&  i\gamma^0 \slashed{\partial}_| \mathcal{P}_+
 \end{pmatrix}
 \end{equation}
-where $j \in \llbracket 1 , d-1 \rrbracket$ and $a \in \llbracket 1 , d-2 \rrbracket$. 
-This notation will be adopted in the following.
-
-
-
+where $\slashed{\partial} = \gamma^j\partial_j$ for
+$j \in \llbracket 1 , d \rrbracket$ and $\slashed{\partial}_| = h^{ab} \gamma_{a} \partial_{b}$ and, by denoting $n_j$ the inward unit vector normal to the boundary $\partial M$,
+\begin{equation*}
+\slashed{\partial}_| = (1 - n_j)\gamma^j\partial_j \quad\mathrm{and}\quad
+\mathcal{P}_\pm = \frac 1 2 (1\pm i n_j\gamma^j)
+\end{equation*}
+For simplicity, we will work on flat boundaries.
+Namely, one can choose $n_j = \delta_{j,d}$ when defining $\partial_|$ and $\mathcal P _\pm$.
+This choice allows us to write down $\slashed{\partial}_|$ in a concise way
+\begin{equation*}
+\slashed \partial_| = \gamma^a\partial_a \quad\mathrm{for}\quad 
+a \in \llbracket 1, \ldots, d-1 \rrbracket
+\end{equation*}
+However, the results are valid in more general case of time-like boundary in Minkowski space-time.
 
 
 
