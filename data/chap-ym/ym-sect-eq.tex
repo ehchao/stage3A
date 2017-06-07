@@ -1,49 +1,102 @@
 \section{Equation of motion}
+Given $M$ a $(d +1)$-dimensional manifold. 
 Let us now derive the equations of motion from the action~\cref{ym-action}.
 A variation $A \rightarrow A + \delta A$ leads to $\mathcal{S}_{YM} \rightarrow \mathcal{S}_{YM} + \delta\mathcal{S}_{YM}$ where
 %
 \begin{equation*}
 \begin{split}
 \delta \mathcal S_{YM} = & -\frac 1 2 \Big(
- \langle \dd \delta A, \dd A \rangle_{L^2(M)} + 
- \langle \dd \delta A , A\wedge A \rangle_{L^2(M)} + 
- \langle \dd A , \delta A\wedge A \rangle_{L^2(M)} + 
- \langle \dd A , A\wedge \delta A \rangle_{L^2(M)}  \\ & + 
- c (\langle \dd \delta A, \dd A \rangle_{L^2(\partial M)}+
- \langle \dd \delta A , A\wedge A \rangle_{L^2(\partial M)} + 
- \langle \dd A , \delta A\wedge A \rangle_{L^2(\partial M)} + 
- \langle \dd A , A\wedge \delta A \rangle_{L^2(\partial M)}  
+ \langle \dd \delta A, \dd A +A\wedge A  \rangle_{L^2(M)} +  
+ \langle \delta A \wedge A, \dd A + A\wedge A \rangle_{L^2(M)} + 
+ \langle A \wedge \delta A , \dd A + A\wedge A \rangle_{L^2(M)}  \\ & + 
+ c (\langle \dd \delta A, \dd A +A\wedge A\rangle_{L^2(\partial M)}+
+ \langle \delta A \wedge A, \dd A + A\wedge A  \rangle_{L^2(\partial M)} + 
+ \langle A \wedge \delta A , \dd A + A\wedge A \rangle_{L^2(\partial M)} 
  )
  \Big) \\
  %
  \underset{\textrm{\cref{ym-stokes}}}{=} & - \frac{1}{2} \Big(
- \langle \delta A_t, \dd A_n \rangle_{L^2(\partial M)} -
+ \langle \delta A_t, (\dd A + A\wedge A)_n \rangle_{L^2(\partial M)} +
  \langle \delta A, \dd^c (\dd A + A\wedge A) \rangle_{L^2(M)} + 
- \langle \dd A + A \wedge A, \delta A \wedge A \rangle_{L^2(M)} \\ & -
+ \langle \delta A \wedge A,  \dd A + A \wedge A \rangle_{L^2(M)} \\ &+
+ \langle A \wedge \delta A,  \dd A + A \wedge A \rangle_{L^2(M)}  +
  \langle \delta A, \dd^c (\dd A + A\wedge A) \rangle_{L^2(\partial M)} + 
- \langle \dd A + A \wedge A, \delta A \wedge A \rangle_{L^2(\partial M)}
+ \langle \delta A \wedge A, \dd A + A \wedge A \rangle_{L^2(\partial M)} \\&+
+ \langle A \wedge \delta A, \dd A + A \wedge A \rangle_{L^2(\partial M)}
  \Big) \\
  %
-\underset{\textrm{\cref{ym-wedge}}}{=} & \frac 1 2 \Big(
+\underset{\textrm{\cref{ym-wedge}}}{=} & - \frac 1 2 \Big(
 \langle \delta A, (\dd^c + [A, \cdot ])(\dd A+ A \wedge A) \rangle_{L^2(M)} \\ &+
-c \big(- c^{-1}\langle \delta A_t, \dd A_n \rangle_{L^2(\partial M)} +
+c \big( c^{-1}\langle \delta A_t, (\dd A + A\wedge A)_n \rangle_{L^2(\partial M)} +
 \langle \delta A, (\dd^c + [A, \cdot ])(\dd A+ A \wedge A) \rangle_{L^2(\partial M)} \big)
 \Big)
+\end{split}
+\end{equation*}
+To compute the codifferential of 2-forms, the dimension of the space should be taken into account. In the bulk, we have
+\begin{equation*}
+\begin{split}
+\dd^c F_{\mu\nu} \dd x^\mu \wedge \dd x^\nu = & (-1)^{d+3} \star \dd \star (F_{\mu\nu} \dd x^\mu \wedge \dd x^\nu ) \\
+%
+= & \frac{(-1)^{d+3}}{2 d!} \star \dd \Big( F_{\mu\nu} \varepsilon^{\mu\nu}_{\enskip \lambda_1\cdots \lambda_{d}} \bigwedge_{i} \dd x^{\lambda_i} \Big) \\
+%
+= & \frac{(-1)^{d+1}}{2d !} \star \Big( \partial_\sigma F_{\mu\nu} \varepsilon^{\mu\nu}_{\enskip \lambda_1\cdots \lambda_{d}} \enskip \dd x^\sigma\wedge \big(\bigwedge_{i} \dd x^{\lambda_i} \big)  \Big) \\
+%
+= & \frac{1}{2d !} \star \Big( \partial_\sigma F_{\mu\nu} \varepsilon^{\mu\nu}_{\enskip \lambda_1\cdots \lambda_{d}} \enskip \big(\bigwedge_{i} \dd x^{\lambda_i} \big) \wedge \dd x^\sigma \Big) \\
+%
+= & \frac{1}{2(d+1)!d !} \enskip  \partial^\sigma F_{\mu\nu} \varepsilon^{\mu\nu}_{\enskip \lambda_1\cdots \lambda_{d}} \varepsilon^{\lambda_1 \cdots\lambda_d}_{\enskip\enskip\enskip\enskip \sigma\eta} \enskip \dd x^\eta \\
+%
+= & \partial^\mu F_{\mu\nu} \dd x^\nu
 \end{split}
 \end{equation*}
 Motivated by this computation, we propose to study the following system of equations of motion
 \begin{equation}\label{ym-motion1}
 \begin{cases}
-\partial^\mu F_{\mu\nu} + [A^\mu, F_{\mu\nu}] = 0 \quad\textrm{ in $M$}\\
+\partial^\mu F_{\mu\nu} +  [A^\mu, F_{\mu\nu}] = 0 \quad\textrm{ in $M$}\\
 %
-\partial^\alpha \bar F_{\alpha\beta} + [\bar A^\alpha, \bar F_{\alpha\beta}] =  
- -c^{-1} \bar F_{\nu\beta} n^\nu
+\partial^\alpha \bar F_{\alpha\beta} +  [\bar A^\alpha, \bar F_{\alpha\beta}] = 
+ c^{-1} F_{\nu\beta}n^\nu
 \quad\textrm{ on $\partial M$}
 \end{cases}
 \end{equation}
-where the quantities with bar live on the boundary and $n$ is the unit in-coming vector normal to $\partial M$\\
-Compared to the original work of C.N. Yang and R. L. Mills~\cite{Yang1954}, there is a supplementary source term for the equation of motion on the boundary due to the field of the bulk.\\
-Let us now choose a 
+where the quantities with bar live on the boundary and $n$ is the unit \textbf{in-coming} vector normal to $\partial M$\\
+Compared to the original work of C.N. Yang and R. L. Mills~\cite{Yang1954}, there is a supplementary source term in the equation of motion on the boundary due to the field of the bulk.\\\\
+Denote $E_i = F_{0i}$ and $\bar E_a = \bar F_{0a} $. 
+We choose the temporal gauge for the following calculation, \ie $A_0 = 0$
+We can split~\cref{ym-motion1} into the dynamical system 
+\begin{equation}\label{ym-dyn}
+\begin{cases}
+\partial_0 A_i = E_i \\
+\partial_0 E_i =  \partial_j F_{ji} - [A_j, F_{ji}] \\
+\partial_0 \bar A_a = \bar E_a \\
+\partial_0 \bar E_a =  \partial_b \bar F_{ba} -  [\bar A_b, \bar F_{ba}] + c^{-1} F_{\nu a} n^\nu \\
+\end{cases}
+\end{equation}
+and the constraint equation
+\begin{equation}\label{ym-const}
+\begin{cases}
+\partial_i E_i  = - [A^i, E_i] \\
+\partial_a \bar E_a = - [\bar A_a , \bar E_a]  + c^{-1} E_{b}n^b
+\end{cases}
+\end{equation}
+Before defining the Hamiltonian of the system, we have to ensure that if a data $(A, E, \bar A, \bar E)$ satisfies~\cref{ym-const} at a given moment and is a solution of~\cref{ym-dyn}, then its evolution will always satisfy~\cref{ym-const}.
+This consequence is general enough. 
+%add explanation
+\begin{equation*}
+\begin{split}
+\nabla^A_0\nabla^A_j E^j = & \partial_0 \nabla^A_j E^j  \\
+= & -\partial_0(\partial_j E^j + [A_j , E^j]) + [A_j, \partial_0 E^j] \\
+= &- \partial_j (\partial^i F_{ij} + [A^i, F_{ij}]) + [E_j, E^j] + [A_j, \partial^i F_{ij} + [A^i, F_{ij}]] \\
+= & \partial^j\partial^i F_{ij}  + [A^i, \partial^j F_{ij}] + [A^j, \partial^i F_{ij}] + [\partial^j A^i, F_{ij}]+ [A^j, [A^i, F_{ij}]]
+\end{split}
+\end{equation*}
+Since $F$ is anti-symmetric, the first three terms vanish. 
+And we have for the last term
+\begin{equation*}
+[A^j, [A^i, F_{ij}]] = - [A^i, [A^j, F_{ij}]]
+= [A^j, [F_{ij}, A^i]] + [F_{ij}, [A^i, A^j]]
+\end{equation*}
+Then, by a simple calculation, we find that the sum of the last two terms vanishes.
+
 
 
 
