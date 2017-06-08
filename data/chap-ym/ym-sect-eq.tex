@@ -66,24 +66,38 @@ We can split~\cref{ym-motion1} into the dynamical system
 \begin{equation}\label{ym-dyn}
 \begin{cases}
 \partial_0 A_i = E_i \\
-\partial_0 E_i =  \partial_j F_{ji} - [A_j, F_{ji}] \\
+\partial_0 E_i =  \partial_j F_{ji} + [A_j, F_{ji}] \\
 \partial_0 \bar A_a = \bar E_a \\
-\partial_0 \bar E_a =  \partial_b \bar F_{ba} -  [\bar A_b, \bar F_{ba}] - c^{-1} F_{\nu a} n^\nu \\
+\partial_0 \bar E_a =  \partial_b \bar F_{ba} +  [\bar A_b, \bar F_{ba}] + c^{-1} F_{\nu a} n^\nu \\
 \end{cases}
 \end{equation}
 and the constraint equation
 \begin{equation}\label{ym-const}
 \begin{cases}
-\partial_i E_i  = - [A^i, E_i] \\
-\partial_a \bar E_a = - [\bar A_a , \bar E_a]  - c^{-1} E_{b}n^b
+\partial_i E_i  = - [A_i, E_i] \\
+\partial_a \bar E_a = - [\bar A_a , \bar E_a]  + c^{-1} E_{b}n^b
 \end{cases}
 \end{equation}
+where repeated latin indices are summed (since the Minkowski metric is $g_{ij} = \delta_{ij}$ under our convention). \\\\
 Before defining the Hamiltonian of the system, we have to ensure that if a data $(A, E, \bar A, \bar E)$ satisfies~\cref{ym-const} at a given moment and is a solution of~\cref{ym-dyn}, then its evolution will always satisfy~\cref{ym-const}.
-This consequence is general enough. 
-%add explanation
+This consequence is general enough. \\\\
+%
+We define the covariant derivative corresponding to the field $A$ by 
+\begin{equation*}
+\nabla^A_\mu \equiv \partial_\mu + [A_\mu, \cdot]
+\end{equation*}
+With this notation, the constraint equations~\cref{ym-const} become
+\begin{equation*}
+\begin{cases}
+\nabla^A_i E_i = 0 \\
+%
+\nabla^{\bar{A}}_i \bar E_i = - c^{-1} E_b n^b 
+\end{cases}
+\end{equation*}
+In the bulk, we compute
 \begin{equation*}
 \begin{split}
-\nabla^A_0\nabla^A_j E^j = & \partial_0 \nabla^A_j E^j  \\
+\frac{d}{dt}\nabla^A_j E^j = & \partial_0 \nabla^A_j E^j  \\
 = & -\partial_0(\partial_j E^j + [A_j , E^j]) + [A_j, \partial_0 E^j] \\
 = &- \partial_j (\partial^i F_{ij} + [A^i, F_{ij}]) + [E_j, E^j] + [A_j, \partial^i F_{ij} + [A^i, F_{ij}]] \\
 = & \partial^j\partial^i F_{ij}  + [A^i, \partial^j F_{ij}] + [A^j, \partial^i F_{ij}] + [\partial^j A^i, F_{ij}]+ [A^j, [A^i, F_{ij}]]
@@ -95,7 +109,21 @@ And we have for the last term
 [A^j, [A^i, F_{ij}]] = - [A^i, [A^j, F_{ij}]]
 = [A^j, [F_{ij}, A^i]] + [F_{ij}, [A^i, A^j]]
 \end{equation*}
-Then, by a simple calculation, we find that the sum of the last two terms vanishes.
+Then, by a simple calculation, we find that the sum of the last two terms vanishes. \\\\
+On the boundary, we have
+\begin{equation*}
+\end{equation*}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
