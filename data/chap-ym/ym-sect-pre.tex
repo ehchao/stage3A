@@ -76,6 +76,69 @@ Consider the 1-forms $D$ and $E$ where $D_i = A_{ij}C^j$ and $E_i = B^j A_{ji}$,
 \end{equation*}
 which allows us to conclude.
 \end{proof}
+We are interested in certain types of mainfold.
+Especially, we want them to have some nice cohomological properties. 
+Some important results of~\cite{Goldshtein2006} will be used to define the framework.
+For this purpose, we introduce them here.
+\begin{definition}
+Given a Banach complex $\{F^k, d\}$ we define the \textbf{torsion} of the complex $F^*$ by 
+\begin{equation*}
+T^k(F^*) \equiv H^k / \bar{H^k}
+\end{equation*}
+where $H^k(F^*) = \ker(d: F^k \rightarrow F^{k+1})/ \im(d: F^{k-1} \rightarrow F^k)$ is the cohomology of the complex $F^*$
+\end{definition}
+The following theorem is a generalized version of the Hodge-Kodaira decomposition.
+\begin{theorem}
+For any complete Riemannian manifold $(M,g)$, the following conditions are equivalent :
+\begin{enumerate}
+%
+\item[(i)]
+\begin{equation*}
+L^2(M, \Lambda^k) = \im \dd \oplus \im\dd^c \oplus 
+\big(L^2(M, \Lambda^k)\cap\ker(\dd \dd^c + \dd^c \dd)\big)
+\end{equation*}
+%
+\item[(ii)]
+\begin{equation*}
+T_2^k(M) = T_2^{n-k}(M) = \{0 \}
+\end{equation*}
+\end{enumerate}
+where $\Lambda^k$ is the $k$th exterior power.
+\end{theorem}
+Finally, we will use the generalized version of the Poincaré-Wirtinger inequalities
+\begin{theorem}
+Denote $\Omega^k_{q,p}(M) \equiv \{ \omega \in L^q(M, \Lambda^k) \vert \dd \omega \in L^p \}$ and $H^k_{q,p}$ the corresponding cohomology. Then
+\begin{enumerate}
+\item $H^k_{q,p}(M,g) = 0$ if and only if there exists a constant $C\leq +\infty$ such that for any closed $p$-integrable differential form $\omega$ of degree $k$, there exists a differential form $\theta$ of degree $k-1$ such that $\dd \theta = \omega$ and
+\begin{equation}
+\| \theta \| \leq C \| \omega \|_{L^p}
+\end{equation}
+%
+\item
+If $T^k_{q,p}(M)=\{0\}$, there exists a constant $C'$ such that for any differential form $\theta \in \Omega^{k-1}_{q,p}(M)$ of degree $k-1$, there exists a closed form $\zeta\in\ker(d: F^{k-1} \rightarrow F^{k})$ such that 
+\begin{equation}
+\| \theta - \zeta \|_{L^q} \leq C' \| \dd \theta \|_{L^p}
+\end{equation}
+\end{enumerate}
+\end{theorem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -80,7 +80,7 @@ and the constraint equation
 \end{equation}
 where repeated latin indices are summed (since the Minkowski metric is $g_{ij} = \delta_{ij}$ under our convention). \\\\
 Before defining the Hamiltonian of the system, we have to ensure that if a data $(A, E, \bar A, \bar E)$ satisfies~\cref{ym-const} at a given moment and is a solution of~\cref{ym-dyn}, then its evolution will always satisfy~\cref{ym-const}.
-This consequence is general enough. \\\\
+This consequence is general enough~\cite{Arnowitt1962}. \\\\
 %
 We define the covariant derivative corresponding to the field $A$ by 
 \begin{equation*}
@@ -98,23 +98,38 @@ In the bulk, we compute
 \begin{equation*}
 \begin{split}
 \frac{d}{dt}\nabla^A_j E^j = & \partial_0 \nabla^A_j E^j  \\
-= & -\partial_0(\partial_j E^j + [A_j , E^j]) + [A_j, \partial_0 E^j] \\
-= &- \partial_j (\partial^i F_{ij} + [A^i, F_{ij}]) + [E_j, E^j] + [A_j, \partial^i F_{ij} + [A^i, F_{ij}]] \\
+= & \partial_0(\partial_j E^j + [A_j , E^j])  \\
+= & \partial_j (\partial^i F_{ij} + [A^i, F_{ij}]) + [E_j, E^j] + [A_j, \partial^i F_{ij} + [A^i, F_{ij}]] \\
 = & \partial^j\partial^i F_{ij}  + [A^i, \partial^j F_{ij}] + [A^j, \partial^i F_{ij}] + [\partial^j A^i, F_{ij}]+ [A^j, [A^i, F_{ij}]]
 \end{split}
 \end{equation*}
 Since $F$ is anti-symmetric, the first three terms vanish. 
-And we have for the last term
+And we have 
+\begin{equation}
+[\partial^j A^i, F_{ij}] = \frac 1 2 \big( [F^{ji}, F_{ij}] - [[A^j, A^i], F_{ij}] \big)
+\end{equation}
+\begin{equation}
+\begin{split}
+&[A^j, [A^i, F_{ij}]] = - [A^i, [A^j, F_{ij}]]
+= [A^j, [F_{ij}, A^i]] + [F_{ij}, [A^i, A^j]] \\
+ \quad\Leftrightarrow\quad &
+[A^j, [A^i, F_{ij}]] = \frac 1 2 [F_{ij}, [A^i, A^j]]
+\end{split}
+\end{equation}
+The sum of the last two terms vanishes. \\\\
+On the boundary, on the contrary, the preservation of the constraint equation is not automatically guaranteed. As we can see,
 \begin{equation*}
-[A^j, [A^i, F_{ij}]] = - [A^i, [A^j, F_{ij}]]
-= [A^j, [F_{ij}, A^i]] + [F_{ij}, [A^i, A^j]]
+\begin{split}
+\frac{d}{dt}\nabla^{\bar A}_a E^a = & 
+\partial_0\big(\partial_a \bar{E}^a + [\bar{A}_a, \bar{E}^a] + c^{-1} F_{j a} n^j\big) + 
+\big[\bar{A}_a, \partial^b F_{ba} + [\bar{A}^b, \bar{F}_{ba}] + c^{-1} F_{j a} n^j\big] \\
+%
+= & c^{-1}\big(\partial_0 F_{ja}+ [\bar{A}_a, F_{ja}]\big) n^j
+\end{split}
 \end{equation*}
-Then, by a simple calculation, we find that the sum of the last two terms vanishes. \\\\
-On the boundary, we have
-\begin{equation*}
-\end{equation*}
-
-
+However,~\cref{ym-const} can be preserved by imposing $A_t = \bar A$ in the domain the Hamiltonian of the dynamical system~\cref{ym-dyn}.
+%%%%%%%%%%
+\input{data/chap-ym/ym-subsect-eqlin}
 
 
 
