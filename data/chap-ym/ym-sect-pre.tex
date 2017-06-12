@@ -88,7 +88,7 @@ T^k(F^*) \equiv H^k / \bar{H^k}
 where $H^k(F^*) = \ker(d: F^k \rightarrow F^{k+1})/ \im(d: F^{k-1} \rightarrow F^k)$ is the cohomology of the complex $F^*$
 \end{definition}
 The following theorem is a generalized version of the Hodge-Kodaira decomposition.
-\begin{theorem}
+\begin{theorem}\label{ym-kodaira}
 For any complete Riemannian manifold $(M,g)$, the following conditions are equivalent :
 \begin{enumerate}
 %
@@ -97,6 +97,7 @@ For any complete Riemannian manifold $(M,g)$, the following conditions are equiv
 L^2(M, \Lambda^k) = \im \dd \oplus \im\dd^c \oplus 
 \big(L^2(M, \Lambda^k)\cap\ker(\dd \dd^c + \dd^c \dd)\big)
 \end{equation*}
+where the decomposition is orthogonal
 %
 \item[(ii)]
 \begin{equation*}
@@ -106,12 +107,12 @@ T_2^k(M) = T_2^{n-k}(M) = \{0 \}
 where $\Lambda^k$ is the $k$th exterior power.
 \end{theorem}
 Finally, we will use the generalized version of the Poincaré-Wirtinger inequalities
-\begin{theorem}
+\begin{theorem}\label{ym-pw}
 Denote $\Omega^k_{q,p}(M) \equiv \{ \omega \in L^q(M, \Lambda^k) \vert \dd \omega \in L^p \}$ and $H^k_{q,p}$ the corresponding cohomology. Then
 \begin{enumerate}
-\item $H^k_{q,p}(M,g) = 0$ if and only if there exists a constant $C\leq +\infty$ such that for any closed $p$-integrable differential form $\omega$ of degree $k$, there exists a differential form $\theta$ of degree $k-1$ such that $\dd \theta = \omega$ and
+\item $H^k_{q,p}(M,g) = 0$ if and only if there exists a constant $C<+\infty$ such that for any closed $p$-integrable differential form $\omega$ of degree $k$, there exists a differential form $\theta$ of degree $k-1$ such that $\dd \theta = \omega$ and
 \begin{equation}
-\| \theta \| \leq C \| \omega \|_{L^p}
+\| \theta \|_{L^q} \leq C \| \omega \|_{L^p}
 \end{equation}
 %
 \item
