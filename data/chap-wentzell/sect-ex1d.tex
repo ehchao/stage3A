@@ -58,7 +58,166 @@ For a given $n$,
 \end{equation*}
 has a unique solution for $\theta \in \enskip] -\frac{\pi}{2}, \frac{\pi}{2}[$
 }
-, we denote $k_n$ for the mode corresponding to $n$.
+, we denote $k_n$ for the mode corresponding to $n$. \\\\
+Let us study the asymptotic behavior of $k_n$. 
+Denoting $\theta_n = \big( \frac n 2 + \frac 1 4 \big)\pi - kL$ and $C = \frac c L$,~\cref{wen-mode1d} becomes
+\begin{equation}\label{wen-modetheta}
+\tan \theta_n = C \Big( \big(\frac n 2 +\frac 1 4 \big) - \theta_n \Big)
+\end{equation} 
+It is not difficult to see that 
+\begin{equation*}
+\lim_{n\rightarrow+\infty}\theta_n = \frac \pi 2
+\end{equation*}
+By expanding
+\begin{equation*}
+\begin{split}
+\tan\Big(\frac{\pi}{2} + \big(\theta - \frac \pi 2 \big) \Big) = &
+- \frac{\cos\big(\theta-\frac{\pi}{2}\big)}{\sin\big(\theta-\frac{\pi}{2}\big)} \\
+= & 
+-\frac{1}{\theta - \frac \pi 2 } - \frac{1}{2}\big(\theta - \frac{\pi}{2}\big) + \mathcal{O}\Big(\big(\theta - \frac \pi 2 \big)^2\Big)
+\end{split}
+\end{equation*}
+\cref{wen-modetheta} implies
+\begin{equation}\label{wen-modetheta2}
+-\frac{1}{\big(\theta - \frac \pi 2\big)} = 
+C\Big( \big(\frac n 2 -\frac 1 4 \big) - \theta \Big) +  \frac{1}{2}\big(\theta - \frac{\pi}{2}\big) + \mathcal{O}\Big(\big(\theta - \frac \pi 2 \big)^2\Big)
+\end{equation}
+The following lemma will be useful
+\begin{lemma}\label{wen-mode1dlem}
+Let $a$ be a function of $x$ and $b \in\mathbb{R}$.
+Suppose that $a $ satisfies
+\begin{equation*}
+-\frac 1 x = a + bx + \mathcal{O}(x^2)
+\end{equation*}
+Then, the following holds
+\begin{equation*}
+x = -\frac{1}{a-\frac 1 a}\Big( 1 - \frac{b}{a^2}\big(a-\frac 1 a\big)^{-1}x + \mathcal{O}(x^2)\Big)
+\end{equation*}
+\end{lemma}
+\begin{proof}
+\begin{equation*}
+\begin{split}
+-\frac 1 x  = & a + bx + \mathcal{O}(x^2) \\ 
+=& a - \frac{1}{a+bx + \mathcal{O}(x^2)} + \mathcal{O}(x^2) \\
+= & a - \frac 1 a + \frac{b}{a^2}x + \mathcal{O}(x^2)
+\end{split}
+\end{equation*}
+So we have
+\begin{equation*}
+\begin{split}
+x = & -\frac{1}{a - \frac 1 a + \frac{b}{a^2}x + \mathcal{O}(x^2)} \\
+=& -\frac{1}{a-\frac 1 a}\Big( 1 - \frac{b}{a^2}\big(a-\frac 1 a\big)^{-1}x + \mathcal{O}(x^2)\Big)
+\end{split}
+\end{equation*}
+\end{proof}
+Therefore, by~\cref{wen-mode1dlem},~\cref{wen-modetheta2} reads\footnote{
+Before passing to the last line of the following equation, one can easily show from~\cref{wen-modetheta2} that 
+\begin{equation*}
+\theta_n - \frac \pi 2 = \mathcal{O}\big(\frac{1}{n}\big)
+\end{equation*}
+when $n\rightarrow +\infty$
+}
+\begin{equation*}
+\begin{split}
+\theta - \frac{\pi}{ 2} = & 
+-\bigg(\frac{\pi}{2} C \big( n- \frac 1 n \big) - \frac{ 2}{ \pi C \big(n - \frac{ 1 }{2} \big)} \bigg)^{-1}
+\bigg( 1 - \big(\frac{ 1}{ 2} - C \big)\Big( \frac C 2 \big( n - \frac{ 1}{ 2} \big) \pi - \frac{2}{\pi C\big(n- \frac{1}{2}\big)} + \mathcal{O}\Big(\big(\theta - \frac \pi 2 \big)^2\Big)\bigg) \\
+%
+=& -\frac{2}{\pi C n}\Big( 1 + \mathcal{O}\big( \frac 1 n\big) \Big)
+\end{split}
+\end{equation*}
+Hence, when $n\rightarrow +\infty$, 
+\begin{equation*}
+k_n = \frac 1 L \Big( \big( \frac n 2 + \frac 1 4 \big)\pi + \frac{2}{\pi C n}+ \mathcal{O}\big(\frac{1}{n^2}\big) \Big)
+\end{equation*}
+Two more lemmas will be needed for our numeric work.
+\begin{lemma}
+Let $b\in\mathbb{R}$
+\begin{equation*}
+\sum_{n=0}^\infty e^{i(n+\frac b n)z} = \frac i z - \frac 1 2 + \mathcal{O}(z^{\frac 1 2})
+\end{equation*}
+when $z\rightarrow 0 $
+\end{lemma}
+\begin{proof}
+\begin{equation*}
+\begin{split}
+\sum_{n=0}^{+\infty} e^{i(n+\frac b n)z} = & 
+\sum_{n=0}^{+\infty} \sum_{k=0}^{+\infty} e^{inz} \frac{1}{k!}\big(\frac{ib}{n}z\big)^k \\
+%
+= & \sum_n e^{inz} + \sum_n \frac{ibz}{n}e^{inz} + \sum_{n=0}^{+\infty} \sum_{k=2}^{+\infty} e^{inz} \frac{1}{k!}\big(\frac{ib}{n}z\big)^k  \\
+%
+= & \sum_n e^{inz} + \sum_n \frac{ibz}{n}e^{inz} - 
+\bigg(\sum_{n=0}^{+\infty} \sum_{k=0}^{+\infty} 
+e^{inz} \frac{1}{n^2(k+2)!}\big(\frac{ib}{n}z\big)^k 
+\bigg)b^2z^2
+\end{split}
+\end{equation*}
+The last term of the last line is normally convergent.
+We conclude the proof with the known equalities
+\begin{equation*}
+\begin{split}
+& \sum_{n=0}^{+\infty}e^{inz} = 
+\frac i z - \frac 1 2 - \frac{iz}{12} + \mathcal{O}(z^2) \\
+%
+& \sum_{n=0}^{+\infty}\frac 1 n e^{inz} =
+\frac{i\pi}{2} - \ln z - \frac{iz}{2} + \mathcal{O}(z^2)
+\end{split}
+\end{equation*}
+\end{proof}
+%
+\begin{lemma}
+Let $(a_n)$ be a sequence such that $a_n = \mathcal{O}\big(\frac{1}{n^2})$ when $n\rightarrow+\infty$ and $b\in\mathbb{R}$. Then
+\begin{equation*}
+\sum_{n=0}^{+\infty} e^{i(n+\frac{b}{n}+a_n)z } - e^{i(n+\frac{b}{n})z }
+\end{equation*}
+converges uniformly.
+\end{lemma}
+\begin{proof}
+Since $a_n = \mathcal{O}\big(\frac{1}{n^2}\big)$, 
+there exists $ K > 0$ such that $ \exists N \in\mathbb{N}, \forall n\geq N, \| a_n\| \leq \frac{K}{n^2}$ \\\\
+Let $m,l\in\mathbb{N}$ such that $l > m \geq N$
+\begin{equation*}
+\begin{split}
+\sum_{n=m}^{l}  | e^{i(n+\frac{b}{n}+a_n)z } - e^{i(n+\frac{b}{n})z } | = & 
+\sum_{n=m}^{l} | e^{ia_n z} - 1 | \\
+%
+\leq & \sum_{n=m}^{l}\sum_{k=1}^{+\infty}\frac{1}{k!}| a_n z |^k \\
+%
+\leq & \sum_{n=m}^l \sum_{k=1}^{+\infty}\frac{1}{k!n^2}(Kz)^k
+\end{split}
+\end{equation*}
+Since the last line is a normally convergent series for $z \in \mathbb{R}$, it could be made small by taking $m$ and $l$ big enough.
+Hence, the series of our lemma converges normally, which implies that it converges uniformly.
+\end{proof}
+Now, let us compute the vacuum polarization, given by~\cref{vacuum-nefvacpol}.
+As one can find in the discussion in~\cref{chap-vacuum}, the Hadamard parametrix of in the bulk remains the same. 
+The divergent terms when calculating the vacuum polarization are given by~\cref{vacuum-nefhadamard}. \\\\
+From \cref{wen-bound1d} and the normalization condition, we deduce $|f| = |g| = \frac 1 2$.
+By adapting time-splitting $x^0 - y^0 = t$, the Hadamard states are
+\begin{equation*}
+\omega(\phi^1(x)\phi^\dagger_1(y)) = \omega(\phi^2(x)\phi^\dagger_2(y)) = 
+\frac{1}{4L}\sum_{k_n>0} e^{-ik_nt}
+\end{equation*} 
+%where to begin?
+%plus 1/2 in the two previous lemmas and review the constant term
+Noticing that 
+\begin{equation*}
+\frac{ 1}{ 4L}\sum_{n=0}^{+\infty} e^{-i\frac{1}{2L}(n+\frac 1 2 ) \pi t} 
+= \frac{-i}{2\pi t} + \frac{1}{4L} + \mathcal{O}(t)
+\end{equation*}
+has the same divergence as the Hadamard parametrix~\cref{chap-nefhadamard}, the renormalized vacuum polarization can be given by
+\begin{equation*}
+\rho =\lim_{t\rightarrow 0} e \bigg(\frac{1}{4L}\sum_{k_n>0} e^{-ik_nt} 
+- \frac{ 1}{ 4L}\sum_{n=0}^{+\infty} e^{-i\frac{1}{2L}(n+\frac 1 2 ) \pi t} + 1 \bigg)
+\end{equation*}
+
+
+
+
+
+
+
+
 
 
 
