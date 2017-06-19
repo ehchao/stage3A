@@ -16,7 +16,7 @@ The coupling equations of motion are
 \begin{cases}
 \nabla^A_\mu F^{\mu\nu} = i\phi^\dagger\gamma^\nu\gamma^0\phi \\
 %
-\nabla^{\bar{A}}_\alpha \bar{F}^{\alpha\beta} =2 i\phi_|^\dagger\gamma^\beta\gamma^0\phi_| -c^{-1}\bar{F}_{\nu\beta}n^\nu 
+\nabla^{\bar{A}}_\alpha \bar{F}^{\alpha\beta} = i\phi_|^\dagger\gamma^\beta\gamma^0\phi_| -c^{-1}\bar{F}_{\nu\beta}n^\nu 
 \end{cases}
 \end{equation*}
 It could be shown that the tangential component of the current term in the bulk is equal to the current term on the boundary as long as we have $\mathcal{P}_+\phi\vert_{\partial M} = \phi_|$. 
@@ -24,16 +24,42 @@ In effect, this condition implies
 \begin{equation}\label{ym-current}
 \phi = 2 \phi_| - i\gamma^\bot\phi
 \end{equation}
-By taking the adjoint of~\cref{ym-current}, we calculate
+Multiplying~\cref{ym-current} by $(\gamma^j\phi)^\dagger\gamma^0$ on the left, we have
+\begin{equation}\label{ym-current1}
+(\gamma^j\phi)^\dagger\gamma^0\phi = 2(\gamma^j\phi)^\dagger\gamma^0\phi_| - i(\gamma^j\phi)^\dagger\gamma^0\gamma^\bot\phi
+\end{equation}
+Taking the adjoint of~\cref{ym-current} multiplied by $\gamma^0$ and multiplying by $\gamma^j\phi$ on the right, we get
+\begin{equation}\label{ym-current2}
+(\gamma^0\phi)^\dagger\gamma^j\phi = 2\phi^\dagger_|\gamma^0\gamma^j\phi - i\phi^\dagger\gamma^\bot\gamma^0\gamma^j\phi
+\end{equation}
+%perhaps put earlier?
+Choosing $j = \bot$, one gets from~\cref{ym-current1} and~\cref{ym-current2}
+\begin{equation}\label{ym-current3}
+\phi^\dagger\gamma^0\gamma^\bot\phi = i\phi^\dagger(\mathcal{P}_+\gamma^0 - \gamma^0\mathcal{P}_+)\phi  
+\end{equation}
+By comparing~\cref{ym-current3} to its adjoint, we find
 \begin{equation*}
-\phi^\dagger\gamma^j\gamma^0\phi = 2 \phi_|^\dagger\gamma^j\gamma^0\phi - 
-\phi^\dagger i \gamma^\bot\gamma^j\gamma^0\phi
+\phi^\dagger\gamma^0\gamma^\bot\phi\vert_{\partial M} = 0
 \end{equation*}
-On the other hand, when we multiply~\cref{ym-current} by $(\gamma^0\phi)^\dagger\gamma^j$ on the right
+As in the normal bag boundary condition, there is no current in the direction perpendicular to the boundary. \\\\
+We can also check that the current on the boundary is conserved. 
+The boundary current density can be expressed as
 \begin{equation*}
-(\gamma^0\phi)^\dagger\gamma^j\phi = 2\phi^\dagger\gamma^0\gamma^j\phi_| - 
-\phi^\dagger i \gamma^\bot\gamma^0\gamma^j\phi
+J_|^\alpha = i \phi_|\gamma^\alpha\gamma^0\phi_|
 \end{equation*}
+Hence, the on-shell divergence of the current density is
+\begin{equation*}
+\begin{split}
+\nabla_\alpha J_|^\alpha  = & (\nabla_\alpha\phi_|^\dagger)\gamma^\alpha\gamma^0\phi_| + \phi_|^\dagger\gamma^\alpha\gamma^0(\nabla_\alpha\phi) \\
+= &
+-ic^{-1}\mathcal{P}_+\phi^\dagger\vert_{\partial M} \gamma^\alpha\gamma^0\phi_| + i\phi_|^\dagger\gamma^\alpha\gamma^0 c^{-1}\mathcal{P}_+\phi\vert_{\partial M} \\
+= & 0
+\end{split}
+\end{equation*}
+This result is expected as there is no current coming from the bulk.
+
+
+
 
 
 
