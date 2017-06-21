@@ -1,0 +1,78 @@
+\section{Introduction}
+Quantum field theories in external potential have gained importance these years due to the progress in experimental technology on intensive lasers and measurement of higher precision.
+Especially, the quantum electrodynamics in such circumstance becomes a great interest (see \eg\cite{Mohr1998}). 
+%Quantum electrodynamics has been well tested in weak external fields.
+%~\cite{Schwinger1951}
+%
+%Hadamard parametrix
+We calculate the vacuum polarization with the method developed in \textit{quantum field theory in curved space-time} (QFT in curved space-time). 
+For a review of this subject, we can refer to~\cite{Hollands2014}. \\\\
+%more explaination ??
+%some Microlocal analysis stuffs
+%According to~\cite{Radzikowski1996}, the Hadamard form of a two-point function is
+%
+%explain what is hadamard parametrix
+\paragraph{Computation of Hadamard parametrix}
+In this report, the Hadamard parametrix used for our calculation is obtained in~\cite{Zahn2015}. 
+Here, we will just give the main idea of the computation of Hadamard parametrices. 
+For more detailed mathematical aspects, one can refer to~\cite{Bar2008}
+As we will discuss about Dirac fields which are in the kernel of the operator $i\slashed{\nabla} - m$ (eventually $m=0$ for massless cases), 
+we have to calculate the retarded and the advanced propagators of 
+\begin{equation*}
+P = (i\slashed{\nabla} - m)(-i\slashed{\nabla} -m) 
+\end{equation*}
+It is a normally hyperbolic differential operator (\cite{Bar2008} for definition).
+The retarded and advanced propagators are the distributional solutions $\Delta$ of
+\begin{equation*} 
+P\Delta = \delta_x
+\end{equation*}
+with appropriate supports.
+Such solutions are given by 
+\begin{equation*}
+\Delta(x,x') = \sum_{k=0}^\infty V_k(x,x') R_{2k+2}(x,x')
+\end{equation*} 
+where $V_k$ are \textit{Hadamard coefficients} satisfying certain recursive relation and $R_{2k+2}$ are so-called \textit{Riesz distributions}.
+The distributional nature of the Riesz distributions gives raise to singularities when coinciding-point limit is applied. 
+We can thus build a Hadamard parametrix for the operator $P$.
+However, the differential operator of the problem is the Dirac operator $i\slashed{\nabla} -m$,
+the corresponding propagators still remains to be found. \\\\
+%
+As $\Delta$ is now in the kernel of $P$ in the sense of distribution, 
+%$\Delta^{\textrm{ret/adv}}\equiv \Delta^{\textrm{ret}} - \Delta^{\textrm{adv}}$,
+we can defined the retarded and advanced propagators as 
+\begin{equation*}
+S^{\textrm{ret/adv}} = (-i\slashed{\nabla} - m)\Delta^{\textrm{ret/adv}} 
+\end{equation*}
+with appropriate supports.
+One can verify easily that $S$ is in the kernel of the Dirac operator $i\slashed{\nabla} - m$.
+We build the Hadamard parametrix $H$ of the Dirac operator by choosing distributions that allow us to get the same singularities at coinciding-point limit as in Riesz distributions such that $H$ satisfied
+\begin{equation*}
+H^+(x,x') - H^-(x,x') = i\big(S^{\mathrm{ret}}(x,x') - S^{\mathrm{adv}}(x,x')\big)
+\end{equation*}
+%add something to microlocal stuffs
+By consequence, for any state $\omega$ with Hadamard two-point function, the following relations hold
+\begin{equation*}
+\begin{split}
+\omega(\psi^B(x)\bar{\psi}_A(y)) = & H^+(x,y)^B_A + R^B_A(x,y) \\
+\omega(\bar{\psi}_A(y)\psi^B(x)) = &- H^-(x,y)^B_A - R^B_A(x,y)
+\end{split}
+\end{equation*}
+where $R$ is smooth and determined up to terms vanishing at coinciding-point limit.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
