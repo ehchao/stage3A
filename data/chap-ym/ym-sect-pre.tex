@@ -36,6 +36,19 @@ We can define an inner product $\langle \cdot, \cdot \rangle_{L^2(M)}$ on $\Omeg
 \begin{equation*}
 \langle w, v \rangle_{L^2(M)} = \int_M w \wedge \star v
 \end{equation*}
+We introduce the notion of tangential and normal component of a $k$-form of $M$ on the boundary $\partial M$ (see~\cite{Schwarz2006}).
+\begin{definition}
+Let $\omega$ be a $k$-form of $M$. 
+Each vector field $X$ on the tangent bundle $TM$ can be decomposed into its tangential part $X^\parallel$ and its normal part $X^\bot$ \wrt $\partial M$.
+We define the \textbf{tangential component} $\omega_t$ and the $\textbf{normal component}$ $\omega_n$ as following
+\begin{equation*}
+\begin{split}
+\omega_t(X_1, \ldots, X_k) = & \omega(X_1^\parallel ,\ldots, X_k^\parallel) \\
+\omega_n(X_1, \ldots, X_k) =& \omega\vert_{\partial M} -  \omega_t(X_1, \ldots, X_k) 
+\end{split}
+\end{equation*}
+where $X_1, \ldots, X_k$  are $k$ vector fields of the tangent bundle $TM\vert_{\partial M}$.
+\end{definition}
 The following version of the Stokes' theorem will be useful.
 \begin{proposition}
 Let $w$ and $v$ be two $1$-forms. Then
