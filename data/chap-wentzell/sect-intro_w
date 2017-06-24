@@ -93,7 +93,7 @@ Furthermore, they have the same rank (equal to the half of the $n$-dimension of 
 \end{proof}
 As a result, \cref{wen-proj} ensures that the projectors $\mathcal{P}_\pm$ are not identically null and that the projection spaces by both projectors are of equal dimension. 
 Thus, one can define an operator $\Delta$ for the problem for $d+1$-dimensional bulk case
-\begin{equation}
+\begin{equation}\label{wen-hamiltonian}
 \Delta = \begin{pmatrix}
 i \gamma^0 \slashed{\partial}  & 0 \\
 -c^{-1} \gamma^0 \mathcal{P}_- \cdot \vert_{\partial M}&  i\gamma^0 \slashed{\partial}_| \mathcal{P}_+
