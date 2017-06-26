@@ -9,7 +9,6 @@ However, it seems that his approach in~\cite{Schwinger1951} leads to some result
 \cite{Zahn2015} highlights this point and proposes another approach using Dirac's method~\cite{Dirac1934} and some notions developped in \textit{quantum field theory in curved space-time} (QFT in curved space-time). 
 Dirac's method consists of considering the vacuum as a space occupied by negative-energy positrons and that nearly all the positive-energy states are unoccupied.
 The positive-energy that occupied by positrons 
-%~\cite{Schwinger1951}
 %
 %Hadamard parametrix
 A review on the necessary notions for this report will be given in the next paragraph.
@@ -36,7 +35,7 @@ We can then construct $\mathscr{A}(M,g)$ by starting with the free *-algebra gen
 %
 \item \textbf{Hermitian field} $\phi(f)^* = \phi(\bar{f})$
 %
-\item \textbf{Commutation relation} $[\phi(f_1), \phi(f_2)] = iE(f_1, f_2) \mathbf{1}$, where $E = E^+ - E^-$ and $E^\pm$ are distributions satisfying $(\Box_g - m^2)E^\pm(x,y) = \delta(x,y)$ with appropriate supports (which define the advanced and retarded operators).
+\item \textbf{Canonical commutation relation (CCR)} $[\phi(f_1), \phi(f_2)] = iE(f_1, f_2) \mathbf{1}$, where $E = E^+ - E^-$ and $E^\pm$ are distributions satisfying $(\Box_g - m^2)E^\pm(x,y) = \delta(x,y)$ with appropriate supports (which define the advanced and retarded operators).
 \end{enumerate}
 %
 We define a \textbf{physical state} $\omega$ as a linear map
@@ -63,14 +62,15 @@ The subtraction of the Hadamard parametrix is a method to renormalize the expect
 %more explaination ??
 %
 However, as we are interested in QED in this report, the above-mentioned theory is not applicable. 
-In particular, the fermionic nature of electron should not be supposed to obey the commutation relation but rather the \textbf{anti-commutation relation}.
+In particular, the fermionic nature of electron should not be supposed to obey the commutation relation but rather the \textbf{canonical anti-commutation relation} (CAR).
 With the same notation as for the commutation relation, 
 for a Dirac field $\psi$, the anti-commutation relation is defined by
 \begin{equation*}
-\{\psi(f_1), \psi(f_2)\} = i E(f_1, f_2) \mathbf{1}
+\{\psi(f_1), \psi(f_2)\} = i S(f_1, f_2) \mathbf{1}
 \end{equation*}
-where $\{\cdot, \cdot\}$ is the anti-commutator. 
-After certain different works, the characterization developed in~\cite{Radzikowski1996} is generalized in~\cite{Sahlmann2000} to the Dirac field case.
+where $\{\cdot, \cdot\}$ is the anti-commutator and $S$ is the difference between the advanced and retarded propagators of the Dirac operator (with mass m) $i\slashed{\nabla} - m$.
+Also, the fields are supposed to verify Dirac equation instead of just Klein-Gordon equation.
+After different works, the characterization developed in~\cite{Radzikowski1996} is generalized in~\cite{Sahlmann2000} to the Dirac field case.
 Without introducing the mathematically rigorous definition\footnote{
 To give a mathematically rigorous statement of this relation, 
 the notion of \textbf{wave front set} is needed. 
@@ -120,7 +120,6 @@ Therefore, if the Hadamard paramtrix $H$ is known, we can get a renormalized vac
 j^\mu(x) = \lim_{y \rightarrow x} \gamma^A_B \big(
 \omega(\psi^B(x)\bar{\psi}_A(y)) - H^B_A (x, y)\big)
 \end{equation*}
-%continue with something like "the hadamard state of our problem can be characterized by ....
 %
 \paragraph{Computation of the Hadamard parametrix}
 In this report, the Hadamard parametrix used for our calculation is obtained in~\cite{Zahn2015}. 
