@@ -5,7 +5,7 @@ This principle is also called holography.
 %Maldacena's paper?
 The main idea of the theory is to study the duality between the string theory in an AdS space-time bulk and the quantum field theory living on the boundary of the AdS space-time.
 Another interesting application of the AdS/CFT correspondance is to study the strong/weak coupling duality, \ie
-a strong coupling of the quantum field theory on the boundary corresponds to a weak coupling of the string theory in the bulk.
+a strong coupling of the quantum field theory on the boundary corresponds to a weak coupling of the string theory in the bulk. 
 For instance,~\cite{Skenderis2002} gives examples to calculate renormalized correlation functions\footnote{
 See~\eg\cite{Peskin1995} for the definition.
 } of the quantum field theory by performing computations on the gravity side.
@@ -21,10 +21,12 @@ However, one can wonder how the boundary field should be built in order to ensur
 -\frac 1 2 \int_M g^{\mu\nu} \partial_\mu \phi \partial_{\nu} + 
 \mu^2\phi^2 - \frac c 2 \int_{\partial M}h^{\mu\nu}\partial_\mu\phi\partial_\nu\phi + \mu^2\phi^2
 \end{equation*}
-and studies the temporal evolution and the quantization of the field.
+and studies the time evolution and the quantization of the field.
 Indeed, the boundary term appears as a counter-term in the holographic renormalization theory~\cite{Skenderis2002}.
 In this report, we will try to extend this kind of studies to the Dirac field case by proposing an action and studying the dynamics of the Dirac field under the induced boundary condition.
-Before showing the main studies, 
+Some methods of functional analysis are used and we can refer to~\cite{Reed1981} and~\cite{Reed1975} for these tools. \\\\
+%
+Before showing the main results, 
 we give a brief description of the AdS/CFT correspondance by using the example of a massless scalar field from~\cite{Witten1998} and~\cite{Skenderis2002}. 
 %
 \paragraph{AdS/CFT correspondance in scalar field case}
@@ -61,7 +63,22 @@ It is defined by~\cite{Gubser1998}
 \end{equation*}
 It could then be shown by the prescription of the section 2 of~\cite{Skenderis2002} that the two-point function of the operator $\mathcal{O}$ is a multiple of $|\mathbf{x} - \mathbf{x}'|^{-2d}$, which agrees with the two-point function of the $d$-dimensional conformal field theory~\cite{Qualls2015}. \\\\
 %
+Among recent works on the AdS/CFT correspondance of Dirac fields, we can find different propositions of boundary action.
+For instance, 
+~\cite{Henningson1998} proposes to put a boundary action which involves the product of the bulk field $\psi$ and its Dirac adjoint $\bar{\psi}$. 
+This term in $\bar{\psi}\psi$ looks like a mass term living on the boundary.
+On the other hand,~\cite{Contino2005} suggests to construct a boundary action such that a chiral component of the bulk field vanishes on the boundary.
+This boundary condition is also known as bag boundary condition, proposed in~\cite{Chodos1974}\footnote{
+A direct consequence of the bag boundary condition is that the component normal to the boundary of the density of current in the bulk will vanish. 
+This kind of boundary condition is used to study the confinement of quarks~\cite{Hasenfratz1978}.
+}.
+Under the setting of~\cite{Contino2005}, one can introduce terms that only contain the chiral component which does not have to vanish on the boundary.
+Taking into account these two possibilities of boundary action construction, 
+one can wonder if a more general action could be made. 
 %
+%
+%
+\input{data/chap-wentzell/final/wentzell-sect-intro-2}
 
 
 
