@@ -1,0 +1,16 @@
+\subsection{Verification of the consistency of the solution}
+Let us justify the consistency of \cref{nef-matching2}. From \cref{nef-basisSol}, we can consider $\phi_{L,k}$ ($\phi_{R,k}$) in the region $x^1 < 0$ ($x^1 > 0 $) as an "in-coming" wave \wrt the origin and $\phi_{R,k}$ ($\phi_{L,k}$) in the region $x^1 > 0$ ($x^1 < 0 $) as an "out-coming" wave \wrt the origin. In the stationary regime, the total density of probability of the in-coming waves should be equal to the total density of probability of the out-coming waves. 
+One can re-write \cref{nef-matching2} in the following way
+\begin{equation}\label{nef-consistency}
+\begin{pmatrix}
+\phi_L(0^+) \\
+\phi_R(0^-)
+\end{pmatrix}=\begin{pmatrix}
+\frac{A}{D} - \frac{| C |^2}{DA} & \frac{C}{A}  \\
+-\frac{C^*}{A}  &  \frac{D}{A}
+\end{pmatrix}\begin{pmatrix}
+\phi_L(0^-) \\
+\phi_R(0^+)
+\end{pmatrix}
+\end{equation} 
+Since $|A|^2 = |C|^2 + |D|^2$, the matrix on the \rhs is an unitary matrix. It follows that the norm of the vector on the \lhs is equal to the norm of the vector on the \rhs, which is indeed what we try to prove.

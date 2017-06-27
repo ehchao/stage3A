@@ -8,13 +8,20 @@ In his paper~\cite{Schwinger1951}, the point-splitting formalism is used.
 However, it seems that his approach in~\cite{Schwinger1951} leads to some results which are not gauge invariant. 
 \cite{Zahn2015} highlights this point and proposes another approach using Dirac's method~\cite{Dirac1934} and some notions developped in \textit{quantum field theory in curved space-time} (QFT in curved space-time). 
 Dirac's method consists of considering the vacuum as a space occupied by negative-energy positrons and that nearly all the positive-energy states are unoccupied.
-The positive-energy that occupied by positrons 
+In presence of an external potential, positrons will occupy some positive-energy states, which leads to the polarization of the vacuum.
+A precise definition of the vacuum polarization will be given in this section.
+In this report, we compute the vacuum polarization of a spatially confined $(1+1)$-dimensional space in presence of a punctual potential commonly used to explain the Kondo effect. 
+By simplicity, we will only consider the vacuum polarization due to massless spin-$\frac 1 2$ particles.
+The results can be extended to massive field with the same calculation.
+\\\\
 %
-%Hadamard parametrix
-A review on the necessary notions for this report will be given in the next paragraph.
+%
+%
+\paragraph{QFT in curved space-time}
+QFT in curved space-time is a semi-classical theory aiming to take into account the curvature of space-time in quantum field theory.
+A review on the necessary notions for this report will be given in this paragraph.
 For a more complete review of this subject, we can refer to~\cite{Hollands2014}. \\\\
 %
-QFT in curved space-time is a semi-classical theory aiming to taking into account the curvature of space-time in quantum field theory.
 For a given curved Lorentzian space-time $(M,g)$,
 the construction of the theory is based on algebraic approach.
 Instead of considering a given Hilbert space, 
@@ -116,10 +123,10 @@ j'(x,y) = \gamma^A_B \omega(\psi^B(x)\bar{\psi}_A(y))
 \end{equation*}
 where the summation over the repeated indices is used.
 Therefore, if the Hadamard paramtrix $H$ is known, we can get a renormalized vacuum current
-\begin{equation*}
+\begin{equation}\label{vacuum-currentexpression}
 j^\mu(x) = \lim_{y \rightarrow x} \gamma^A_B \big(
 \omega(\psi^B(x)\bar{\psi}_A(y)) - H^B_A (x, y)\big)
-\end{equation*}
+\end{equation}
 %
 \paragraph{Computation of the Hadamard parametrix}
 In this report, the Hadamard parametrix used for our calculation is obtained in~\cite{Zahn2015}. 
@@ -183,10 +190,10 @@ A satisfactory explanation is that this phenomenon would be due to the existence
 Kondo's paper~\cite{Kondo1964} treats this phenomenon as an interaction between spins of conduction electrons and impurities.
 As the impurities are considered as punctual,
 the Hamiltonian of the Kondo effect in real space (rather than Fourier mode space) is given by~\cite{Erdmenger2013}
-\begin{equation*}
+\begin{equation}\label{vacuum-kondohamiltonian}
 H_K = \psi_\alpha^\dagger \frac{-\nabla^2}{2m}\psi_\alpha +
 \frac 1 2\lambda_K \delta(\vec{x})\vec{S}\cdot \psi_{\alpha'}^\dagger  \vec{\sigma}_{\alpha' \alpha} \psi_\alpha
-\end{equation*}
+\end{equation}
 where $\psi$ and $\psi^\dagger$ are annihilation and creation operator, 
 $\alpha$ is the indice for spin (up or down), 
 $\vec{S}$ is the spin of the impurity,

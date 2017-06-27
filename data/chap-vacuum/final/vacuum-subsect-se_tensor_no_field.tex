@@ -1,0 +1,55 @@
+\subsection{Stress-energy tensor}
+It is also worthy to compute the stress-energy tensor of the system in order to see how it is related to the vacuum polarization that we have calculated.
+With its classical form, one can write down the components of stress-energy tensor as
+\begin{equation}
+\begin{split}
+& T_{00} = \frac{i}{2} (\bar{\psi} \gamma_1 \nabla_1 \psi - \nabla_1 \bar{\psi}\gamma_1 \psi)  \\
+& T_{11} = \frac{i}{2} (\bar{\psi} \gamma_0 \nabla_0 \psi - \nabla_0 \bar{\psi}\gamma_0 \psi)  \\
+& T_{01} = \frac{i}{4} (\bar{\psi} \gamma_1 \nabla_0 \psi +\bar{\psi} \gamma_0 \nabla_1 \psi - \nabla_1 \bar{\psi}\gamma_0 \psi - \nabla_0 \bar{\psi}\gamma_1 \psi)  
+\end{split}
+\end{equation}
+In the two-point function formulation, the expectation value of $T_{ab}$ corresponds to the regular part of the state $\omega$ previously defined. For example\footnote{Normal ordering is applied here when calculating the two-point function. The anti-commutation relation of the state is involved.},
+\begin{equation}
+\begin{split}
+T_{00}(x,y) = &
+- \frac{i}{2}\big(\omega( \nabla_1 \psi^B(x) \bar{\psi}_A(y))(\gamma_1)^A_B - \omega( \psi^B(x) \nabla_1 \bar{\psi}_A(y))(\gamma_1)^A_B \big) - \textrm{singular part}  \\
+\end{split}
+\end{equation}
+Practically, the singular part corresponds to the covariant derivatives of the Hadamard parametrix. In terms of $\phi = \gamma^0 \psi$, 
+\begin{equation*}
+\bar{\psi} \gamma_1 \nabla \psi = - \phi^\dagger \gamma^1 \gamma^0 \nabla \phi
+\end{equation*}
+As usual, we start with the region $[-\frac{L}{2}, 0)$. By denoting
+\begin{equation*}
+\zeta = \gamma^1 \gamma^0 = \begin{pmatrix}
+1 & 0 \\
+0 & -1
+\end{pmatrix}
+\end{equation*}
+using the function $\xi$ that we have introduced in \cref{nef-xi}, the states evaluated at the components of the stress-energy tensor can be written as
+\begin{equation}
+\begin{split}
+T_{00}(x,y) = 
+& \frac{i}{2}\Big(\nabla_{x^1} \big( \omega(\phi^B(x) \phi^\dagger_A(y))\zeta^A_C - H^+(x,y) \big)
+- \nabla_{y^1} \big( \omega( \phi^B(x) \bar{\phi}_A(y))\zeta^A_C - H^+(x,y) \big)
+\Big)\delta_B^C  \\
+= & \frac{i}{2} \big( (-\xi'(z) - \xi'(w)) - \xi'(z) - \xi'(w) + \frac{i}{\pi z} + \frac{i}{\pi w} \big)   \\
+T_{11}(x,y) =
+& - \frac{i}{2}\big( \xi'(z) + \xi'(w) + \xi'(z) + \xi'(w) - \frac{i}{\pi z} - \frac{i}{\pi w}\big) \\
+T_{01}(x,y) = 
+& \frac{i}{4}\Big(\nabla_{x^0} \big( \omega(\phi^B(x) \phi^\dagger_A(y))(\zeta_1)^A_C - H^+(x,y) \big) + \nabla_{x^1} \big( \omega(\phi^B(x) \phi^\dagger_A(y))\delta^A_C - H^+(x,y) \big)  \\
+& - \nabla_{y^0} \big( \omega( \phi^B(x) \bar{\phi}_A(y))\zeta^A_C - H^+(x,y) \big)
+- \nabla_{y^1} \big( \omega( \phi^B(x) \bar{\phi}_A(y))\delta^A_C - H^+(x,y) \big)
+\Big)\delta_B^C \\
+= & \frac{i}{4}\Big( \big( \xi'(z) - \xi'(w) \big) + \big(- \xi'(z) + \xi'(w) \big) - \big( - \xi'(z) + \xi'(w) \big) - \big( \xi'(z) - \xi'(w) \big) \Big) \\
+= & 0
+\end{split}
+\end{equation}
+where $z = x^0 - y^0 - x^1 + y^1$ and $w = x^0 - y^0 + x^1 - y^1$ \\
+Taking the coinciding point limit, we find
+\begin{equation}
+T_{ab} = \frac{ \pi}{2 L^2} \big( -\frac{1}{3} + \frac{(\theta - \pi)^2}{\pi^2}\big)\begin{pmatrix}
+1  & 0 \\ 0  &  1
+\end{pmatrix}
+\end{equation}
+

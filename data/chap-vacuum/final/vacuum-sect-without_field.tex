@@ -1,0 +1,134 @@
+\section*{Notations and convention}
+The signature of our space-time is $(+, -)$.
+The index 0 represents the temporal component.
+We choose the following representations for the Dirac gamma matrices
+\begin{equation*}
+\gamma^0 = \begin{pmatrix}
+0 & 1 \\
+1 & 0 \end{pmatrix}  \quad  \gamma^1 = \begin{pmatrix}
+0  & 1 \\
+-1 & 0
+\end{pmatrix}
+\end{equation*}
+%
+%
+%
+\section{Vacuum polarization in a confined space without external electric field}\label{sect-nef}
+We consider a massless Dirac field in $1+1$-dimensional space-time. %spatially confined in the region $[-\frac L 2 , \frac L 2 ]$.
+Denoting $\phi = \gamma^0\psi$, the Dirac equation of the massless field
+\begin{equation*}
+i\gamma^\mu\partial_\mu \psi = 0
+\end{equation*}
+can be written as
+\begin{equation*}
+i\partial_0\phi = i \begin{pmatrix} -1 & 0 \\ 0 & 1 \end{pmatrix}\partial_1\phi
+\end{equation*}
+As shown in~\cite{Zahn2015}, when there is no external electric field, no polarization occurs. 
+However, one can wonder if this result is always valid when there is a punctual interaction in the confined space.
+Inspired by~\cref{vacuum-kondohamiltonian}, we introduce a potential term which is due to the impurity at $x^1 = 0$.
+We can write down the Dirac equation of the problem as following
+\begin{equation}\label{nef-Dirac}
+i \partial \phi = 
+\begin{pmatrix} 
+-1 & 0 \\
+0 & 1 
+\end{pmatrix} i \partial \phi +
+\begin{pmatrix}
+v_3 & v_- \\
+v_+ & -v_3
+\end{pmatrix} \delta(x_1) \phi
+\end{equation}
+where $v_3, v_+, v_-$ are constants.
+By denoting $\phi =
+\begin{pmatrix}
+\phi_L \\
+\phi_R
+\end{pmatrix}$
+, \cref{nef-Dirac} leads to
+\begin{equation}
+\begin{cases}
+i \partial_0 \phi_L = -i\partial_1 \phi_L + (v_3 \phi_L + v_- \phi_R) \delta(x_1) \\
+i \partial_0 \phi_R = i\partial_1 \phi_R + (v_+ \phi_L - v_3 \phi_R) \delta(x_1)
+\end{cases}
+\end{equation}
+The presence of a punctual potential might impose some matching condition at the singular point (See \eg Appendix J of~\cite{albeverio1988solvable}).
+Let us consider now the matching conditions at $x^1=0$.
+A solution of~\cref{nef-Dirac} is not continuous at $x^1 = 0$. 
+By integrating~\cref{nef-Dirac} over $[-\epsilon, \epsilon]$ and taking the limite for $\epsilon \rightarrow 0$,
+we have the matching condition
+\begin{equation}\label{nef-matching}
+\begin{cases}
+-i(\phi_L(0^+) - \phi_L(0^-)) + \frac{1}{2}(v_3 (\phi_L(0^+) + \phi_L(0^-))+ v_- (\phi_R(0+) + \phi_R(0^-))) = 0 \\
+i(\phi_R(0^+) - \phi_R(0^-)) + \frac{1}{2}(v_+ (\phi_L(0^+) + \phi_L(0^-)) - v_3 (\phi_R(0^+) + \phi_R(0^-))) = 0
+\end{cases}
+\end{equation}
+%After the operations $L_1 \leftarrow L_1 \times (i - \frac{1}{2} v_3) - L_2 \times \frac{1}{2} v_-$ and $L_2 \leftarrow L_2 \times (-i + \frac{1}{2} v_3) - L_1 \times \frac{1}{2} v_+$, we have 
+%\begin{equation}
+%\begin{pmatrix}
+%1- \frac{1}{4}\Sigma + i v_3  & 0 \\
+%0  &  1- \frac{1}{4} \Sigma + i v_3 
+%\end{pmatrix}\begin{pmatrix}
+%\phi_L(0^+) \\
+%\phi_R(0^+)
+%\end{pmatrix} = \begin{pmatrix}
+%1+\frac{1}{4} \Sigma  & -iv_-  \\
+%iv_+  &  1+\frac{1}{4} \Sigma
+%\end{pmatrix}\begin{pmatrix}
+%\phi_L(0^-) \\
+%\phi_R(0^-)
+%\end{pmatrix}
+%\end{equation}
+Denote $\Sigma = v_+ ^ 2 + v_- ^ 2 + v_3 ^ 2$.
+One can notice that this system does not have unique solution for certain values of $v_i$, namely, when the matrix on the left-hand side vanishes, \ie when $1 - \frac{1}{4}\Sigma + iv_3 = 0$. This case will be excluded in the following.
+Therefore, the matching condition \cref{nef-matching} implies 
+\begin{equation}\label{nef-matching2}
+\begin{pmatrix}
+\phi_L(0^+) \\
+\phi_R(0^+)
+\end{pmatrix} = \begin{pmatrix}
+\frac{A}{D}  & \frac{C}{D} \\
+\frac{C^*}{D} & \frac{A}{D}
+\end{pmatrix}\begin{pmatrix}
+\phi_L(0^-) \\
+\phi_R(0^-)
+\end{pmatrix}
+\end{equation}
+where $A = 1+ \frac{1}{4}\Sigma$, $C = -iv_-$, $D = 1-\frac{1}{4}\Sigma + iv_3$.
+%
+\\\\
+%
+%
+\input{data/chap-vacuum/final/vacuum-subsect-consistency}
+%
+\\\\
+However, because of the $\delta$-functions in \cref{nef-Dirac}, 
+the well-posedness of the problem is not guaranteed,
+\ie it is uncertain if the system has a unitary time evolution solution~\cite{Reed1981}.
+We should thus check the self-adjointness of the Hamiltonian of the dynamical system~\cref{nef-Dirac}
+This aspect will be tackled in the next subsection.
+%
+\input{data/chap-vacuum/final/vacuum-subsect-sa}
+\input{data/chap-vacuum/final/vacuum-subsect-hadamard}
+\input{data/chap-vacuum/final/vacuum-subsect-se_tensor_no_field}
+%
+%
+%
+%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

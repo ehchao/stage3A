@@ -1,0 +1,113 @@
+\subsection{Without electric field}\label{sect-nbnef}
+In this section we examine the vacuum polarisation in the no-boundary case.
+The matching condition \cref{nef-matching2} and the calculation in \cref{sect-nef} suggest that all eigenspaces for eigenvalue $k$ of the Hamiltonian are 2-dimensional. We search therefore an orthonormal basis of the Hilbert space composed of eigenvectors (for eigenvalue $k$) of type
+\begin{equation}
+\begin{split}
+& | k_{(1)} \rangle = \bigg( \begin{pmatrix} f & 0 \\ 0 & 0 \end{pmatrix}
+\Theta(-x^1) + 
+\frac{1}{D}\begin{pmatrix} Af & 0 \\  0 & C^* f \end{pmatrix} \Theta(x^1) \bigg)
+\begin{pmatrix} e^{ikx^1}  \\ e^{-ikx^1} \end{pmatrix}   \\
+& | k_{(2)} \rangle = \bigg( \begin{pmatrix} g& 0 \\ 0 & h \end{pmatrix}
+\Theta(-x^1) + 
+\frac{1}{D}\begin{pmatrix} Ag + Ch  & 0\\ 0&  C^*g + Ah  \end{pmatrix} \Theta(x^1) \bigg)
+\begin{pmatrix} e^{ikx^1}  \\  e^{-ikx^1}  \end{pmatrix}  
+\end{split}
+\end{equation}
+where $f,g,h \in \mathbb{C}$
+The normalisation condition demands
+\begin{equation}
+\langle k'_{(m)} | k_{(n)} \rangle = \delta(k - k') \delta_{mn}
+\end{equation}
+Since\footnote{
+The distributional formula $\frac{1}{x \pm i\epsilon} = P\big(\frac{1}{x}\big) \mp i\pi\delta(x)$, where $P\big(\frac{1}{x}\big)$ is the principal value of $\frac{1}{x}$, is used.}
+\begin{equation}
+\begin{split}
+\langle k'_{(1)} | k_{(1)} \rangle = & |f|^2 \bigg( \int_{-\infty}^0 e^{i(k - k')x} \dd x + \int_0^{\infty}\frac{|A|^2}{|D|^2} e^{i(k-k')x} + \frac{|C|^2}{|D|^2} e^{-i(k - k')x} \dd x \bigg) \\
+= & |f|^2 \bigg( \frac{1}{i(k-k' - i\epsilon)} - \frac{A^2}{|D|^2}\frac{1}{i(k-k'+i\epsilon)} + \frac{|C|^2}{|D|^2}\frac{1}{i(k-k'-i\epsilon)} \bigg) \\
+= & \frac{A^2 |f|^2}{i |D|^2}\Big( P\big(\frac{1}{k-k'}\big) + i\pi \delta(k-k') - P\big(\frac{1}{k-k'}\big) + i\pi \delta(k-k') \Big) \\
+= & \frac{2\pi A^2 |f|^2}{|D|^2} \delta(k-k')
+\end{split}
+\end{equation}
+we choose $f = \frac{|D|}{\sqrt{2\pi} A}$ to fulfil the normalisation condition. \\\\
+On the other hand, 
+\begin{equation}
+\begin{split}
+\langle k'_{(1)} | k_{(2)} \rangle = &
+f^*\bigg( \int_{-\infty}^0 g e^{i(k-k')x} \dd x + \int_0^{\infty} \frac{A}{D^*}\big(\frac{A}{D}g + \frac{C}{D}h \big) e^{i(k-k')x} \dd x + \int^{\infty}_0 \frac{C}{D^*} \big( \frac{C^*}{D}g + \frac{A}{D}h \big) e^{-i(k - k')x} \dd x \bigg)   \\
+= & f^*\Big( \frac{1}{i(k-k' - i\epsilon)} g - \frac{A}{D^*}\big(\frac{A}{D} g + \frac{C}{D} h \big) \frac{1}{i(k-k' + i\epsilon)} + \frac{C}{D^*}\big( \frac{C^*}{D}g + \frac{A}{D}h \big) \frac{1}{i(k-k' -i\epsilon)} \Big)    \\
+= & f^* \pi \delta(k-k') \Big(  \big(1+ \frac{A^2}{|D|^2} + \frac{|C|^2}{|D|^2} \big) g + \frac{2AC}{|D|^2}h  \Big)
+\end{split}
+\end{equation}
+gives the following condition for the orthogonality
+\begin{equation}
+\begin{split}
+g = - \frac{\beta e^{i\eta}}{\alpha} h \quad \textrm{where }
+& \alpha = 1 + \frac{A^2 + |C|^2}{|D|^2}  \quad
+ \beta = \frac{2A|C|}{|D|^2}  \quad
+\eta = \textrm{Arg } C
+\end{split}
+\end{equation}
+Finally, the normalisation of $| k_{(2)} \rangle$ imposes 
+\begin{equation}
+\begin{split}
+\delta(k - k') = & \langle k'_{(2)} | k_{(2)} \rangle \\
+= & |h|^2 \bigg( \int_{\infty}^0 \Big( \frac{\beta^2}{\alpha^2} e^{i(k-k')x} + e^{-i(k-k')x} \Big) \dd x 
++ \int_0^{\infty} \underbrace{\Big|-\frac{A\beta}{D\alpha} e^{i\eta} + \frac{C}{D}\Big|^2}_{\text{$E$}} e^{i(k-k')x} \dd x \\
+& + \int_0^{\infty}\underbrace{\Big|-\frac{C^*\beta}{D\alpha} e^{i\eta} + \frac{A}{D}\Big|^2}_{\text{$F$}} e^{-i(k-k')x}\dd x \bigg) \\
+= & |h|^2 \bigg(\frac{\beta^2}{i \alpha^2}\frac{1}{k-k'-i\epsilon} - \frac{1}{i(k-k'+i\epsilon)} - E\frac{1}{i(k-k'+i\epsilon)} + F \frac{1}{i(k-k'-i\epsilon)} \bigg)   \\
+= & |h|^2 \bigg( \Big(\frac{\beta^2}{\alpha^2} - 1 - E + F \Big) P\big(\frac{1}{k-k'}\big) + i\pi \delta(k-k')\Big(\frac{\beta^2}{\alpha^2} + 1 + E + F \Big) P\big(\frac{1}{k-k'}\big) \bigg)  \\
+= & |h|^2\pi \bigg( \alpha\Big(\frac{\beta^2}{\alpha^2} + 1 \Big) - 2\frac{\beta^2}{\alpha}  \bigg) \delta (k-k')\\
+\underset{\alpha^2 - \beta^2 = 2\alpha}{=}  2\pi|h|^2 \delta(k-k')
+\end{split}
+\end{equation}
+we can therefore choose
+\begin{equation*}
+h = \frac{1}{\sqrt{2\pi}}
+\end{equation*}
+We have thus found an orthonormal basis for our Hilbert space
+\begin{equation}
+\begin{split}
+& | k_{(1)} \rangle = \frac{|D|}{\sqrt{2\pi}A}\bigg( \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}
+\Theta(-x^1) + 
+\frac{1}{D}\begin{pmatrix} A & 0 \\  0 & C^* \end{pmatrix} \Theta(x^1) \bigg)
+\begin{pmatrix} e^{ikx^1}  \\ e^{-ikx^1} \end{pmatrix}   \\
+& | k_{(2)} \rangle = \frac{1}{\sqrt{2\pi}}
+\Bigg( \begin{pmatrix} -\frac{\beta e^{i\eta}}{\alpha} & 0 \\ 0 & 1 \end{pmatrix}
+\Theta(-x^1) + 
+\frac{1}{D}\begin{pmatrix} -A\frac{\beta e^{i\eta}}{\alpha} + C  & 0\\ 0&  -C^*\frac{\beta e^{i\eta}}{\alpha} + A  \end{pmatrix} \Theta(x^1) \Bigg)
+\begin{pmatrix} e^{ikx^1}  \\  e^{-ikx^1}  \end{pmatrix}  
+\end{split}
+\end{equation}
+Let us calculate the two point functions associated with these eigenvectors now. In the region $x<0$, we have
+\begin{equation*}
+\begin{split}
+\omega(\psi^2(x)\bar{\psi}_1(y)) & =  \omega(\phi^1(x)\phi^\dagger_1(y)) \\
+& = \int_{k > 0} \frac{|D|^2}{2\pi A^2} e^{-ik(x^0 - y^0 - x^1 + y^1)} \dd k + \int_{k>0} \frac{1}{2\pi}  \frac{\beta^2}{\alpha^2} e^{-ik(x^0 - y^0 - x^1 + y^1)} \dd k\\
+& = -\frac{1}{2\pi}\frac{i}{x^0 - y^0 - x^1 + y^1 - i\epsilon} 
+\end{split}
+\end{equation*}
+\begin{equation*}
+\omega(\psi^1(x)\bar{\psi}_2(y))   =  \omega(\phi^2(x)\phi^\dagger_2(y)) = -\frac{1}{2\pi}\frac{i}{x^0 - y^0 - x^1 + y^1 - i\epsilon} 
+\end{equation*}
+Subtracting by the Hadamard parametrix and tracing with gamma matrices, we yield 0 for both current and charge density. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
