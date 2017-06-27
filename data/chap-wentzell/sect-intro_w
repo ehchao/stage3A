@@ -1,4 +1,5 @@
-\section{Introduction}
+\section{Lagrangian}
+Among recent works on the AdS/CFT correspondance of Dirac fields, we can find different proposition
 The main goal of this work is to generalize the bag boundary condition proposed in~\cite{Chodos1974}
 by introducing the derivatives of the wave function in the boundary condition for a Lorentzian manifold $M$. 
 The boundary $\partial M$ is supposed to be static and we use the Minkowski space-time with signature $(+, -,\ldots, -)$.\footnote{
