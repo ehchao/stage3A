@@ -10,11 +10,21 @@ We choose the following representations for the Dirac gamma matrices
 -1 & 0
 \end{pmatrix}
 \end{equation*}
-%
-%
+We give hereunder the off-diagonal components\footnote{
+In effect, since the gamma matrices that we choose here are off-diagonal, only the off-diagonal will be used when we calculate the vacuum current.
+}
+ of the Hadamard parametrix found in~\cite{Zahn2015} which describes the case of a spin-$\frac 1 2$ massless particle with charge $+e$ in $(1+1)$-dimension in presence of a potential under static gauge $A^\mu(x) = (Ex^1, 0)$, where $E$ is a constant electric field and $x^1$ is the spatial coordinate
+\begin{equation}\label{vacuum-hadamardparametrix}
+\begin{split}
+& H^\pm (x, y)^1_2 = \frac{-i}{2\pi}\frac{1-\frac i 2 e E(x^1 + y^1)(x^0-y^0) 
+- \frac 1 8 (eE)^2(x^1 + y^1)^2(x^0 - y^0)^2}{x^0 - y^0 + x^1 - y^1 \mp i \epsilon}  \\
+& H^\pm (x, y)^2_1 = \frac{-i}{2\pi}\frac{1-\frac i 2 e E(x^1 + y^1)(x^0-y^0) 
+- \frac 1 8 (eE)^2(x^1 + y^1)^2(x^0 - y^0)^2}{x^0 - y^0 - x^1 + y^1 \mp i \epsilon}
+\end{split}
+\end{equation}
 %
 \section{Vacuum polarization in a confined space without external electric field}\label{sect-nef}
-We consider a massless Dirac field in $1+1$-dimensional space-time. %spatially confined in the region $[-\frac L 2 , \frac L 2 ]$.
+We consider a massless Dirac field in $1+1$-dimensional space-time spatially confined in the region $[-\frac L 2 , \frac L 2 ]$.
 Denoting $\phi = \gamma^0\psi$, the Dirac equation of the massless field
 \begin{equation*}
 i\gamma^\mu\partial_\mu \psi = 0
@@ -23,22 +33,36 @@ can be written as
 \begin{equation*}
 i\partial_0\phi = i \begin{pmatrix} -1 & 0 \\ 0 & 1 \end{pmatrix}\partial_1\phi
 \end{equation*}
+%
+As for the boundary condition on $\pm \frac L 2$, we impose the bag boundary condition~\cite{Chodos1974}, \ie 
+\begin{equation}\label{vacuum-bagboundcond}
+i\gamma^1 \psi \eval{\pm \frac{L}{2}} = \pm \psi \eval{\pm \frac{L}{2}}
+\end{equation}
+%
 As shown in~\cite{Zahn2015}, when there is no external electric field, no polarization occurs. 
 However, one can wonder if this result is always valid when there is a punctual interaction in the confined space.
 Inspired by~\cref{vacuum-kondohamiltonian}, we introduce a potential term which is due to the impurity at $x^1 = 0$.
-We can write down the Dirac equation of the problem as following
+We can write down the equations of motion of the problem as following
 \begin{equation}\label{nef-Dirac}
-i \partial \phi = 
+i \partial_0 \phi = 
 \begin{pmatrix} 
 -1 & 0 \\
 0 & 1 
-\end{pmatrix} i \partial \phi +
+\end{pmatrix} i \partial_1 \phi +
 \begin{pmatrix}
 v_3 & v_- \\
 v_+ & -v_3
 \end{pmatrix} \delta(x_1) \phi
 \end{equation}
-where $v_3, v_+, v_-$ are constants.
+where $v_3, v_+ + v_- \in \mathbb{R}$ and $ v_+ - v_-\in i \mathbb{R}$.\footnote{
+In effect, the Kondo potential (the second term of the \rhs of~\cref{vacuum-kondohamiltonian}) is expressed as linear combination of the Pauli matrices
+\begin{equation*}
+\sigma^1 = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \quad
+\sigma^2 = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix} \quad
+\sigma^3 = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} 
+\end{equation*}
+with real coefficients.
+}
 By denoting $\phi =
 \begin{pmatrix}
 \phi_L \\

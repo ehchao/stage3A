@@ -6,10 +6,10 @@ Especially, the quantum electrodynamics in such circumstance becomes a great int
 Its present form is basically due to Schwinger. 
 In his paper~\cite{Schwinger1951}, the point-splitting formalism is used. 
 However, it seems that his approach in~\cite{Schwinger1951} leads to some results which are not gauge invariant. 
-\cite{Zahn2015} highlights this point and proposes another approach using Dirac's method~\cite{Dirac1934} and some notions developped in \textit{quantum field theory in curved space-time} (QFT in curved space-time). 
+In~\cite{Zahn2015}, this point is highlighted and another approach using Dirac's method~\cite{Dirac1934} and some notions developped in \textit{quantum field theory in curved space-time} (QFT in curved space-time) is proposed. 
 Dirac's method consists of considering the vacuum as a space occupied by negative-energy positrons and that nearly all the positive-energy states are unoccupied.
-In presence of an external potential, positrons will occupy some positive-energy states, which leads to the polarization of the vacuum.
-A precise definition of the vacuum polarization will be given in this section.
+In presence of an external potential, positrons will occupy some positive-energy states, which leads to the polarization of vacuum.
+A precise definition of the vacuum polarization will be given later.
 In this report, we compute the vacuum polarization of a spatially confined $(1+1)$-dimensional space in presence of a punctual potential commonly used to explain the Kondo effect. 
 By simplicity, we will only consider the vacuum polarization due to massless spin-$\frac 1 2$ particles.
 The results can be extended to massive field with the same calculation.
@@ -18,7 +18,7 @@ The results can be extended to massive field with the same calculation.
 %
 %
 \paragraph{QFT in curved space-time}
-QFT in curved space-time is a semi-classical theory aiming to take into account the curvature of space-time in quantum field theory.
+QFT in curved space-time is a semi-classical theory taking into account the curvature of space-time in quantum field theory.
 A review on the necessary notions for this report will be given in this paragraph.
 For a more complete review of this subject, we can refer to~\cite{Hollands2014}. \\\\
 %
@@ -48,12 +48,12 @@ We can then construct $\mathscr{A}(M,g)$ by starting with the free *-algebra gen
 We define a \textbf{physical state} $\omega$ as a linear map
 $\omega: \mathscr{A}(M,g) \rightarrow \mathbb{C}$ satisfying the normalization condition $\omega(\mathbf{1}) = 1$ and the positivity $\omega(a^*a) \geq 0$ for $a\in\mathscr{A}(M,g)$.
 A physical state could simply be considered as an expectation value functional. 
-For a given state $\omega$, there is an associated Hilbert space $\mathscr{H}_\omega$, a representation $\pi : \mathscr{A}(M,g)\rightarrow \mathscr{H}_\omega$ and a non-trivial vector $\Psi \in \mathscr{H}_\omega$ such that for $a \in \mathscr{A}(M,g)$
+For a given state $\omega$, there is an associated Hilbert space $(\mathscr{H}_\omega, \langle \cdot, \cdot \rangle)$, a representation $\pi : \mathscr{A}(M,g)\rightarrow \mathscr{H}_\omega$ and a non-trivial vector $\Psi \in \mathscr{H}_\omega$ such that for $a \in \mathscr{A}(M,g)$
 \begin{equation*}
 \omega(a) = \frac{\langle \Psi, \pi(a)\Psi\rangle}{\langle \Psi, \Psi \rangle}
 \end{equation*}
 by the GNS-construction (see \eg the appendix of~\cite{Timmermann2008} for more detail).
-For what concerns this projet, the physical state that we will be interested in is the vacuum $(d+1)$-current in a $(d+1)$-dimensional space-time.
+For what concerns this projet, the physical state that we will be interested in is the vacuum $(1+1)$-current in a $(1+1)$-dimensional space-time.
 The definition of such a current will be given later. \\\\
 %
 Especially, it is of big interest to study physical states which are \textbf{2-point functions} (or more precisely, 2-point distributions), 
@@ -63,7 +63,7 @@ W_2(f, g ) \equiv \omega(\phi(f)\otimes \phi(g))
 \end{equation*}
 It should be noted that $W_2(x,y)$ is defined only in sense of distribution because of the divergence when the coinciding-point limit $x\rightarrow y$ is applied.
 In a globally hyperbolic space-time $(M,g)$ (see~\cite{Wald2010} for definition), it is shown (theorem 5.1 of~\cite{Radzikowski1996}) that the singular behaviour of the two-point function takes the same form for the states verifying a certain relation (such states are called \textbf{Hadamard states}). 
-It is proven in~\cite{Fulling1978} that the singular structure of a Hadamard state is preserved in a globally hyperbolic space-time. 
+It is proven in~\cite{Fulling1978} that the singular structure of a Hadamard state is preserved and propagates in a globally hyperbolic space-time. 
 The singular part at the coinciding-point limit of a Hadamard state is called \textbf{Hadamard parametrix}.
 The subtraction of the Hadamard parametrix is a method to renormalize the expectation functional $\omega$. \\\\
 %more explaination ??
@@ -110,19 +110,19 @@ j'^{\mu}(x,y) =  e \int_{E_k > 0} \bar{\psi}_k(y)\gamma^\mu \psi_k(x) e^{- i E_k
 \end{equation}
 where $\psi_k$ is the coefficient corresponding to the $k$-mode in the mode expansion and $\gamma^\mu$ are the Dirac gamma matrices.
 The convergence of this expression is not ensured because of the infinite number of modes (UV-divergence).
-Meanwhile, we recognize a Hadamard state from~\cref{vacuum-2pointfct} defined by 
-\begin{equation*}
+Meanwhile, we recognize a Hadamard state structure from~\cref{vacuum-2pointfct} defined by 
+\begin{equation}\label{vacuum-hadamardstate}
 \begin{split}
 \omega(\psi^B(x)\bar{\psi}_A(y)) = & \int_{E_k >0} \psi_k^B(x)\bar{\psi}_{A,k}(y)e^{-i(x^0-y^0)E_k} \dd k \\
 \omega(\bar{\psi}_A(y)\psi^B(x)) = & \int_{E_k <0} \psi_k^B(x)\bar{\psi}_{A,k}(y)e^{-i(x^0-y^0)E_k} \dd k 
 \end{split}
-\end{equation*}
+\end{equation}
 such that 
 \begin{equation*}
 j'(x,y) = \gamma^A_B \omega(\psi^B(x)\bar{\psi}_A(y)) 
 \end{equation*}
 where the summation over the repeated indices is used.
-Therefore, if the Hadamard paramtrix $H$ is known, we can get a renormalized vacuum current
+Therefore, if the Hadamard paramtrix $H$ is known, we can define the renormalized vacuum current
 \begin{equation}\label{vacuum-currentexpression}
 j^\mu(x) = \lim_{y \rightarrow x} \gamma^A_B \big(
 \omega(\psi^B(x)\bar{\psi}_A(y)) - H^B_A (x, y)\big)
@@ -131,8 +131,8 @@ j^\mu(x) = \lim_{y \rightarrow x} \gamma^A_B \big(
 \paragraph{Computation of the Hadamard parametrix}
 In this report, the Hadamard parametrix used for our calculation is obtained in~\cite{Zahn2015}. 
 Here, we will just give the main idea of the computation of Hadamard parametrices. 
-For more detailed mathematical aspects, one can refer to~\cite{Bar2008}
-As we will discuss about Dirac fields which are in the kernel of the operator $i\slashed{\nabla} - m$ (eventually $m=0$ for massless cases), 
+For more detailed mathematical aspects, one can refer to~\cite{Bar2008}.
+As we will discuss Dirac fields which are in the kernel of the operator $i\slashed{\nabla} - m$ (eventually $m=0$ for massless cases), 
 we have to calculate the retarded and the advanced propagators of 
 \begin{equation*}
 P = (i\slashed{\nabla} - m)(-i\slashed{\nabla} -m) 
@@ -173,7 +173,8 @@ By consequence, for any state $\omega$ with Hadamard two-point function, the fol
 \omega(\bar{\psi}_A(y)\psi^B(x)) = &- H^-(x,y)^B_A - R^B_A(x,y)
 \end{split}
 \end{equation*}
-where $R$ is smooth and determined up to terms vanishing at coinciding-point limit.
+where $R$ is smooth and determined up to terms vanishing at coinciding-point limit. \\\\
+%
 %
 %
 %

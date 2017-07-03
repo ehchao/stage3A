@@ -1,11 +1,8 @@
 \subsection{Two-point Hadamard form of the spatially bounded case}
-Consider now a system confined in $[-\frac{L}{2}, \frac{L}{2}]$. We apply the procedure given in~\cite{Zahn2015} in order to calculate the vacuum polarisation. 
-We impose the bag boundary condition~\cite{Chodos1974} 
-\begin{equation*}
-i\gamma^1 \psi \eval{\pm \frac{L}{2}} = \pm \psi \eval{\pm \frac{L}{2}}
-\end{equation*}
+%Consider now a system confined in $[-\frac{L}{2}, \frac{L}{2}]$. 
+%We apply the procedure given in~\cite{Zahn2015} in order to calculate the vacuum polarisation. 
 Suppose that the the solution takes the form $\phi = \begin{pmatrix} \phi_L \\ \phi_R \end{pmatrix}$.
-In terms of $\phi = \gamma^0 \psi$, the boundary conditions become
+In terms of $\phi = \gamma^0 \psi$, the boundary condition~\cref{vacuum-bagboundcond} becomes
 \begin{equation*}
 \begin{pmatrix}
 -i \phi_R \\
@@ -41,7 +38,7 @@ Let us look for solutions for the eigenvalue $k$.
 Suppose that for the region $x^1<0$, 
 %the solution $\phi_k$ corresponding to the $k$-mode can be written as
  $\phi_L = f e^{-ik(x^0 - x^1)}$ and $\phi_R = g e^{-ik(x^0+x^1)}$, where $f$ and $g$ are complex numbers that we have to determine. 
-According to \cref{nef-matching2}, the components of the solution in the region $x > 0$ should be $\phi_L = \frac{1}{D} (Af+Cg) e^{ikx^1}$ and $\phi_R = \frac{1}{D}(C^* f + Ag ) e^{-ikx^1}$. 
+According to \cref{nef-matching2}, the components of the solution in the region $x > 0$ should be $\phi_L = \frac{1}{D} (Af+Cg) e^{-ik(x^0 - x^1)}$ and $\phi_R = \frac{1}{D}(C^* f + Ag ) e^{-ik(x^0 + x^1)}$. 
 Note that the solution on the whole space $x^1 \in [-\frac{L}{2}, \frac{L}{2}] - \{0\}$ is totally determined by $f$ and $g$ due to the matching condition \cref{nef-matching}. \\\\
 The boundary condition implies
 \begin{equation}
@@ -134,7 +131,7 @@ Hence, the normalisation condition and \cref{nef-boundCond2} imply
  & \textrm{$\beta = \frac{2 A |C|}{|D|^2}$}
 \end{split}
 \end{equation}
-Therefore, for the mode $k_n > 0$, the solution space is spanned by 
+Therefore, we have found an eigenvector for the eigenvalue $k_n > 0$ 
 \begin{equation}
 \begin{split}
 \phi_{k_{n}} = 
@@ -156,19 +153,22 @@ e^{- ik_{n} x^1}
 \end{equation}
 where $\Theta$ is the Heaviside step function.\\\\
 %%%%%%%%%%%
-We take the Hadamard state defined in~\cite{Zahn2015} to calculate the vacuum polarisation of this configuration, given by the two-point function
-\begin{equation}\label{vacuum-nefvacpol}
-\omega(\psi^B(x) \bar{\psi_A}(y)) = \int_{E_k > 0} \psi^B(x) \bar{\psi_A}(y) e^{-i(x^0 - y^0) E_k} \dd k
-\end{equation}
-As we will multiply these two-point functions by $\gamma^i$ to get observables (current and charge density), only the following terms should be considered in terms of $\phi$ \footnote{
-The summation of Einstein is not applied here.}
-\begin{equation}
+%We take the Hadamard state defined in~\cite{Zahn2015} to calculate the vacuum polarisation of this configuration, given by the two-point function
+%\begin{equation}\label{vacuum-nefvacpol}
+%\omega(\psi^B(x) \bar{\psi_A}(y)) = \int_{E_k > 0} \psi^B(x) \bar{\psi_A}(y) e^{-i(x^0 - y^0) E_k} \dd k
+%\end{equation}
+Let us compute now the two-point Hadamard state~\cref{vacuum-hadamardstate}.
+As we will multiply these two-point functions by $\gamma^i$ to get observables (current and charge density), only the off-diagonal terms should be considered ($A\neq B$ in~\cref{vacuum-calculhadamard}).
+In terms of $\phi$, these terms are expressed as
+%\footnote{The summation of Einstein is not applied on $A$ here.}
+\begin{equation}\label{vacuum-calculhadamard}
 \omega(\psi^B(x) \bar{\psi_A}(y)) = 
-\gamma^B_A \omega(\phi^A(x) \phi^\dagger_A(y)) = 
-\int_{E_k > 0} \phi^A(x) \phi^\dagger_A(y) e^{-i(x^0 - y^0) E_k} \dd k
-\quad \textrm{for $A = 1,2$}
+(\gamma^0)^B_C \omega(\phi^C(x) \phi^\dagger_A(y)) = (\gamma^0)^B_C
+\int_{E_k > 0} \phi^C(x) \phi^\dagger_A(y) e^{-i(x^0 - y^0) E_k} \dd k
+%\quad \textrm{for $A = 1,2$}
 \end{equation}
-Firstly, consider $x^1, y^1 < 0$. The integral term for $A =1$, with $z =x^0 - y^0 - x^1 +y^1$ becomes
+Let us begin by considering the region $x^1, y^1 < 0$. 
+For $A =1, B= 2$, with $z =x^0 - y^0 - x^1 +y^1$,~\cref{vacuum-calculhadamard} becomes
 \begin{equation}
 \sum_{2p \geq 0} \frac{e^{-i(\theta + 2p\pi)\frac{z}{L}}}{L(\alpha - \beta \sin (\theta - \eta))} 
 + \sum_{2p+1 \geq 0} \frac{e^{-i(- \theta + (2p+2)\pi)\frac{z}{L}}}{L(\alpha + \beta \sin (\theta + \eta))}\\
@@ -204,7 +204,7 @@ we have
    + \frac{1}{\alpha + \beta \sin (\theta + \eta)} 
 = 1
 \end{equation}
-Therefore, the singularity of $\mathcal{O}(z^{-1})$ is the same as for the Hadamard parametrix of the vacuum case.\\\\
+%Therefore, the singularity of $\mathcal{O}(z^{-1})$ is the same as for the Hadamard parametrix of the vacuum case.\\\\
 We calculate now the vacuum polarization in the region $[-\frac{L}{2}, 0)$. Since
 \begin{equation*}
 \frac{1}{2i \sin \frac{\pi}{L}z } = \frac{-iL}{2 \pi z} - \frac{i \pi z}{12L} + \mathcal{O}(z^3) 
@@ -233,14 +233,15 @@ we thus have
 \omega(\psi^1(x) \bar{\psi_2}(y)) =  \omega(\phi^2(x) \phi^\dagger_2(y)) 
 = \xi(x^0 - y^0 + x^1 -y^1)
 \end{equation*}
-The off-diagonal components of the Hadamard parametrix of our problem are~\cite{Zahn2015}
-\begin{equation}\label{vacuum-nefhadamard}
-\begin{split}
-H^{+} (x,y)^2_1 = \frac{-i}{2\pi (x^0 - y^0 - x^1 + y^1 -i\epsilon)} + \textrm{terms vanishing at coinciding point limit}  \\
-H^{+} (x,y)^1_2 = \frac{-i}{2\pi (x^0 - y^0 + x^1 - y^1 -i\epsilon)} + \textrm{terms vanishing at coinciding point limit} 
-\end{split}
-\end{equation}
-Hence, in the region $[-\frac{L}{2}, 0)$, the charge density is
+%The off-diagonal components of the Hadamard parametrix of our problem are~\cite{Zahn2015}
+%\begin{equation}\label{vacuum-nefhadamard}
+%\begin{split}
+%H^{+} (x,y)^2_1 = \frac{-i}{2\pi (x^0 - y^0 - x^1 + y^1 -i\epsilon)} + \textrm{terms vanishing at coinciding point limit}  \\
+%H^{+} (x,y)^1_2 = \frac{-i}{2\pi (x^0 - y^0 + x^1 - y^1 -i\epsilon)} + \textrm{terms vanishing at coinciding point limit} 
+%\end{split}
+%\end{equation}
+We subtract then from the above the Hadamard parametrix~\cref{vacuum-hadamardparametrix} and trace them with the gamma matrices in order to get the components of the vacuum charge and current densities.
+In the region $[-\frac{L}{2}, 0)$, the charge density is
 \begin{equation}
 \rho(x) = \frac{e}{\pi L}\Big( \frac{\beta \sin \theta \cos \eta}{\alpha + \beta \sin \eta \cos \theta}\Big) (-\theta + \pi)
 \end{equation}

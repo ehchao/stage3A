@@ -1,6 +1,6 @@
 \subsection{Well-posedness of the problem~\cref{nef-Dirac}}\label{vacuum-subsect-sa}
 %In this section, we study the self-adjointness of the Hamiltonian in which the Kondo potential is involved. 
-The Hilbert space in which we are going to work is $\mathcal{H} = L^{2}(I_-, \mathbb{C}^2) \oplus L^{2}(I_+, \mathbb{C}^2)$,  where $I_- = [-\frac{L}{2}, 0)$ and $I_+ = (0, \frac{L}{2}]$.
+The Hilbert space on which we are going to work is $\mathcal{H} = L^{2}(I_-, \mathbb{C}^2) \oplus L^{2}(I_+, \mathbb{C}^2)$,  where $I_- = [-\frac{L}{2}, 0)$ and $I_+ = (0, \frac{L}{2}]$.
 The inner product of this Hilbert space is the sum of the usual $L^2$ inner products on $I_+$ and $I_-$, namely
 \begin{equation*}
 \langle \cdot, \cdot\rangle_{\mathcal{H} } = \langle \cdot, \cdot\rangle_{L^{2}(I_-, \mathbb{C}^2)} +\langle \cdot, \cdot\rangle_{L^{2}(I_+, \mathbb{C}^2)}
@@ -16,7 +16,7 @@ To start, we choose for the domain of $H$ as
 \begin{equation*}
 \mathrm{Dom}(H) = \Big \{\phi \enskip \big\vert \enskip \phi \in L^{2}(I_-, \mathbb{C}^2) \oplus L^{2}(I_+, \mathbb{C}^2), \enskip -i \gamma^1 \phi\vert_{\pm \frac{L}{2}} = \pm \phi \vert_{ \pm \frac{L}{2} }, \enskip \phi \textrm{ verifies the matching condition at 0} \Big \}
 \end{equation*} 
-where the matching condition at 0 is given in \cref{nef-matching}\\\\
+where the matching condition at 0 is given in \cref{nef-matching2}\\\\
 Let $ \phi = \begin{pmatrix} \phi_L \\ \phi_R \end{pmatrix}, \psi = \begin{pmatrix} \psi_L \\ \psi_R \end{pmatrix} \in \mathrm{Dom}(H)$
 \begin{equation}\label{sa-hamiltonian}
 \begin{split}
@@ -26,7 +26,7 @@ Let $ \phi = \begin{pmatrix} \phi_L \\ \phi_R \end{pmatrix}, \psi = \begin{pmatr
 & - i \int_{I_-} ( - \partial \psi_L^* \phi_L + \partial \psi_R^*  \phi_R ) - i \int_{I_+} ( - \partial \psi_L^* \phi_L + \partial \psi_R^*  \phi_R ) 
 \end{split}
 \end{equation}
-The boundary condition implies
+The boundary condition~\cref{vacuum-bagboundcond} implies
 \begin{equation*}
 - \psi_L^*(\pm \frac{L}{2}) \phi_L(\pm \frac{L}{2}) + \psi_R^*(\pm \frac{L}{2}) \phi_R(\pm \frac{L}{2}) =0
 \end{equation*}
@@ -39,7 +39,7 @@ The matching condition at $x = 0$ gives
 & = \big[ \psi^*_R\phi_R] ^{0^+}_{0^-}
 \end{split}
 \end{equation*}
-Hence, \cref{sa-hamiltonian} implies that $H^* = H$ and $\mathrm{Dom}(H^*) \supset \mathrm{Dom}(H)$ 
+Hence, \cref{sa-hamiltonian} implies that the adjoint $H^* = H$ and $\mathrm{Dom}(H^*) \supset \mathrm{Dom}(H)$ 
 \\\\
 A basic criterion of self-adjointness is given in~\cite{Reed1981}
 \begin{theorem}
@@ -55,7 +55,7 @@ We start by calculate $\mathcal{K}_-$. Let $\phi \in \mathcal{K}_-$. Then $- i \
 \begin{equation}
 i \begin{pmatrix} \phi_L \\ \phi_R \end{pmatrix} = 
 i \begin{pmatrix} 1 & 0  \\ 0  &  -1 \end{pmatrix} 
-\begin{pmatrix}  \phi_L  \\  \phi_R \end{pmatrix}
+\begin{pmatrix} \partial_1 \phi_L  \\  \partial_1\phi_R \end{pmatrix}
 \end{equation} 
 Thus, $\phi$ could be written as
 \begin{equation}
@@ -93,7 +93,7 @@ $f_+$ and $f_-$ are non-vanishing if and only if
 \end{equation}
 %For $C = -iv_- = -iv_1 - v_2$ and $A = 1 + \frac{1}{4}(v_1^2 + v_2^2 + v_3^2)$, this requires
 This condition is not verified in general, as the $v_i$ do not depend on $L$, in which case we get $\dim \mathcal{K}_- = 0$. \\
-For $\mathcal{K}_+$, it suffices to replace $L$ by $-L$ in the above calculation. Therefore, besides certain specific potentials, $H$ is essentially self-adjoint.
+For $\mathcal{K}_+$, it suffices to replace $L$ by $-L$ in the above calculation. Therefore, besides certain specific potentials, $H$ can be made self-adjoint with a properly chosen domain on which $H is closed$ ($H$ is said to be essentially self-adjoint).
 
 
 
