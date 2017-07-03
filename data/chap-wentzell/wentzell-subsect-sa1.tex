@@ -1,4 +1,4 @@
-\subsection{Bulk $M = \mathbb{R}^{d-1} \times \mathbb{R}_+$}\label{wen-subsect1}
+\subsection{$M = \mathbb{R}^{d-1} \times \mathbb{R}_+$}\label{wen-subsect1}
 \begin{proposition}
 Let $M = \mathbb{R}^{d-1} \times \mathbb{R}_+$. $\Delta$ is a self-adjoint operator with spectrum $\mathbb{R}$
 \end{proposition}
@@ -7,7 +7,7 @@ The self-adjointness being proven, let us find the eigenvectors and eigenvalues 
 \begin{equation}\label{wen-motion2}
 \begin{cases}
 i \gamma^0 \gamma^j \partial_j \phi_k = k \phi_k \\
--c^{-1} \gamma^0 \mathcal{P}_- \phi\vert_{\partial M} + i \gamma^0 \gamma^a \partial_a \mathcal{P}_+ \phi_{| k} = k \phi_{| k}
+-c^{-1} \gamma^0 \mathcal{P}_- \phi\vert_{\partial M} + i \gamma^0 \gamma^a \partial_a \phi_{| k} = k \phi_{| k}
 \end{cases}
 \end{equation}
 Since for all vector $\psi$,
@@ -29,23 +29,23 @@ with $p_j$ satisfying
 \begin{equation*}
 - p^j p_j = k^2
 \end{equation*}
-forms a basis for the solution of the first equation of \cref{wen-motion}. 
+spans the solution space of the first equation of~\cref{wen-motion}. 
 The constants $A$ and $B$ will be determined by the second equation of \cref{wen-motion} and the boundary condition. 
 The only constraint on $\psi_n$ is that $\psi_n$ should not be in $\ker( \gamma^0 \gamma^j p_j + k \mathbb{1})$. 
 \footnote{
 As 
-$(\gamma^0\gamma^j p_j + k \mathbb{1})^2 = (\gamma^j p_j + k\mathbb{1})^2 
+$(\gamma^0\gamma^j p_j + k \mathbb{1})
+(-\gamma^0\gamma^j p_j + k \mathbb{1})  
 = k^2 - (p_j)^2= 0$, 
-$\gamma^0 \gamma^j p_j + k \mathbb{1}$
-is nilpotent and its kernel is not reduced to $\{ 0 \}$
+the kernel of $\gamma^0 \gamma^j p_j + k \mathbb{1}$ is not reduced to $\{ 0 \}$
 } 
 Since we have projectors $\mathcal{P}_\pm$, 
-it is natural to take the basis of the representation space as the union of an orthonormal basis $\mathfrak{B}_+$ of $\ran(\mathcal{P}_+)$ and an orthonormal basis $\mathfrak{B}_-$ of $\ran(\mathcal{P}_-)$. \\\\
-Considering the second equation and the condition that an element of $\dom(\Delta)$ should satisfy, one gets
+it is natural to take the basis of the total representation space as the union of an orthonormal basis $\mathfrak{B}_+$ of $\ran(\mathcal{P}_+)$ and an orthonormal basis $\mathfrak{B}_-$ of $\ran(\mathcal{P}_-)$. \\\\
+Considering the second equation of~\cref{wen-motion} and the condition that an element of $\dom(\Delta)$ should satisfy, one gets
 \begin{equation}\label{wen-boundary}
 \begin{split}
-& \mathcal{P}_+\phi\vert_{\partial M} = \mathcal{P}_+ \phi_| \\
-& -c^{-1} \gamma^0 \mathcal{P}_- \phi\vert_{\partial M} + i\gamma^0\gamma^a\partial_a \mathcal{P}_+\phi\vert_{\partial M} = k \mathcal{P}_+ \phi_| 
+& \mathcal{P}_+\phi\vert_{\partial M} =  \phi_| \\
+& -c^{-1} \gamma^0 \mathcal{P}_- \phi\vert_{\partial M} + i\gamma^0\gamma^a\partial_a \mathcal{P}_+\phi\vert_{\partial M} = k \phi_| 
 \end{split}
 \end{equation}
 which implies
@@ -105,5 +105,6 @@ c^{-1} B + p_\bot A = 0
 \paragraph{Case 4 : $\psi \in \mathfrak{B}_+$ and $p_\bot = 0$}
 The constants $A$ and $B$ can be chosen arbitarily in this case. \\\\
 The above discussion indicates that for any $k \in \mathbb{R}$, 
-we can find normalisable eigenvectors of $\Delta$ with eigenvalue $k$.
+we can find eigenvectors of $\Delta$ with eigenvalue $k$.
+However, it should be noted that these plane wave solutions are only normalizable to $\delta$-function.
 \end{proof}

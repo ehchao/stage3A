@@ -1,23 +1,30 @@
-\subsection{Bulk $M = \mathbb{R}^{d-1} \times [-L, L]$ }\label{wen-subsect-saw2}
+\subsection{${M} = \mathbb{R}^{d-1} \times [-L, L]$ }\label{wen-subsect-saw2}
 The subtlety that one should beware of in this case is the projectors $\mathcal{P}_+$.
-Since $\mathcal{P}_+$ is defined by considering a set of generators of Clifford Algebra on the tangent bundle $T_{ \partial M}$, 
+Since $\mathcal{P}_+$ is defined by considering a set of generators of Clifford Algebra on the tangent bundle $T_{ \partial \mathcal{M}}$, 
 if we would like to fixe the system of coordinates once for all,
-we should also take into account the transformation of these generators. \\
-Let $(x^0, \ldots, x^d)$ a system of coordinate of the bulk $M$. 
+we should also take into account the transformation of these generators. \\\\
+Let $(x^0, \ldots, x^d)$ a system of coordinate of the bulk $\mathcal{M} =\mathbb{R}\times M $. 
 Because of the geometric configuration of the bulk, 
 this system of coordinate is global. 
-The boundary is therefore $\partial M = \{x^d = -L \} \cup \{ x^d = L \}$.
-Furthermore, we  \\
+The boundary is therefore $\partial \mathcal{M} = \{x^d = -L \} \cup \{ x^d = L \}$.
+Furthermore, we  \\\\
 We denote $(\gamma^\mu)_\mu$ the set of gamma matrices chosen on $\{x^d  = - L \}$. 
-We will have then $\mathcal{P}_+\vert_{\{x^d = L\}} = \mathcal{P}_-\vert_{\{x^d = -L\}}$ and $\gamma^\mu\vert_{\{x^d = L\}}=\gamma^\mu\vert_{\{x^d = -L\}}$ for $\mu\in\llbracket 0, d-1 \rrbracket$
-When it is not specified, we refer to the gamma matrices and the projectors on $\{x^d = -L\}$ \\
-Now, for $\Phi = (\phi, \phi_|)$ the boundary condition becomes
+We will have then $\mathcal{P}_+\vert_{\{x^d = L\}} = \mathcal{P}_-\vert_{\{x^d = -L\}}$ and $\gamma^\mu\vert_{\{x^d = L\}}=\gamma^\mu\vert_{\{x^d = -L\}}$ for $\mu\in\llbracket 0, d-1 \rrbracket$.
+When it is not specified, we refer to the gamma matrices and the projectors on $\{x^d = -L\}$. \\\\
+%
+As for the boundary component $\phi_|$ of a solution $\Phi= (\phi, \phi_|)$,
+we can rewrite it as
+\begin{equation*}
+\phi_| = \mathbf{1}_{\{x^d = L \}}\phi_+ + \mathbf{1}_{\{x^d = - L \}}\phi_-
+\end{equation*}
+where $\phi_\pm$ represent the restriction of $\phi_|$ on $\{x^d = \pm L \}$.
+Now, the boundary condition becomes
 \begin{equation}\label{wen-saw2bound}
 \begin{split}
 \begin{cases}
-\mathcal{P}_+ \phi\vert_{\{x^d = -L\}} = \mathcal{P}_+\phi_| \\
+\mathcal{P}_+ \phi\vert_{\{x^d = -L\}} = \phi_- \\
 c^{-1}\mathcal{P}_-\phi\vert_{\{x^d = -L\}} = \mathcal{P}_-(\partial_d \phi\vert_{x^d = -L}) \\
-\mathcal{P}_- \phi\vert_{\{x^d = L\}} = \mathcal{P}_-\phi_| \\
+\mathcal{P}_- \phi\vert_{\{x^d = L\}} =\phi_+ \\
 -c^{-1}\mathcal{P}_+\phi\vert_{\{x^d = L\}} = \mathcal{P}_+(\partial_d \phi\vert_{x^d = L}) \\
 \end{cases}
 \end{split}
@@ -64,16 +71,18 @@ The same argument as in~\cref{wen-subsect1} requires
 (- p_d A + c^{-1}B)\sin p_d L - (p_d B + c^{-1} A)\cos p_d L = 0
 \end{cases}
 \end{equation}
-There are some sub-cases here
+In order to study~\cref{wen-plates1}, we discuss the following four sub-cases according to the coefficients of $\sin$ and $\cos$.
 \subparagraph{Sub-case 1: $ p_d B - c^{-1}A = 0$}
 \cref{wen-plates1} becomes
-\begin{equation*}
+\begin{equation}\label{wen-plates1-1}
 \begin{cases}
 (c^{-2} + p_d ^2)\cos p_d L = 0 \\
 (c^{-2} - p_d^2)\sin p_d L = 2 c^{-1}p_d \cos p_d L
 \end{cases}
-\end{equation*}
-We can verify easily that supposing $ c^{-2} + p_d^2 = 0 $ will lead to paradoxal situation. The only solutions for this sub-case are $p_d = \pm c^{-1}$ for $L$ satisfying $\cos c^{-1} L = 0$
+\end{equation}
+We can verify easily that supposing $ c^{-2} + p_d^2 = 0 $ will lead to paradoxal situation. 
+In effect, under this assumption, the second equation of~\cref{wen-plates1-1} will lead to $e^{-\pm c^{-1}L} = 0$. \\
+Therefore, the only solutions for this sub-case are $p_d = \pm c^{-1}$ for $L$ satisfying $\cos c^{-1} L = 0$
 %
 \subparagraph{Sub-case 2: $ -p_d A + c^{-1}B = 0$}
 By an easy calculation, we obtain the same result as in sub-case 1
@@ -94,7 +103,7 @@ Hence, we have $A = \pm B$ and
 \begin{equation}\label{wen-tan}
 \tan p_d L = \frac{p_d \pm c^{-1}}{p_d \mp c^{-1}}
 \end{equation}
-Show that
+We show that
 \begin{equation*}
 \tan \theta = \frac{\theta + a}{\theta - a} \quad a\in \mathbb{R} 
 \end{equation*}
@@ -143,13 +152,14 @@ Leads to the trivial solution. \\\\
 To conclude, we give the following proposition
 \begin{proposition}
 In the case where $\cos c^{-1}L \neq 0$,
-the spectrum of~\cref{wen-maineq} is $\mathbb{R}$ 
-and the eigenvectors for eigenvalue $k$ can be written as 
+the spectrum of~\cref{wen-maineq} is discrete.
+For any eigenvalue $k$, there exists $p_d\in \mathbb{R}$ satisfying~\cref{wen-tan} and $-p^jp_j = k^2$.
+The eigenvectors for eigenvalue $k$ can be written as 
 \begin{equation*}
 \phi_k = \Big(\big(i\gamma^0\gamma^a p_a+k\mathbb{1}\big)(\cos p_d x^d + \sin p_d x^d) +
 i\gamma^0\gamma^d p_d(-\sin p_d x^d + \cos p_d x^d)\Big) \psi e^{-ip_a x^a}
 \end{equation*}
-where $\psi$ is a spinor, $-p^jp_j = k^2$ and $p_d$ satisfies~\cref{wen-tan}
+where $\psi$ is a spinor in $\mathfrak{B}_+$ or $\mathfrak{B}_-$.
 \end{proposition}
 
 
