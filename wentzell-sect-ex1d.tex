@@ -1,0 +1,270 @@
+\section{Vacuum polarization in $\mathcal{M} = \mathbb R \times [-L, L]$ }
+We give an explicit example to see how this boundary condition can affect the solution. 
+In particular, we calculte the vacuum polarization by using the method introduced in~\cref{chap-vacuum}\\\\
+We choose for this example
+\begin{equation*}
+\gamma^0 = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \quad
+\gamma^1 = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}
+\end{equation*}
+We then have 
+\begin{equation*}
+ \mathcal{P}_\pm = \frac 1 2  \begin{pmatrix} 1 & \mp i \\ \pm i & 1 \end{pmatrix}
+\end{equation*}
+Let $\Phi = (\phi, \phi_|)$ where $\phi = \begin{pmatrix} \phi_L \\ \phi_R \end{pmatrix}$ be a solution of~\cref{wen-maineq}. 
+It is easy to verify that $\phi_L$ and $\phi_R$ are of form
+\begin{equation*}
+\phi_L = f e^{-ik(x^0 - x^1)} \quad
+\phi_R = g e^{-ik(x^0 + x^1)}
+\end{equation*}
+where $f, g\in\mathbb C$ are constants which have to be determined. \\\\
+By the discussion in~\cref{wen-subsect-saw2} and~\cref{wen-saw2bound}, $\phi$ must satisfy
+\begin{equation*}
+\begin{cases}
+\begin{pmatrix} 1 & i \\ -i & 1 \end{pmatrix}(c^{-1} \phi - \partial_1 \phi)\vert_{x^1 = -L} = 0 \\
+%
+\begin{pmatrix} 1 & -i \\ i & 1 \end{pmatrix}(c^{-1} \phi + \partial_1 \phi)\vert_{x^1 = L} = 0
+\end{cases}
+\end{equation*}
+In terms of components, this system of equations is equivalent to
+\begin{equation*}
+\begin{cases}
+f(c^{-1} - ik)e^{-ikL} + ig(c^{-1} + ik)e^{ikL} = 0 \\
+f(c^{-1} + ik)e^{ikL} - ig(c^{-1}- ik) e^{-ikL} = 0
+\end{cases}
+\end{equation*}
+\ie
+\begin{equation}\label{wen-bound1d}
+\begin{cases}
+f = -ig \frac{(c^{-1} + ik)e^{ikL}}{(c^{-1} - ik) e^{-ikL}} \\
+%
+(c^{-1} + ik)^2 e^{2ikL} + (c^{-1}-ik)^2 e^{-2ikL} = 0
+\end{cases}
+\end{equation}
+The second equation of~\cref{wen-bound1d} implies
+\begin{equation}\label{wen-k1d1}
+2kL + 2\arctan{ck} = \big( n +\frac 1 2 \big) \pi \quad\textrm{for $n \in \mathbb Z$}
+\end{equation}
+A solution of~\cref{wen-k1d1} should satisfy
+\begin{equation}\label{wen-mode1d}
+\exists n\in \mathbb{Z}\quad
+kL - \big(\frac{n}{2} + \frac 1 4 \big) \pi \in \big[-\frac{\pi}{2}, \frac{\pi}{2}\big] \quad
+\tan\Big( \big(\frac{n}{2}+\frac 1 4 \big)\pi -kL \Big) = ck
+\end{equation}
+It is easy to show that this correspond to~\cref{wen-tan}.
+Since for a given $n$, we can prove that there exists a unique $k$ verifying~\cref{wen-mode1d}\footnote{
+For a given $n$, 
+\begin{equation*}
+\tan \theta = \frac c L \Big( -\theta + \big( \frac n 2 + \frac 1 4 \big)\Big)
+\end{equation*}
+has a unique solution for $\theta \in \enskip] -\frac{\pi}{2}, \frac{\pi}{2}[$
+}
+, we denote $k_n$ for the mode corresponding to $n$. \\\\
+Let us study the asymptotic behavior of $k_n$. 
+Denoting $\theta_n = \big( \frac n 2 + \frac 1 4 \big)\pi - kL$ and $C = \frac c L$,~\cref{wen-mode1d} becomes
+\begin{equation}\label{wen-modetheta}
+\tan \theta_n = C \Big( \big(\frac n 2 +\frac 1 4 \big) - \theta_n \Big)
+\end{equation} 
+It is not difficult to see that 
+\begin{equation*}
+\lim_{n\rightarrow+\infty}\theta_n = \frac \pi 2
+\end{equation*}
+By expanding
+\begin{equation*}
+\begin{split}
+\tan\Big(\frac{\pi}{2} + \big(\theta - \frac \pi 2 \big) \Big) = &
+- \frac{\cos\big(\theta-\frac{\pi}{2}\big)}{\sin\big(\theta-\frac{\pi}{2}\big)} \\
+= & 
+-\frac{1}{\theta - \frac \pi 2 } - \frac{1}{3}\big(\theta - \frac{\pi}{2}\big) + \mathcal{O}\Big(\big(\theta - \frac \pi 2 \big)^2\Big)
+\end{split}
+\end{equation*}
+\cref{wen-modetheta} implies
+\begin{equation}\label{wen-modetheta2}
+-\frac{1}{\big(\theta - \frac \pi 2\big)} = 
+C\Big( \big(\frac n 2 -\frac 1 4 \big)\pi - \theta \Big) +  \frac{1}{3}\big(\theta - \frac{\pi}{2}\big) + \mathcal{O}\Big(\big(\theta - \frac \pi 2 \big)^2\Big)
+\end{equation}
+The following lemma will be useful
+\begin{lemma}\label{wen-mode1dlem}
+Let $a$ be a function of $x$ and $b \in\mathbb{R}$.
+Suppose that $a $ satisfies
+\begin{equation*}
+-\frac 1 x = a + bx + \mathcal{O}(x^2)
+\end{equation*}
+Then, the following holds
+\begin{equation*}
+x = -\frac 1 a + \mathcal{O}(x^3)
+\end{equation*}
+\end{lemma}
+\begin{proof}
+Since $a = \mathcal{O}(\frac 1 x) $, 
+\begin{equation*}
+\begin{split}
+-x =  \frac{1}{a + bx + \mathcal{O}(x^2)} 
+= \frac 1 a \big(1 + \frac b a x + \mathcal{O}(x^2)\big) 
+=  \frac 1 a +  \mathcal{O}(x^3)
+\end{split}
+\end{equation*}
+\end{proof}
+Therefore, by~\cref{wen-mode1dlem},~\cref{wen-modetheta2} reads
+\begin{equation*}
+\begin{split}
+\theta - \frac{\pi}{ 2} = &  -\frac{2}{\pi C n}\Big( 1 + \mathcal{O}\big( \frac 1 n\big) \Big)
+\end{split}
+\end{equation*}
+Hence, when $n\rightarrow +\infty$, 
+\begin{equation*}
+k_n = \frac 1 L \Big( \big( \frac n 2 + \frac 1 4 \big)\pi + \frac{2}{\pi C n}+ \mathcal{O}\big(\frac{1}{n^2}\big) \Big)
+\end{equation*}
+Two more lemmas will be needed for our calculation of vacuum polarization.
+\begin{lemma}
+Let $b\in\mathbb{R}$
+\begin{equation*}
+\sum_{n=1}^{+\infty} e^{i(n + \frac 1 2+\frac b n)z} = \frac i z - 1 + \mathcal{O}(z^{\frac 1 2})
+\end{equation*}
+when $z\rightarrow 0 $
+\end{lemma}
+\begin{proof}
+\begin{equation*}
+\begin{split}
+\sum_{n=1}^{+\infty} e^{i(n + \frac 1 2 +\frac b n)z} = & 
+\sum_{n=1}^{+\infty} \sum_{k=0}^{+\infty} e^{i(n + \frac 1 2)z} \frac{1}{k!}\big(\frac{ib}{n}z\big)^k \\
+%
+= & \sum_n e^{i(n+\frac 1 2 )z} + \sum_n \frac{ibz}{n}e^{i(n+\frac 1 2 )z} + \sum_{n=1}^{+\infty} \sum_{k=2}^{+\infty} e^{i(n+\frac 1 2)z} \frac{1}{k!}\big(\frac{ib}{n}z\big)^k  \\
+%
+= & \sum_n e^{i(n+\frac 1 2)z} + \sum_n \frac{ibz}{n}e^{i(n+\frac 1 2)z} - 
+\bigg(\sum_{n=1}^{+\infty} \sum_{k=0}^{+\infty} 
+e^{i(n+\frac 1 2)z} \frac{1}{n^2(k+2)!}\big(\frac{ib}{n}z\big)^k 
+\bigg)b^2z^2
+\end{split}
+\end{equation*}
+The last term of the last line is normally convergent.
+We conclude the proof with the known equalities
+\begin{equation*}
+\begin{split}
+& \sum_{n=1}^{+\infty}e^{i(n + \frac 1 2 )z} = 
+\frac i z - 1 - \frac{11iz}{24} + \mathcal{O}(z^2) \\
+%
+& \sum_{n=1}^{+\infty}\frac 1 n e^{i(n+\frac 1 2)z} =
+\frac{i\pi}{2} - \ln z - \frac 1 4 (-2i - \pi - 2i\ln z)z + \mathcal{O}(z^2)
+\end{split}
+\end{equation*}
+\end{proof}
+%
+\begin{lemma}
+Let $(a_n)$ be a sequence such that $a_n = \mathcal{O}\big(\frac{1}{n^2})$ when $n\rightarrow+\infty$ and $b\in\mathbb{R}$. Then
+\begin{equation*}
+\sum_{n=1}^{+\infty} e^{i(n+\frac 1 2+\frac{b}{n}+a_n)z } - e^{i(n+\frac 1 2+\frac{b}{n})z }
+\end{equation*}
+converges uniformly.
+\end{lemma}
+\begin{proof}
+Since $a_n = \mathcal{O}\big(\frac{1}{n^2}\big)$, 
+there exists $ K > 0$ such that $ \exists N \in\mathbb{N}, \forall n\geq N, \| a_n\| \leq \frac{K}{n^2}$ \\\\
+Let $m,l\in\mathbb{N}$ such that $l > m \geq N$
+\begin{equation*}
+\begin{split}
+\sum_{n=m}^{l}  | e^{i(n + \frac 1 2+\frac{b}{n}+a_n)z } - e^{i(n+\frac 1 2+\frac{b}{n})z } | = & 
+\sum_{n=m}^{l} | e^{ia_n z} - 1 | \\
+%
+\leq & \sum_{n=m}^{l}\sum_{k=1}^{+\infty}\frac{1}{k!}| a_n z |^k \\
+%
+\leq & \sum_{n=m}^l \sum_{k=1}^{+\infty}\frac{1}{k!n^2}(Kz)^k
+\end{split}
+\end{equation*}
+Since the last line is a normally convergent series for $z \in \mathbb{R}$, it could be made small by taking $m$ and $l$ big enough.
+Hence, the series of our lemma converges normally, which implies that it converges uniformly.
+\end{proof}
+Now, let us compute the vacuum two-point function, given by~\cref{vacuum-hadamardstate}.
+As one can find in the discussion in~\cref{chap-vacuum}, the Hadamard parametrix of in the bulk remains the same. 
+The divergent terms when calculating the vacuum polarization are given by~\cref{vacuum-hadamardparametrix}. \\\\
+The boundary component $\phi_|$ is (cf~\cref{wen-saw2bound})
+\begin{equation*}
+\begin{split}
+\phi_| = & \mathbf{1}_{\{x^1 = L\}} \mathcal{P}_-\phi + \mathbf{1}_{\{x^1 = -L\}} \mathcal{P}_+\phi \\
+%
+= & \frac 1 2 \mathbf{1}_{\{x^1 = L\} } \begin{pmatrix} f e^{ik(x^0 -x^1)} + ig e^{-ik(x^0 + x^1)} \\
+-if e^{ik(x^0 - x^1)} + g e^{-ik(x^0+x^1)}\end{pmatrix}
++ \frac 1 2 \mathbf{1}_{\{x^1 = - L\} } \begin{pmatrix} f e^{ik(x^0 -x^1)} - ig e^{-ik(x^0 + x^1)} \\
+if e^{ik(x^0 - x^1)} + g e^{-ik(x^0+x^1)}\end{pmatrix} 
+\end{split}
+\end{equation*}
+We denote
+\begin{equation*}
+\arg(c^{-1} - ik_n) = \eta_n
+\end{equation*}
+Using Dirac measure on the boundary, 
+the normalization condition and~\cref{wen-bound1d} imply
+\begin{equation*}
+\begin{split}
+\Big\| \begin{pmatrix} \phi \\  \phi_| \end{pmatrix} \Big\|^2_{\mathcal{H}}  = &
+4L |f|^2 + \frac 1 2 c |f|^2 \bigg( \Big| 1 + \frac{c^{-1} - ik}{c^{-1} + ik}e^{ikL} \Big|^2
++ \Big| e^{ikL} - \frac{c^{-1} - ik}{c^{-1} + ik}e^{-3ikL} \Big|^2
+\bigg) \\
+%
+=& 4L |f|^2 + c |f|^2 \big(2 + \cos(2\eta) - \cos(-4kL + 2\eta) \big) \\
+%
+=& 4L |f|^2 +2 c |f|^2 \big(1 + \sin 4kL \sin 2 \eta \big) \\
+= & 1 \\
+\Rightarrow &
+|f|^2 = \frac{1}{4L} \Big( 1 + \frac 1 2 C (1 + \sin 4kL \sin 2\eta ) \Big)^{-1}
+\end{split}
+\end{equation*}
+As $c> 0 $, the asymptotic behavior of $\eta$ is given by
+\begin{equation*}
+\eta_n = \frac \pi 2 + \frac{2}{\pi Cn} + \mathcal{O}\big(\frac{1}{n^2}\big)
+\end{equation*}
+Thus, the square of the norm of the renormalization constants ($|f| = |g|$) behaves when $n\rightarrow +\infty$ as
+\begin{equation*}
+|f_n|^2 = 
+\frac{1}{4L}\Big( 1 - \frac{4}{\pi^2C L n^2} + \mathcal{O}\big(\frac{1}{n^3}\big) \Big)
+\end{equation*}
+By adapting time-splitting $x^0 - y^0 = t$, the Hadamard states are
+\begin{equation*}
+\omega(\phi^1(x)\phi^\dagger_1(y)) = \omega(\phi^2(x)\phi^\dagger_2(y)) = 
+ \sum_{k_n>0} |f_n|^2 e^{-ik_nt}
+\end{equation*} 
+%where to begin?
+%plus 1/2 in the two previous lemmas and review the constant term
+Noticing that 
+\begin{equation*}
+\frac{ 1}{ 4L}\Big(1+\sum_{n=1}^{+\infty} e^{-i\frac{1}{2L}(n+\frac 1 2 + \frac{4}{\pi C n} ) \pi t} \Big)
+= \frac{-i}{2\pi t} + \mathcal{O}(t)
+\end{equation*}
+has the same divergence as the Hadamard parametrix~\cref{vacuum-hadamardparametrix}, the renormalized vacuum polarization can be given by
+\footnote{
+One can show that $k_n > 0$ holds for $n \geq 0$. In effect, for $n = 0$, we look for positive solution $k$ of~\cref{wen-mode1d} such that $\tan(\frac 1 4 - kL) = ck$. By denoting $X = \frac 1 4 \pi - kL$ and $C = \frac c L$, the problem becomes to search for $X \in ] 0, \frac \pi 4[$ such that $\tan X = \frac 1 4 \pi C - C X$. One can then show that this equation has a unique solution $X$.
+}
+\begin{equation*}
+\begin{split}
+\rho =& \lim_{t\rightarrow 0} e \bigg(\sum_{k_n>0} |f_n|^2 e^{-ik_nt} 
+- \frac{ 1}{ 4L}\sum_{n=0}^{+\infty} e^{-i\frac{1}{2L}(n+\frac 1 2 ) \pi t} - 1 \bigg) \\
+%
+= & \lim_{t\rightarrow 0 }\frac{e}{4L}\Big( e^{-ik_0t} - 1 +
+\underbrace{ \sum_{n=1}^{+\infty}e^{ik_nt} - e^{(n+\frac 1 2 + \frac b n )\frac{t}{2L}} }_{\textrm{uniformly convergent}} 
++\underbrace{\sum_{n=1}^{+\infty}\big(4 L  |f_n|^2 -1 \big) e^{-ik_nt}}_{\textrm{uniformly convergent}}
+\Big) \\
+& = e \sum_{n=1}^{+\infty}\big(|f_n|^2 -\frac{1}{4L} \big)
+\end{split}
+\end{equation*}
+%Before introducing electromagnetic field, one would expect to also get a vanishing vacuum polarization under such a boundary condition, which has been shown here.\\\\
+%
+To calculate the stress-energy tensor, we choose the point-splitting in both temporal and spatial direction as in~\cref{chap-vacuum}. 
+In order to do the derivation term by term in the infinite sum appearing in the state, we use the $i\varepsilon$ prescription as in~\cite{Zahn2017}. 
+Namely, we consider the two-point functions with $\varepsilon >0$
+\begin{equation*}
+\omega(\phi^1(x)\phi_1^\dagger(y)) = 
+\omega(\phi^2(x)\phi_2^\dagger(y)) =
+ \sum_{k_n>0} |f_n|^2 e^{-ik_n(t-i\varepsilon)}
+\end{equation*}
+
+
+
+
+
+
+
+
+
+
+
+
+
