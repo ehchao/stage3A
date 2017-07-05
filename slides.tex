@@ -1,0 +1,383 @@
+%\PassOptionToPackage{english}{babel}
+\documentclass[french]{beamer}
+\usetheme{Warsaw}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{amsmath,amsthm,amssymb,graphicx,mathrsfs}
+%\usepackage[hmargin={3.5cm,3.5cm},top=4cm,bottom=4cm]{geometry} %problem...
+
+\newcommand{\vb}[1]{\mathbf{#1}}
+\newcommand{\V}[1]{\textnormal{#1}}
+\newcommand{\dd}[0]{\textrm{d}}
+\newcommand{\bra}[1]{\langle#1 |}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\vdot}[0]{\boldsymbol\cdot}
+
+\setbeamertemplate{footline}[frame number]{}
+%\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lstset{%
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  basicstyle=\small,        % the size of the fonts that are used for the code
+  commentstyle=\color{blue},    % comment style
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{red},       % keyword style
+  language=Fortran,                 % the language of the code
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stringstyle=\color{green},     % string literal style
+  tabsize=2,                       % sets default tabsize to 2 spaces
+  frame=single
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Quantum field theories in external potentials}
+\author{En-Hung CHAO}
+\institute{Ecole Polytechnique}
+\date{\today}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%\selectlanguage{english}
+%\graphicspath{{../images/}}
+
+\begin{frame}
+\titlepage%
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Outline}
+\framesubtitle{}
+\begin{enumerate}
+ \item Introduction 
+  \begin{enumerate}
+  \item Elements of Quantum Field Theory in Curved Space-Time (QFTCST)
+  \item Kondo effect
+  \item Brief review of AdS/CFT correspondence and holographic renormalization
+  \end{enumerate}
+ \item Vacuum polarization in 1+1 dimension in presence of a Kondo type potential
+  \begin{enumerate}
+  \item Hadamard parametrix and vacuum polarization
+  \item Results
+  \end{enumerate}
+ \item Wentzell boundary condition for Dirac fields
+  \begin{enumerate}
+  \item Well-posedness of an action
+  \item 3 examples
+  \item Vacuum polarization and stress-energy tensors in 1+1 dimensional
+  \end{enumerate}
+ \item Conclusion and prospective
+\end{enumerate}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Introduction}
+\framesubtitle{Elements of QFTCST}
+
+\begin{itemize}
+\item Difficulty in defining the ground state in curved space-time for usual construction of Hilbert space
+\item Algebraic approach formulated with an algebra of quantum observables $\mathscr{A}(M,g)$
+\item Distributional nature of fields
+\item Postulates for scalar field theory
+ \begin{enumerate}
+  \item \textbf{Linearity} $\phi(c_1 f_1 + c_2 f_2) = c_1 \phi(f_1) + c_2 \phi(f_2)$ for $c_1, c_2 \in \mathbb{C}$
+%
+\item \textbf{Klein-Gordon equation} $\phi\big( (\Box_g - m^2)f \big) = 0$
+%
+\item \textbf{Hermitian field} $\phi(f)^* = \phi(\bar{f})$
+%
+\item \textbf{Canonical commutation relation (CCR)} $[\phi(f_1), \phi(f_2)] = iE(f_1, f_2) \mathbf{1}$
+ \end{enumerate}
+\end{itemize}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Introduction}
+\framesubtitle{Elements of QFTCST}
+\begin{itemize}
+
+\item \textbf{Physical state} $\omega: \mathscr{A}(M,g) \rightarrow \mathbb{C}$ with $\omega(\mathbf{1}) = 1$ and the positivity $\omega(a^*a) \geq 0$
+
+\item \textbf{GNS construction} corresponding to the state 
+
+\item Equivalent theory for Dirac field : Dirac equation and \textit{anti}-commutation relation
+\begin{equation*}
+\{\psi(f_1), \psi(f_2)\} = i S(f_1, f_2) \mathbf{1}
+\end{equation*}
+
+
+\end{itemize}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Introduction}
+\framesubtitle{Elements of QFTCST}
+
+\begin{itemize}
+
+\item \textbf{Hadamard states} and characterization
+ \begin{equation*}
+\begin{split}
+\omega(\psi^B(x)\bar{\psi}_A(x')) + \omega(\bar{\psi}_A(x')\psi^B(x)) = &
+iS^B_A(x,x') \\
+\overline{\omega(\bar{\psi}(u)\psi(\bar{v}))} = & \omega(\bar{\psi}(v)\psi(\bar{u}))
+\end{split}
+\end{equation*}
+
+\item Dirac's method and vacuum current as a Hadamard state
+
+\begin{equation*}
+\begin{split}
+\omega(\psi^B(x)\bar{\psi}_A(y)) = & \int_{E_k >0} \psi_k^B(x)\bar{\psi}_{A,k}(y)e^{-i(x^0-y^0)E_k} \dd k \\
+\omega(\bar{\psi}_A(y)\psi^B(x)) = & \int_{E_k <0} \psi_k^B(x)\bar{\psi}_{A,k}(y)e^{-i(x^0-y^0)E_k} \dd k 
+\end{split}
+\end{equation*}
+
+\begin{equation*}
+j^\mu(x) = \lim_{y \rightarrow x} \gamma^A_B \big(
+\omega(\psi^B(x)\bar{\psi}_A(y)) - H^B_A (x, y)\big)
+\end{equation*}
+
+
+\end{itemize}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Kondo effect}
+\framesubtitle{}
+\begin{itemize}
+\item Anomalies in electrical resistance when temperature decreases
+
+\end{itemize}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Kondo effect}
+\framesubtitle{}
+\begin{itemize}
+\item Punctual spin interaction between electrons and impurities
+\item Hamiltonian
+\begin{equation*}
+H_K = \psi_\alpha^\dagger \frac{-\nabla^2}{2m}\psi_\alpha +
+\frac 1 2\lambda_K \delta(\vec{x})\vec{S}\cdot \psi_{\alpha'}^\dagger  \vec{\sigma}_{\alpha' \alpha} \psi_\alpha
+\end{equation*}
+
+\item How could such a punctual interaction change the vacuum polarization ?
+\end{itemize}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Introduction}
+\framesubtitle{Holographic renormalization}
+
+\begin{itemize}
+\item Strong/weak coupling duality and IR-UV connection in anti-deSitter/Conformal Field Theory (AdS/CFT) correspondence
+
+\item Example for scalar field
+
+\begin{equation*}
+\begin{split}
+\mathcal{S}[\phi] = & -\int_{B_{d+1}} \sqrt{g} \phi D_i D^i \phi + 
+\lim_{\epsilon\rightarrow 0}\int_{T_\epsilon}  \sqrt{h} \phi (\vec{n}\cdot\vec{\nabla})\phi \\
+%
+& \sim \int \dd \mathbf{x} \dd \mathbf{x}' 
+\frac{\phi_0(\mathbf{x})\phi_0(\mathbf{x}')}{|\mathbf{x} - \mathbf{x}'|^{2d}}
+\end{split}
+\end{equation*}
+
+$\Rightarrow$ the same divergence as in CFT
+
+\end{itemize}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Introduction}
+\framesubtitle{Holographic renormalization}
+
+\begin{itemize}
+
+\item Boundary field and holographic renormalization
+
+\item Type of action appearing in holographic renormalization for scalar case
+\begin{equation*}
+\begin{split}
+\mathcal{S} = & \mathcal{S}_{\mathrm{bulk}} + \mathcal{S}_{\mathrm{bdy}}
+\\ = &
+-\frac 1 2 \int_M g^{\mu\nu} \partial_\mu \phi \partial_{\nu} + 
+\mu^2\phi^2 - \frac c 2 \int_{\partial M}h^{\mu\nu}\partial_\mu\phi\partial_\nu\phi + \mu^2\phi^2
+\end{split}
+\end{equation*}
+
+\item The case of Dirac fields and the vacuum polarization under the new boundary condition?
+
+\end{itemize}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[shrink=20]
+\frametitle{Vacuum polarization in 1+1 dimension in presence of a Kondo type potential}
+\framesubtitle{Hadamard parametrix and vacuum polarization}
+
+\begin{itemize}
+\item Representation of the Dirac gamma matrices
+\begin{equation*}
+\gamma^0 = \begin{pmatrix}
+0 & 1 \\
+1 & 0 \end{pmatrix}  \quad  \gamma^1 = \begin{pmatrix}
+0  & 1 \\
+-1 & 0
+\end{pmatrix}
+\end{equation*}
+
+\item Hadamard parametrix for a spin-$\frac 1 2$ massless particle with charge $+e$ with external potential $A^\mu(x) = (Ex^1, 0 )$
+\begin{equation*}
+\begin{split}
+& H^\pm (x, y)^1_2 = \frac{-i}{2\pi}\frac{1-\frac i 2 e E(x^1 + y^1)(x^0-y^0) 
+- \frac 1 8 (eE)^2(x^1 + y^1)^2(x^0 - y^0)^2}{x^0 - y^0 + x^1 - y^1 \mp i \epsilon}  \\
+& H^\pm (x, y)^2_1 = \frac{-i}{2\pi}\frac{1-\frac i 2 e E(x^1 + y^1)(x^0-y^0) 
+- \frac 1 8 (eE)^2(x^1 + y^1)^2(x^0 - y^0)^2}{x^0 - y^0 - x^1 + y^1 \mp i \epsilon}
+\end{split}
+\end{equation*}
+
+\end{itemize}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[shrink=10]
+\frametitle{Vacuum polarization in 1+1 dimension in presence of a Kondo type potential}
+\framesubtitle{Hadamard parametrix and vacuum polarization}
+
+We start with $E = 0$ and a confined space $x^1 \in [\-\frac L 2 , \frac L 2]$
+\begin{itemize}
+\item We denote $\phi = \gamma^0\psi$ where $\psi$ is a massless Dirac field satisfying 
+\begin{equation*}
+i\gamma^\mu\partial_\mu \psi = 0
+\end{equation*}
+outside the singularity
+\item Imposing a Kondo type potential due to the impurity at $x^1 = 0$,
+we consider $\phi$ satisfying
+
+\begin{equation*}
+i \partial_0 \phi = 
+\begin{pmatrix} 
+-1 & 0 \\
+0 & 1 
+\end{pmatrix} i \partial_1 \phi +
+\begin{pmatrix}
+v_3 & v_- \\
+v_+ & -v_3
+\end{pmatrix} \delta(x_1) \phi
+\end{equation*}
+where $v_3, v_+ + v_- \in \mathbb{R}$ and $ v_+ - v_-\in i \mathbb{R}$
+\end{itemize}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Vacuum polarization in 1+1 dimension in presence of a Kondo type potential}
+\framesubtitle{Hadamard parametrix and vacuum polarization}
+
+\begin{itemize}
+\item Matching condition at $x^1 = 0$ for $\phi =
+\begin{pmatrix}
+\phi_L \\
+\phi_R
+\end{pmatrix}$
+
+\begin{equation*}
+\begin{pmatrix}
+\phi_L(0^+) \\
+\phi_R(0^+)
+\end{pmatrix} = \begin{pmatrix}
+\frac{A}{D}  & \frac{C}{D} \\
+\frac{C^*}{D} & \frac{A}{D}
+\end{pmatrix}\begin{pmatrix}
+\phi_L(0^-) \\
+\phi_R(0^-)
+\end{pmatrix}
+\end{equation*}
+where  $\Sigma = v_+ ^ 2 + v_- ^ 2 + v_3 ^ 2$, $A = 1+ \frac{1}{4}\Sigma$, $C = -iv_-$, $D = 1-\frac{1}{4}\Sigma + iv_3$.
+
+\item Bag boundary condition (in terms of $\psi = \gamma^0\phi$)
+\begin{equation*}
+i\gamma^1 \psi \Big\vert_{\pm \frac{L}{2}} = \pm \psi \Big\vert_{\pm \frac{L}{2}}
+\end{equation*}
+
+\item The problem is well posed because the Hamiltonian of the dynamical system is self-adjoint under these conditions
+
+\end{itemize}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Vacuum polarization in 1+1 dimension in presence of a Kondo type potential}
+\framesubtitle{Hadamard parametrix and vacuum polarization}
+
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{}
+\framesubtitle{}
+
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{}
+\framesubtitle{}
+
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{}
+\framesubtitle{}
+
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{}
+\framesubtitle{}
+
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%d
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
