@@ -1,0 +1,362 @@
+\section{Well-posedness of the problem}\label{wen-sect-saw}
+\subsection{Self-adjoint extension of $\Delta$}
+We define the inner product for our Hilbert space $\mathcal{H} = L^{2}(M)\times L^{2}(\partial M, \mathcal{P}_+ F)$,\footnote{
+This space is isomorphic to 
+$L^2(M)\oplus L^2(\partial M, \mathcal{P}_+ F)$.
+The two spaces will sometimes be identified in this chapter.
+One should also note the projection which is taken here on the boundary bundle.
+This is used to ensure that we have a Hilbert space for the following computations.
+}
+where $M$ is an equal-time hypersurface of $\mathcal{M}$ and $\partial M = M\cap \partial \mathcal{M}$
+\begin{equation}\label{wen-innerpdt}
+\langle \cdot, \cdot \rangle _\mathcal{H} = \langle \cdot, \cdot \rangle _{L^2(M)} + c \langle \cdot, \cdot \rangle _{L^2(\partial M)}
+\end{equation}
+In order to have a self-adjoint operator, we define $\Delta$ on the domain
+\begin{equation*}
+\dom( \Delta) = \{ \Phi = (\phi, \phi_|) \in \mathcal{H} \enskip | \enskip \mathcal{P}_+\phi \vert_{\partial M} - \phi_| = 0 \}
+\end{equation*}  
+For $\Phi = (\phi, \phi_|) \in \mathcal{H}$ and $ \Psi = (\psi, \psi_|)\in\dom(\Delta)$
+\begin{equation}
+\begin{split}
+\langle \Phi, \Delta \Psi \rangle _\mathcal{H}
+ = & \int_M \phi^\dagger i \gamma^0 \gamma^j \partial_j \psi 
++ \int_{\partial M} \phi^\dagger_|(  -\gamma^0\mathcal{P}_- \psi\vert_{\partial M} + ic \gamma^0 \gamma^a \partial_a\psi_|)   \\
+ = & - \int_M \partial_j \phi^\dagger i \gamma^0 \gamma^j \psi 
++ \int_{\partial M} \phi^\dagger_|(-\gamma^0 \mathcal{P}_- \psi\vert_{\partial M} + ic \gamma^0 \gamma^a \partial_a  \psi_|) 
+- i\phi\vert_{\partial M}^\dagger \gamma^0 \gamma^\bot \psi\vert_{\partial M}   \\
+= &
+- \int_M \partial_j \phi^\dagger i \gamma^0 \gamma^j \psi 
++ \int_{\partial M} - \phi^\dagger\vert_{\partial M}\mathcal{P}_- \gamma^0 \psi_| + ic \phi^\dagger_|\gamma^0 \gamma^a \partial_a  \psi_|  \\
+& - i \phi\vert_{\partial M}^\dagger \gamma^0 \gamma^\bot \psi\vert_{\partial M} 
+-\phi_|^\dagger \gamma^0 \mathcal{P}_- \psi\vert_{\partial M} 
++ \phi^\dagger\vert_{\partial M}\mathcal{P}_- \gamma^0 \psi_| \\
+\underset{(\mathcal{P}_-)^\dagger = \mathcal{P}_-}{=} 
+& \langle \Delta\Phi, \Psi \rangle_\mathcal{H}
++\phi^\dagger\vert_{\partial M} \gamma^0 (-i \gamma^\bot \psi\vert_{\partial M} + \psi_|)
+- \phi_|^\dagger \gamma^0 \mathcal{P}_- \psi\vert_{\partial M} \\
+= & \langle \Delta\Phi, \Psi \rangle_\mathcal{H}
++ (\phi^\dagger\vert_{\partial M} - \phi_|^\dagger)\mathcal{P}_+ \gamma^0 \psi\vert_{\partial M}
+\end{split}
+\end{equation}
+The residual term of the last line vanishes if and only if $\mathcal{P}_+\phi \vert_{\partial M} - \phi_|= 0$, which shows the self-adjointness of $\Delta$. \\\\
+One can wonder if the problem has unique smooth solution which propagates causally, \ie depending smoothly on the initial data of a Cauchy surface. \\
+Let us determine $\dom (\Delta^k)$ now. 
+To start, for $k =2$, 
+\begin{equation}\label{wen-deltak}
+\begin{split}
+\Delta^2 \Phi & =  
+\begin{pmatrix} i \gamma^0 \gamma^j \partial_j & 0 \\
+- c^{-1} \gamma^0 \mathcal{P}_- \cdot \vert_{\partial M} & i \gamma^0 \gamma^a \partial_a \end{pmatrix}
+\begin{pmatrix}   i \gamma^0 \gamma^j \partial_j \phi \\
+- c^{-1} \gamma^0 \mathcal{P}_- \phi\vert_{\partial M} + i \gamma^0 \gamma^a \partial_a  \phi_| \end{pmatrix} \\
+&= 
+\begin{pmatrix} (i\gamma^0\gamma^j\partial_j)^2 \phi \\
+-c^{-1}\gamma^0\mathcal{P}_- \big( (i\gamma^0\gamma^j\partial_j \phi)\vert_{\partial M}\big)
+-c^{-1}i \gamma^0\gamma^a\partial_a \mathcal{P}_+ \gamma^0 \mathcal{P}_-(\phi\vert_{\partial M})
++ (i\gamma^0\gamma^a\partial_a)^2\phi_| \end{pmatrix}
+\\
+\end{split}
+\end{equation}
+One finds that for $\Phi \in \dom(\Delta)$, $\Delta \Phi \in \dom \Delta$ if and only if
+\begin{equation*}
+\begin{split}
+&\mathcal{P}_+\Big( ( i\gamma^0\gamma^j \partial_j \phi ) \vert_{\partial M} +
+ c^{-1}\gamma^0 \mathcal{P}_- ( \phi \vert_{\partial M})
+- i \gamma^0 \gamma^a \partial_a \mathcal{P}_+\phi _| \Big) \\
+\underset{\Phi\in \dom(\Delta)}{ = }& 
+\mathcal{P}_+\Big( (i\gamma^0\gamma^\bot \partial_\bot\phi)\vert_{\partial M} +
+c^{-1}\gamma^0 \mathcal{P}_- ( \phi \vert_{\partial M}) \Big) \\ 
+= & 
+\gamma^0\mathcal{P}_-\big(- \partial_\bot \phi \vert_{\partial M} + c^{-1} \phi\vert_{\partial M}\big)
+\\ = & 0
+\end{split}
+\end{equation*}
+The fact that $\partial M = \{x^\bot = 0\}$ is used to coincide the tangential derivatives evaluated on the static boundary.
+Continuing the calculation of \cref{wen-deltak}, we get
+\begin{equation}\label{wen-delta2}
+\Delta^2 \Phi = \begin{pmatrix} (i \gamma^0 \gamma^j\partial_j)^2 & 0 \\ 
+- c^{-1}\mathcal{P}_+( \partial_\bot \cdot\vert_{\partial M} ) & 
+(i \gamma^0 \gamma^a \partial_a)^2 \end{pmatrix}
+\begin{pmatrix} \phi \\ \phi_| \end{pmatrix}
+\end{equation}
+with domain 
+\begin{equation*}
+\dom(\Delta^2) = \Big\{ (\phi, \phi_|) \in W^{2,2}(M)\times W^{2,2}(\partial M) \big\vert\enskip \mathcal{P}_- \Big(\partial_\bot\phi\vert_{\partial M} - c^{-1} (\phi\vert_{\partial M}) \Big) = 0 \Big\} \cap \dom(\Delta)
+\end{equation*}
+For $k = 3$, 
+we check the domain
+\begin{equation*}
+\dom(\Delta^3) = \big\{ (\phi, \phi_|)\in W^{3,2}(M)\times W^{3,2}(\partial M) \big\vert \enskip \mathcal{P}_+(\partial_\bot^2 \phi\vert_{\partial M} - c^{-1}\partial_\bot \phi\vert_{\partial M} ) = 0 \big\} 
+\cap \dom(\Delta^2)
+\end{equation*}
+%We compute 
+%\begin{equation*}
+%\begin{split}
+%\Delta^3 \Phi  = &
+%\begin{pmatrix} i\gamma^0\gamma^j\partial_j & 0 \\ 
+%-c^{-1}\gamma^0 \mathcal{P}_- \cdot \vert_{\partial M} & i\gamma^0\gamma^a\partial_a  \end{pmatrix} 
+%\begin{pmatrix} (i\gamma^0\gamma^j\partial_j)^2 \phi \\
+%-c^{-1}\mathcal{P}_+ (\partial_\bot \phi\vert_{\partial M}) + (i\gamma^0\gamma^a\partial_a)^2  \phi_| \end{pmatrix} \\ 
+%
+%= & \begin{pmatrix} i\gamma^0\gamma^j \partial_j& 0 \\ 
+%-c^{-1}\gamma^0 \mathcal{P}_- \cdot \vert_{\partial M} & i\gamma^0\gamma^a\partial_a  \end{pmatrix} 
+%\begin{pmatrix} \partial^j\partial_j \phi \\
+%-c^{-1}\mathcal{P}_+ (\partial_\bot \phi\vert_{\partial M}) + (\partial_a\partial^a)  \phi_| \end{pmatrix} \\ 
+%= &
+%\begin{pmatrix}  i\gamma^0\gamma^j\partial_j(\partial_l\partial^l \phi ) \\
+%-c^{-1}\gamma^0\mathcal{P}_-(\partial_j\partial^j \phi\vert_{\partial M}) - ic^{-1}\gamma^0\gamma^a\partial_a \mathcal{P}_+(\partial_\bot \phi\vert_{\partial M})  +i\gamma^0\gamma^a\partial_a(\partial_b\partial^b \phi_| )\end{pmatrix} \\ 
+%\underset{\Phi \in \dom(\Delta^3)}{= }&
+%\begin{pmatrix}  i\gamma^0\gamma^j\partial_j(\partial_l\partial^l \phi ) \\
+%-c^{-1}\gamma^0\mathcal{P}_-(\partial_j\partial^j\phi\vert_{\partial M}) 
+%- i\gamma^0\gamma^a\partial_a \mathcal{P}_+(\partial^2_\bot \phi\vert_{\partial M}) + i\gamma^0\gamma^a\partial_a(\partial_b\partial^b \phi_| )\end{pmatrix} \\ 
+%& = \begin{pmatrix} i\gamma^0\gamma^j\partial_j (\partial_l\partial^l)^2  & 0\\
+%c^{-1}\gamma^0 \mathcal{P}_- \big( (-\partial_j\partial^j \cdot\vert_{\partial M}) - i\gamma^0\gamma^a\partial_a\partial_\bot\cdot\vert_{\partial M} \big)
+% & i\gamma^0\gamma^a\partial_a(\partial_b\partial^b )\end{pmatrix}
+%\begin{pmatrix}
+%\phi \\ \phi_|
+%\end{pmatrix}
+%\end{split}
+%\end{equation*}
+Let us prove the following proposition for the domain of $\Delta^k$.
+\begin{proposition}
+Let $k \in \mathbb{N}^*$. Then
+\begin{equation*}
+\begin{split}
+& \dom (\Delta^{2k} )  =
+\big\{ (\phi, \phi_|)\in W^{2k,2}(M)\times W^{2k,2}(\partial M) \big\vert \enskip \mathcal{P}_-\big( \partial_\bot^{2k-1}\phi\vert_{\partial M} - c^{-1}\partial_\bot^{2k-2}\phi\vert_{\partial M}\big) \big\} 
+\cap \dom(\Delta^{2k - 1})  \\
+& \dom (\Delta^{2k+1} )  =
+\big\{ (\phi, \phi_|)\in W^{2k+1,2}(M)\times W^{2k+1,2}(\partial M) \big\vert \enskip \mathcal{P}_+\big( \partial_\bot^{2k}\phi\vert_{\partial M} - c^{-1}\partial_\bot^{2k-1}\phi\vert_{\partial M}\big) \big\}  \cap \dom(\Delta^{2k })
+\end{split}
+\end{equation*}
+\end{proposition}
+\begin{proof}
+We prove the proposition by induction.
+The claim holds for $k =1$ as we have already shown. 
+Let $k \in \mathbb{N}$ and suppose that the claim holds for $\forall n \in \llbracket 1, k-1 \rrbracket $. 
+It is easy to show that $\Delta^{2m}$ takes the form
+\begin{equation*}
+ \Delta^{2m}  = 
+\begin{pmatrix} (\partial^j\partial_j)^m & 0 \\
+\star & (\partial^a \partial_a)^m\end{pmatrix}
+\end{equation*}
+For $\Phi = (\phi, \phi_|)$
+\begin{equation*}
+\begin{split}
+\Phi \in \dom(\Delta^{2k}) \quad &\Leftrightarrow \quad
+\Phi \in W^{2k,2}(M)\times W^{2k,2}(\partial M) \enskip \mathrm{and}\enskip \Delta^{2k-2}\Phi \in \dom(\Delta^{2}) \\
+&\Leftrightarrow \quad 
+\mathcal{P}_{-}\big(\partial_\bot(\partial_j\partial^j)^{k-1}\phi\vert_{\partial M} - c^{-1}(\partial_j\partial^j)^{k-1}\phi\vert_{\partial M} \big) = 0
+\end{split}
+\end{equation*}
+and
+\begin{equation*}
+\begin{split}
+\Phi \in \dom(\Delta^{2k+1}) \quad &\Leftrightarrow \quad
+\Phi \in W^{2k+1,2}(M)\times W^{2k+1,2}(\partial M) \enskip \mathrm{and}\enskip \Delta^{2k-2}\Phi \in \dom(\Delta^{3}) \\
+&\Leftrightarrow \quad 
+\mathcal{P}_{+}\big(\partial_\bot^2(\partial_j\partial^j)^{k-1}\phi\vert_{\partial M} - c^{-1}\partial^\bot(\partial_j\partial^j)^{k-1}\phi\vert_{\partial M} \big) = 0
+\end{split}
+\end{equation*}
+As the lower powers coincide by hypothesis, 
+the claim still holds for $k$.
+\end{proof}
+%%%%%%%%
+%%%%%%%%
+\subsection{Causal propagation}
+We would like to show that for a certain type of Cauchy data, 
+the solution of~\cref{wen-maineq} propagates causally, \ie depending smoothly on the Cauchy data.
+Notice that, thanks to the essential self-adjointness of $\Delta$, 
+it is possible to construct a solution which evolutes unitarily.
+For this purpose, 
+consider now the subspace
+\begin{equation*}
+\mathcal{K} = \cap_{k\in \mathbb{N}^*} \dom(\Delta^k)
+\end{equation*}
+and an element $\Phi \in \mathcal{K}$.
+The time evolution of the system is given by
+\begin{equation*}
+i \frac{\partial }{\partial t} \Phi = \Delta \Phi 
+\end{equation*}
+Taking into account the fact that $\Phi\in\dom(\Delta^2)$ one gets
+\begin{equation}\label{wen-tobebounded}
+\begin{split}
+\big\| \frac{\partial }{\partial t} \Phi \big\|^2_\mathcal{H} = \| \Delta \Phi \|^2_{\mathcal{H}}  = &
+\langle \Phi, \Delta^2 \Phi \rangle_{\mathcal{H}}   \\ 
+\underset{\textrm{Green's formula}}=
+& - \int_M \partial^j \phi^\dagger \partial_j \phi 
+ -  \int_{\partial M}\phi_|^\dagger \mathcal{P}_+(\partial_\bot \phi)\vert_{\partial M} 
+ + \int_{\partial M} (\phi^\dagger \partial_\bot\phi)\vert_{\partial M}
+- c\int_{\partial M} \partial^a \phi^\dagger_| \partial_a \phi_| \\
+\underset{\Phi \in \dom(\Delta^2)}{=} &
+\|\nabla \phi \|^2_{L^2 (M)} + c^{-1} \| \mathcal{P}_- \phi\vert_{\partial M} \|^2_{L^2(\partial M)}
++ c \| \mathcal{P}_+ \nabla \phi\vert_{\partial M} \|^2_{L^2(\partial M)}
+\end{split}
+\end{equation}
+where $\nabla$ is the gradient.
+By the unitary time evolution, 
+\begin{equation*}
+\big\|\partial_t^m \Phi(t) \big\|= 
+\big\|\Delta^m\Phi(t) \big\| =
+\big\|\Delta^m \Phi(0) \big\|
+\end{equation*} 
+Since
+\begin{equation*}
+ \Big\|\frac{\partial^{m}}{\partial t^{m}} \Phi \Big\|^2 = 
+ \langle \Delta^{m-1}\Phi, \Delta^{2}(\Delta^{m-1} \Phi )\rangle_{\mathcal{H}(M)} 
+\end{equation*}
+if we can bound~\cref{wen-tobebounded} at instant $t$ by the Cauchy data at instant $0$, 
+the higher time-derivatives of $\Phi$ can also be bounded by the Cauchy data at instant $0$ living in an appropriate Hilbert space.\\\\
+We will prove the following proposition as in~\cite{Zahn2016}
+\begin{proposition}\label{wen-propcau}
+Let $\Sigma_0$ and $\Sigma_1$ two equal-time surfaces. 
+Then, for $\Phi = (\phi, \phi_|) \in \mathcal{K}$ any smooth solution of \cref{wen-maineq} for smooth initial data $(\phi_0, \phi_{|0}) \in C^\infty(M) \times C^\infty(\partial M)$ on a Cauchy surface $\mathcal{S}_0 \subset \Sigma_0$,
+the following relation holds
+\begin{equation}\label{wen-causal}
+\big\| \frac{\partial}{\partial t} \Phi \big\|_{\mathcal{H}(\mathcal{S}_1)}^2
+\leq 
+\big\| \frac{\partial}{\partial t} \Phi \big\|_{\mathcal{H}(\mathcal{S}_0)}^2
+\end{equation}
+for any $\mathcal{S}_1 \in D^+(\mathcal{S}_0)\cap\Sigma_1$, where $D^+(\mathcal{S}_0)$ is the future domain of dependence of $\mathcal{S}_0$.
+\end{proposition}
+\begin{proof}
+As in~\cite{Zahn2016} we introduce the following quantities
+\footnote{
+These quantities are not tensors because the $\phi$s are spinor fields. 
+Under all change of frame of reference
+\begin{equation*}
+T_{\mu'\nu'} \neq \Lambda^\mu_{\enskip \mu'}\Lambda^\nu_{\enskip \nu'}T_{\mu \nu} 
+\end{equation*}
+where $\Lambda$ is the element of the Lorentz group corresponding to the change of frame.
+However, 
+this will not affect our proof since we are not going to use tensor properties directly in the following.
+}
+\begin{equation*}
+\begin{split}
+& T_{\mu\nu} = \partial_{(\mu} \phi^\dagger \partial_{\nu)} \phi - \frac{1}{2}g_{\mu\nu} \partial_\lambda\phi^\dagger\partial^\lambda\phi  \\
+& T_{|\alpha\beta} = c\Big( \partial_{(\alpha}\mathcal{P}_+\phi^\dagger_| \partial_{\beta)}\mathcal{P}_+\phi_| - 
+\frac{1}{2}h_{\alpha\beta}\big( \partial_\gamma\mathcal{P}_+\phi^\dagger_| \partial^\gamma\mathcal{P}_+\phi_|
+ - c^{-2}|\mathcal{P}_- \phi\vert_{\partial M}|^2 \big)\Big) 
+\end{split}
+\end{equation*}
+As $\phi$ is a solution for the first equation of \cref{wen-maineq},
+\begin{equation*}
+(i\partial_0 + i\gamma^0\gamma^j\partial_j)( i\partial_0 -i\gamma^0\gamma^j\partial_j)\phi  = 
+\Box \phi= 0
+\end{equation*}
+where $\Box = \partial^\mu\partial_\mu$ is the d'Alembertian.
+On the other hand, 
+\begin{equation*}
+\begin{split}
+&0 = (i\gamma^\mu\gamma^0\partial_\mu\phi)^\dagger
+= - i\partial_j\phi^\dagger\gamma^j\gamma^0 - i\partial_0\phi^\dagger \\
+\Rightarrow \quad &
+\phi^\dagger(i\overleftarrow{\partial}_j\gamma^j\gamma^0 - i\overleftarrow{\partial}_0)
+(i\overleftarrow{\partial}_j\gamma^j\gamma^0 + i\overleftarrow{\partial}_0)
+= \phi^\dagger \overleftarrow{\Box} = 0
+\end{split}
+\end{equation*}
+$T_{\mu\nu}$ is thus conserved on-shell. \\\\
+From the expression of $\Delta^2$ \cref{wen-delta2}, 
+\begin{equation*}
+\Box_|\mathcal{P}_+ \phi_| = c^{-1}\mathcal{P}_+\partial_\bot \phi\vert_{\partial M}
+\end{equation*}
+which leads to
+\begin{equation*}
+\begin{split}
+\partial^\alpha T_{|\alpha \beta} = & 
+ \mathcal{P}_+(\partial_{(\bot} \phi^\dagger\vert_{\partial M})\partial_{\beta)}\mathcal{P}_+ \phi_| + 
+c^{-1}(\mathcal{P}_-\phi^\dagger\vert_{\partial M}) \partial_\beta\mathcal{P}_- \phi\vert_{\partial M}
++c^{-1}(\mathcal{P}_-\partial_\beta\phi^\dagger\vert_{\partial M}) \mathcal{P}_- \phi\vert_{\partial M} \\ 
+\underset{\Phi \in \dom(\Delta^2)}{=} & 
+\partial_{(\bot}\phi^\dagger\vert_{\partial M} \partial_{\beta)}\phi\vert_{\partial M} \\
+= & T\vert_{\partial M,{\bot\beta}}
+\end{split}
+\end{equation*}
+on-shell. \\\\
+One can easily verify that $T_{\mu\nu}$ and $T_{| \alpha\beta}$ satisfy the dominant energy condition, \ie for a time-like vector $\xi$ \footnote{
+Even though these are not tensors, their positivitiy could still be ensured by the presence of the products of conjugated quantities.
+}
+\begin{equation*}
+\begin{split}
+T_{\mu\nu} \xi^\mu \xi^\nu \geq 0 \quad \mathrm{ and }\quad
+T_{\alpha\beta} \xi^\alpha \xi^\beta \geq 0 
+\end{split}
+\end{equation*}
+Let $\xi = e_0$, which is a Killing vector field in the static case.
+Then we have $\partial^\mu T_{\mu\nu}\xi^\nu = 0$.
+Using Stokes' theorem, the integral of this quantity over 
+%TODO add picture
+gives
+\begin{equation*}
+\begin{split}
+0 \underset{\partial^\bot = -\partial_\bot}{=} &
+- \int_{\mathcal{S}_0}T_{00} + \int_{\mathcal{S}_1} T_{00} + \int_{\mathcal{S}_2} n^\mu T_{\mu 0} + \int_{\partial \mathcal{M}} T \vert_{\partial \mathcal{M}, \bot 0}   \\
+= & - \int_{\mathcal{S}_0} T_{00} + \int_{\mathcal{S}_1} T_{00} + 
+ \int_{\mathcal{S}_2} n^\mu T_{\mu 0} -
+  \int_{\partial \mathcal{M} \cap \mathcal{S}_0} T_{|00}  +\int_{\partial \mathcal{M} \cap \mathcal{S}_1} T_{|00}
+ + \int_{\partial \mathcal{M} \cap \mathcal{S}_2} s^\alpha T_{\alpha 0}
+\end{split}
+\end{equation*}
+where $n^\mu$ and $s^\alpha$ are future-directed unit vectors normal to $\mathcal{S}_2$ and $\partial M \cap \mathcal{S}_2$ respectively.
+By the dominant energy condition, 
+$n^\mu T_{\mu 0 }\geq 0$ and $s^\alpha T_{\alpha 0 }\geq 0$. 
+We obtain \cref{wen-causal} by replacing $T_{00}$ and $T_{| 00}$ by their expression in terms of $\phi$
+\end{proof}
+%
+The last step of proving of causal propagation consists in constructing suitable Hilbert spaces such that we can make sense of "smooth dependence". 
+We denote 
+\begin{equation*}
+\mathcal{H}^k(M) = \cap_{s=0}^{k} \dom(\Delta)
+\end{equation*}
+We consider the following map from $\mathcal{H}^k(M)$ to $\mathbb{R}_+$
+\begin{equation}\label{wen-hilbertnorm}
+\| \cdot \|_{\mathcal{H}^k(M)} = \| \Delta^k \cdot \|_{\mathcal{H}(M)}
+\end{equation}
+This map does not define a norm on $\mathcal{H}^k(M)$ because of the 0-modes of $\dom(\Delta)$ ($\ker \Delta \neq \{0\}$).
+However, one can still create a Hilbert space by projecting out these modes.
+Denote
+\begin{equation*}
+\mathcal{H}_\varepsilon^k(M) \equiv
+\{ \Phi \in \mathcal{H}^k(M) \enskip\big\vert\enskip \| \Delta^k \Phi\| \geq \varepsilon \| \Phi\| \}
+\end{equation*}
+for some $\varepsilon > 0 $.
+We consider the completion $\overline{\mathcal{H}_\varepsilon^k(M)}$ of
+$\mathcal{H}_\varepsilon^k(M)$ \wrt\cref{wen-hilbertnorm}\footnote{
+For mathematical details, we can refer to~\cite{Reed1981}
+}
+. 
+In particular, one can see that if for a Cauchy data $\Phi_0$,
+there exists a strictly positive sequence $(\varepsilon_n)$ such that 
+\begin{equation}\label{wen-nozeromode} 
+\Phi_0\in \cap_{k\in\mathbb{N}}\overline{\mathcal{H}^k_{\varepsilon_n}(M) }
+\end{equation}
+We can always estimate the time-derivative of $\Phi$ in terms of the norm of the initial data on the Cauchy surface.
+\begin{proposition}
+Let $k \in \mathbb{N}^*$.
+Suppose that the initial data $\Phi_0 = (\phi, \phi_|)$ satisfies~\cref{wen-hilbertnorm}.
+With the same notations and the same conditions as in \cref{wen-propcau}, 
+the smooth solution $\Phi$ depends continuously on the initial data $(\phi, \phi_|)$ in the sense that
+\begin{equation*}
+\big\| \frac{\partial^k}{\partial t^k} \Phi\big\|_{\mathcal{H}(\mathcal{S}_1)}
+\leq
+\big\| \Phi\big\|_{\mathcal{H}^{k}(\mathcal{S}_0)}
+\end{equation*}
+\end{proposition}
+%
+\begin{remark}
+The pathological case of 0-modes is not a problem in the massive scalar field case~\cite{Zahn2016}. 
+However, the spectrum of $\Delta$ is in general not bounded by below, even with the presence of a mass.
+The presence of a mass term could not ensure the positivity of~\cref{wen-hilbertnorm}, neither. 
+\end{remark}
+%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+\section{Plane wave solutions in two simple cases}
+We will discuss two simple cases, $M = \mathbb{R}^{d-1} \times \mathbb{R}_+$ at first and $M = \mathbb{R}^{d-1} \times [-L, L]$ later in this section. 
+%%%%%%%
+\input{data/chap-wentzell/final/wentzell-subsect-sa1}
+\input{data/chap-wentzell/final/wentzell-subsect-sa2}
+
+
+
+

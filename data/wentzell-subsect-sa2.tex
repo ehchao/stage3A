@@ -1,0 +1,167 @@
+\subsection{${M} = \mathbb{R}^{d-1} \times [-L, L]$ }\label{wen-subsect-saw2}
+The subtlety that one should beware of in this case is the projectors $\mathcal{P}_+$.
+Since $\mathcal{P}_+$ is defined by considering a set of generators of Clifford Algebra on the tangent bundle $T_{ \partial \mathcal{M}}$, 
+if we would like to fixe the system of coordinates once for all,
+we should also take into account the transformation of these generators. \\\\
+Let $(x^0, \ldots, x^d)$ a system of coordinate of the bulk $\mathcal{M} =\mathbb{R}\times M $. 
+Because of the geometric configuration of the bulk, 
+this system of coordinate is global. 
+The boundary is therefore $\partial \mathcal{M} = \{x^d = -L \} \cup \{ x^d = L \}$.
+Furthermore, we  \\\\
+We denote $(\gamma^\mu)_\mu$ the set of gamma matrices chosen on $\{x^d  = - L \}$. 
+We will have then $\mathcal{P}_+\vert_{\{x^d = L\}} = \mathcal{P}_-\vert_{\{x^d = -L\}}$ and $\gamma^\mu\vert_{\{x^d = L\}}=\gamma^\mu\vert_{\{x^d = -L\}}$ for $\mu\in\llbracket 0, d-1 \rrbracket$.
+When it is not specified, we refer to the gamma matrices and the projectors on $\{x^d = -L\}$. \\\\
+%
+As for the boundary component $\phi_|$ of a solution $\Phi= (\phi, \phi_|)$,
+we can rewrite it as
+\begin{equation*}
+\phi_| = \mathbf{1}_{\{x^d = L \}}\phi_+ + \mathbf{1}_{\{x^d = - L \}}\phi_-
+\end{equation*}
+where $\phi_\pm$ represent the restriction of $\phi_|$ on $\{x^d = \pm L \}$.
+Now, the boundary condition becomes
+\begin{equation}\label{wen-saw2bound}
+\begin{split}
+\begin{cases}
+\mathcal{P}_+ \phi\vert_{\{x^d = -L\}} = \phi_- \\
+c^{-1}\mathcal{P}_-\phi\vert_{\{x^d = -L\}} = \mathcal{P}_-(\partial_d \phi\vert_{x^d = -L}) \\
+\mathcal{P}_- \phi\vert_{\{x^d = L\}} =\phi_+ \\
+-c^{-1}\mathcal{P}_+\phi\vert_{\{x^d = L\}} = \mathcal{P}_+(\partial_d \phi\vert_{x^d = L}) \\
+\end{cases}
+\end{split}
+\end{equation}
+As \cref{wen-subsect1}, the general solution $\phi$ in the bulk can be written as
+\begin{equation*}
+\phi 
+ =\Big( (k \mathbb{1}+ \gamma^0\gamma^a p_a )(A \cos p_d x^d + B \sin p_d x^d)e^{-ip_a x^a}
++ i\gamma^0\gamma^d p_d (-A \sin p_d x^d + B \cos p_d x^d) e^{-ip_a x^a} \Big) \psi
+ \end{equation*}
+ where $\psi $ is a spinor and the Einstein summation over $a = 1, \ldots, d-1$ is applied. \\
+ We compute
+\begin{equation*}
+\begin{split}
+\partial_d \phi\vert_{x^d = \pm L }
+= (\gamma^0\gamma^a p_a + k\mathbb{1})(\mp p_d A \sin p_d L + p_d B \cos p_d L)
++ i\gamma^0\gamma^d p_d(-p_d A \cos p_d L \mp p_d B \sin p_d L)\psi e^{-ip_a x^a}
+\end{split}
+\end{equation*}
+Hence, the boundary condition leads to
+\begin{equation*}
+\begin{split}
+0 = &\mathcal{P}_-\Bigg(
+(\gamma^0\gamma^a p_a + k\mathbb{1})\Big((p_d A + c^{-1}B) \sin p_d L + (p_d B - c^{-1}A) \cos p_d L\Big) \\
+& + i\gamma^0\gamma^d p_d \Big((-p_d A -c^{-1} B) \cos p_d L + (p_d B - c^{-1} A )\sin p_d L\Big) 
+\Bigg)\psi
+\end{split}
+\end{equation*}
+\begin{equation*}
+\begin{split}
+0 = &\mathcal{P}_+\Bigg(
+(\gamma^0\gamma^a p_a + k\mathbb{1})\Big((- p_d A + c^{-1}B) \sin p_d L + (p_d B + c^{-1}A) \cos p_d L\Big) \\
+& + i\gamma^0\gamma^d p_d \Big((-p_d A + c^{-1} B )\cos p_d L - (p_d B + c^{-1} A )\sin p_d L\Big) 
+\Bigg)\psi
+\end{split}
+\end{equation*}
+Once again, there are 4 possible cases to be discussed as in \cref{wen-subsect1}
+%
+\paragraph{Case 1 : $\psi \in \mathfrak{B}_-$ and $p_d \neq 0$}
+The same argument as in~\cref{wen-subsect1} requires
+\begin{equation}\label{wen-plates1}
+\begin{cases}
+(p_d A + c^{-1} B) \cos p_d L + (p_d B - c^{-1} A)\sin p_d L = 0 \\
+(- p_d A + c^{-1}B)\sin p_d L - (p_d B + c^{-1} A)\cos p_d L = 0
+\end{cases}
+\end{equation}
+In order to study~\cref{wen-plates1}, we discuss the following four sub-cases according to the coefficients of $\sin$ and $\cos$.
+\subparagraph{Sub-case 1: $ p_d B - c^{-1}A = 0$}
+\cref{wen-plates1} becomes
+\begin{equation}\label{wen-plates1-1}
+\begin{cases}
+(c^{-2} + p_d ^2)\cos p_d L = 0 \\
+(c^{-2} - p_d^2)\sin p_d L = 2 c^{-1}p_d \cos p_d L
+\end{cases}
+\end{equation}
+We can verify easily that supposing $ c^{-2} + p_d^2 = 0 $ will lead to paradoxal situation. 
+In effect, under this assumption, the second equation of~\cref{wen-plates1-1} will lead to $e^{-\pm c^{-1}L} = 0$. \\
+Therefore, the only solutions for this sub-case are $p_d = \pm c^{-1}$ for $L$ satisfying $\cos c^{-1} L = 0$
+%
+\subparagraph{Sub-case 2: $ -p_d A + c^{-1}B = 0$}
+By an easy calculation, we obtain the same result as in sub-case 1
+%
+\subparagraph{Sub-case 3: $\cos p_d L = 0 $}
+Idem as in sub-case 1.
+%
+\subparagraph{Sub-case 4: none of the above statements holds}
+\cref{wen-plates1} leads to
+\begin{equation*}
+\tan p_d L = \frac{p_d A + c^{-1} B }{p_d B - c^{-1} A} = 
+\frac{p_d B + c^{-1}A}{p_d A- c^{-1} B}
+\quad\Rightarrow\quad
+(p_d ^2 + c^{-2})(A^2 - B^2 )= 0
+\end{equation*}
+One can easily verify that $p_d = \pm c^{-1}$ can not be solution of the equation. 
+Hence, we have $A = \pm B$ and
+\begin{equation}\label{wen-tan}
+\tan p_d L = \frac{p_d \pm c^{-1}}{p_d \mp c^{-1}}
+\end{equation}
+We show that
+\begin{equation*}
+\tan \theta = \frac{\theta + a}{\theta - a} \quad a\in \mathbb{R} 
+\end{equation*}
+does not have solution $\theta \in \mathbb{C} - \mathbb{R}$.
+Obviously, this equation can not have pure imaginary solutions.
+If such solution $\theta = x + i y$ exists for $(x, y) \in\mathbb{R}^*\times\mathbb{R}^*$,
+\begin{equation*}
+\begin{split}
+\tan \theta = & \frac{e^{i(x+iy)} - e^{-i(x+iy)}}{i(e^{i(x+iy)}+ e^{-i(x-iy)})} \\
+= & \frac{e^{-y}\sin x + \sinh y (-i\cos x - \sin x)}{e^{-y}\sin x + \cosh y (\cos x - i\sin x)} \\
+= & \frac{(e^{-y}\sin x - \sinh y \sin x )- i\cos x \sinh y}{(e^{-y} \sin x +\cosh y \cos x) - i \sin x \cosh y} \\
+=& \frac{x+a+ iy}{x -a +iy}
+\end{split}
+\end{equation*}
+which implies
+\begin{equation*}
+\cos x \sinh y = \sin x \cosh y
+\end{equation*}
+This relation shows that $\sin x \neq 0$.
+We thus have
+\begin{equation*}\begin{split}
+\frac{e^{-y}\sin x - \sinh y \sin x}{e^{-y}\sin x + \cosh y \cos x} = &
+\frac{1 - e^y \sinh y}{1+ e^y \cosh y \cot x} \\
+= &\frac{1 - e^y \sinh y }{1+ e^y \frac{\cosh^2 y }{\sinh y}} \\
+=& \frac{1+\frac{a}{x}}{1 - \frac{a}{x}}
+\end{split}
+\end{equation*}
+which can not be satified because $\cosh^2 y - \sinh^2 y =1$
+Thus,~\cref{wen-tan} has solutions $p_d \in \mathbb{R}$. The set of solutions of~\cref{wen-tan} is discrete.
+%%
+\paragraph{Case 2 : $\psi \in \mathfrak{B}_-$ and $p_d = 0$}
+This case implies $A = 0$, which is forbidden because it leads to the trivial solution.
+%
+\paragraph{Case 3 : $\psi \in \mathfrak{B}_+$ and $p_d \neq 0$}
+\cref{wen-tan} becomes
+\begin{equation*}
+\begin{cases}
+(-p_d A - c^{-1} B)\cos p_d L + (p_d B - c^{-1}A)\sin p_d L = 0  \\
+(-p_d A + c^{-1}B)\sin p_d L + (p_d B + c^{-1} A)\cos p_d L = 0 
+\end{cases}
+\end{equation*}
+This is strictly equivalent to the case 1 of this discussion.
+%
+\paragraph{Case 4 : $\psi \in \mathfrak{B}_+$ and $p_d = 0$}
+Leads to the trivial solution. \\\\
+To conclude, we give the following proposition
+\begin{proposition}
+In the case where $\cos c^{-1}L \neq 0$,
+the spectrum of~\cref{wen-maineq} is discrete.
+For any eigenvalue $k$, there exists $p_d\in \mathbb{R}$ satisfying~\cref{wen-tan} and $-p^jp_j = k^2$.
+The eigenvectors for eigenvalue $k$ can be written as 
+\begin{equation*}
+\phi_k = \Big(\big(i\gamma^0\gamma^a p_a+k\mathbb{1}\big)(\cos p_d x^d + \sin p_d x^d) +
+i\gamma^0\gamma^d p_d(-\sin p_d x^d + \cos p_d x^d)\Big) \psi e^{-ip_a x^a}
+\end{equation*}
+where $\psi$ is a spinor in $\mathfrak{B}_+$ or $\mathfrak{B}_-$.
+\end{proposition}
+
+
+
+

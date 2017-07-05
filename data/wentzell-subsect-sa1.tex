@@ -1,0 +1,110 @@
+\subsection{$M = \mathbb{R}^{d-1} \times \mathbb{R}_+$}\label{wen-subsect1}
+\begin{proposition}
+Let $M = \mathbb{R}^{d-1} \times \mathbb{R}_+$. $\Delta$ is a self-adjoint operator with spectrum $\mathbb{R}$
+\end{proposition}
+\begin{proof}
+The self-adjointness being proven, let us find the eigenvectors and eigenvalues of $\Delta$. Let $k$ an eigenvalue of $\Delta$ and $\Phi_k = (\phi_k, \phi_{| k})$. Then
+\begin{equation}\label{wen-motion2}
+\begin{cases}
+i \gamma^0 \gamma^j \partial_j \phi_k = k \phi_k \\
+-c^{-1} \gamma^0 \mathcal{P}_- \phi\vert_{\partial M} + i \gamma^0 \gamma^a \partial_a \phi_{| k} = k \phi_{| k}
+\end{cases}
+\end{equation}
+Since for all vector $\psi$,
+\begin{equation*}
+(i\gamma^0 \gamma^j\partial_j - k )(i\gamma^0 \gamma^j\partial_j + k )\psi = 
+(- \partial^j\partial_j - k^2) \psi = 0
+\end{equation*}
+has plane wave solutions, 
+the family
+\begin{equation*}
+\begin{split}
+\phi_n = & (i\gamma^0\gamma^j\partial_j + k \mathbb{1}) e^{-ip_a x^a }(A\cos p_\bot x^\bot + B \sin p_\bot x^\bot) \psi_n \\
+ = &\gamma^0\gamma^a p_a (A \cos p_\bot x^\bot + B \sin p_\bot x^\bot)e^{-ip_a x^a}
++ i\gamma^0\gamma^\bot p_\bot (-A \sin p_\bot x^\bot + B \cos p_\bot x^\bot) e^{-ip_a x^a} \\
+& + k \mathbb{1} e^{-ip_a x^a}(A\cos p_\bot x^\bot + B \sin p_\bot x^\bot)  \\
+\end{split}
+\end{equation*}
+with $p_j$ satisfying
+\begin{equation*}
+- p^j p_j = k^2
+\end{equation*}
+spans the solution space of the first equation of~\cref{wen-motion}. 
+The constants $A$ and $B$ will be determined by the second equation of \cref{wen-motion} and the boundary condition. 
+The only constraint on $\psi_n$ is that $\psi_n$ should not be in $\ker( \gamma^0 \gamma^j p_j + k \mathbb{1})$. 
+\footnote{
+As 
+$(\gamma^0\gamma^j p_j + k \mathbb{1})
+(-\gamma^0\gamma^j p_j + k \mathbb{1})  
+= k^2 - (p_j)^2= 0$, 
+the kernel of $\gamma^0 \gamma^j p_j + k \mathbb{1}$ is not reduced to $\{ 0 \}$
+} 
+Since we have projectors $\mathcal{P}_\pm$, 
+it is natural to take the basis of the total representation space as the union of an orthonormal basis $\mathfrak{B}_+$ of $\ran(\mathcal{P}_+)$ and an orthonormal basis $\mathfrak{B}_-$ of $\ran(\mathcal{P}_-)$. \\\\
+Considering the second equation of~\cref{wen-motion} and the condition that an element of $\dom(\Delta)$ should satisfy, one gets
+\begin{equation}\label{wen-boundary}
+\begin{split}
+& \mathcal{P}_+\phi\vert_{\partial M} =  \phi_| \\
+& -c^{-1} \gamma^0 \mathcal{P}_- \phi\vert_{\partial M} + i\gamma^0\gamma^a\partial_a \mathcal{P}_+\phi\vert_{\partial M} = k \phi_| 
+\end{split}
+\end{equation}
+which implies
+\begin{equation}\label{wen-boundary2}
+-c^{-1} \gamma^0 \mathcal{P}_-(\phi\vert_{\partial M}) = 
+\mathcal{P}_+(k\phi\vert_{\partial M} - i\gamma^0\gamma^a\partial_a\mathcal{P}_+(\phi\vert_{\partial M})) = 
+i\gamma^0\mathcal{P}_-(\gamma^\bot\partial_\bot \phi\vert_{\partial M})
+\end{equation}
+We compute
+\begin{equation*}
+\begin{split}
+\partial_\bot \phi \vert_{\partial M} = 
+\big(\gamma^0\gamma^a p_a e^{-i_a x^a} p_\bot B - i\gamma^0\gamma^\bot p_\bot^2 A + k\mathbb{1}e^{-ip_a x^a}\big) \psi
+\end{split}
+\end{equation*}
+Hence, \cref{wen-boundary} implies
+\begin{equation}\label{wen-projected}
+\mathcal{P}_- \Big( (\gamma^0 \gamma^a p_a + k\mathbb{1})(c^{-1} A - p_\bot B)
+-\gamma^0 p_\bot(c^{-1} B + p_\bot A) \Big) \psi = 0
+\end{equation}
+Let $\psi = e_+ + e_-$ where $e_\pm \in \ran({P}_\pm)$.
+\cref{wen-projected} implies
+\begin{equation}\label{wen-projected2}
+(\gamma^a p_a + k\mathbb{1})(c^{-1}A - p_\bot B) e_- - \gamma^0 p_\bot(c^{-1}B + p_\bot A) e_+ = 0
+\end{equation}
+As previously mentioned,
+one can naturally consider the elements of the basis $\mathfrak{B}_+ \cup \mathfrak{B}_-$.
+The four possible cases are discussed
+\paragraph{Case 1 : $\psi \in \mathfrak{B}_-$ and $p_\bot \neq 0$} 
+By \cref{wen-projected2}
+\begin{equation*}
+(\gamma^a p_a + k\gamma^0)(c^{-1}A - p_\bot B) \psi = 0
+\end{equation*}
+Now, since 
+\begin{equation*}
+(\gamma^a p_a + k\gamma^0)^2 = ( k^2 - p^a p_a ) \mathbb{1}= p^\bot p_\bot \mathbb{1} \neq 0
+\end{equation*}
+we must have 
+\begin{equation*}
+c^{-1} A = p_\bot B
+\end{equation*}
+\paragraph{Case 2 : $\psi \in \mathfrak{B}_-$ and $p_\bot = 0$}
+In order to have non-trivial solution, 
+we must have $A \neq 0$. 
+In this case, 
+\cref{wen-projected2} implies 
+\begin{equation*}
+(\gamma^a p_a + k \mathbb{1})\psi = 0
+\end{equation*}
+which again leads to trivial solution. 
+This case should thus be discarded.
+\paragraph{Case 3 : $\psi \in \mathfrak{B}_+$ and $p_\bot \neq 0$}
+We get 
+\begin{equation*}
+c^{-1} B + p_\bot A = 0
+\end{equation*}
+\paragraph{Case 4 : $\psi \in \mathfrak{B}_+$ and $p_\bot = 0$}
+The constants $A$ and $B$ can be chosen arbitarily in this case. \\\\
+The above discussion indicates that for any $k \in \mathbb{R}$, 
+we can find eigenvectors of $\Delta$ with eigenvalue $k$.
+However, it should be noted that these plane wave solutions are only normalizable to $\delta$-function.
+\end{proof}
