@@ -107,12 +107,12 @@ Since $a = \mathcal{O}(\frac 1 x) $,
 Therefore, by~\cref{wen-mode1dlem},~\cref{wen-modetheta2} reads
 \begin{equation*}
 \begin{split}
-\theta - \frac{\pi}{ 2} = &  -\frac{2}{\pi C n}\Big( 1 + \mathcal{O}\big( \frac 1 n\big) \Big)
+\theta - \frac{\pi}{ 2} = &  -\frac{2}{\pi C n}\Big( 1 + \mathcal{O}\big( \frac{ 1}{ n^2}\big) \Big)
 \end{split}
 \end{equation*}
 Hence, when $n\rightarrow +\infty$, 
 \begin{equation*}
-k_n = \frac 1 L \Big( \big( \frac n 2 + \frac 1 4 \big)\pi + \frac{2}{\pi C n}+ \mathcal{O}\big(\frac{1}{n^2}\big) \Big)
+k_n = \frac 1 L \Big( \big( \frac n 2 + \frac 1 4 \big)\pi + \frac{2}{\pi C n}+ \mathcal{O}\big(\frac{1}{n^3}\big) \Big)
 \end{equation*}
 Two more lemmas will be needed for our calculation of vacuum polarization.
 \begin{lemma}
@@ -149,7 +149,7 @@ We conclude the proof with the known equalities
 \end{equation*}
 \end{proof}
 %
-\begin{lemma}
+\begin{lemma}\label{wen-lemmacvu}
 Let $(a_n)$ be a sequence such that $a_n = \mathcal{O}\big(\frac{1}{n^2})$ when $n\rightarrow+\infty$ and $b\in\mathbb{R}$. Then
 \begin{equation*}
 \sum_{n=1}^{+\infty} e^{i(n+\frac 1 2+\frac{b}{n}+a_n)z } - e^{i(n+\frac 1 2+\frac{b}{n})z }
@@ -202,10 +202,10 @@ the normalization condition and~\cref{wen-bound1d} imply
 %
 =& 4L |f|^2 + c |f|^2 \big(2 + \cos(2\eta) - \cos(-4kL + 2\eta) \big) \\
 %
-=& 4L |f|^2 +2 c |f|^2 \big(1 + \sin 4kL \sin 2 \eta \big) \\
+=& 4L |f|^2 +2 c |f|^2 \big(1 + \sin(2kL - 2\eta) \sin 2kL  \big) \\
 = & 1 \\
 \Rightarrow &
-|f|^2 = \frac{1}{4L} \Big( 1 + \frac 1 2 C (1 + \sin 4kL \sin 2\eta ) \Big)^{-1}
+|f|^2 = \frac{1}{4L} \Big( 1 + \frac 1 2 C (1 + \sin(2kL-2\eta) \sin 2kL ) \Big)^{-1}
 \end{split}
 \end{equation*}
 As $c> 0 $, the asymptotic behavior of $\eta$ is given by
@@ -215,7 +215,7 @@ As $c> 0 $, the asymptotic behavior of $\eta$ is given by
 Thus, the square of the norm of the renormalization constants ($|f| = |g|$) behaves when $n\rightarrow +\infty$ as
 \begin{equation*}
 |f_n|^2 = 
-\frac{1}{4L}\Big( 1 - \frac{4}{\pi^2C L n^2} + \mathcal{O}\big(\frac{1}{n^3}\big) \Big)
+\frac{1}{4L}\Big( 1 - \frac{4}{\pi^2C n^2} + \mathcal{O}\big(\frac{1}{n^3}\big) \Big)
 \end{equation*}
 By adapting time-splitting $x^0 - y^0 = t$, the Hadamard states are
 \begin{equation*}
@@ -236,13 +236,13 @@ One can show that $k_n > 0$ holds for $n \geq 0$. In effect, for $n = 0$, we loo
 \begin{equation*}
 \begin{split}
 \rho =& \lim_{t\rightarrow 0} e \bigg(\sum_{k_n>0} |f_n|^2 e^{-ik_nt} 
-- \frac{ 1}{ 4L}\sum_{n=0}^{+\infty} e^{-i\frac{1}{2L}(n+\frac 1 2 ) \pi t} - 1 \bigg) \\
+- \frac{ 1}{ 4L}\sum_{n=1}^{+\infty} e^{-i\frac{1}{2L}(n+\frac 1 2 + \frac{4}{\pi C n}) \pi t} - 1 \bigg) \\
 %
 = & \lim_{t\rightarrow 0 }\frac{e}{4L}\Big( e^{-ik_0t} - 1 +
-\underbrace{ \sum_{n=1}^{+\infty}e^{ik_nt} - e^{(n+\frac 1 2 + \frac b n )\frac{t}{2L}} }_{\textrm{uniformly convergent}} 
-+\underbrace{\sum_{n=1}^{+\infty}\big(4 L  |f_n|^2 -1 \big) e^{-ik_nt}}_{\textrm{uniformly convergent}}
+\underbrace{ \sum_{n=1}^{+\infty}e^{-ik_nt} - e^{-i(n+\frac 1 2 + \frac{4}{\pi C n} )\frac{\pi t}{2L}} }_{\textrm{uniformly convergent}} 
++\underbrace{\sum_{n=0}^{+\infty}\big(4 L  |f_n|^2 -1 \big) e^{-ik_nt}}_{\textrm{uniformly convergent}}
 \Big) \\
-& = e \sum_{n=1}^{+\infty}\big(|f_n|^2 -\frac{1}{4L} \big)
+& = e \sum_{n=0}^{+\infty}\big(|f_n|^2 -\frac{1}{4L} \big)
 \end{split}
 \end{equation*}
 %Before introducing electromagnetic field, one would expect to also get a vanishing vacuum polarization under such a boundary condition, which has been shown here.\\\\
@@ -251,13 +251,52 @@ To calculate the stress-energy tensor, we choose the point-splitting in both tem
 In order to do the derivation term by term in the infinite sum appearing in the state, we use the $i\varepsilon$ prescription as in~\cite{Zahn2017}. 
 Namely, we consider the two-point functions with $\varepsilon >0$
 \begin{equation*}
-\omega(\phi^1(x)\phi_1^\dagger(y)) = 
-\omega(\phi^2(x)\phi_2^\dagger(y)) =
- \sum_{k_n>0} |f_n|^2 e^{-ik_n(t-i\varepsilon)}
+\begin{split}
+& \omega(\phi^1(x)\phi_1^\dagger(y)) = 
+ \sum_{k_n>0} |f_n|^2 e^{-ik_n(x^0 - y^0 - x^1 + y^1-i\varepsilon)} \\
+ %
+& \omega(\phi^2(x)\phi_2^\dagger(y)) =
+\sum_{k_n>0} |f_n|^2 e^{-ik_n(x^0 - y^0 + x^1 - y^1-i\varepsilon)}
+\end{split}
 \end{equation*}
-
-
-
+%
+Using~\cref{vacuum-stressenergy} for 
+\begin{equation*}
+\xi(t) = \sum_{k_n>0} |f_n|^2 e^{-ik_n t} ,  \quad
+z = x^0 - y^0 - x^1 + y^1-i\varepsilon  ,\quad
+w = x^0 - y^0 + x^1 - y^1-i\varepsilon
+\end{equation*}
+Using
+\begin{equation*}
+\sum_{n=1}^{+\infty} n e^{-i(n+\frac b n )(t - i\varepsilon)}
+= -\frac{1}{(t-i\varepsilon)^2} - \frac{1}{12}-b + \mathcal{O}(t-i\varepsilon)
+\end{equation*}
+We compute
+\begin{equation*}
+\begin{split}
+\xi'(t  - i\varepsilon)  = & -i\sum_{k_n>0}|f_n|^2k_n e^{-ik_n(t-i\varepsilon)} \\
+%
+=& -\frac{i}{4L^2} \sum_{k_n>0} \Big(\frac n 2 \pi + \frac 1 4 \pi + \mathcal{O}\big(\frac{1}{n^2}\big)\Big) e^{-ik_n(t-i\varepsilon)}
+\\
+%
+= & \frac{i}{2\pi}\frac{1}{(t-i\varepsilon)^2}  + 
+\frac{i}{8L}\frac{1}{t-i\varepsilon} 
+- i |f_0|^2k_0e^{-ik_0(t-i\varepsilon)}
+\\
+% 
+& -\frac{i}{4L^2}\sum_{n\geq1}\Big(\frac{n\pi}{2} + \frac 1 4 \pi\Big)
+\bigg(e^{-\frac{i}{2L}\big((n+\frac 1 2 )\pi + \frac{4}{\pi C n} + \mathcal{O}(n^{-3})\big)(t-i\varepsilon)}
+-e^{-\frac{i}{2L}\big((n+\frac 1 2 )\pi + \frac{4}{\pi C n} \big)(t-i\varepsilon)} \bigg) \\
+&-i \sum_{n \geq 1} \Big( |f_n|^2 k_n - \frac{1}{4L^2}\big(\frac{n\pi}{2} + \frac 1 4 \pi \big) \Big) e^{-ik_n(t-i\varepsilon)}
+\end{split}
+\end{equation*}
+With a similar calculation as in~\cref{wen-lemmacvu}, both infinite sums appearing at the last two lines converge uniformly.
+The singular terms of the stress-energy tensor are cancelled out as expected and the renormalized stress-energy tensor components are
+\begin{equation*}
+T_{00} = T_{11}= 2 \sum_{n\geq1} \Big( |f_n|^2 k_n - 
+\frac{1}{4L^2}\big(\frac{n\pi}{2} + \frac 1 4 \pi \big) \Big) , \quad
+T_{01}=T_{10}  = 0
+\end{equation*}
 
 
 
