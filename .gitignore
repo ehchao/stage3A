@@ -1,6 +1,6 @@
 # PDF documents
 *.pdf
-
+*.div
 # TeX
 ## Core latex/pdflatex auxiliary files:
 *.aux
