@@ -13,6 +13,8 @@
 \usepackage{slashed}
 %\usepackage[hmargin={3.5cm,3.5cm},top=4cm,bottom=4cm]{geometry} %problem...
 
+\graphicspath{{images/}}
+
 \newcommand{\vb}[1]{\mathbf{#1}}
 \newcommand{\V}[1]{\textnormal{#1}}
 \newcommand{\dd}[0]{\textrm{d}}
@@ -69,23 +71,23 @@
 \frametitle{Outline}
 \framesubtitle{}
 \begin{enumerate}
- \item Introduction
-  \begin{enumerate}
-  \item Elements of Quantum Field Theory in Curved Space-Time (QFTCST)
-  \item Kondo effect
-  \item Brief review of AdS/CFT correspondence and holographic renormalization
-  \end{enumerate}
+ \item Introduction and motivation
+%  \begin{enumerate}
+%  \item Elements of Quantum Field Theory in Curved Space-Time (QFTCST)
+%  \item Kondo effect
+%  \item Brief review of AdS/CFT correspondence and holographic renormalization
+%  \end{enumerate}
  \item Vacuum polarization in 1+1 dimension in presence of a Kondo type potential
-  \begin{enumerate}
-  \item Hadamard parametrix and vacuum polarization
-  \item Results
-  \end{enumerate}
+%  \begin{enumerate}
+%  \item Hadamard parametrix and vacuum polarization
+%  \item Results
+%  \end{enumerate}
  \item Wentzell boundary condition for Dirac fields
-  \begin{enumerate}
-  \item Well-posedness of an action
-  \item 3 examples
-  \item Vacuum polarization and stress-energy tensors in 1+1 dimension
-  \end{enumerate}
+%  \begin{enumerate}
+%  \item Well-posedness of an action
+%  \item 3 examples
+%  \item Vacuum polarization and stress-energy tensors in 1+1 dimension
+%  \end{enumerate}
  \item Conclusion and prospective
 \end{enumerate}
 \end{frame}
@@ -94,7 +96,11 @@
 \frametitle{Introduction}
 \framesubtitle{Elements of QFTCST}
 
+\color{blue}[S. Hollands, R.M. Wald Phys. Rep. 2015]
+
 \begin{itemize}
+
+
 \item Difficulty in defining the ground state in curved space-time for usual construction of Hilbert space
 \item Algebraic approach formulated with an algebra of quantum observables $\mathscr{A}(M,g)$
 \item Distributional nature of fields
@@ -121,10 +127,11 @@
 
 \item \textbf{GNS construction} corresponding to the state 
 
-\item Equivalent theory for Dirac field : Dirac equation and \textit{anti}-commutation relation
-\begin{equation*}
-\{\psi(f_1), \psi(f_2)\} = i S(f_1, f_2) \mathbf{1}
-\end{equation*}
+\item \textbf{Hadamard states} propagation of the singularity of a Hadamard state in globally hyperbolic space-times
+\\
+\color{blue}[M.J. Radzikowski, Comm. Math. Phys.
+, 179(3):529–553, 1996] \color{black}
+
 
 
 \end{itemize}
@@ -137,6 +144,18 @@
 
 \begin{itemize}
 
+\item Equivalent theory for Dirac field : Dirac equation and \textit{anti}-commutation relation
+\\
+\color{blue}[ H. Sahlmann and R. Verch
+Rev. Math. Phys.
+, 13:1203–
+1246, 2001]\color{black}
+
+\begin{equation*}
+\{\psi(f_1), \psi(f_2)\} = i S(f_1, f_2) \mathbf{1}
+\end{equation*}
+
+
 \item \textbf{Hadamard states} and characterization
  \begin{equation*}
 \begin{split}
@@ -145,8 +164,6 @@ iS^B_A(x,x') \\
 \overline{\omega(\bar{\psi}(u)\psi(\bar{v}))} = & \omega(\bar{\psi}(v)\psi(\bar{u}))
 \end{split}
 \end{equation*}
-
-\item Propagation of the singularity of a Hadamard state in globally hyperbolic space-times
 
 \end{itemize}
 
@@ -158,6 +175,11 @@ iS^B_A(x,x') \\
 \begin{itemize}
 \item Anomalies in electrical resistance when temperature decreases
 
+\begin{figure}[!h]
+  \centering
+  \includegraphics[height=0.4\textheight]{kondo}
+\end{figure}
+
 \end{itemize}
 
 \end{frame}
@@ -166,14 +188,23 @@ iS^B_A(x,x') \\
 \frametitle{Introduction}
 \framesubtitle{Kondo effect}
 \begin{itemize}
-\item Punctual spin interaction between electrons and impurities
+\item Local spin interaction between electrons and impurities
+\\
+\color{blue}[J. Kondo
+, 32(1):37, 1964]\color{black}
+
 \item Hamiltonian
+\\
+\color{blue}[J. Erdmenger, C. Hoyos, A. O’Bannon and J. Wu, JHEP
+, 12:086, 2013]\color{black}
+
+
 \begin{equation*}
-H_K = \psi_\alpha^\dagger \frac{-\nabla^2}{2m}\psi_\alpha +
-\frac 1 2\lambda_K \delta(\vec{x})\vec{S}\cdot \psi_{\alpha'}^\dagger  \vec{\sigma}_{\alpha' \alpha} \psi_\alpha
+H = \psi_\alpha^\dagger \frac{-\nabla^2}{2m}\psi_\alpha +
+\frac 1 2\lambda \delta(\vec{x})\vec{S}\cdot \psi_{\alpha'}^\dagger  \vec{\sigma}_{\alpha' \alpha} \psi_\alpha
 \end{equation*}
 
-\item How could such a punctual interaction change the vacuum polarization ?
+\item How could such a local interaction change the vacuum polarization ?
 \end{itemize}
 
 \end{frame}
@@ -210,6 +241,11 @@ $\Rightarrow$ the same divergence as in CFT
 \begin{itemize}
 
 \item Boundary field and holographic renormalization
+\\
+\color{blue}[K. Skenderis
+Class. Quant. Grav.
+,
+19:5849–5876, 2002]\color{black}
 
 \item Type of action appearing in holographic renormalization for scalar case
 \begin{equation*}
@@ -220,6 +256,8 @@ $\Rightarrow$ the same divergence as in CFT
 \mu^2\phi^2 - \frac c 2 \int_{\partial M}h^{\mu\nu}\partial_\mu\phi\partial_\nu\phi + \mu^2\phi^2
 \end{split}
 \end{equation*}
+
+\color{blue}[J. Zahn,  arXiv:1512.05512v2]\color{black}
 
 \item The case of Dirac fields and the vacuum polarization under the new boundary condition (generalized bag boundary condition)?
 
@@ -243,6 +281,9 @@ $\Rightarrow$ the same divergence as in CFT
 \end{equation*}
 
 \item Hadamard parametrix for a spin-$\frac 1 2$ massless particle with charge $+e$ with external potential $A^\mu(x) = (Ex^1, 0 )$
+
+\color{blue}[J. Schlemmer and J. Zahn, Ann. of Phys. 2015]\color{black}
+
 \begin{equation*}
 \begin{split}
 & H^\pm (x, y)^1_2 = \frac{-i}{2\pi}\frac{1-\frac i 2 e E(x^1 + y^1)(x^0-y^0) 
@@ -614,22 +655,73 @@ T_{\alpha\beta} \xi^\alpha \xi^\beta \geq 0
 \frametitle{Wentzell boundary condition for Dirac fields}
 \framesubtitle{Vacuum polarization and stress-energy tensors in 1+1 dimension}
 
+\begin{itemize}
 
+\item Spatially confined in $x^1 \in [-L, L]$
+\begin{equation*}
+\gamma^0 = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \quad
+\gamma^1 = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}
+\quad
+ \mathcal{P}_\pm = \frac 1 2  \begin{pmatrix} 1 & \mp i \\ \pm i & 1 \end{pmatrix}
+\end{equation*}
 
+\item Let $\Phi = (\phi, \phi_|)$ where $\phi = \begin{pmatrix} \phi_L \\ \phi_R \end{pmatrix}$ \\
+Well-posedness $\Longrightarrow$
+\begin{equation*}
+\phi_L = \sum f_n e^{-ik_n(x^0 - x^1)} \quad
+\phi_R = \sum g_n e^{-ik_n(x^0 + x^1)}
+\end{equation*}
+\end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 \frametitle{Wentzell boundary condition for Dirac fields}
 \framesubtitle{Vacuum polarization and stress-energy tensors in 1+1 dimension}
 
+\begin{itemize}
+\item Asymptotic behavior of the modes and the normalization constants
+
+\begin{equation*}
+k_n = \frac 1 L \Big( \big( \frac n 2 + \frac 1 4 \big)\pi + \frac{2}{\pi C n}+ \mathcal{O}\big(\frac{1}{n^3}\big) \Big)
+\end{equation*}
+
+\begin{equation*}
+|f_n|^2 = |g|^2=
+\frac{1}{4L}\Big( 1 - \frac{4}{\pi^2C n^2} + \mathcal{O}\big(\frac{1}{n^3}\big) \Big)
+\end{equation*}
+
+\item Renormalized vacuum current and stress-energy tensor
+
+\begin{equation*}
+\rho = e \sum_{n=0}^{+\infty}\big(|f_n|^2 -\frac{1}{4L} \big)
+\end{equation*}
 
 
+\end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-\frametitle{Wentzell boundary condition for Dirac fields}
-\framesubtitle{Vacuum polarization and stress-energy tensors in 1+1 dimension}
+\frametitle{Conclusion and prospective}
 
+
+
+\begin{itemize}
+
+\item To summerize
+ \begin{itemize}
+ \item The offset effect of Kondo type potential on vacuum polarization using Dirac's prescription
+ \item Alternative and generalization of the bag boundary condition
+ \item Effect of the boundary field on vacuum polarization 
+ \end{itemize}
+
+\item Prospective
+ \begin{itemize}
+ \item Generalization of boundary conditions of vector fields and gauge fields
+ \item Causal propagation of the 0 modes
+ \item Application in holographic renormalization
+ \end{itemize}
+
+\end{itemize}
 
 
 \end{frame}
