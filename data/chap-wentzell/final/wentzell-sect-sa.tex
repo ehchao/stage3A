@@ -13,7 +13,8 @@ where $M$ is an equal-time hypersurface of $\mathcal{M}$ and $\partial M = M\cap
 \end{equation}
 In order to have a self-adjoint operator, we define $\Delta$ on the domain
 \begin{equation*}
-\dom( \Delta) = \{ \Phi = (\phi, \phi_|) \in \mathcal{H} \enskip | \enskip \mathcal{P}_+\phi \vert_{\partial M} - \phi_| = 0 \}
+\dom( \Delta) = \{ \Phi = (\phi, \phi_|) \in W^{1,2}(M)\times W^{1,2}(
+\partial M)\enskip | \enskip \mathcal{P}_+\phi \vert_{\partial M} - \phi_| = 0 \}
 \end{equation*}  
 For $\Phi = (\phi, \phi_|) \in \mathcal{H}$ and $ \Psi = (\psi, \psi_|)\in\dom(\Delta)$
 \begin{equation}
@@ -285,8 +286,15 @@ T_{\alpha\beta} \xi^\alpha \xi^\beta \geq 0
 \end{equation*}
 Let $\xi = e_0$, which is a Killing vector field in the static case.
 Then we have $\partial^\mu T_{\mu\nu}\xi^\nu = 0$.
-Using Stokes' theorem, the integral of this quantity over 
-%TODO add picture
+Using Stokes' theorem, the integral of this quantity over the zone contained between $\mathcal{S}_0$ and $\mathcal{S}_1$ which is in the future domain of dependance of $\mathcal{S}_0$ (cf~\cref{integratedzone})
+%
+\begin{figure}[!h]
+  \centering
+  %\captionsetup{width=0.8\textwidth}
+  \includegraphics[height=0.4\textheight]{causal}
+  \caption{Zone to integrate}\label{integratedzone}
+\end{figure}
+%
 gives
 \begin{equation*}
 \begin{split}
@@ -329,7 +337,7 @@ For mathematical details, we can refer to~\cite{Reed1981}
 In particular, one can see that if for a Cauchy data $\Phi_0$,
 there exists a strictly positive sequence $(\varepsilon_n)$ such that 
 \begin{equation}\label{wen-nozeromode} 
-\Phi_0\in \cap_{k\in\mathbb{N}}\overline{\mathcal{H}^k_{\varepsilon_n}(M) }
+\Phi_0\in \cap_{k\in\mathbb{N}}\overline{\mathcal{H}^k_{\varepsilon_k}(M) }
 \end{equation}
 We can always estimate the time-derivative of $\Phi$ in terms of the norm of the initial data on the Cauchy surface.
 \begin{proposition}

@@ -235,14 +235,14 @@ One can show that $k_n > 0$ holds for $n \geq 0$. In effect, for $n = 0$, we loo
 }
 \begin{equation*}
 \begin{split}
-\rho =& \lim_{t\rightarrow 0} e \bigg(\sum_{k_n>0} |f_n|^2 e^{-ik_nt} 
-- \frac{ 1}{ 4L}\sum_{n=1}^{+\infty} e^{-i\frac{1}{2L}(n+\frac 1 2 + \frac{4}{\pi C n}) \pi t} - 1 \bigg) \\
+\rho =& \lim_{t\rightarrow 0} 2e \bigg(\sum_{k_n>0} |f_n|^2 e^{-ik_nt} 
+- \frac{ 1}{ 4L}\sum_{n=1}^{+\infty} e^{-i\frac{1}{2L}(n+\frac 1 2 + \frac{4}{\pi C n}) \pi t} - \frac{1}{4L} \bigg) \\
 %
-= & \lim_{t\rightarrow 0 }\frac{e}{4L}\Big( e^{-ik_0t} - 1 +
+= & \lim_{t\rightarrow 0 }\frac{e}{2L}\Big( e^{-ik_0t} - 1 +
 \underbrace{ \sum_{n=1}^{+\infty}e^{-ik_nt} - e^{-i(n+\frac 1 2 + \frac{4}{\pi C n} )\frac{\pi t}{2L}} }_{\textrm{uniformly convergent}} 
 +\underbrace{\sum_{n=0}^{+\infty}\big(4 L  |f_n|^2 -1 \big) e^{-ik_nt}}_{\textrm{uniformly convergent}}
 \Big) \\
-& = e \sum_{n=0}^{+\infty}\big(|f_n|^2 -\frac{1}{4L} \big)
+& = 2e \sum_{n=0}^{+\infty}\big(|f_n|^2 -\frac{1}{4L} \big)
 \end{split}
 \end{equation*}
 %Before introducing electromagnetic field, one would expect to also get a vanishing vacuum polarization under such a boundary condition, which has been shown here.\\\\
@@ -276,25 +276,30 @@ We compute
 \begin{split}
 \xi'(t  - i\varepsilon)  = & -i\sum_{k_n>0}|f_n|^2k_n e^{-ik_n(t-i\varepsilon)} \\
 %
-=& -\frac{i}{4L^2} \sum_{k_n>0} \Big(\frac n 2 \pi + \frac 1 4 \pi + \mathcal{O}\big(\frac{1}{n^2}\big)\Big) e^{-ik_n(t-i\varepsilon)}
-\\
+%=& -\frac{i}{4L^2} \sum_{k_n>0} \Big(\frac n 2 \pi + \frac 1 4 \pi 
+%+\mathcal{O}\big(\frac{1}{n^2}\big)\Big) e^{-ik_n(t-i\varepsilon)}
+%\\
 %
 = & \frac{i}{2\pi}\frac{1}{(t-i\varepsilon)^2}  + 
-\frac{i}{8L}\frac{1}{t-i\varepsilon} 
+\frac{i}{8L}\frac{1}{t-i\varepsilon}
++\frac{i}{4L^2}\big(\frac{\pi}{24} + \frac{2}{\pi C} +1 \big)
 - i |f_0|^2k_0e^{-ik_0(t-i\varepsilon)}
 \\
 % 
 & -\frac{i}{4L^2}\sum_{n\geq1}\Big(\frac{n\pi}{2} + \frac 1 4 \pi\Big)
-\bigg(e^{-\frac{i}{2L}\big((n+\frac 1 2 )\pi + \frac{4}{\pi C n} + \mathcal{O}(n^{-3})\big)(t-i\varepsilon)}
+\bigg(e^{-ik_n(t-i\varepsilon)}
 -e^{-\frac{i}{2L}\big((n+\frac 1 2 )\pi + \frac{4}{\pi C n} \big)(t-i\varepsilon)} \bigg) \\
 &-i \sum_{n \geq 1} \Big( |f_n|^2 k_n - \frac{1}{4L^2}\big(\frac{n\pi}{2} + \frac 1 4 \pi \big) \Big) e^{-ik_n(t-i\varepsilon)}
++\mathcal{O}\big((t-i\varepsilon)^{\frac{1}{2}}\big)
 \end{split}
 \end{equation*}
 With a similar calculation as in~\cref{wen-lemmacvu}, both infinite sums appearing at the last two lines converge uniformly.
 The singular terms of the stress-energy tensor are cancelled out as expected and the renormalized stress-energy tensor components are
 \begin{equation*}
-T_{00} = T_{11}= 2 \sum_{n\geq1} \Big( |f_n|^2 k_n - 
-\frac{1}{4L^2}\big(\frac{n\pi}{2} + \frac 1 4 \pi \big) \Big) , \quad
+T_{00} = T_{11}= 2 |f_0|^2 k_0 + 2 \sum_{n\geq1} \Big( |f_n|^2 k_n - 
+\frac{1}{4L^2}\big(\frac{n\pi}{2} + \frac 1 4 \pi \big) \Big)
+-\frac{1}{2L^2}\big(\frac{\pi}{24} + \frac{2}{\pi C}+1\big)
+ , \quad
 T_{01}=T_{10}  = 0
 \end{equation*}
 
