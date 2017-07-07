@@ -27,7 +27,7 @@
 \newtheorem{proposition}{Proposition}
 
 \setbeamertemplate{footline}[frame number]{}
-%\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{caption}[numbered]
 
 
@@ -54,7 +54,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{Quantum field theories in external potentials}
 \author{En-Hung CHAO}
-\institute{Ecole Polytechnique}
+\institute{Ecole Polytechnique \& Uni Leipzig}
 \date{\today}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -64,6 +64,7 @@
 
 \begin{frame}
 \titlepage%
+\centerline{supervised by Jochen Zahn (Uni Leipzig)}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -90,30 +91,64 @@
 %  \end{enumerate}
  \item Conclusion and prospective
 \end{enumerate}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Introduction}
+\framesubtitle{}
+
+\begin{itemize}
+
+\item Study vacuum polarization in different case using renormalization tools developed in Quantum Field Theory in Curved Space-Time
+
+\item Main references: 
+\begin{itemize}
+\item J. Schlemmer and J. Zahn, \textit{The current density in quantum electrodynamics in external potentials}, Ann. of Phys. 2015\\
+
+\item J. Zahn, \textit{Generalized Wentzell boundary conditions and holography} [arXiv:1512.05512v2]
+\end{itemize}
+
+\end{itemize}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Outline}
+\framesubtitle{}
+\begin{enumerate}
+\item Introduction and motivation
+ \item Vacuum polarization in 1+1 dimension in presence of a Kondo type potential
+ \item Wentzell boundary condition for Dirac fields
+ \item Conclusion and prospective
+\end{enumerate}
+
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame}
 \frametitle{Introduction}
 \framesubtitle{Elements of QFTCST}
 
-\color{blue}[S. Hollands, R.M. Wald Phys. Rep. 2015]
+\textbf{Quantum field theories in curved space-time}
+\\
+\tiny\color{blue}[S. Hollands, R.M. Wald Phys. Rep. 2015]\color{black}\normalsize
 
 \begin{itemize}
-
 
 \item Difficulty in defining the ground state in curved space-time for usual construction of Hilbert space
 \item Algebraic approach formulated with an algebra of quantum observables $\mathscr{A}(M,g)$
 \item Distributional nature of fields
-\item Postulates for scalar field theory
- \begin{enumerate}
-  \item \textbf{Linearity} $\phi(c_1 f_1 + c_2 f_2) = c_1 \phi(f_1) + c_2 \phi(f_2)$ for $c_1, c_2 \in \mathbb{C}$
+%\item Postulates for scalar field theory
+% \begin{enumerate}
+%  \item \textbf{Linearity} $\phi(c_1 f_1 + c_2 f_2) = c_1 \phi(f_1) + c_2 \phi(f_2)$ for $c_1, c_2 \in \mathbb{C}$
 %
-\item \textbf{Klein-Gordon equation} $\phi\big( (\Box_g - m^2)f \big) = 0$
+%\item \textbf{Klein-Gordon equation} $\phi\big( (\Box_g - m^2)f \big) = 0$
 %
-\item \textbf{Hermitian field} $\phi(f)^* = \phi(\bar{f})$
+%\item \textbf{Hermitian field} $\phi(f)^* = \phi(\bar{f})$
 %
-\item \textbf{Canonical commutation relation (CCR)} $[\phi(f_1), \phi(f_2)] = iE(f_1, f_2) \mathbf{1}$
- \end{enumerate}
+%\item \textbf{Canonical commutation relation (CCR)} $[\phi(f_1), \phi(f_2)] = iE(f_1, f_2) \mathbf{1}$
+% \end{enumerate}
 \end{itemize}
 
 \end{frame}
@@ -129,8 +164,24 @@
 
 \item \textbf{Hadamard states} propagation of the singularity of a Hadamard state in globally hyperbolic space-times
 \\
-\color{blue}[M.J. Radzikowski, Comm. Math. Phys.
-, 179(3):529–553, 1996] \color{black}
+\tiny{\color{blue}[S. A. Fulling, M. Sweeny, and R. M. Wald, Comm. Math. Phys., 63(3):257?264, 1978.]}\color{black}\normalsize
+
+
+%\item Characterization of Hadamard states
+%\\
+%\tiny{\color{blue}[H. Sahlmann and R. Verch Rev. Math. Phys., 13:1203– 1246, 2001]\color{black}}\normalsize
+
+% \begin{equation*}
+%\begin{split}
+%\omega(\psi^B(x)\bar{\psi}_A(x')) + \omega(\bar{\psi}_A(x')\psi^B(x)) = &
+%iS^B_A(x,x') \\
+%\overline{\omega(\bar{\psi}(u)\psi(\bar{v}))} = & \omega(\bar{\psi}(v)\psi(\bar{u}))
+%\end{split}
+%\end{equation*}
+
+
+%\\
+%\color{blue}[M.J. Radzikowski, Comm. Math. Phys., 179(3):529–553, 1996] \color{black}
 
 
 
@@ -138,36 +189,25 @@
 
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-\frametitle{Introduction}
-\framesubtitle{Elements of QFTCST}
+%\begin{frame}
+%\frametitle{Introduction}
+%\framesubtitle{Elements of QFTCST}
 
-\begin{itemize}
+%\begin{itemize}
 
-\item Equivalent theory for Dirac field : Dirac equation and \textit{anti}-commutation relation
-\\
-\color{blue}[ H. Sahlmann and R. Verch
-Rev. Math. Phys.
-, 13:1203–
-1246, 2001]\color{black}
+%\item Equivalent theory for Dirac field : Dirac equation and \textit{anti}-commutation relation
+%\\
+%\color{blue}[ H. Sahlmann and R. Verch Rev. Math. Phys., 13:1203– 1246, 2001]\color{black}
 
-\begin{equation*}
-\{\psi(f_1), \psi(f_2)\} = i S(f_1, f_2) \mathbf{1}
-\end{equation*}
+%\begin{equation*}
+%\{\psi(f_1), \psi(f_2)\} = i S(f_1, f_2) \mathbf{1}
+%\end{equation*}
 
 
-\item \textbf{Hadamard states} and characterization
- \begin{equation*}
-\begin{split}
-\omega(\psi^B(x)\bar{\psi}_A(x')) + \omega(\bar{\psi}_A(x')\psi^B(x)) = &
-iS^B_A(x,x') \\
-\overline{\omega(\bar{\psi}(u)\psi(\bar{v}))} = & \omega(\bar{\psi}(v)\psi(\bar{u}))
-\end{split}
-\end{equation*}
 
-\end{itemize}
+%\end{itemize}
 
-\end{frame}
+%\end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 \frametitle{Introduction}
@@ -190,13 +230,13 @@ iS^B_A(x,x') \\
 \begin{itemize}
 \item Local spin interaction between electrons and impurities
 \\
-\color{blue}[J. Kondo
-, 32(1):37, 1964]\color{black}
+\tiny\color{blue}[J. Kondo
+, 32(1):37, 1964]\color{black}\normalsize
 
 \item Hamiltonian
 \\
-\color{blue}[J. Erdmenger, C. Hoyos, A. O’Bannon and J. Wu, JHEP
-, 12:086, 2013]\color{black}
+\tiny\color{blue}[J. Erdmenger, C. Hoyos, A. O’Bannon and J. Wu, JHEP
+, 12:086, 2013]\color{black}\normalsize
 
 
 \begin{equation*}
@@ -209,43 +249,48 @@ H = \psi_\alpha^\dagger \frac{-\nabla^2}{2m}\psi_\alpha +
 
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-\frametitle{Introduction}
-\framesubtitle{Holographic renormalization}
+%\begin{frame}
+%\frametitle{Introduction}
+%\framesubtitle{Holographic renormalization}
 
-\begin{itemize}
-\item Strong/weak coupling duality and IR-UV connection in anti-deSitter/Conformal Field Theory (AdS/CFT) correspondence
+%\begin{itemize}
 
-\item Example for scalar field
 
-\begin{equation*}
-\begin{split}
-\mathcal{S}[\phi] = & -\int_{B_{d+1}} \sqrt{g} \phi D_i D^i \phi + 
-\lim_{\epsilon\rightarrow 0}\int_{T_\epsilon}  \sqrt{h} \phi (\vec{n}\cdot\vec{\nabla})\phi \\
+%\item Example for scalar field
+
+%\begin{equation*}
+%\begin{split}
+%\mathcal{S}[\phi] = & -\int_{B_{d+1}} \sqrt{g} \phi D_i D^i \phi + 
+%\lim_{\epsilon\rightarrow 0}\int_{T_\epsilon}  \sqrt{h} \phi (\vec{n}\cdot\vec{\nabla})\phi \\
 %
-& \sim \int \dd \mathbf{x} \dd \mathbf{x}' 
-\frac{\phi_0(\mathbf{x})\phi_0(\mathbf{x}')}{|\mathbf{x} - \mathbf{x}'|^{2d}}
-\end{split}
-\end{equation*}
+%& \sim \int \dd \mathbf{x} \dd \mathbf{x}' 
+%\frac{\phi_0(\mathbf{x})\phi_0(\mathbf{x}')}{|\mathbf{x} - \mathbf{x}'|^{2d}}
+%\end{split}
+%\end{equation*}
 
-$\Rightarrow$ the same divergence as in CFT
+%$\Rightarrow$ the same divergence as in CFT
 
-\end{itemize}
+%\end{itemize}
 
-\end{frame}
+%\end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
+\begin{frame}[shrink=10]
 \frametitle{Introduction}
 \framesubtitle{Holographic renormalization}
 
 \begin{itemize}
+
+\item %Strong/weak coupling duality and 
+IR-UV connection in anti-deSitter/Conformal Field Theory (AdS/CFT) correspondence
+\\
+\tiny\color{blue}[L. Susskind, E. Witten, arXiv:hep-th/9805114]\color{black}\normalsize
 
 \item Boundary field and holographic renormalization
 \\
-\color{blue}[K. Skenderis
+\tiny\color{blue}[K. Skenderis
 Class. Quant. Grav.
 ,
-19:5849–5876, 2002]\color{black}
+19:5849–5876, 2002]\color{black}\normalsize
 
 \item Type of action appearing in holographic renormalization for scalar case
 \begin{equation*}
@@ -257,20 +302,48 @@ Class. Quant. Grav.
 \end{split}
 \end{equation*}
 
-\color{blue}[J. Zahn,  arXiv:1512.05512v2]\color{black}
+\tiny\color{blue}[J. Zahn,  arXiv:1512.05512v2]\color{black}\normalsize
 
 \item The case of Dirac fields and the vacuum polarization under the new boundary condition (generalized bag boundary condition)?
+\\
+\tiny\color{blue}[A. Chodos, R. L. Jaffe, K. Johnson, C. B. Thorn, and V. F. Weisskopf Phys. Rev., D9:3471?3495, 1974.]\color{black}\normalsize
 
 \end{itemize}
 
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Vacuum polarization in 1+1 dimension in presence of a Kondo type potential}
+\framesubtitle{Hadamard parametrix and vacuum polarization}
+
+\begin{itemize}
+
+%\item Point-splitting prescription
+%\\
+%\tiny\color{blue}[J. S. Schwinger, Phys. Rev., 82:664?679, 1951.]\color{black}\normalsize
+
+\item Point-splitting prescription and the expectation value of vacuum current
+\\
+\tiny\color{blue}[P. A. M. Dirac, Mathematical Proceedings of the Cambridge Philosophical Society, 30(2):150?163, 1934] \color{black}\normalsize
+
+\begin{equation*}
+\begin{split}
+\omega(\psi^B(x)\bar{\psi}_A(y)) = & \int_{E_k >0} \psi_k^B(x)\bar{\psi}_{A,k}(y)e^{-i(x^0-y^0)E_k} \dd k \\
+\omega(\bar{\psi}_A(y)\psi^B(x)) = & \int_{E_k <0} \psi_k^B(x)\bar{\psi}_{A,k}(y)e^{-i(x^0-y^0)E_k} \dd k 
+\end{split}
+\end{equation*}
+
+\end{itemize}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame}[shrink=20]
 \frametitle{Vacuum polarization in 1+1 dimension in presence of a Kondo type potential}
 \framesubtitle{Hadamard parametrix and vacuum polarization}
 
 \begin{itemize}
-\item Representation of the Dirac gamma matrices
+\item Representations of the Dirac gamma matrices
 \begin{equation*}
 \gamma^0 = \begin{pmatrix}
 0 & 1 \\
@@ -282,54 +355,44 @@ Class. Quant. Grav.
 
 \item Hadamard parametrix for a spin-$\frac 1 2$ massless particle with charge $+e$ with external potential $A^\mu(x) = (Ex^1, 0 )$
 
-\color{blue}[J. Schlemmer and J. Zahn, Ann. of Phys. 2015]\color{black}
+\tiny\color{blue}[J. Schlemmer and J. Zahn, Ann. of Phys. 2015]\color{black}\normalsize
 
 \begin{equation*}
 \begin{split}
 & H^\pm (x, y)^1_2 = \frac{-i}{2\pi}\frac{1-\frac i 2 e E(x^1 + y^1)(x^0-y^0) 
-- \frac 1 8 (eE)^2(x^1 + y^1)^2(x^0 - y^0)^2}{x^0 - y^0 + x^1 - y^1 \mp i \epsilon}  \\
+- \frac 1 8 (eE)^2(x^1 + y^1)^2(x^0 - y^0)^2}{x^0 - y^0 + x^1 - y^1 \mp i \epsilon}  + \textrm{s. t.}\\
 & H^\pm (x, y)^2_1 = \frac{-i}{2\pi}\frac{1-\frac i 2 e E(x^1 + y^1)(x^0-y^0) 
-- \frac 1 8 (eE)^2(x^1 + y^1)^2(x^0 - y^0)^2}{x^0 - y^0 - x^1 + y^1 \mp i \epsilon}
+- \frac 1 8 (eE)^2(x^1 + y^1)^2(x^0 - y^0)^2}{x^0 - y^0 - x^1 + y^1 \mp i \epsilon}+ \textrm{s. t.}
 \end{split}
 \end{equation*}
 
 \end{itemize}
 
 \end{frame}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 \frametitle{Vacuum polarization in 1+1 dimension in presence of a Kondo type potential}
 \framesubtitle{Hadamard parametrix and vacuum polarization}
 
- Dirac's method and vacuum current as a Hadamard state
+\begin{itemize}
 
-\begin{equation*}
-\begin{split}
-\omega(\psi^B(x)\bar{\psi}_A(y)) = & \int_{E_k >0} \psi_k^B(x)\bar{\psi}_{A,k}(y)e^{-i(x^0-y^0)E_k} \dd k \\
-\omega(\bar{\psi}_A(y)\psi^B(x)) = & \int_{E_k <0} \psi_k^B(x)\bar{\psi}_{A,k}(y)e^{-i(x^0-y^0)E_k} \dd k 
-\end{split}
-\end{equation*}
-
+\item Renormalized vacuum current expectation
 \begin{equation*}
 j^\mu(x) = \lim_{y \rightarrow x} \gamma^A_B \big(
 \omega(\psi^B(x)\bar{\psi}_A(y)) - H^B_A (x, y)\big)
 \end{equation*}
 
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-\frametitle{Vacuum polarization in 1+1 dimension in presence of a Kondo type potential}
-\framesubtitle{Hadamard parametrix and vacuum polarization}
+
+\item Renormalized vacuum stress-energy tensor expectation
 
 \begin{equation*}
 \begin{split}
-& T_{00} = \frac{i}{2} (\bar{\psi} \gamma_1 \nabla_1 \psi - \nabla_1 \bar{\psi}\gamma_1 \psi)  \\
-& T_{11} = \frac{i}{2} (\bar{\psi} \gamma_0 \nabla_0 \psi - \nabla_0 \bar{\psi}\gamma_0 \psi)  \\
+& T_{00} = \frac{i}{2} (\bar{\psi} \gamma_1 \nabla_1 \psi - \nabla_1 \bar{\psi}\gamma_1 \psi) , \quad
+ T_{11} = \frac{i}{2} (\bar{\psi} \gamma_0 \nabla_0 \psi - \nabla_0 \bar{\psi}\gamma_0 \psi)  \\
 & T_{01} = \frac{i}{4} (\bar{\psi} \gamma_1 \nabla_0 \psi +\bar{\psi} \gamma_0 \nabla_1 \psi - \nabla_1 \bar{\psi}\gamma_0 \psi - \nabla_0 \bar{\psi}\gamma_1 \psi)  
 \end{split}
 \end{equation*}
-
-Renormalization of the stress-energy tensor
 
 \begin{equation*}
 \begin{split}
@@ -340,7 +403,7 @@ T_{00}(x,y) =
 \end{split}
 \end{equation*}
 
-
+\end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[shrink=10]
@@ -378,75 +441,33 @@ where $v_3, v_+ + v_- \in \mathbb{R}$ and $ v_+ - v_-\in i \mathbb{R}$
 \framesubtitle{Results}
 
 \begin{itemize}
-\item Matching condition at $x^1 = 0$ for $\phi =
-\begin{pmatrix}
-\phi_L \\
-\phi_R
-\end{pmatrix}$
+\item The EOM can be written as $i\partial_0\phi = H\phi$ with matching condition at $x^1 = 0$ 
+%for $\phi =
+%\begin{pmatrix}
+%\phi_L \\
+%\phi_R
+%\end{pmatrix}$
 
-\begin{equation*}
-\begin{pmatrix}
-\phi_L(0^+) \\
-\phi_R(0^+)
-\end{pmatrix} = \begin{pmatrix}
-\frac{A}{D}  & \frac{C}{D} \\
-\frac{C^*}{D} & \frac{A}{D}
-\end{pmatrix}\begin{pmatrix}
-\phi_L(0^-) \\
-\phi_R(0^-)
-\end{pmatrix}
-\end{equation*}
-where  $\Sigma = v_+ ^ 2 + v_- ^ 2 + v_3 ^ 2$, $A = 1+ \frac{1}{4}\Sigma$, $C = -iv_-$, $D = 1-\frac{1}{4}\Sigma + iv_3$.
+%\begin{equation*}
+%\begin{pmatrix}
+%\phi_L(0^+) \\
+%\phi_R(0^+)
+%\end{pmatrix} = \begin{pmatrix}
+%\frac{A}{D}  & \frac{C}{D} \\
+%\frac{C^*}{D} & \frac{A}{D}
+%\end{pmatrix}\begin{pmatrix}
+%\phi_L(0^-) \\
+%\phi_R(0^-)
+%\end{pmatrix}
+%\end{equation*}
+%where  $\Sigma = v_+ ^ 2 + v_- ^ 2 + v_3 ^ 2$, $A = 1+ \frac{1}{4}\Sigma$, $C = -iv_-$, $D = 1-\frac{1}{4}\Sigma + iv_3$.
 
 \item Bag boundary condition (in terms of $\psi = \gamma^0\phi$)
 \begin{equation*}
 i\gamma^1 \psi \Big\vert_{\pm \frac{L}{2}} = \pm \psi \Big\vert_{\pm \frac{L}{2}}
 \end{equation*}
 
-\item The problem is well posed because the Hamiltonian of the dynamical system is self-adjoint under these conditions
-
-\end{itemize}
-
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[shrink=10]
-\frametitle{Vacuum polarization in 1+1 dimension in presence of a Kondo type potential}
-\framesubtitle{Results}
-
-We denote $\eta = \arg C$
-
-\begin{itemize}
-
-\item Mode expansion
-\begin{equation*}
-\begin{split}
-k_{n} = \frac{1}{L} \big(\theta + (\pi - \theta)(1- (-1)^n)\big) + \frac{\pi}{L}n \\
-\quad \textrm{where $\theta = \arccos\bigg( \frac{-|C| \sin \eta}{A} \bigg)$}
-\end{split}
-\end{equation*}
-
-
-\item Solutions
-\begin{equation*}
-\begin{split}
-\phi_{k_{n}} = 
-& \sqrt{\frac{1}{L(\alpha - \beta \sin (k_{n}L - \eta))}} \Bigg( 
-\begin{pmatrix}
-1 & 0 \\
-0  & e^{-i(kL + \frac{\pi}{2})}
-\end{pmatrix}
-\Theta(-x^1) + \\
-& \begin{pmatrix}
-\frac{A}{D}  +  \frac{C}{D} e^{-i(kL + \frac{\pi}{2})} & 0 \\
-0  & \frac{C^*}{D}  + \frac{A}{D}e^{-i(kL + \frac{\pi}{2})}
-\end{pmatrix}\Theta(x^1)\Bigg)
-\begin{pmatrix}
-e^{ik_{n} x^1} \\
-e^{- ik_{n} x^1}
-\end{pmatrix}
-\end{split}
-\end{equation*}
-
+\item The problem is well posed because $H$ is self-adjoint under these conditions
 
 \end{itemize}
 
@@ -504,18 +525,27 @@ $\Longrightarrow$ The presence of the Kondo potential opposite offsets in the tw
 
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[shrink=5]
+\begin{frame}[shrink=10]
 \frametitle{Wentzell boundary condition for Dirac fields}
 \framesubtitle{Well-posedness of an action}
 
 $\mathcal{M}$ a d+1 dimensional spin manifold (Minkowski) with time-like static boundary $\partial\mathcal{M}$
 \begin{itemize}
-\item We propose to study the following action
+\item We propose to study the following action 
+\\
+\tiny\color{blue}[M. Henningson and K. Sfetsos,Phys. Lett. B, 431(1):63 ? 68, 1998.] \color{black}\normalsize
+\\
+\tiny\color{blue} [R. Contino and A. Pomarol JHEP, 11:058, 2004.]
+\color{black}\normalsize
+
+
 \begin{equation*}
 \mathcal{S} = \frac{1}{2}i\int_{\mathcal{M}} \bar{\psi} \gamma^\mu \partial_\mu \psi - \partial_\mu \bar{\psi} \gamma^\mu \psi 
 + \frac{1}{2}\int_{\partial \mathcal{M}} ic \bar{\psi} \gamma^\alpha \partial_\alpha (1 - i \gamma^\bot) \psi
 + \bar{\psi} \psi
 \end{equation*}
+
+where $\gamma^\bot = n_j\gamma^j$ with $n$ unit inward vector normal to the boundary.
 
 \item Equation of motion in terms of $\phi = \gamma^0 \psi$
 \begin{equation*}
@@ -525,6 +555,10 @@ i \partial_0(1 + i\gamma^\bot) \phi = i\gamma^0 \gamma^a \partial_a (1+ i\gamma^
 \end{cases}
 \end{equation*}
 
+$\Longrightarrow$ bag boundary condition when $c\rightarrow0$ 
+
+\item Bulk and boundary field $\Phi = (\phi, \phi_|)$
+
 \end{itemize}
 
 \end{frame}
@@ -532,7 +566,15 @@ i \partial_0(1 + i\gamma^\bot) \phi = i\gamma^0 \gamma^a \partial_a (1+ i\gamma^
 \begin{frame}
 \frametitle{Wentzell boundary condition for Dirac fields}
 \framesubtitle{Well-posedness of an action}
-The Hamiltonian of the problem
+
+\begin{itemize}
+
+\item We have a projector 
+\begin{equation*}
+\mathcal{P}_\pm = \frac{1}{2}(1 \pm i n_j\gamma^j) 
+\end{equation*}
+
+\item The problem can be written as $i\partial_t \Phi = \Delta \Phi$ with
 
 \begin{equation*}
 \Delta = \begin{pmatrix}
@@ -543,10 +585,7 @@ i \gamma^0 \slashed{\partial}  & 0 \\
 where $\slashed{\partial} = \gamma^j\partial_j$ for
 $j \in \llbracket 1 , d \rrbracket$ and $\slashed{\partial}_| = h^{ab} \gamma_{a} \partial_{a}$ where $h$ is the second fundamental form.
 
-$\mathcal{P}_+$ is the projector defined by
-\begin{equation*}
-\mathcal{P}_\pm = \frac{1}{2}(1 \pm i n_j\gamma^j) 
-\end{equation*}
+\end{itemize}
 
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -556,7 +595,7 @@ $\mathcal{P}_+$ is the projector defined by
 
 \begin{itemize}
 
-\item Hilbert space $\mathcal{H} = L^{2}(M)\times L^{2}(\partial M, \mathcal{P}_+ F)$
+\item Hilbert space $\mathcal{H} = L^{2}(M, E)\times L^{2}(\partial M, \mathcal{P}_+ F)$
 where $M$ is an equal-time hypersurface of $\mathcal{M}$ and $\partial M = M\cap \partial \mathcal{M}$ with inner product
 \begin{equation*}
 \langle \cdot, \cdot \rangle _\mathcal{H} = \langle \cdot, \cdot \rangle _{L^2(M)} + c \langle \cdot, \cdot \rangle _{L^2(\partial M)}
@@ -569,6 +608,11 @@ where $M$ is an equal-time hypersurface of $\mathcal{M}$ and $\partial M = M\cap
 \partial M) \enskip | \enskip \mathcal{P}_+\phi \vert_{\partial M} - \phi_| = 0 \} 
 \end{equation*}  
 
+\item Causal propagation ? 
+\begin{figure}[!h]
+  \centering
+  \includegraphics[height=0.4\textheight]{causal}
+\end{figure}
 \end{itemize}
 
 \end{frame}
@@ -690,14 +734,31 @@ k_n = \frac 1 L \Big( \big( \frac n 2 + \frac 1 4 \big)\pi + \frac{2}{\pi C n}+ 
 \frac{1}{4L}\Big( 1 - \frac{4}{\pi^2C n^2} + \mathcal{O}\big(\frac{1}{n^3}\big) \Big)
 \end{equation*}
 
-\item Renormalized vacuum current and stress-energy tensor
+
+\end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Wentzell boundary condition for Dirac fields}
+\framesubtitle{Vacuum polarization and stress-energy tensors in 1+1 dimension}
+
+\begin{itemize}
+\item Renormalized vacuum current %and stress-energy tensor
 
 \begin{equation*}
 \rho = e \sum_{n=0}^{+\infty}\big(|f_n|^2 -\frac{1}{4L} \big)
 \end{equation*}
 
 
+\begin{figure}[!h]
+  \centering
+  \includegraphics[height=0.4\textheight]{ex1d}
+\end{figure}
+
 \end{itemize}
+
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
@@ -727,10 +788,10 @@ k_n = \frac 1 L \Big( \big( \frac n 2 + \frac 1 4 \big)\pi + \frac{2}{\pi C n}+ 
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-\frametitle{Wentzell boundary condition for Dirac fields}
-\framesubtitle{Vacuum polarization and stress-energy tensors in 1+1 dimension}
+%\frametitle{Wentzell boundary condition for Dirac fields}
+%\framesubtitle{Vacuum polarization and stress-energy tensors in 1+1 dimension}
 
-
+\centerline{\Huge{Thank you for your attention !}}
 
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -769,6 +830,50 @@ and $-p^jp_j = k^2$.
 
 
 \end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[shrink=10]
+\frametitle{Vacuum polarization in 1+1 dimension in presence of a Kondo type potential}
+\framesubtitle{Results}
+
+We denote $\eta = \arg C$
+
+\begin{itemize}
+
+\item Mode expansion
+\begin{equation*}
+\begin{split}
+k_{n} = \frac{1}{L} \big(\theta + (\pi - \theta)(1- (-1)^n)\big) + \frac{\pi}{L}n \\
+%\quad \textrm{where $\theta = \arccos\bigg( \frac{-|C| \sin \eta}{A} \bigg)$}
+\end{split}
+\end{equation*}
+
+
+\item Solutions
+\begin{equation*}
+\begin{split}
+\phi_{k_{n}} = 
+& \sqrt{\frac{1}{L(\alpha - \beta \sin (k_{n}L - \eta))}} \Bigg( 
+\begin{pmatrix}
+1 & 0 \\
+0  & e^{-i(kL + \frac{\pi}{2})}
+\end{pmatrix}
+\Theta(-x^1) + \\
+& \begin{pmatrix}
+\frac{A}{D}  +  \frac{C}{D} e^{-i(kL + \frac{\pi}{2})} & 0 \\
+0  & \frac{C^*}{D}  + \frac{A}{D}e^{-i(kL + \frac{\pi}{2})}
+\end{pmatrix}\Theta(x^1)\Bigg)
+\begin{pmatrix}
+e^{ik_{n} x^1} \\
+e^{- ik_{n} x^1}
+\end{pmatrix}
+\end{split}
+\end{equation*}
+
+
+\end{itemize}
+
+\end{frame}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{document}
