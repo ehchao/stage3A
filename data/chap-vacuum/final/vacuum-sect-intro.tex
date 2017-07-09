@@ -65,28 +65,42 @@ we consider the \textbf{2-point functions} (or more precisely, 2-point distribut
 W_2(f, g ) \equiv \omega(\phi(f) \phi(g))
 \end{equation*}
 It should be noted that $W_2(x,y)$ is defined only in sense of distribution because of the divergence when the coinciding-point limit $x\rightarrow y$ is applied.
-In a globally hyperbolic space-time $(M,g)$ (see~\cite{Wald2010} for definition), it is shown (theorem 5.1 of~\cite{Radzikowski1996}) that the singular behaviour of the two-point function takes the same form for the states verifying a certain relation (such states are called \textbf{Hadamard states}). 
-It is proven in~\cite{Fulling1978} that the singular structure of a Hadamard state is preserved and propagates in a globally hyperbolic space-time. 
-The singular part at the coinciding-point limit of a Hadamard state is called \textbf{Hadamard parametrix}.
-The subtraction of the Hadamard parametrix is a method to renormalize the expectation functional $\omega$. \\\\
-%more explaination ??
+For most of physically relevant states, the divergent term at the coinciding-point limit of the two-point function is of \textbf{Hadamard form} (cf~\cite{Hollands2014}).
+These states are called \textbf{Hadamard states}.
+In a globally hyperbolic space-time $(M,g)$ (see~\cite{Wald2010} for definition), 
+the singular structure of Hadamard state is preserved, 
+\ie if a state is of Hadamard form in the neighborhood of a point, it is globally Hadamard state~\cite{Fulling1978}.
+The singular part at the coinciding-point limit of a Hadamard state is called \textbf{Hadamard parametrix}.  \\\\
 %
 However, as we are interested in QED in this report, the above-mentioned theory is not applicable. 
 In particular, the fermionic nature of electron should not be supposed to obey the commutation relation but rather the \textbf{canonical anti-commutation relation} (CAR).
 With the same notation as for the commutation relation, 
 for a Dirac field $\psi$, the anti-commutation relation is defined by
 \begin{equation*}
-\{\psi(f_1), \bar{\psi}(f_2)\} = i S(f_1, f_2) \mathbf{1}
+\{\psi(f_1), \bar{\psi}(f_2)\} = i S(f_1, f_2) \mathbb{1}
 \end{equation*}
 where $\{\cdot, \cdot\}$ is the anti-commutator and $S$ is the difference between the advanced and retarded propagators of the Dirac operator (with mass m) $i\slashed{\nabla} - m$.
-Also, the fields are supposed to verify Dirac equation instead of just Klein-Gordon equation.
-After different works, the characterization developed in~\cite{Radzikowski1996} is generalized in~\cite{Sahlmann2000} to the Dirac field case.
-Without introducing the mathematically rigorous definition\footnote{
-To give a mathematically rigorous statement of this relation, 
-the notion of \textbf{wave front set} is needed. 
-We refer to~\cite{Radzikowski1996} for more details.
-}, 
-we write down the characterization of a 2-point Hadamard state $\omega$ as in~\cite{Zahn2015}
+Also, the fields are supposed to verify Dirac equation instead of just Klein-Gordon equation. 
+The preservation of Hadamard form in a globally hyperbolic space-time is generalized to Dirac fields in~\cite{Sahlmann2000}.
+Since the sigular structure of a Hadamard state depends only on local geometric data, the subtraction of the Hadamard parametrix from a Hadamard state can be used as a method of renormalization.
+This provides us a motivation to define the vacuum current as a Hadamard state.
+\\\\
+Inspired by the classical expression of the current in QED\footnote{
+More precisely, we mean here the expectation value of the current observable.
+}
+\begin{equation*}
+j^\mu = -e\bar{\psi}\gamma^\mu\psi
+\end{equation*}
+where $\gamma$ is the Dirac gamma matrices,
+we define the following two-point function
+\begin{equation}\label{vacuum-hadamardstate}
+\begin{split}
+\omega(\psi^B(x)\bar{\psi}_A(y)) = & \int_{E_k >0} \psi_k^B(x)\bar{\psi}_{A,k}(y)e^{-i(x^0-y^0)E_k} \dd k \\
+\omega(\bar{\psi}_A(y)\psi^B(x)) = & \int_{E_k <0} \psi_k^B(x)\bar{\psi}_{A,k}(y)e^{-i(x^0-y^0)E_k} \dd k 
+\end{split}
+\end{equation}
+where $A$ and $B$ are component indices for the co-spinor $\bar{\psi}$ and the spinor $\psi$.
+We can verify that the two-point function defined in the above way satisfies the characteristic of Hadamard state given by~\cite{Radzikowski1996}, \ie
 \begin{equation}\label{vacuum-hadamardcond}
 \begin{split}
 \omega(\psi^B(x)\bar{\psi}_A(x')) + \omega(\bar{\psi}_A(x')\psi^B(x)) = &
@@ -94,42 +108,30 @@ iS^B_A(x,x') \\
 \overline{\omega(\bar{\psi}(u)\psi(\bar{v}))} = & \omega(\bar{\psi}(v)\psi(\bar{u}))
 \end{split}
 \end{equation}
-where $A$ and $B$ are component indices for the co-spinor $\bar{\psi}$ and the spinor $\psi$ and the two-point function constructed with $\omega$ should take positive (respectively, negative) frequency in the first (respectively, second) argument.
+and the two-point function takes positive (respectively, negative) frequency in the first (respectively, second) argument\footnote{
+To give a mathematically rigorous statement of this relation, 
+the notion of \textbf{wave front set} is needed. 
+We refer to~\cite{Radzikowski1996} for more details.
+}.
 To be more precise, 
 by frequency we mean the co-vector corresponding to the time component of the coordinate in the Fourier space.
 One can associate this quantity to the "energy" of a given mode. 
-%We should note that the tensorial product of two Dirac fields is implicitly understood in the argument of $\omega$. 
 In addition, we should recall the distributional nature of the Dirac field that we use here. 
 Hence, the first equation of~\cref{vacuum-hadamardcond} should be understood in the sense of distribution,
-while the second one is smeared with some test sections $u$ and $\bar{v}$. \\\\
-Now, let us define the vacuum current with Dirac's method~\cite{Dirac1934}.
-If we suppose that positrons should only occupy negative-energy states in a non-polarized vacuum, 
-the vacuum polarization could be considered as the occupation of positive-energy states by positrons. 
-Since the field of positron satisfies Dirac's equation, 
-we define the vacuum $d+1$-current density (in $d+1$-dimensional space-time) as the sum of the current densities of all possible modes which are of positive energy. 
-Naively, we would like to define the vacuum current density by the coinciding-point limit of the two-point function
-\begin{equation}\label{vacuum-2pointfct}
-j'^{\mu}(x,y) =  e \int_{E_k > 0} \bar{\psi}_k(y)\gamma^\mu \psi_k(x) e^{- i E_k(x^0 - y^0)} \dd k
-\end{equation}
-where $\psi_k$ is the coefficient corresponding to the $k$-mode in the mode expansion and $\gamma^\mu$ are the Dirac gamma matrices.
-The convergence of this expression is not ensured because of the infinite number of modes (UV-divergence).
-Meanwhile, we recognize a Hadamard state structure from~\cref{vacuum-2pointfct} defined by 
-\begin{equation}\label{vacuum-hadamardstate}
-\begin{split}
-\omega(\psi^B(x)\bar{\psi}_A(y)) = & \int_{E_k >0} \psi_k^B(x)\bar{\psi}_{A,k}(y)e^{-i(x^0-y^0)E_k} \dd k \\
-\omega(\bar{\psi}_A(y)\psi^B(x)) = & \int_{E_k <0} \psi_k^B(x)\bar{\psi}_{A,k}(y)e^{-i(x^0-y^0)E_k} \dd k 
-\end{split}
-\end{equation}
-such that 
-\begin{equation*}
-j'(x,y) = \gamma^A_B \omega(\psi^B(x)\bar{\psi}_A(y)) 
-\end{equation*}
-where the summation over the repeated indices is used.
-Therefore, if the Hadamard paramtrix $H$ is known, we can define the renormalized vacuum current
+while the second one is smeared with some test sections $u$ and $\bar{v}$. 
+As the singular part of the state, the Hadamard parametrix $H$, is known, we define the vacuum expectation of the current density by 
 \begin{equation}\label{vacuum-currentexpression}
-j^\mu(x) = \lim_{y \rightarrow x} \gamma^A_B \big(
+\lim_{y \rightarrow x} \gamma^A_B \big(
 \omega(\psi^B(x)\bar{\psi}_A(y)) - H^B_A (x, y)\big)
 \end{equation}
+For the rest of the report, the term "vacuum current" refers to its vacuum expectation instead of the observable itself. 
+
+%In~\cite{Dirac1934}, Dirac makes the assumption of.
+%If we suppose that positrons should only occupy negative-energy states in a non-polarized vacuum, 
+%the vacuum polarization could be considered as the occupation of positive-energy states by positrons. 
+%Since the field of positron satisfies Dirac's equation, 
+%we define the vacuum $d+1$-current density (in $d+1$-dimensional space-time) as the sum of the current densities of all possible modes which are of positive energy. 
+%%%
 %
 \paragraph{Computation of the Hadamard parametrix}
 In this report, the Hadamard parametrix used for our calculation is obtained in~\cite{Zahn2015}. 
