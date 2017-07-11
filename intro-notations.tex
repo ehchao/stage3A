@@ -1,0 +1,62 @@
+%The index 0 represents the temporal component.
+\section*{Notations and convention}
+When talking about manifold with boundary, we consider a $(d+1)$-dimensional manifold $\mathcal{M}$ for the bulk with a $d$-dimensional boundary $\partial \mathcal{M}$ which is supposed to be static and we use the Minkowski space-time with signature $(+, -,\ldots, -)$.
+We denote by $M$ an equal-time hypersurface of $\mathcal{M}$.
+As we work with spinor fields, $\mathcal{M}$ and $\partial \mathcal{M}$ are required to be spin manifolds. 
+A good review on the notions of spin structure can be find in~\cite{Trautman2007}.
+\footnote{
+Such a structure on a given manifold exists if and only if the second Stiefel-Whitney class of its bundle vanishes (see~\eg Chap. 2 of \cite{Lawson1989} or~\cite{Alagia1985} for extension to pseudo-Riemannian manifolds).}
+%
+The indice 0 will correspond to the time component.
+We denote $\gamma^\mu$ for $\mu = 0, \ldots, d$ for the generators of the Clifford algebra\footnote{
+For simplicity, we will sometimes call this generators gamma matrices in this report.
+} in the bulk, which should satisfy
+\begin{equation*}
+\{ \gamma^\mu, \gamma^\nu \} = \eta^{\mu\nu}
+\end{equation*} 
+where $\eta = \mathrm{diag}(1, -1 ,\ldots, -1)$.
+Also, we choose a Hermitian representation for $\gamma^0$, 
+\ie
+\begin{equation*}
+(\gamma^0)^\dagger = \gamma^0
+\end{equation*}
+Like in many literatures, Greek letters are used for both spatial and temporal components, whereas Latin letters are only used for spatial ones.
+With shorthand notations, the generators of the induced Clifford algebra on the boundary $\partial \mathcal{M}$ will also be denoted by $\gamma^\alpha$ for $\alpha = 0 ,\ldots, d-1$. 
+However, we specify that the Greek letters $\mu$ and $\nu$ will be used for the indices of bulk terms (taking values in $\llbracket 0, d \rrbracket$) and the Greek letters $\alpha$ and $\beta$ will be used for the indices of boundary terms (taking values in $\llbracket 0, d-1 \rrbracket$).
+Analogously, the Latin letters $i $ and $j$ will be used for bulk terms and $a$ and $b$ will be used for boundary terms. \\\\
+%
+We denote the spinor representation spaces of $\mathcal{M}$ and $\partial \mathcal{M}$ by $E$ and $F$ respectively.
+For certain manifolds, we can define the Sobolev spaces on them (\cite{Hebey1996}, \cite{Eichhorn1996}).
+We suppose that $\mathcal{M}$ and $\partial\mathcal{M}$ belong to these categories of manifold.\footnote{
+We might encounter some difficulties defining the Sobolev spaces for the boundaries. Meanwhile, the boundaries of these two cases are in effect "open manifolds", \ie, without boundary and compact connected component. 
+According to~\cite{Eichhorn1996}, it is possible to define Sobolev spaces which are also Banach spaces for them.
+Then, when working with $L^2$-norm, we have Hilbert space structures since the inner products will be well-defined.  
+}
+In the following text, if not specified, the Sobolev space $W^{m,n}(\mathcal{M})$ on manifold $\mathcal{M}$ represents $W^{m,n}(\mathcal{M}, E)$.
+On the other hand, $W^{m,n}(\partial \mathcal{M})$ represents $W^{m,n}(\partial \mathcal{M}, F)$.
+This notation is also applicable to the $L^2$ spaces which appear in this section. \\\\
+Finally, when we talk about Hamiltonian, we refer to the Hamiltonian of a dynamical system.
+%
+\paragraph{Hadamard parametrix}
+We give hereunder the off-diagonal components\footnote{
+In effect, since the gamma matrices that we choose here are off-diagonal, only the off-diagonal will be used when we calculate the vacuum current.
+}
+ of the Hadamard parametrix found in~\cite{Zahn2015} for the following representations of gamma matrices
+\begin{equation*}
+\gamma^0 = \begin{pmatrix}
+0 & 1 \\
+1 & 0 \end{pmatrix}  \quad  \gamma^1 = \begin{pmatrix}
+0  & 1 \\
+-1 & 0
+\end{pmatrix}
+\end{equation*}
+which describes the case of a spin-$\frac 1 2$ massless particle with charge $+e$ in $(1+1)$-dimension in presence of a potential under static gauge $A^\mu(x) = (Ex^1, 0)$, where $E$ is a constant electric field and $x^1$ is the spatial coordinate
+\begin{equation}\label{vacuum-hadamardparametrix}
+\begin{split}
+& H^\pm (x, y)^1_2 = \frac{-i}{2\pi}\frac{1-\frac i 2 e E(x^1 + y^1)(x^0-y^0) 
+- \frac 1 8 (eE)^2(x^1 + y^1)^2(x^0 - y^0)^2}{x^0 - y^0 + x^1 - y^1 \mp i \epsilon}  + R^\pm(x,y)^{1}_2\\
+& H^\pm (x, y)^2_1 = \frac{-i}{2\pi}\frac{1-\frac i 2 e E(x^1 + y^1)(x^0-y^0) 
+- \frac 1 8 (eE)^2(x^1 + y^1)^2(x^0 - y^0)^2}{x^0 - y^0 - x^1 + y^1 \mp i \epsilon} + R^\pm(x,y)^{2}_1
+\end{split}
+\end{equation}
+where $R^\pm(x,y)$ are smooth two-point functions vanishing when $y\rightarrow x$
