@@ -15,70 +15,52 @@ Based on the observation of the IR-UV connection~\cite{Susskind1998},
 we can renormalize a theory by undergoing the holographic renormalization procedure~\cite{Skenderis2002}. \\\\
 %
 However, one can wonder how the boundary field should be built in order to ensure that the two-point function constructed on the boundary has the behaviors that correspond to the bulk field. 
-\cite{Zahn2016} proposes thus an additional boundary action for a scalar field, namely, by considering the following action
+\cite{Skenderis2002} proposes thus an additional boundary action for a scalar field, namely, by considering the following action
 \begin{equation*}
 \mathcal{S} = \mathcal{S}_{\mathrm{bulk}} + \mathcal{S}_{\mathrm{bdy}} = 
 -\frac 1 2 \int_M g^{\mu\nu} \partial_\mu \phi \partial_{\nu} + 
 \mu^2\phi^2 - \frac c 2 \int_{\partial M}h^{\mu\nu}\partial_\mu\phi\partial_\nu\phi + \mu^2\phi^2
 \end{equation*}
-and studies the time evolution and the quantization of the field.
-Indeed, the boundary term appears as a counter-term in the holographic renormalization theory~\cite{Skenderis2002}.
+Indeed, the boundary term appears as a counter-term in the holographic renormalization theory.
+In~\cite{Zahn2016} the time evolution and the quantization of the field are studied and the well-posedness of the problem derived from this action is shown.
+By saying a problem is well posed, we mean that the problem possesses unitary time evolution solutions and that these solutions propagate causally, \ie can be controlled by the Cauchy data.
 In this report, we will try to extend this kind of studies to the Dirac field case by proposing an action and studying the dynamics of the Dirac field under the induced boundary condition.
-Some methods of functional analysis are used and we can refer to~\cite{Reed1981} and~\cite{Reed1975} for these tools. \\\\
+Some methods of functional analysis are used and we can refer to~\cite{Reed1981} and~\cite{Reed1975} for these tools. 
 %
-Before showing the main results, 
-we give a brief description of the AdS/CFT correspondance by using the example of a massless scalar field from~\cite{Witten1998} and~\cite{Skenderis2002}. 
-%
-\paragraph{AdS/CFT correspondance in scalar field case}
-The metric of the $(d+1)$-AdS space-time can be identified as the open unit ball $B_{d+1}$ in a Euclidean space $\mathbb{R}^{d+1}$ with coordinates $y_0, \ldots, y_d$ such that $\sum_{i=0}^d y_i^2 <1$ with the metric
-\begin{equation*}
-ds^2 = \frac{4\sum_{i=0}^d dy_i^2}{(1 - |y|^2)^2}
-\end{equation*}
-We can include the infinity boundary by taking the closure of the unit ball $B_{d+1}$. 
-As one can notice, the singularity of the metric at infinity ($|y|^2 = 1$) can be resolved by studying the conformal transformation of the metric, 
-\ie by replacing $ds^2$ by $d\tilde{s}^2$ which is defined by
-\begin{equation*}
-d\tilde{s}^2 = (1 - |y|^2) ds^2
-\end{equation*}
-We consider a field theory with the action of a massless scalar field $\phi$
-\begin{equation}\label{wen-adscft1}
-\mathcal{S}[\phi] = \frac 1 2 \int_{B_{d+1}} \dd^{d+1} y \sqrt{g} |\dd \phi|^2
+\paragraph{The bag boundary condition}
+The bag boundary condition is commonly used when studying the confinement of quarks~\cite{Hasenfratz1978}.
+In the configuration of the bag boundary condition, the boundary can be static or not. 
+The physical requirement is that the out-going current vanishes on the boundary.
+\cite{Chodos1974} shows that this kind of boundary condition can be used for different types of field (scalar, Dirac and gauge fields). 
+For our case, we are interested in Dirac fields in a confined space with static time-like boundary.
+The bag boundary condition is represented by the following relation for a Dirac field $\psi$ 
+\begin{equation}\label{wen-bagboundcond}
+i n_\mu\gamma^\mu \psi = \psi
 \end{equation}
-where $g$ is the absolute value of the determinant of the metric tensor.
-By doing integration by part to~\cref{wen-adscft1}, we find
+where $n_\mu$ is a space-like unit vector normal to the boundary.
+We follow~\cite{Stokes2015} to show that the normal component of the current $n_\mu j^\mu$ vanishes on the boundary $\partial M$.
+We multiply~\cref{wen-bagboundcond} by $\psi\gamma^0$ to the right and we get
 \begin{equation*}
-\mathcal{S}[\phi] = -\int_{B_{d+1}} \sqrt{g} \phi D_i D^i \phi + 
-\lim_{\epsilon\rightarrow 0}\int_{T_\epsilon}  \sqrt{h} \phi (\vec{n}\cdot\vec{\nabla})\phi
+i n_\mu j^\mu \big\vert_{\partial M}= \psi^\dagger\psi \big\vert_{\partial M}
 \end{equation*}
-where $T_\epsilon$ is a family of surfaces parametrized by $\epsilon$ and converges to the boundary of $B_{d+1}$ when $\epsilon\rightarrow 0$ and $h$ is the absolute value of the determinant of the induced metric on the boundary.
-The first term of the \rhs vanishes on-shell and the action can be written in terms of the boundary field $\phi_0$
+On the other hand, if we take the adjoint of~\cref{wen-bagboundcond} and multiply it by $\gamma^0\psi$ to the left and using the anti-commutation relation of the gamma matrices, we have
 \begin{equation*}
-\mathcal{S}[\phi] \sim \int \dd \mathbf{x} \dd \mathbf{x}' 
-\frac{\phi_0(\mathbf{x})\phi_0(\mathbf{x}')}{|\mathbf{x} - \mathbf{x}'|^{2d}}
+- i n_\mu j^\mu \big\vert_{\partial M} = \psi^\dagger\psi\big\vert_{\partial M}
 \end{equation*}
-Consider a field $\mathcal{O}$ whose source is the boundary field $\phi$. 
-It is defined by~\cite{Gubser1998}
-\begin{equation*}
-\mathcal{S}[\phi] = \int \dd \mathbf{x} \phi_0(\mathbf{x})\mathcal{O}(\mathbf{x})
-\end{equation*}
-It could then be shown by the prescription of the section 2 of~\cite{Skenderis2002} that the two-point function of the operator $\mathcal{O}$ is a multiple of $|\mathbf{x} - \mathbf{x}'|^{-2d}$, which agrees with the two-point function of the $d$-dimensional conformal field theory~\cite{Qualls2015}. \\\\
+which shows that the normal component of the current vanishes on the boundary. \\\\
 %
 Among recent works on the AdS/CFT correspondance of Dirac fields, we can find different propositions for boundary action.
 For instance, 
 ~\cite{Henningson1998} proposes to put a boundary action which involves the product of the bulk field $\psi$ and its Dirac adjoint $\bar{\psi}$. 
 This term in $\bar{\psi}\psi$ looks like a mass term living on the boundary.
 On the other hand,~\cite{Contino2005} suggests to construct a boundary action such that a chiral component of the bulk field vanishes on the boundary.
-This boundary condition is also known as bag boundary condition, proposed in~\cite{Chodos1974}\footnote{
-A direct consequence of the bag boundary condition is that the component normal to the boundary of the density of current in the bulk will vanish. 
-This kind of boundary condition is used to study the confinement of quarks~\cite{Hasenfratz1978}.
-}.
+This boundary condition is also known as bag boundary condition, proposed in~\cite{Chodos1974}.
 Under the setting of~\cite{Contino2005}, one can introduce terms that only contain the chiral component which is not imposed to vanish on the boundary.
 Taking into account these two possibilities of boundary action construction, 
 one can wonder if a more general action could be made. 
 %
 %
-%
-\input{data/chap-wentzell/final/wentzell-sect-intro-2}
+%\input{data/chap-wentzell/final/wentzell-sect-intro-2}
 
 
 
