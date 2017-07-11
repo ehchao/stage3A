@@ -12,42 +12,56 @@ H \phi = i \begin{pmatrix}
 -1  &  0 \\
 0  &  1  \end{pmatrix} \partial_1 \phi 
 \end{equation}
-To start, we choose for the domain of $H$ as 
+To start, we encode the boundary condition~\cref{vacuum-bagboundcond} and the matching condition at $x^1 = 0$~\cref{nef-matching2} in the domaine of $H$ 
 \begin{equation*}
-\mathrm{Dom}(H) = \Big \{\phi \enskip \big\vert \enskip \phi \in L^{2}(I_-, \mathbb{C}^2) \oplus L^{2}(I_+, \mathbb{C}^2), \enskip -i \gamma^1 \phi\vert_{\pm \frac{L}{2}} = \pm \phi \vert_{ \pm \frac{L}{2} }, \enskip \phi \textrm{ verifies the matching condition at 0} \Big \}
+\mathrm{Dom}(H) = \Big \{\phi \enskip \big\vert \enskip \phi \in W^{1,2}(I_-, \mathbb{C}^2) \oplus W^{1,2}(I_+, \mathbb{C}^2), \enskip \phi \textrm{ verifies~\cref{vacuum-bagboundcond} and~\cref{nef-matching2}} \Big \}
 \end{equation*} 
 where the matching condition at 0 is given in \cref{nef-matching2}\\\\
 Let $ \phi = \begin{pmatrix} \phi_L \\ \phi_R \end{pmatrix}, \psi = \begin{pmatrix} \psi_L \\ \psi_R \end{pmatrix} \in \mathrm{Dom}(H)$
 \begin{equation}\label{sa-hamiltonian}
 \begin{split}
-\langle \psi, H \phi \rangle = & i \int_{I_-} ( - \psi_L^* \partial \phi_L + \psi_R^* \partial \phi_R )
-+ i \int_{I_+} ( - \psi_L^* \partial \phi_L + \psi_R^* \partial \phi_R ) \\
-= & i \big[-\psi_L^* \phi_L + \psi_R^* \phi_R \big]^{0^-}_{-\frac{L}{2}} + i \big[-\psi_L^* \phi_L + \psi_R^* \phi_R \big]_{0^+}^{\frac{L}{2}} \\
-& - i \int_{I_-} ( - \partial \psi_L^* \phi_L + \partial \psi_R^*  \phi_R ) - i \int_{I_+} ( - \partial \psi_L^* \phi_L + \partial \psi_R^*  \phi_R ) 
+\langle \psi, H \phi \rangle = & i \int_{I_-} ( - \psi_L^\dagger \partial \phi_L + \psi_R^\dagger \partial \phi_R )
++ i \int_{I_+} ( - \psi_L^\dagger \partial \phi_L + \psi_R^\dagger \partial \phi_R ) \\
+= & i \big[-\psi_L^\dagger \phi_L + \psi_R^\dagger \phi_R \big]^{0^-}_{-\frac{L}{2}} + i \big[-\psi_L^\dagger \phi_L + \psi_R^\dagger \phi_R \big]_{0^+}^{\frac{L}{2}} \\
+& - i \int_{I_-} ( - \partial \psi_L^\dagger \phi_L + \partial \psi_R^\dagger  \phi_R ) - i \int_{I_+} ( - \partial \psi_L^\dagger \phi_L + \partial \psi_R^\dagger  \phi_R ) 
 \end{split}
 \end{equation}
 The boundary condition~\cref{vacuum-bagboundcond} implies
 \begin{equation*}
-- \psi_L^*(\pm \frac{L}{2}) \phi_L(\pm \frac{L}{2}) + \psi_R^*(\pm \frac{L}{2}) \phi_R(\pm \frac{L}{2}) =0
+i\phi_R \big(\pm \frac L 2) = \mp\phi_L\big(\pm\frac L 2\big)
+\end{equation*}
+Therefore
+\begin{equation*}
+\begin{split}
+- \psi_L^\dagger(\pm \frac{L}{2}) \phi_L(\pm \frac{L}{2}) + \psi_R^\dagger(\pm \frac{L}{2}) \phi_R(\pm \frac{L}{2}) = 
+0
+\end{split}
 \end{equation*}
 The matching condition at $x = 0$ gives
 \begin{equation*}
 \begin{split}
-\big[ \psi^*_L\phi_L] ^{0^+}_{0^-} & = \frac{1}{|D|^2}(A \psi^*(0^-) + C^*\psi^*_R(0^-))(A \phi_L(0^-) + C\phi_R(0^-)) - \psi^*_L(0^-)\phi^*_L(0^-) \\
-& = \frac{|C|^2}{|D|^2}\big(\psi_L(0^-)^*\phi_L(0^-) + \psi_R^*(0^-) \phi_R(0^-)\big) +
-\frac{2A}{|D|^2}\Re{C\psi_L^* \phi_R} \\
-& = \big[ \psi^*_R\phi_R] ^{0^+}_{0^-}
+\big[ \psi^\dagger_L\phi_L] ^{0^+}_{0^-} & = \frac{1}{|D|^2}(A \psi^\dagger(0^-) + C^\dagger\psi^\dagger_R(0^-))(A \phi_L(0^-) + C\phi_R(0^-)) - \psi^\dagger_L(0^-)\phi^\dagger_L(0^-) \\
+& = \frac{|C|^2}{|D|^2}\big(\psi_L(0^-)^\dagger\phi_L(0^-) + \psi_R^\dagger(0^-) \phi_R(0^-)\big) +
+\frac{2A}{|D|^2}\Re{C\psi_L^\dagger \phi_R} \\
+& = \big[ \psi^\dagger_R\phi_R] ^{0^+}_{0^-}
 \end{split}
 \end{equation*}
-Hence, \cref{sa-hamiltonian} implies that the adjoint $H^* = H$ and $\mathrm{Dom}(H^*) \supset \mathrm{Dom}(H)$ 
+Hence, 
+\begin{equation*}
+\langle \psi, H \phi \rangle = \langle H \psi , \phi \rangle
+\end{equation*}
+$H$ is symmetric. 
 \\\\
-A basic criterion of self-adjointness is given in~\cite{Reed1981}
+It would be more complicated to find the right domain of self-adjointness of $H$.
+However, the exact domain of self-adjointness is not what interests us the most. 
+To prove the well-posedness of the problem, it suffices to show that $H$ is \textit{essentially self-adjointness}, \ie possesses a self-adjoint extension.
+A basic criterion of self-adjointness is given by~\cite{Reed1981}
 \begin{theorem}
 Let $T$ be a symmetric operator on a Hilbert space $ \mathcal{H}$. The 3 following statement are equivalent 
 \begin{enumerate}
-\item $T$ is self-adjoint
-\item $T$ is closed and $\ker(T^* \pm i) = \{0\}$
-\item $\ran(T \pm i ) = \mathcal{H}$
+\item $T$ is essentially self-adjoint
+\item $\ker(T^* \pm i) = \{0\}$
+\item $\ran(T \pm i )$ are dense
 \end{enumerate} 
 \end{theorem}
 We denote  $\mathcal{K}_{\pm} = \ker (i \mp H^*)$ for the deficiency subspaces of $H$. The corollary of the Theorem X.2 of~\cite{Reed1975} states that $\dim \mathcal{K}_+ = \dim \mathcal{K}_-$ is a necessary and sufficient condition such that $H$ possesses an self-adjoint extension (all closed extension of $H$ is self-adjoint if this two numbers are equal to zero). \\\\
@@ -78,22 +92,20 @@ We have found that the matching condition at $x=0$ gives a linear transformation
 With the boundary conditions, this implies
 \begin{equation}
 f_+ \begin{pmatrix} 1 \\ ie^L \end{pmatrix}
-= f_- T \begin{pmatrix} 1 \\ -ie^L \end{pmatrix}
+= f_- T \begin{pmatrix} 1 \\ -ie^{-L} \end{pmatrix}
 = f_- \begin{pmatrix} \frac{A}{D} - i\frac{C}{D} e^{-L}  \\
 \frac{C^*}{D} - i \frac{A}{D} e^{-L} \end{pmatrix}
 \end{equation}
 $f_+$ and $f_-$ are non-vanishing if and only if 
 \begin{equation}
 \begin{split}
-%& ie^L = \frac{C^* - iA e^{-L}}{A - iC e^{-L}} \\
-%\Leftrightarrow \quad & 1 = \frac{C^* - iA e^{-L}}{iA + C e^{-L}} \\
-%\Leftrightarrow \quad & 
-2i A \cosh L = -C + C^*
+& \frac A D - i\frac C D e^{-L} =  -ie^{-L}\big(\frac{ C^*}{ D} -i \frac A D e^{-L}\big) \\
+\Leftrightarrow & \quad 2i A \cosh L = -C + C^*
 \end{split}
 \end{equation}
 %For $C = -iv_- = -iv_1 - v_2$ and $A = 1 + \frac{1}{4}(v_1^2 + v_2^2 + v_3^2)$, this requires
 This condition is not verified in general, as the $v_i$ do not depend on $L$, in which case we get $\dim \mathcal{K}_- = 0$. \\
-For $\mathcal{K}_+$, it suffices to replace $L$ by $-L$ in the above calculation. Therefore, besides certain specific potentials, $H$ can be made self-adjoint with a properly chosen domain on which $H is closed$ ($H$ is said to be essentially self-adjoint).
+For $\mathcal{K}_+$, it suffices to replace $L$ by $-L$ in the above calculation. Therefore, besides certain specific potentials, $H$ possesses self-adjoint extension.
 
 
 

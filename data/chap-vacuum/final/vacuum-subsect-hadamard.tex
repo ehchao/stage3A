@@ -1,25 +1,10 @@
 \subsection{Two-point Hadamard form of the spatially bounded case}
-%Consider now a system confined in $[-\frac{L}{2}, \frac{L}{2}]$. 
-%We apply the procedure given in~\cite{Zahn2015} in order to calculate the vacuum polarisation. 
-Suppose that the the solution takes the form $\phi = \begin{pmatrix} \phi_L \\ \phi_R \end{pmatrix}$.
-In terms of $\phi = \gamma^0 \psi$, the boundary condition~\cref{vacuum-bagboundcond} becomes
-\begin{equation*}
-\begin{pmatrix}
--i \phi_R \\
-i \phi_L
-\end{pmatrix} \eval{\pm \frac{L}{2}} = \pm \begin{pmatrix}
-\phi_L \\
-\phi_R
-\end{pmatrix} \eval{\pm \frac{L}{2}}
-\end{equation*}
-Since the Hamiltonian of the problem~\cref{nef-Dirac} is self-adjoint, 
-a solution $\phi$ can be written as
-%%%%%%%%%%%
-%move to next subsect
-\begin{equation*}
-\phi = \int_{\mathbb{R}} \dd \mu(k)\big( f_k\phi_{L,k} e^{- i k x^0} +g_k\phi_{R,k} e^{- i k x^0}\big)
-\end{equation*}
-where $f,g$ are constants and
+From now on, we work on the self-adjoint extension of the Hamiltonian of the problem~\cref{nef-Dirac}.
+The space of eigenvectors for eigenvalue $k$ is spanned by
+%\begin{equation*}
+%\phi = \int_{\mathbb{R}} \dd \mu(k)\big( f_k\phi_{L,k} e^{- i k x^0} +g_k\phi_{R,k} e^{- i k x^0}\big)
+%\end{equation*}
+%where $f,g$ are constants and
 \begin{equation}\label{nef-basisSol}
 \phi_{L,k} = 
 \begin{pmatrix}
@@ -32,13 +17,12 @@ where $f,g$ are constants and
 1
 \end{pmatrix} e^{-ikx^1}
 \end{equation}
-and $\mu(k)$ is the spectral measure for the eigenvalue $k$ (see \eg Chap. 8 of~\cite{Reed1981} for definition).  \\\\
+%and $\mu(k)$ is the spectral measure for the eigenvalue $k$ (see \eg Chap. 8 of~\cite{Reed1981} for definition).  \\\\
 %
 Let us look for solutions for the eigenvalue $k$.
 Suppose that for the region $x^1<0$, 
-%the solution $\phi_k$ corresponding to the $k$-mode can be written as
  $\phi_L = f e^{-ik(x^0 - x^1)}$ and $\phi_R = g e^{-ik(x^0+x^1)}$, where $f$ and $g$ are complex numbers that we have to determine. 
-According to \cref{nef-matching2}, the components of the solution in the region $x > 0$ should be $\phi_L = \frac{1}{D} (Af+Cg) e^{-ik(x^0 - x^1)}$ and $\phi_R = \frac{1}{D}(C^* f + Ag ) e^{-ik(x^0 + x^1)}$. 
+According to \cref{nef-matching2}, the components of the solution in the region $x^1 > 0$ should be $\phi_L = \frac{1}{D} (Af+Cg) e^{-ik(x^0 - x^1)}$ and $\phi_R = \frac{1}{D}(C^* f + Ag ) e^{-ik(x^0 + x^1)}$. 
 Note that the solution on the whole space $x^1 \in [-\frac{L}{2}, \frac{L}{2}] - \{0\}$ is totally determined by $f$ and $g$ due to the matching condition \cref{nef-matching}. \\\\
 The boundary condition implies
 \begin{equation}
@@ -101,10 +85,13 @@ For the case where $n$ is odd, the calculation is similar.
 We try to find $k$ such that $kL - \pi \in [0, \pi]$, which gives $kL = 2\pi - \arccos \big(-\frac{|C|}{A}\big)$. 
 Other solutions for the case where $n$ is odd are equal to this value modulo $2 \pi$.\\
 To sum up, the possible values of $k$ are given by
-\begin{equation}
+\begin{equation*}
 k_{n} = \frac{1}{L} \big(\theta + (\pi - \theta)(1- (-1)^n)\big) + \frac{\pi}{L}n 
-\quad \textrm{where $\theta = \arccos\bigg( \frac{-|C| \sin \eta}{A} \bigg)$}
-\end{equation}
+\end{equation*}
+where
+\begin{equation*}
+\theta = \arccos\bigg( \frac{-|C| \sin \eta}{A} \bigg)
+\end{equation*}
 The coefficients $f_{n}$ and $g_{n}$ for the mode $k_{ n}$ can be determined by using the normalisation condition  $\int_{[-\frac{L}{2}, \frac{L}{2}]}\phi^\dagger \phi = 1$. 
 In the region $[-\frac{L}{2}, 0)$ , $\phi^\dagger \phi = | f |^2 + | g |^2$. Whereas in the region $(0, \frac{L}{2}]$, 
 \begin{equation}\label{nef-norm1}
@@ -125,12 +112,14 @@ By the first equation of \cref{nef-boundCond}, the last term of the last express
 - 4\frac{A |C|}{|D|^2}| f|^2\sin( kL - \eta) 
 \end{equation*}
 Hence, the normalisation condition and \cref{nef-boundCond2} imply
-\begin{equation}
-\begin{split}
- | f_{n} | =  \sqrt{\frac{1}{L(\alpha - \beta \sin (k_{n} L - \eta))}}  \quad  \textrm{where } & \textrm{$\alpha = 1+\frac{A^2 + |C|^2}{|D|^2}$} \\ 
- & \textrm{$\beta = \frac{2 A |C|}{|D|^2}$}
-\end{split}
-\end{equation}
+\begin{equation*}
+ | f_{n} | =  \sqrt{\frac{1}{L(\alpha - \beta \sin (k_{n} L - \eta))}}  
+\end{equation*}
+where 
+\begin{equation*}
+\alpha = 1+\frac{A^2 + |C|^2}{|D|^2} \quad,\quad
+\beta = \frac{2 A |C|}{|D|^2}
+\end{equation*}
 Therefore, we have found an eigenvector for the eigenvalue $k_n > 0$ 
 \begin{equation}
 \begin{split}

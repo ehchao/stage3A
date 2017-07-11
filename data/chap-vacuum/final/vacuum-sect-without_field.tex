@@ -1,7 +1,6 @@
-\section*{Notations and convention}
-The signature of our space-time is $(+, -)$.
-The index 0 represents the temporal component.
-We choose the following representations for the Dirac gamma matrices
+%\section*{Notations and convention}
+%The signature of our space-time is $(+, -)$.
+We choose the following representations for the Dirac gamma matrices for this chapter
 \begin{equation*}
 \gamma^0 = \begin{pmatrix}
 0 & 1 \\
@@ -10,18 +9,6 @@ We choose the following representations for the Dirac gamma matrices
 -1 & 0
 \end{pmatrix}
 \end{equation*}
-We give hereunder the off-diagonal components\footnote{
-In effect, since the gamma matrices that we choose here are off-diagonal, only the off-diagonal will be used when we calculate the vacuum current.
-}
- of the Hadamard parametrix found in~\cite{Zahn2015} which describes the case of a spin-$\frac 1 2$ massless particle with charge $+e$ in $(1+1)$-dimension in presence of a potential under static gauge $A^\mu(x) = (Ex^1, 0)$, where $E$ is a constant electric field and $x^1$ is the spatial coordinate
-\begin{equation}\label{vacuum-hadamardparametrix}
-\begin{split}
-& H^\pm (x, y)^1_2 = \frac{-i}{2\pi}\frac{1-\frac i 2 e E(x^1 + y^1)(x^0-y^0) 
-- \frac 1 8 (eE)^2(x^1 + y^1)^2(x^0 - y^0)^2}{x^0 - y^0 + x^1 - y^1 \mp i \epsilon}  \\
-& H^\pm (x, y)^2_1 = \frac{-i}{2\pi}\frac{1-\frac i 2 e E(x^1 + y^1)(x^0-y^0) 
-- \frac 1 8 (eE)^2(x^1 + y^1)^2(x^0 - y^0)^2}{x^0 - y^0 - x^1 + y^1 \mp i \epsilon}
-\end{split}
-\end{equation}
 %
 \section{Vacuum polarization in a confined space without external electric field}\label{sect-nef}
 We consider a massless Dirac field in $1+1$-dimensional space-time spatially confined in the region $[-\frac L 2 , \frac L 2 ]$.
@@ -35,13 +22,24 @@ i\partial_0\phi = i \begin{pmatrix} -1 & 0 \\ 0 & 1 \end{pmatrix}\partial_1\phi
 \end{equation*}
 %
 As for the boundary condition on $\pm \frac L 2$, we impose the bag boundary condition~\cite{Chodos1974}, \ie 
-\begin{equation}\label{vacuum-bagboundcond}
+\begin{equation*}
 i\gamma^1 \psi \eval{\pm \frac{L}{2}} = \pm \psi \eval{\pm \frac{L}{2}}
+\end{equation*}
+In terms of $\phi = \gamma^0\psi = \begin{pmatrix} \phi_L \\ \phi_R \end{pmatrix}$.
+In terms of $\phi = \gamma^0 \psi$, the bag boundary condition becomes
+\begin{equation}\label{vacuum-bagboundcond}
+\begin{pmatrix}
+-i \phi_R \\
+i \phi_L
+\end{pmatrix} \eval{\pm \frac{L}{2}} = \pm \begin{pmatrix}
+\phi_L \\
+\phi_R
+\end{pmatrix} \eval{\pm \frac{L}{2}}
 \end{equation}
 %
 As shown in~\cite{Zahn2015}, when there is no external electric field, no polarization occurs. 
 However, one can wonder if this result is always valid when there is a punctual interaction in the confined space.
-Inspired by~\cref{vacuum-kondohamiltonian}, we introduce a potential term which is due to the impurity at $x^1 = 0$.
+Inspired by~\cref{vacuum-kondohamiltonian}, we introduce a delta potential term at $x^1 = 0$.
 We can write down the equations of motion of the problem as following
 \begin{equation}\label{nef-Dirac}
 i \partial_0 \phi = 
@@ -86,24 +84,11 @@ we have the matching condition
 i(\phi_R(0^+) - \phi_R(0^-)) + \frac{1}{2}(v_+ (\phi_L(0^+) + \phi_L(0^-)) - v_3 (\phi_R(0^+) + \phi_R(0^-))) = 0
 \end{cases}
 \end{equation}
-%After the operations $L_1 \leftarrow L_1 \times (i - \frac{1}{2} v_3) - L_2 \times \frac{1}{2} v_-$ and $L_2 \leftarrow L_2 \times (-i + \frac{1}{2} v_3) - L_1 \times \frac{1}{2} v_+$, we have 
-%\begin{equation}
-%\begin{pmatrix}
-%1- \frac{1}{4}\Sigma + i v_3  & 0 \\
-%0  &  1- \frac{1}{4} \Sigma + i v_3 
-%\end{pmatrix}\begin{pmatrix}
-%\phi_L(0^+) \\
-%\phi_R(0^+)
-%\end{pmatrix} = \begin{pmatrix}
-%1+\frac{1}{4} \Sigma  & -iv_-  \\
-%iv_+  &  1+\frac{1}{4} \Sigma
-%\end{pmatrix}\begin{pmatrix}
-%\phi_L(0^-) \\
-%\phi_R(0^-)
-%\end{pmatrix}
-%\end{equation}
-Denote $\Sigma = v_+ ^ 2 + v_- ^ 2 + v_3 ^ 2$.
-One can notice that this system does not have unique solution for certain values of $v_i$, namely, when the matrix on the left-hand side vanishes, \ie when $1 - \frac{1}{4}\Sigma + iv_3 = 0$. This case will be excluded in the following.
+Denote 
+\begin{equation*}
+\Sigma = v_+ ^ 2 + v_- ^ 2 + v_3 ^ 2
+\end{equation*}
+One can notice that this system does not have unique solution when $1 - \frac{1}{4}\Sigma + iv_3 = 0$. This case will be excluded in the following.
 Therefore, the matching condition \cref{nef-matching} implies 
 \begin{equation}\label{nef-matching2}
 \begin{pmatrix}
@@ -117,14 +102,14 @@ Therefore, the matching condition \cref{nef-matching} implies
 \phi_R(0^-)
 \end{pmatrix}
 \end{equation}
-where $A = 1+ \frac{1}{4}\Sigma$, $C = -iv_-$, $D = 1-\frac{1}{4}\Sigma + iv_3$.
+where 
+\begin{equation*}
+A = 1+ \frac{1}{4}\Sigma \quad, \quad
+C = -iv_-  \quad, \quad
+D = 1-\frac{1}{4}\Sigma + iv_3
+\end{equation*}
+%\input{data/chap-vacuum/final/vacuum-subsect-consistency}
 %
-\\\\
-%
-%
-\input{data/chap-vacuum/final/vacuum-subsect-consistency}
-%
-\\\\
 However, because of the $\delta$-functions in \cref{nef-Dirac}, 
 the well-posedness of the problem is not guaranteed,
 \ie it is uncertain if the system has a unitary time evolution solution~\cite{Reed1981}.
