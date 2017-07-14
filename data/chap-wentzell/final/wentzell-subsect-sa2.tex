@@ -67,8 +67,8 @@ Once again, there are 4 possible cases to be discussed as in \cref{wen-subsect1}
 The same argument as in~\cref{wen-subsect1} requires
 \begin{equation}\label{wen-plates1}
 \begin{cases}
-(p_d A + c^{-1} B) \cos p_d L + (p_d B - c^{-1} A)\sin p_d L = 0 \\
-(- p_d A + c^{-1}B)\sin p_d L - (p_d B + c^{-1} A)\cos p_d L = 0
+(p_d A + c^{-1} B) \sin p_d L + (p_d B - c^{-1} A)\cos p_d L = 0 \\
+(- p_d A + c^{-1}B)\cos p_d L - (p_d B + c^{-1} A)\sin p_d L = 0
 \end{cases}
 \end{equation}
 In order to study~\cref{wen-plates1}, we discuss the following four sub-cases according to the coefficients of $\sin$ and $\cos$.
@@ -93,46 +93,25 @@ Idem as in sub-case 1.
 \subparagraph{Sub-case 4: none of the above statements holds}
 \cref{wen-plates1} leads to
 \begin{equation*}
-\tan p_d L = \frac{p_d A + c^{-1} B }{p_d B - c^{-1} A} = 
-\frac{p_d B + c^{-1}A}{p_d A- c^{-1} B}
+\tan p_d L = \frac{-p_d B + c^{-1} A }{p_d A + c^{-1} B} = 
+\frac{-p_d A + c^{-1}B}{p_d B + c^{-1} A}
 \quad\Rightarrow\quad
 (p_d ^2 + c^{-2})(A^2 - B^2 )= 0
 \end{equation*}
-One can easily verify that $p_d = \pm c^{-1}$ can not be solution of the equation. 
+One can easily verify that $p_d = i \pm c^{-1}$ can not be solution of the equation. 
 Hence, we have $A = \pm B$ and
 \begin{equation}\label{wen-tan}
-\tan p_d L = \frac{p_d \pm c^{-1}}{p_d \mp c^{-1}}
+\tan p_d L = \frac{\mp p_d + c^{-1}}{p_d \pm c^{-1}}
 \end{equation}
 We show that
 \begin{equation*}
-\tan \theta = \frac{\theta + a}{\theta - a} \quad a\in \mathbb{R} 
+\tan \theta = \frac{\mp\theta + a}{\theta \pm a} \quad a>0
 \end{equation*}
-does not have solution $\theta \in \mathbb{C} - \mathbb{R}$.
-Obviously, this equation can not have pure imaginary solutions.
-If such solution $\theta = x + i y$ exists for $(x, y) \in\mathbb{R}^*\times\mathbb{R}^*$,
+does not have solution $\theta \in \mathbb{C} - \mathbb{R}$ since the equation implies
 \begin{equation*}
-\begin{split}
-\tan \theta = & \frac{e^{i(x+iy)} - e^{-i(x+iy)}}{i(e^{i(x+iy)}+ e^{-i(x-iy)})} \\
-= & \frac{e^{-y}\sin x + \sinh y (-i\cos x - \sin x)}{e^{-y}\sin x + \cosh y (\cos x - i\sin x)} \\
-= & \frac{(e^{-y}\sin x - \sinh y \sin x )- i\cos x \sinh y}{(e^{-y} \sin x +\cosh y \cos x) - i \sin x \cosh y} \\
-=& \frac{x+a+ iy}{x -a +iy}
-\end{split}
+\Im (\tan\theta) = \frac{\Im(a\theta^*)}{|\theta \pm a|^2}
 \end{equation*}
-which implies
-\begin{equation*}
-\cos x \sinh y = \sin x \cosh y
-\end{equation*}
-This relation shows that $\sin x \neq 0$.
-We thus have
-\begin{equation*}\begin{split}
-\frac{e^{-y}\sin x - \sinh y \sin x}{e^{-y}\sin x + \cosh y \cos x} = &
-\frac{1 - e^y \sinh y}{1+ e^y \cosh y \cot x} \\
-= &\frac{1 - e^y \sinh y }{1+ e^y \frac{\cosh^2 y }{\sinh y}} \\
-=& \frac{1+\frac{a}{x}}{1 - \frac{a}{x}}
-\end{split}
-\end{equation*}
-which can not be satified because $\cosh^2 y - \sinh^2 y =1$
-Thus,~\cref{wen-tan} has solutions $p_d \in \mathbb{R}$. The set of solutions of~\cref{wen-tan} is discrete.
+which is impossible because $\Im\tan(x+iy)$ and $y$ are of the same sign for $x,y\in\mathbb{R}$.
 %%
 \paragraph{Case 2 : $\psi \in \mathfrak{B}_-$ and $p_d = 0$}
 This case implies $A = 0$, which is forbidden because it leads to the trivial solution.
@@ -161,7 +140,6 @@ i\gamma^0\gamma^d p_d(-\sin p_d x^d + \cos p_d x^d)\Big) \psi e^{-ip_a x^a}
 \end{equation*}
 where $\psi$ is a spinor in $\mathfrak{B}_+$ or $\mathfrak{B}_-$.
 \end{proposition}
-
 
 
 
