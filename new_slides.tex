@@ -86,6 +86,14 @@
 \frametitle{Introduction}
 \framesubtitle{}
 
+\begin{itemize}
+\item<1-> Well-posedness of the system under the matching and boundary conditions: unitary time evolution and causal propagation
+\item<2-> Vacuum polarization 
+	\begin{itemize}
+		\item Define the expectation of vacuum current by point-splitting prescription as a Hadamard state
+		\item Renormalization by subtraction the global singularity of Hadamard states
+	\end{itemize}
+\end{itemize}
 
 \end{frame}
 %%%%%%%%%%%%%%%%%%
@@ -96,7 +104,7 @@
 %
 \item<1-> 
 The equation of motion for a massless spin-$\frac 1 2$ fermion in presence of a Kondo potential \\
-\tiny\color{blue}[J. Erdmenger, C. Hoyos, A. O’Bannon and J. Wu, JHEP
+\tiny\color{blue}[J. Erdmenger, C. Hoyos, A. O?Bannon and J. Wu, JHEP
 , 12:086, 2013]\color{black}\normalsize
 
 \begin{equation*}
@@ -136,6 +144,50 @@ where $\phi = \gamma^0\psi$ for some Dirac field $\psi$,  $v_3, v_+ + v_- \in \m
 \end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%%%%%
+\begin{frame}[shrink=30]
+\frametitle{\small{Vacuum polarization in presence of a Kondo-type delta potential}}
+\framesubtitle{Definition of vacuum current and stress-energy tensor}
+
+\begin{itemize}
+\item<1-> Define the Hadamard state
+\\\tiny\color{blue}[J. Schlemmer and J. Zahn, Ann. of Phys. 2015]\color{black}\normalsize
+\begin{equation*}
+\begin{split}
+\omega(\psi^B(x)\bar{\psi}_A(y)) = & \int_{E_k >0} \psi_k^B(x)\bar{\psi}_{A,k}(y)e^{-i(x^0-y^0)E_k} \dd k \\
+\omega(\bar{\psi}_A(y)\psi^B(x)) = & \int_{E_k <0} \psi_k^B(x)\bar{\psi}_{A,k}(y)e^{-i(x^0-y^0)E_k} \dd k 
+\end{split}
+\end{equation*}
+%
+\item<2-> Renormalized vacuum current expectation
+\begin{equation*}
+j^\mu(x) = \lim_{y \rightarrow x} \gamma^A_B \big(
+\omega(\psi^B(x)\bar{\psi}_A(y)) - H^B_A (x, y)\big)
+\end{equation*}
+
+%
+\item<3-> Renormalized vacuum stress-energy tensor expectation
+
+\begin{equation*}
+\begin{split}
+& T_{00} = \frac{i}{2} (\bar{\psi} \gamma_1 \nabla_1 \psi - \nabla_1 \bar{\psi}\gamma_1 \psi) , \quad
+ T_{11} = \frac{i}{2} (\bar{\psi} \gamma_0 \nabla_0 \psi - \nabla_0 \bar{\psi}\gamma_0 \psi)  \\
+& T_{01} = \frac{i}{4} (\bar{\psi} \gamma_1 \nabla_0 \psi +\bar{\psi} \gamma_0 \nabla_1 \psi - \nabla_1 \bar{\psi}\gamma_0 \psi - \nabla_0 \bar{\psi}\gamma_1 \psi)  
+\end{split}
+\end{equation*}
+
+\begin{equation*}
+\begin{split}
+T_{00}(x,y) = 
+\frac{i}{2}\Big( & 
+\nabla_{x^1}\big(\omega(  \psi^B(x) \bar{\psi}_A(y))-H^B_A(x,y)\big)(\gamma_1)^A_B \\
+& - \nabla_{y^1}\Big(\omega( \psi^B(x)  \bar{\psi}_A(y)) - H^B_A(x,y)\big)(\gamma_1)^A_B \Big)   
+\end{split}
+\end{equation*}
+
+\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame}[shrink=30]
 \frametitle{\small{Vacuum polarization in presence of a Kondo-type delta potential}}
 \framesubtitle{}
@@ -277,16 +329,26 @@ where $D^+(\mathcal{S}_0)$ is the future domain of dependence of $\mathcal{S}_0$
 \item<3-> Two examples 
 
 	\begin{itemize}
-		\item<4-> $M = \mathbb{R}^{d-1}\times \mathbb{R}_+$, the spectrum is $\mathbb{R}$
-		\item<5-> $M = \mathbb{R}^{d-1}\times [-L, L]$, the spectrum is given by
+		\item<4-> $M = \mathbb{R}^{d-1}\times \mathbb{R}_+$ the spectrum is $\mathbb{R}$
+		\item<5-> $M = \mathbb{R}^{d-1}\times [-L, L]$ the spectrum is
+		\begin{equation*}
+		\{k\in\mathbb{R} \enskip\vert\enskip k^2 = p^2 + q^2 \enskip\mathrm{ where }\enskip p\in\mathbb{R}^{d-1}, \tan q L = \frac{\mp q + c^{-1}}{q \pm c^{-1}}\}
+		\end{equation*}
+		$\Rightarrow$ Causal propagation in $d=1$
 	\end{itemize}
 \end{itemize}
 
 \end{frame}
 %%%%%%%%%%%%%%%%%%
+\begin{frame}[shrink=30]
+\frametitle{Conclusion}
+\framesubtitle{}
 
+\begin{itemize}
+\item To summarize
+\end{itemize}
+\end{frame}
 \end{document}
-
 
 
 
