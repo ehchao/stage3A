@@ -16,7 +16,9 @@ v_3 & v_- \\
 v_+ & -v_3
 \end{pmatrix} \delta(x_1) \phi
 \end{equation}
-For eigenvalue $k$ of the new Hamiltonian, the eigenvector in the region $[-\frac{L}{2}, 0)$ can be written as 
+Let $\phi_k$ be an eigenfunction for eigenvalue $k$ of the new Hamiltonian. 
+Suppose that in the region $[-\frac{L}{2}, 0)$, 
+$\phi_k$ can be written as 
 \begin{equation}
 \phi_k =\begin{pmatrix}
 \phi_{k,L}  \\
@@ -28,21 +30,23 @@ For eigenvalue $k$ of the new Hamiltonian, the eigenvector in the region $[-\fra
 \end{split}
 $}
 \end{equation}
-for $f, g\in \mathbb{C}$. The matching condition at $x^1 = 0$ is the same as \cref{nef-matching2}. With the same boundary conditions, we can derive a relation similar to \cref{nef-boundCond}
+for $f, g\in \mathbb{C}$. 
+The matching condition at $x^1 = 0$ is the same as \cref{nef-matching2}. 
+With the same boundary conditions, we can derive a relation similar to \cref{nef-boundCond}
 \begin{equation}
 \begin{cases}
 g = fe^{i(kL + \frac{\pi}{2}) - i\frac{eE}{8}L^2}  \\
 g = \frac{A + iC^* e^{-ikL + i\frac{eE}{8}L^2 }}{A - iC e^{ikL - i\frac{eE}{8}L^2}} fe^{ikL - i\frac{eE}{8}L^2 + i\frac{\pi}{2}}
 \end{cases}
-\end{equation}ß
+\end{equation}
 which implies $|f| = |g|$ and
 \begin{equation}
 kL = \textrm{Arg}(A - iC e^{ikL -i\frac{eE}{8}L^2}) + (n + \frac{1}{2}) \quad n\in \mathbb{Z}
 \end{equation}
-This equation can be solved in the same way which has been done for \cref{nef-boundCond1} by replacing $C$ by $Ce^{-i\frac{eE}{4}L^2}$. \\
+This equation can be solved in the same way which has been done for \cref{nef-boundCond1} by replacing $C$ by $Ce^{-i\frac{eE}{8}L^2}$. \\
 Thus, by denoting $\eta = \textrm{Arg } C - \frac{eE}{8}L^2 $, an eigenvalue $k$ of the Hamiltonian can take the following values
 \begin{equation}
-k_{n} = \frac{(-1)^n}{L} \theta+ \frac{2\pi}{L}n 
+k_{n} = \frac{(-1)^n}{L} \theta+ \frac{\pi}{L}n 
 \quad \textrm{where $\theta = \arccos\bigg( \frac{-|C| \sin \eta}{A} \bigg)$}
 \end{equation}
 We have thus found an eigenvector for the eigenvalue $k_n$
@@ -83,7 +87,7 @@ With $z = x^0 - y^0 - x^1 + y^1$, we define
 + \mathcal{O}(z^2)
 \end{split}
 \end{equation}
-In the region $[-\frac{L}{2}, 0)$, the two-point functions defined in the last section become
+In the region $[-\frac{L}{2}, 0)$, the two-point function becomes
 \begin{equation*}
 \begin{split}
 \omega(\psi^2(x) \bar{\psi_1}(y)) = 
@@ -102,7 +106,7 @@ Similarly, by defining
 + \mathcal{O}(z^2)
 \end{split}
 \end{equation}
-we have the expressions for the states in the region $(0, \frac{L}{2}]$
+We have the expressions for the two-point function in the region $(0, \frac{L}{2}]$
 \begin{equation*}
 \begin{split}
 \omega(\psi^2(x) \bar{\psi_1}(y)) = 
@@ -111,7 +115,7 @@ we have the expressions for the states in the region $(0, \frac{L}{2}]$
 \omega(\phi^2(x) \phi^\dagger_2(y)) = \chi_E(x^0 - y^0 + x^1 - y^1, x^1, y^1)
 \end{split}
 \end{equation*}
-The coinciding point limit gives the charge density of the vacuum polarisation and the stress-tensor energy in the whole region %(compared to the results of~\cite{Zahn2015})
+Finally, we obtain the global expressions for the vacuum expectation values of vacuum charge density and stress-energy tensor 
 \begin{equation}
 \rho(x) = \frac{e}{\pi L}\Big( \frac{\beta \sin \theta \cos \eta}{\alpha + \beta \sin \eta \cos \theta}\Big) (-\theta + \pi)
 \Big(\Theta(- x^1) - \Theta(x^1))\Big) + \frac{e^2 E}{\pi} x^1

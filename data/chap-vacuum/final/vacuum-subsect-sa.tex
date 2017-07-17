@@ -1,17 +1,21 @@
 \subsection{Well-posedness of the problem~\cref{nef-Dirac}}\label{vacuum-subsect-sa}
-%In this section, we study the self-adjointness of the Hamiltonian in which the Kondo potential is involved. 
+We would like to prove that~\cref{nef-Dirac} possesses indeed unitary time evolution solutions by functional analysis for unbounded operators~\cite{Reed1975}.
+The Hamiltonian $H$ of the dynamical system~\cref{nef-Dirac} as an operator is defined as
+\begin{equation}
+H \phi = i \begin{pmatrix}
+-1  &  0 \\
+0  &  1  \end{pmatrix} \partial_1 \phi 
+\end{equation}
+First of all, we should decide on which Hilbert space the Hamiltonian $H$ acts.
+If we can show that $H$ has a self-adjoint extension for this Hilbert space, 
+we know that the problem has unitary time evolution solutions which can be expressed in terms of the self-adjoint extension of $H$.\\\\
+%
 The Hilbert space on which we are going to work is $\mathcal{H} = L^{2}(I_-, \mathbb{C}^2) \oplus L^{2}(I_+, \mathbb{C}^2)$,  where $I_- = [-\frac{L}{2}, 0)$ and $I_+ = (0, \frac{L}{2}]$.
 The inner product of this Hilbert space is the sum of the usual $L^2$ inner products on $I_+$ and $I_-$, namely
 \begin{equation*}
 \langle \cdot, \cdot\rangle_{\mathcal{H} } = \langle \cdot, \cdot\rangle_{L^{2}(I_-, \mathbb{C}^2)} +\langle \cdot, \cdot\rangle_{L^{2}(I_+, \mathbb{C}^2)}
 \end{equation*}
 % with $I = [-\frac{L}{2}, \frac{L}{2}]$. 
-The Hamiltonian of the dynamical system~\cref{nef-Dirac} as an operator on this Hilbert space is defined as
-\begin{equation}
-H \phi = i \begin{pmatrix}
--1  &  0 \\
-0  &  1  \end{pmatrix} \partial_1 \phi 
-\end{equation}
 To start, we encode the boundary condition~\cref{vacuum-bagboundcond} and the matching condition at $x^1 = 0$~\cref{nef-matching2} in the domaine of $H$ 
 \begin{equation*}
 \mathrm{Dom}(H) = \Big \{\phi \enskip \big\vert \enskip \phi \in W^{1,2}(I_-, \mathbb{C}^2) \oplus W^{1,2}(I_+, \mathbb{C}^2), \enskip \phi \textrm{ verifies~\cref{vacuum-bagboundcond} and~\cref{nef-matching2}} \Big \}
@@ -37,7 +41,7 @@ Therefore
 0
 \end{split}
 \end{equation*}
-The matching condition at $x = 0$ gives
+The matching condition at $x^1 = 0$ gives
 \begin{equation*}
 \begin{split}
 \big[ \psi^\dagger_L\phi_L] ^{0^+}_{0^-} & = \frac{1}{|D|^2}(A \psi^\dagger(0^-) + C^\dagger\psi^\dagger_R(0^-))(A \phi_L(0^-) + C\phi_R(0^-)) - \psi^\dagger_L(0^-)\phi^\dagger_L(0^-) \\
@@ -55,7 +59,7 @@ $H$ is symmetric.
 It would be more complicated to find the right domain of self-adjointness of $H$.
 However, the exact domain of self-adjointness is not what interests us the most. 
 To prove the well-posedness of the problem, it suffices to show that $H$ is \textit{essentially self-adjointness}, \ie possesses a self-adjoint extension.
-A basic criterion of self-adjointness is given by~\cite{Reed1981}
+A basic criterion of essential self-adjointness is given by~\cite{Reed1981}
 \begin{theorem}
 Let $T$ be a symmetric operator on a Hilbert space $ \mathcal{H}$. The 3 following statement are equivalent 
 \begin{enumerate}
@@ -103,9 +107,11 @@ $f_+$ and $f_-$ are non-vanishing if and only if
 \Leftrightarrow & \quad 2i A \cosh L = -C + C^*
 \end{split}
 \end{equation}
-%For $C = -iv_- = -iv_1 - v_2$ and $A = 1 + \frac{1}{4}(v_1^2 + v_2^2 + v_3^2)$, this requires
-This condition is not verified in general, as the $v_i$ do not depend on $L$, in which case we get $\dim \mathcal{K}_- = 0$. \\
-For $\mathcal{K}_+$, it suffices to replace $L$ by $-L$ in the above calculation. Therefore, besides certain specific potentials, $H$ possesses self-adjoint extension.
+This equation can not hold since $A > |C|$.
+As a consequence, $\dim\mathcal{K}_- = 0$. 
+For $\mathcal{K}_+$, it suffices to replace $L$ by $-L$ in the above calculation and we will find $\dim\mathcal{K}_+ = 0$. 
+Therefore,
+$H$ possesses self-adjoint extension.
 
 
 

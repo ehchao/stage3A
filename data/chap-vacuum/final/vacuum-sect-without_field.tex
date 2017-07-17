@@ -1,5 +1,3 @@
-%\section*{Notations and convention}
-%The signature of our space-time is $(+, -)$.
 We choose the following representations for the Dirac gamma matrices for this chapter
 \begin{equation*}
 \gamma^0 = \begin{pmatrix}
@@ -21,12 +19,12 @@ can be written as
 i\partial_0\phi = i \begin{pmatrix} -1 & 0 \\ 0 & 1 \end{pmatrix}\partial_1\phi
 \end{equation*}
 %
-As for the boundary condition on $\pm \frac L 2$, we impose the bag boundary condition~\cite{Chodos1974}, \ie 
+As for the boundary condition on $x^1 = \pm \frac L 2$, we impose the bag boundary condition~\cite{Chodos1974}, \ie 
 \begin{equation*}
 i\gamma^1 \psi \eval{\pm \frac{L}{2}} = \pm \psi \eval{\pm \frac{L}{2}}
 \end{equation*}
-In terms of $\phi = \gamma^0\psi = \begin{pmatrix} \phi_L \\ \phi_R \end{pmatrix}$.
-In terms of $\phi = \gamma^0 \psi$, the bag boundary condition becomes
+In terms of $\phi = \gamma^0\psi = \begin{pmatrix} \phi_L \\ \phi_R \end{pmatrix}$
+, the bag boundary condition becomes
 \begin{equation}\label{vacuum-bagboundcond}
 \begin{pmatrix}
 -i \phi_R \\
@@ -37,10 +35,11 @@ i \phi_L
 \end{pmatrix} \eval{\pm \frac{L}{2}}
 \end{equation}
 %
-As shown in~\cite{Zahn2015}, when there is no external electric field, no polarization occurs. 
-However, one can wonder if this result is always valid when there is a punctual interaction in the confined space.
+As shown in~\cite{Zahn2015}, when there is no external electric field, no polarization occurs,
+\ie the expectation values of current and charge densities both vanish. 
+However, it is curious to know if vacuum current and charge would be created when there is an extremly localized electric field.
 Inspired by~\cref{vacuum-kondohamiltonian}, we introduce a delta potential term at $x^1 = 0$.
-We can write down the equations of motion of the problem as following
+We can write down the equation of motion of the problem as following
 \begin{equation}\label{nef-Dirac}
 i \partial_0 \phi = 
 \begin{pmatrix} 
@@ -69,13 +68,13 @@ By denoting $\phi =
 , \cref{nef-Dirac} leads to
 \begin{equation}
 \begin{cases}
-i \partial_0 \phi_L = -i\partial_1 \phi_L + (v_3 \phi_L + v_- \phi_R) \delta(x_1) \\
-i \partial_0 \phi_R = i\partial_1 \phi_R + (v_+ \phi_L - v_3 \phi_R) \delta(x_1)
+i \partial_0 \phi_L = -i\partial_1 \phi_L + (v_3 \phi_L + v_- \phi_R) \delta(x^1) \\
+i \partial_0 \phi_R = i\partial_1 \phi_R + (v_+ \phi_L - v_3 \phi_R) \delta(x^1)
 \end{cases}
 \end{equation}
-The presence of a punctual potential might impose some matching condition at the singular point (See \eg Appendix J of~\cite{albeverio1988solvable}).
-Let us consider now the matching conditions at $x^1=0$.
-A solution of~\cref{nef-Dirac} is not continuous at $x^1 = 0$. 
+The presence of a delta potential might impose some matching condition at the singular point (See \eg Appendix J of~\cite{albeverio1988solvable}).
+Let us consider now the matching condition at $x^1=0$.
+A spinor field $\phi$ verifying~\cref{nef-Dirac} should not be continuous at $x^1 = 0$. 
 By integrating~\cref{nef-Dirac} over $[-\epsilon, \epsilon]$ and taking the limite for $\epsilon \rightarrow 0$,
 we have the matching condition
 \begin{equation}\label{nef-matching}
@@ -110,10 +109,9 @@ D = 1-\frac{1}{4}\Sigma + iv_3
 \end{equation*}
 %\input{data/chap-vacuum/final/vacuum-subsect-consistency}
 %
-However, because of the $\delta$-functions in \cref{nef-Dirac}, 
+However, because of the $\delta$-function in \cref{nef-Dirac}, 
 the well-posedness of the problem is not guaranteed,
 \ie it is uncertain if the system has a unitary time evolution solution~\cite{Reed1981}.
-We should thus check the self-adjointness of the Hamiltonian of the dynamical system~\cref{nef-Dirac}
 This aspect will be tackled in the next subsection.
 %
 \input{data/chap-vacuum/final/vacuum-subsect-sa}

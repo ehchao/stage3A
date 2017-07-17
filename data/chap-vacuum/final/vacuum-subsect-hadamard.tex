@@ -1,10 +1,6 @@
-\subsection{Two-point Hadamard form of the spatially bounded case}
+\subsection{Vacuum charge and current in the spatially bounded case}
 From now on, we work on the self-adjoint extension of the Hamiltonian of the problem~\cref{nef-Dirac}.
 The space of eigenvectors for eigenvalue $k$ is spanned by
-%\begin{equation*}
-%\phi = \int_{\mathbb{R}} \dd \mu(k)\big( f_k\phi_{L,k} e^{- i k x^0} +g_k\phi_{R,k} e^{- i k x^0}\big)
-%\end{equation*}
-%where $f,g$ are constants and
 \begin{equation}\label{nef-basisSol}
 \phi_{L,k} = 
 \begin{pmatrix}
@@ -47,12 +43,11 @@ and
 \begin{equation}\label{nef-boundCond2}
 | f | = | g |
 \end{equation}
-Thus, according to \cref{nef-boundCond1}, $k$ has to take specific values such that
+Thus, according to \cref{nef-boundCond1},
 \begin{equation}\label{nef-kn1}
 kL =  \textrm{Arg}(A - iC e^{ikL}) + \big(n+\frac{1}{2} \big)\pi   \quad \textrm{for n $\in \mathbb{Z}$}
 \end{equation}
-The case $|C| =0$ is relatively easy to deal with. Let us focus on the cases where $|C| \neq 0$. We should consider separately \cref{nef-kn1} for $n$ odd and $n$ even. 
-The motivation of this distinction is due to the $2\pi$-periodicity of the exponential term. \\\\
+The case $|C| =0$ is relatively easy to deal with. Let us focus on the cases where $|C| \neq 0$. We should consider separately \cref{nef-kn1} for $n$ odd and $n$ even because of the $2\pi$-periodicity of the exponential term. \\\\
 Let us start with the case where $n$ is even. 
 For $C = |C| e^{i\eta} \neq 0 $, it follows\footnote{
 For $\alpha, \beta, \theta \in \mathbb{R}$, assuming that $\alpha + \beta \cos \theta > 0$, $\alpha + \beta e^{i \theta} = \alpha + \beta \cos \theta + i\beta \sin \theta = (\alpha^2 + \beta^2 + 2\alpha \beta \cos \theta) e^{i \delta}$ with $\delta = \arctan \frac{\beta\sin\theta}{\alpha + \beta\cos\theta}$  
@@ -70,29 +65,28 @@ Therefore, by \cref{nef-kn1}, $k$ must satisfy
 \begin{split}
 & \frac{|C| \sin(kL - \frac{\pi}{2} + \eta)}{A + | C| \cos(kL - \frac{\pi}{2} + \eta) } =  - \cot kL  \\
 \Leftrightarrow \quad & A \cot kL = |C| \cos(kL + \eta) - |C| \cot kL \sin(kL + \eta)  \\
+%
+\Leftrightarrow\quad
+A \cos kL + |C| \sin\eta= 0
 \end{split}
 \end{equation}
-As $k$ should satisfy  
-\begin{equation}
-A \cos kL + |C| \sin\eta= 0
-\end{equation}
-we have
+Hence,
 \begin{equation*}
-kL = \arccos \big(-\frac{|C|}{A}\big)
+kL = \arccos \big(-\frac{|C|\sin\eta}{A}\big)
 \end{equation*}
-Other solutions for the case where $n$ is even are equal to this value modulo $2 \pi$. \\
-For the case where $n$ is odd, the calculation is similar.
+For all even $n$, the corresponding mode $k_n$ is equal to this value modulo $2 \pi$. \\
+For odd $n$, the calculation is similar.
 We try to find $k$ such that $kL - \pi \in [0, \pi]$, which gives $kL = 2\pi - \arccos \big(-\frac{|C|}{A}\big)$. 
-Other solutions for the case where $n$ is odd are equal to this value modulo $2 \pi$.\\
+And thus for all odd $n$, the corresponding mode $k_n$ is equal to this value modulo $2 \pi$.\\
 To sum up, the possible values of $k$ are given by
 \begin{equation*}
-k_{n} = \frac{1}{L} \big(\theta + (\pi - \theta)(1- (-1)^n)\big) + \frac{\pi}{L}n 
+k_{n} = \frac{(-1)^n}{L}\theta  + \frac{\pi}{L}n 
 \end{equation*}
 where
 \begin{equation*}
 \theta = \arccos\bigg( \frac{-|C| \sin \eta}{A} \bigg)
 \end{equation*}
-The coefficients $f_{n}$ and $g_{n}$ for the mode $k_{ n}$ can be determined by using the normalisation condition  $\int_{[-\frac{L}{2}, \frac{L}{2}]}\phi^\dagger \phi = 1$. 
+The coefficients $f_{n}$ and $g_{n}$ for the mode $k_{ n}$ can be determined by using the normalization condition  $\int_{[-\frac{L}{2}, \frac{L}{2}]}\phi^\dagger \phi = 1$. 
 In the region $[-\frac{L}{2}, 0)$ , $\phi^\dagger \phi = | f |^2 + | g |^2$. Whereas in the region $(0, \frac{L}{2}]$, 
 \begin{equation}\label{nef-norm1}
 \begin{split}
@@ -106,12 +100,12 @@ In the region $[-\frac{L}{2}, 0)$ , $\phi^\dagger \phi = | f |^2 + | g |^2$. Whe
 \frac{A^2 + | C|^2}{| D |^2}(|f|^2 + |g|^2) + 4\frac{A}{|D|^2}\Re \{C f^* g\}
 \end{split}
 \end{equation}
-By the first equation of \cref{nef-boundCond}, the last term of the last expression is 
+By the first equation of \cref{nef-boundCond}, the last term of~\cref{nef-norm1} is 
 \begin{equation*}
 4\frac{A |C|}{|D|^2}| f|^2\Re\{e ^{-i(kL + \frac{\pi}{2} - \eta)}\} = 
 - 4\frac{A |C|}{|D|^2}| f|^2\sin( kL - \eta) 
 \end{equation*}
-Hence, the normalisation condition and \cref{nef-boundCond2} imply
+Hence, the normalization condition and \cref{nef-boundCond2} imply
 \begin{equation*}
  | f_{n} | =  \sqrt{\frac{1}{L(\alpha - \beta \sin (k_{n} L - \eta))}}  
 \end{equation*}
@@ -141,15 +135,10 @@ e^{- ik_{n} x^1}
 \end{split}
 \end{equation}
 where $\Theta$ is the Heaviside step function.\\\\
-%%%%%%%%%%%
-%We take the Hadamard state defined in~\cite{Zahn2015} to calculate the vacuum polarisation of this configuration, given by the two-point function
-%\begin{equation}\label{vacuum-nefvacpol}
-%\omega(\psi^B(x) \bar{\psi_A}(y)) = \int_{E_k > 0} \psi^B(x) \bar{\psi_A}(y) e^{-i(x^0 - y^0) E_k} \dd k
-%\end{equation}
-Let us compute now the two-point Hadamard state~\cref{vacuum-hadamardstate}.
-As we will multiply these two-point functions by $\gamma^i$ to get observables (current and charge density), only the off-diagonal terms should be considered ($A\neq B$ in~\cref{vacuum-calculhadamard}).
+Let us compute now the vacuum 1+1 current~\cref{vacuum-currentexpression}.
+As we will multiply the two-point function defined in~\cref{vacuum-hadamardstate} by $\gamma^i$, 
+only the off-diagonal terms of the two-point function should be considered.
 In terms of $\phi$, these terms are expressed as
-%\footnote{The summation of Einstein is not applied on $A$ here.}
 \begin{equation}\label{vacuum-calculhadamard}
 \omega(\psi^B(x) \bar{\psi_A}(y)) = 
 (\gamma^0)^B_C \omega(\phi^C(x) \phi^\dagger_A(y)) = (\gamma^0)^B_C
@@ -158,16 +147,17 @@ In terms of $\phi$, these terms are expressed as
 \end{equation}
 Let us begin by considering the region $x^1, y^1 < 0$. 
 For $A =1, B= 2$, with $z =x^0 - y^0 - x^1 +y^1$,~\cref{vacuum-calculhadamard} becomes
-\begin{equation}
-\sum_{2p \geq 0} \frac{e^{-i(\theta + 2p\pi)\frac{z}{L}}}{L(\alpha - \beta \sin (\theta - \eta))} 
+\begin{equation*}
+\begin{split}
+& \sum_{2p \geq 0} \frac{e^{-i(\theta + 2p\pi)\frac{z}{L}}}{L(\alpha - \beta \sin (\theta - \eta))} 
 + \sum_{2p+1 \geq 0} \frac{e^{-i(- \theta + (2p+2)\pi)\frac{z}{L}}}{L(\alpha + \beta \sin (\theta + \eta))}\\
-\end{equation}
-The above sum can be written as
-\begin{equation}
+%
+=& 
 \frac{1}{2i L\sin\frac{\pi}{L}z} \bigg( \frac{e^{i(-\theta + \pi)\frac{z}{L}}}{\alpha - \beta \sin (\theta - \eta)}
 + \frac{e^{i(\theta - \pi) \frac{z}{L}}}{\alpha + \beta \sin (\theta + \eta)}
 \bigg)
-\end{equation}
+\end{split}
+\end{equation*}
 Developping the term in the parenthesis up to $\mathcal{O}(1)$, we get
 \begin{equation}
 \begin{split}
@@ -222,19 +212,12 @@ we thus have
 \omega(\psi^1(x) \bar{\psi_2}(y)) =  \omega(\phi^2(x) \phi^\dagger_2(y)) 
 = \xi(x^0 - y^0 + x^1 -y^1)
 \end{equation*}
-%The off-diagonal components of the Hadamard parametrix of our problem are~\cite{Zahn2015}
-%\begin{equation}\label{vacuum-nefhadamard}
-%\begin{split}
-%H^{+} (x,y)^2_1 = \frac{-i}{2\pi (x^0 - y^0 - x^1 + y^1 -i\epsilon)} + \textrm{terms vanishing at coinciding point limit}  \\
-%H^{+} (x,y)^1_2 = \frac{-i}{2\pi (x^0 - y^0 + x^1 - y^1 -i\epsilon)} + \textrm{terms vanishing at coinciding point limit} 
-%\end{split}
-%\end{equation}
-We subtract then from the above the Hadamard parametrix~\cref{vacuum-hadamardparametrix} and trace them with the gamma matrices in order to get the components of the vacuum charge and current densities.
+We subtract then from the above the Hadamard parametrix~\cref{vacuum-hadamardparametrix} and trace them with the gamma matrices in order to get the vacuum charge and current densities.
 In the region $[-\frac{L}{2}, 0)$, the charge density is
 \begin{equation}
 \rho(x) = \frac{e}{\pi L}\Big( \frac{\beta \sin \theta \cos \eta}{\alpha + \beta \sin \eta \cos \theta}\Big) (-\theta + \pi)
 \end{equation}
-The same calculation allows us to get the two points functions and the Hadamard parametrix (which is the same) in the region $(0, \frac{L}{2}]$. By denoting
+The same calculation allows us to get the two point function in the region $(0, \frac{L}{2}]$. By denoting
 \begin{equation*}
 \begin{split} 
 \chi(z) = & \omega(\phi^1(x) \phi^\dagger_1(y)) \\
