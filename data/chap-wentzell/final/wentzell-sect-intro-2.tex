@@ -13,8 +13,7 @@ As we will see later, the supplementary $\frac 1 2 (1-i\gamma^\bot)$ acts as a p
 \\\\
 When $c \rightarrow 0$, the boundary condition becomes the bag condition. 
 Furthermore, we suppose $\partial(\partial \mathcal{M}) = \emptyset$.
-% that $\psi$ and $\partial_\mu \psi$ vanish at $\partial(\partial \M)$. 
-By variational method, we can derive the equations of motion in the bulk and on the boundary
+By variational method, we can derive the equation of motion in the bulk and on the boundary
 \begin{equation}\label{wen-motion}
 \begin{cases}
 i \gamma^\mu \partial_\mu \psi = 0  \quad \textrm{in $\mathcal{M}$}\\
@@ -29,8 +28,8 @@ i \partial_0 \phi = i \gamma^0 \gamma^j \partial_j \phi   \quad \textrm{in $\mat
 i \partial_0(1 + i\gamma^\bot) \phi = i\gamma^0 \gamma^a \partial_a (1+ i\gamma^\bot)\phi - c^{-1} \gamma^0(1 - i \gamma^{\bot})\phi \quad \textrm{on $\partial \mathcal{M}$}
 \end{cases}
 \end{equation}
-One can notice that the boundary condition implies constraints on only a part of the components of $\phi$. 
-For instance, for $\dim \mathcal{M} = 3$, we can construct the following generator of Clifford Algebra as suggested in~\cite{Polchinski1998}
+One can notice that the boundary condition implies constraints on only certain components of $\phi$. 
+For instance, for $\dim \mathcal{M} = 3$, we can construct the following gamma matrices as suggested in~\cite{Polchinski1998}
 \begin{equation*}
 \gamma^0 = i\begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}  \quad
 \gamma^1 = i\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}  \quad
@@ -61,7 +60,15 @@ Furthermore, they have the same rank (equal to the half of the $n$-dimension of 
 \begin{equation*}
 \gamma^0\mathcal{P}_\pm = \mathcal{P}_\mp\gamma^0
 \end{equation*}
-Thus, one can define an operator $\Delta$ for the problem for $d+1$-dimensional bulk case
+In a more general way, 
+we can rewrite~\cref{wen-maineq} as a time evolution problem with Cauchy data
+$\Phi = \begin{pmatrix}
+\phi, \phi_|
+\end{pmatrix}$
+\begin{equation*}
+i\partial_0 \Phi = \Delta \Phi
+\end{equation*}
+where $\phi$ is the bulk field, $\phi_|$ is the boundary field and the operator $\Delta$ is defined as
 \begin{equation}\label{wen-hamiltonian}
 \Delta = \begin{pmatrix}
 i \gamma^0 \slashed{\partial}  & 0 \\
@@ -71,19 +78,14 @@ i \gamma^0 \slashed{\partial}  & 0 \\
 where $\slashed{\partial} = \gamma^j\partial_j$ for
 $j \in \llbracket 1 , d \rrbracket$ and $\slashed{\partial}_| = h^{ab} \gamma_{a} \partial_{b}$ where $h$ is the induced metric on the boundary.
 For simplicity, we will work on flat boundaries.
-By denoting $n_j$ the inward unit vector normal to the boundary $\partial M$,
-\begin{equation*}
-\slashed{\partial}_| = (1 - n_j)\gamma^j\partial_j \quad\mathrm{and}\quad
-\mathcal{P}_\pm = \frac 1 2 (1\pm i n_j\gamma^j)
-\end{equation*}
-One can choose $n_j = \delta_{j,d}$ when defining $\partial_|$ and $\mathcal P _\pm$.
-This choice allows us to write down $\slashed{\partial}_|$ in a concise way
+We choose a coordinate system where $n^\perp = n_d$.
+Under this choice,
+$\partial_|$ can be written in a more concise way
 \begin{equation*}
 \slashed \partial_| = \gamma^a\partial_a \quad\mathrm{for}\quad 
 a \in \llbracket 1, \ldots, d-1 \rrbracket
 \end{equation*}
-We will make the above choice for the rest of the chapter. 
-However, it would also be possible to show that the results that we will obtain are valid in more general case of time-like boundary in Minkowski space-time.
+We will take the above choice for the rest of the chapter. 
 
 
 

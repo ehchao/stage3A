@@ -1,11 +1,13 @@
 \section{Well-posedness of the problem}\label{wen-sect-saw}
 \subsection{Self-adjoint extension of $\Delta$}
-We define the inner product for our Hilbert space $\mathcal{H} = L^{2}(M,E)\oplus L^{2}(\partial M, \mathcal{P}_+ F)$,
+We are going to use tools of functional analysis to proof that the Cauchy problem is well-posed for certain types of initial data.
+We define the Hilbert space $\mathcal{H} = L^{2}(M,E)\oplus L^{2}(\partial M, \mathcal{P}_+ F)$,
 \footnote{
 One should note the projection which is taken here on the boundary bundle.
 This is used to ensure that we have a Hilbert space for the following computations.
 }
-where $M$ is an equal-time hypersurface of $\mathcal{M}$ and $\partial M = M\cap \partial \mathcal{M}$
+,where $M$ is an equal-time hypersurface of $\mathcal{M}$ and $\partial M = M\cap \partial \mathcal{M}$,
+with inner product
 \begin{equation}\label{wen-innerpdt}
 \langle \cdot, \cdot \rangle _\mathcal{H} = \langle \cdot, \cdot \rangle _{L^2(M)} + c \langle \cdot, \cdot \rangle _{L^2(\partial M)}
 \end{equation}
@@ -37,8 +39,8 @@ For $\Phi = (\phi, \phi_|) \in \mathcal{H}$ and $ \Psi = (\psi, \psi_|)\in\dom(\
 + (\phi^\dagger\vert_{\partial M} - \phi_|^\dagger)\mathcal{P}_+ \gamma^0 \psi\vert_{\partial M}
 \end{split}
 \end{equation}
-The residual term of the last line vanishes if and only if $\mathcal{P}_+\phi \vert_{\partial M} - \phi_|= 0$, which shows the self-adjointness of $\Delta$. \\\\
-One can wonder if the problem has unique smooth solution which propagates causally, \ie depending smoothly on the initial data of a Cauchy surface. \\
+The second term of the last line vanishes if and only if $\mathcal{P}_+\phi \vert_{\partial M} - \phi_|= 0$, which shows the self-adjointness of $\Delta$. \\\\
+If for all $k\in\mathbb{N}$, the inital data $\Phi_0\in\dom(\Delta^k)$, the Cauchy problem has a unique solution $\Phi(t) = \Phi_0 e^{-i\Delta t}$.
 Let us determine $\dom (\Delta^k)$ now. 
 To start, for $k =2$, 
 \begin{equation}\label{wen-deltak}
@@ -157,27 +159,29 @@ and
 \mathcal{P}_{+}\big(\partial_\bot^2(\partial_j\partial^j)^{k-1}\phi\vert_{\partial M} - c^{-1}\partial^\bot(\partial_j\partial^j)^{k-1}\phi\vert_{\partial M} \big) = 0
 \end{split}
 \end{equation*}
-As the lower powers coincide by hypothesis, 
+By the hypothesis of induction, 
 the claim still holds for $k$.
 \end{proof}
-%%%%%%%%
-%%%%%%%%
-\subsection{Causal propagation}
-We would like to show that for a certain type of Cauchy data, 
-the solution of~\cref{wen-maineq} propagates causally, \ie depending smoothly on the Cauchy data.
-Notice that, thanks to the essential self-adjointness of $\Delta$, 
-it is possible to construct a solution which evolutes unitarily.
-For this purpose, 
-consider now the subspace
+By denoting
 \begin{equation*}
 \mathcal{K} = \cap_{k\in \mathbb{N}^*} \dom(\Delta^k)
 \end{equation*}
-and an element $\Phi \in \mathcal{K}$.
-The time evolution of the system is given by
+we give the following proposition
+\begin{proposition}\label{wen-propwellposedness}
+The Cauchy problem~\cref{wen-maineq} with initial data $\Phi_0\in\mathcal{K}$ has a unique solution $\Phi(t) = \Phi_0 e^{-i\Delta t}$
+\end{proposition}
+%%%%%%%%
+%%%%%%%%
+\subsection{Causal propagation}
+As a complement for~\cref{wen-propwellposedness},
+we would like to show that on certain manifold $\mathcal{M}$, 
+the solution of~\cref{wen-maineq} propagates causally, \ie depending smoothly on the Cauchy data.
+Consider an element $\Phi \in \mathcal{K}$.
+As the time evolution of the system is given by
 \begin{equation*}
 i \frac{\partial }{\partial t} \Phi = \Delta \Phi 
 \end{equation*}
-Taking into account the fact that $\Phi\in\dom(\Delta^2)$ one gets
+taking into account the fact that $\Phi\in\dom(\Delta^2)$, one gets
 \begin{equation}\label{wen-tobebounded}
 \begin{split}
 \big\| \frac{\partial }{\partial t} \Phi \big\|^2_\mathcal{H} = \| \Delta \Phi \|^2_{\mathcal{H}}  = &
@@ -199,13 +203,13 @@ By the unitary time evolution,
 \big\|\Delta^m\Phi(t) \big\| =
 \big\|\Delta^m \Phi(0) \big\|
 \end{equation*} 
-Since
+We have
 \begin{equation*}
  \Big\|\frac{\partial^{m}}{\partial t^{m}} \Phi \Big\|^2 = 
- \langle \Delta^{m-1}\Phi, \Delta^{2}(\Delta^{m-1} \Phi )\rangle_{\mathcal{H}(M)} 
+ \langle \Delta^{m-1}\Phi(0), \Delta^{2}(\Delta^{m-1} \Phi(0))\rangle_{\mathcal{H}(M)} 
 \end{equation*}
-if we can bound~\cref{wen-tobebounded} at instant $t$ by the Cauchy data at instant $0$, 
-the higher time-derivatives of $\Phi$ can also be bounded by the Cauchy data at instant $0$ living in an appropriate Hilbert space.\\\\
+If we can bound~\cref{wen-tobebounded} at instant $t$ by the Cauchy data at instant $0$, 
+the higher time-derivatives of $\Phi$ can also be bounded by the Cauchy data at instant $0$.\\\\
 We will prove the following proposition as in~\cite{Zahn2016}
 \begin{proposition}\label{wen-propcau}
 Let $\Sigma_0$ and $\Sigma_1$ two equal-time surfaces. 
@@ -313,31 +317,16 @@ We obtain \cref{wen-causal} by replacing $T_{00}$ and $T_{| 00}$ by their expres
 The last step of proving of causal propagation consists in constructing suitable Hilbert spaces such that we can make sense of "smooth dependence". 
 We denote 
 \begin{equation*}
-\mathcal{H}^k(M) = \cap_{s=0}^{k} \dom(\Delta)
+\mathcal{H}^k(M) = \cap_{s=0}^{k} \dom(\Delta^s)
 \end{equation*}
 We consider the following map from $\mathcal{H}^k(M)$ to $\mathbb{R}_+$
 \begin{equation}\label{wen-hilbertnorm}
 \| \cdot \|_{\mathcal{H}^k(M)} = \| \Delta^k \cdot \|_{\mathcal{H}(M)}
 \end{equation}
 This map does not define a norm on $\mathcal{H}^k(M)$ because of the 0-modes of $\dom(\Delta)$ ($\ker \Delta \neq \{0\}$).
-However, one can still create a Hilbert space by projecting out these modes.
-Denote
-\begin{equation*}
-\mathcal{H}_\varepsilon^k(M) \equiv
-\{ \Phi \in \mathcal{H}^k(M) \enskip\big\vert\enskip \| \Delta^k \Phi\| \geq \varepsilon \| \Phi\| \}
-\end{equation*}
-for some $\varepsilon > 0 $.
-We consider the completion $\overline{\mathcal{H}_\varepsilon^k(M)}$ of
-$\mathcal{H}_\varepsilon^k(M)$ \wrt\cref{wen-hilbertnorm}\footnote{
-For mathematical details, we can refer to~\cite{Reed1981}
-}
-. 
-In particular, one can see that if for a Cauchy data $\Phi_0$,
-there exists a strictly positive sequence $(\varepsilon_n)$ such that 
-\begin{equation}\label{wen-nozeromode} 
-\Phi_0\in \cap_{k\in\mathbb{N}}\overline{\mathcal{H}^k_{\varepsilon_k}(M) }
-\end{equation}
-We can always estimate the time-derivative of $\Phi$ in terms of the norm of the initial data on the Cauchy surface.
+However, 
+if 0 is an isolated point of the spectrum of $\Delta$, $\Delta^k \Phi$ does not vanish for all $k\in\mathbb{N}$.
+We summarize this discussion on causal propagation by the following proposition.
 \begin{proposition}
 Let $k \in \mathbb{N}^*$.
 Suppose that the initial data $\Phi_0 = (\phi, \phi_|)$ satisfies~\cref{wen-hilbertnorm}.
@@ -351,9 +340,8 @@ the smooth solution $\Phi$ depends continuously on the initial data $(\phi, \phi
 \end{proposition}
 %
 \begin{remark}
-The pathological case of 0-modes is not a problem in the massive scalar field case~\cite{Zahn2016}. 
-However, the spectrum of $\Delta$ is in general not bounded by below, even with the presence of a mass.
-The presence of a mass term could not ensure the positivity of~\cref{wen-hilbertnorm}, neither. 
+As we will see, $M = \mathbb{R}^{d-1}\times[-L,L]$ is an example where 0 is an isolated point of the sepctrum of $\Delta$. 
+The problem has solutions which propagates causally in this case.
 \end{remark}
 %%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%

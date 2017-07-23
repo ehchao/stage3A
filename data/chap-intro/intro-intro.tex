@@ -229,20 +229,23 @@ we can verify easily that
 S^{\textrm{ret/adv}} = (-i\slashed{\nabla} - m)\Delta^{\textrm{ret/adv}} 
 \end{equation*}
 is in the kernel of the Dirac operator $i\slashed{\nabla} - m$.
-In particular, it is shown in~\cite{Bar2008} that $\Delta^{ret/adv}$ can be expressed in terms of \textit{Riesz distribution} $\{R_j^{\mathrm{ret/adv}}\}_j$.
+In particular, it is shown in~\cite{Bar2008} that $\Delta^{\mathrm{ret/adv}}$ can be expressed in terms of \textit{Riesz distribution} $\{R_j^{\mathrm{ret/adv}}\}_j$.
 The crucial point of the construction of Hadamard parametrix of~\cite{Zahn2015} is to find distributions $T_j^{\pm}$ which are of positive/negative frequency in their first/second argument such that
 \begin{equation*}
 T_j^+ - T_j^- = 2\pi i(R_j^{\mathrm{adv}} - R_j^{\mathrm{ret}})
 \end{equation*} 
 We build the Hadamard parametrix $H^\pm$ of the Dirac operator as a two-point function by manipulating correctly $T_j^{\pm}$ and the Dirac operator such that $H^\pm$ are in the kernel of the Dirac operator 
-and fulfill~\cref{vacuum-hadamardcond}.
+and 
+\begin{equation}\label{intro-hh}
+H^+(x,y) - H^-(x,y) = i S(x,y)
+\end{equation}
 As a consequence, for any state $\omega$ with Hadamard two-point function, the following relations hold
-\begin{equation*}
+\begin{equation}\label{intro-renormalization}
 \begin{split}
 \omega(\psi^B(x)\bar{\psi}_A(y)) = & H^+(x,y)^B_A + R^B_A(x,y) \\
 \omega(\bar{\psi}_A(y)\psi^B(x)) = &- H^-(x,y)^B_A - R^B_A(x,y)
 \end{split}
-\end{equation*}
+\end{equation}
 where $R$ is smooth and determined up to terms vanishing at coinciding-point limit. 
 %
 %
