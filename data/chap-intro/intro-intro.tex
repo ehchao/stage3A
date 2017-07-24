@@ -1,4 +1,3 @@
-%\section{Introduction}
 Quantum field theories in external potentials have gained importance in recent years due to the progress in experimental technology on intensive lasers and measurements of higher precision.
 Especially, quantum electrodynamics in such circumstance becomes of great interest~\cite{Mohr1998}. 
 Quantum electrodynamics (QED) has been well tested in weak external fields.
@@ -6,25 +5,26 @@ However, some corrections need to be done for atomic energy level.
 The discussion of vacuum polarization becomes thus an important research topic. 
 Some approaches have been proposed in the 30's shortly after the very beginning of QED.
 Its present form is basically due to Schwinger~\cite{Schwinger1951}. 
-In~\cite{Zahn2015}, an approach using the point-splitting formalism proposed by Dirac~\cite{Dirac1934} and some notions developped in \textit{quantum field theory in curved space-time} (QFT in curved space-time) is proposed. 
+In~\cite{Zahn2015}, an approach using the point-splitting formalism proposed by Dirac~\cite{Dirac1934} and some notions developped in \textit{quantum field theory on curved space-times} (QFT on curved space-times) is proposed. 
 The idea is to subtract the singular part, the \textit{Hadamard parametrix}, from the expectation value of the current observable which depends locally on the geometric data. 
+A brief introduction of some basic notions of QFT on curved space-times in order to understand the renormalization used in~\cite{Zahn2015} is given in~\cref{appendix-qftcst}.
 A precise definition of the vacuum polarization will be given later.
 In this report, we are interested in how matching conditions and boundary conditions could affect vacuum polarization calculated by the previously mentioned method. \\\\
 %
 %Kondo
-By matching condition, we refer to the cases where singular potential is present and the Dirac field is not smooth at certain points any more. 
+By matching condition, we refer to the cases where singular potentials are present and the Dirac field is not smooth at certain points any more. 
 To glue the smooth field solutions in the regimes where there is no singular potential together, 
-some conditions are imposed to the Dirac field at the singular points of the potential.
-In~\cref{chap-vacuum}, we propose compute the vacuum polarization of 
-$(1+1)$-dimensional space in presence of a local delta function interaction, inspired by the Hamiltonian used to describe the Kondo effect.
-This type of potential has been proposed by Jun Kondo in~\cite{Kondo1964} in order to study the so-called \textit{Kondo effect}.
-Since the 1930's, people have observed anomalies in electrical resistance for some materials when the temperature decreases. 
-Rather than having a decreasing resistance when the temperature gets down,
-the resistance of certain types of material increases. 
+some conditions are imposed to the Dirac field at the singular points of the potentials.
+In~\cref{chap-vacuum}, we propose to compute the vacuum polarization of 
+$(1+1)$-dimensional space in presence of a local delta potential, inspired by the Hamiltonian used to describe the \textit{Kondo effect}.
+%This type of potential has been proposed by Jun Kondo in~\cite{Kondo1964} in order to study the so-called \textit{Kondo effect}.
+Since the 1930's, people have observed anomalies in electrical resistance for some materials when temperature decreases. 
+Rather than having a decreasing resistance when temperature gets down,
+the resistances of some materials increases. 
 A satisfactory explanation is that this phenomenon would be due to the existence of magnetic impurities in the material. 
-Kondo's paper~\cite{Kondo1964} treats this phenomenon as an interaction between spins of conduction electrons and impurities.
-As the impurities are considered as punctual,
-the Hamiltonian of the Kondo effect in real space (rather than Fourier mode space) is given by~\cite{Erdmenger2013}
+Kondo's paper~\cite{Kondo1964} treats this phenomenon as a result of interactions between spins of conduction electrons and impurities.
+By modeling these interactions as local punctual interactions,
+the Hamiltonian of the Kondo effect is given by~\cite{Erdmenger2013}
 \begin{equation}\label{vacuum-kondohamiltonian}
 H_K = \psi_\alpha^\dagger \frac{-\nabla^2}{2m}\psi_\alpha +
 \frac 1 2\lambda_K \delta(\vec{x})\vec{S}\cdot \psi_{\alpha'}^\dagger  \vec{\sigma}_{\alpha' \alpha} \psi_\alpha
@@ -32,12 +32,12 @@ H_K = \psi_\alpha^\dagger \frac{-\nabla^2}{2m}\psi_\alpha +
 where $\psi$ and $\psi^\dagger$ are annihilation and creation operator, 
 $\alpha$ is the indice for spin (up or down), 
 $\vec{S}$ is the spin of the impurity,
-$\delta$ is the Dirac distribution,
+$\delta$ is the Dirac delta distribution,
 $\vec{\sigma}$ represents the vector of Pauli matrices and $\lambda_K$ is the Kondo coupling constant (positive for anti-ferromagnetic and negative for ferromagnetic).
 By simplicity, we will only consider the vacuum polarization due to massless spin-$\frac 1 2$ particles. \\\\
 %
-On the other hand, boundary conditions determine how the field solution is quantized.
-In the usual case, one can use the \textit{bag boundary condition} to obtain quantized Dirac field.
+On the other hand, boundary conditions determine how the field is quantized.
+In usual cases, one can use the \textit{bag boundary condition} to obtain quantized Dirac field.
 The bag boundary condition is commonly used when studying the confinement of quarks~\cite{Hasenfratz1978}.
 In the configuration of the bag boundary condition, the boundary can be static or not. 
 The physical requirement is that the out-going current vanishes on the boundary.
@@ -60,6 +60,7 @@ On the other hand, if we take the adjoint of~\cref{wen-bagboundcond} and multipl
 which shows that the normal component of the current vanishes on the boundary. \\\\
 Nonetheless, one can wonder if there is a more general boundary condition than the bag boundary condition. 
 In~\cref{chap-wentzell}, we propose to study an action of Dirac fields inspired by the \textit{holographic normalization}. \\\\
+%The idea how the Hadamard parametrix is found in~\cite{Zahn2015} will be elaborated at the end of the chapter.
 %
 The AdS/CFT correspondence has been a very active field of research in theoretical physics in the past 20 years. 
 This principle is also called holography.
@@ -68,105 +69,48 @@ This principle is also called holography.
 The main idea of the theory is to study the duality between the string theory in an AdS space-time bulk and the quantum field theory living on the boundary of the AdS space-time.
 Another interesting application of the AdS/CFT correspondance is to study the strong/weak coupling duality, \ie
 a strong coupling of the quantum field theory on the boundary corresponds to a weak coupling of the string theory in the bulk. 
-For instance,~\cite{Skenderis2002} gives examples to calculate renormalized correlation functions\footnote{
+For instance,~\cite{Skenderis2002} gives some examples of calculating renormalized correlation functions\footnote{
 See~\eg\cite{Peskin1995} for the definition.
-} of the quantum field theory by performing computations on the gravity side.
+} in quantum field theory by performing computations on the gravity side.
 The strong couplings in QCD might be better understood in using the holography principal. 
 Based on the observation of the IR-UV connection~\cite{Susskind1998}, 
 \ie the fact that the ultraviolet divergence of the boundary theory corresponds to the infrared divergence of the bulk theory, 
-we can renormalize a theory by undergoing the holographic renormalization procedure~\cite{Skenderis2002}. \\\\
-%
-However, one can wonder how the boundary field should be built in order to ensure that the two-point function constructed on the boundary has the behaviors that correspond to the bulk field. 
-\cite{Skenderis2002} proposes thus an additional boundary action for a scalar field, namely, by considering the following action
+we can renormalize a theory by undergoing the holographic renormalization procedure~\cite{Skenderis2002}. 
+The technique consists of adding a boundary action which plays the role of counter term in the renormalization process.
+In the case of scalar fields,~\cite{Skenderis2002} argues that such an action should be
 \begin{equation*}
 \mathcal{S} = \mathcal{S}_{\mathrm{bulk}} + \mathcal{S}_{\mathrm{bdy}} = 
 -\frac 1 2 \int_M g^{\mu\nu} \partial_\mu \phi \partial_{\nu} + 
 \mu^2\phi^2 - \frac c 2 \int_{\partial M}h^{\mu\nu}\partial_\mu\phi\partial_\nu\phi + \mu^2\phi^2
 \end{equation*}
-Indeed, the boundary term appears as a counter-term in the holographic renormalization theory.
 In~\cite{Zahn2016} the time evolution and the quantization of the field are studied and the well-posedness of the problem derived from this action is shown.
-By saying a problem is well posed, we mean that the problem possesses unitary time evolution solutions and that these solutions propagate causally, \ie can be controlled by the Cauchy data.
+By saying a problem is well posed, we mean that the problem has a unique solution when the initial data is given.
 In this report, we will try to extend this kind of studies to the Dirac field case by proposing an action and studying the dynamics of the Dirac field under the induced boundary condition.
+Also, we would be interested in the \textit{causal propagation} of the field solution, \ie the smooth dependence on the initial data on a Cauchy surface.
 Some methods of functional analysis are used and we can refer to~\cite{Reed1981} and~\cite{Reed1975} for these tools. 
 %
-Among recent works on the AdS/CFT correspondance of Dirac fields, we can find different propositions for boundary action.
+Among recent works on the AdS/CFT correspondance of Dirac fields, we can find different propositions for the boundary action.
 For instance, 
 ~\cite{Henningson1998} proposes to put a boundary action which involves the product of the bulk field $\psi$ and its Dirac adjoint $\bar{\psi}$. 
 This term in $\bar{\psi}\psi$ looks like a mass term living on the boundary.
 On the other hand,~\cite{Contino2005} suggests to construct a boundary action such that a chiral component of the bulk field vanishes on the boundary.
-This boundary condition is also known as bag boundary condition, proposed in~\cite{Chodos1974}.
-Under the setting of~\cite{Contino2005}, one can introduce terms that only contain the chiral component which is not imposed to vanish on the boundary.
+This boundary condition is also in effect equivalent to the bag boundary condition~\cite{Chodos1974}.
+Under the setting of~\cite{Contino2005}, one can introduce terms that only contain the chiral component which is not required to vanish on the boundary.
 The action that we propose in~\cref{chap-wentzell} will be a mixte of these 2 boundary conditions.
 At the end of~\cref{chap-wentzell}, we give an example of vacuum polarization in $1+1$-dimension under the generalized boundary condition that we have found.
-\\\\
-%
-Hereby, we introduce briefly some basic notions of QFT in curved space-time in order to understand the renormalization used in~\cite{Zahn2015}.
-Especially, the idea how the Hadamard parametrix is found in~\cite{Zahn2015} will be elaborated.
 %%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%
-\paragraph{QFT in curved space-time}
-QFT in curved space-time is a semi-classical theory taking into account the curvature of space-time in quantum field theory.
-A review on the necessary notions for this report will be given in this paragraph.
-For a more complete review of this subject, we can refer to~\cite{Hollands2014}. \\\\
-%
-For a given curved Lorentzian space-time $(M,g)$,
-the construction of the theory is based on algebraic approach.
-Instead of considering a given Hilbert space, 
-the theory is formulated with an algebra of quantum observables $\mathscr{A}(M,g)$.
-As done in the section 2 of~\cite{Hollands2014}, we give here a brief review of QFT in curved space-time for quantum algebra of observables generated by a Klein-Gordon field $\phi$. 
-However, the field $\phi$ should be treated as general function, \ie  distribution.
-As a quantized field, the contribution of high frequency modes makes it difficult to define $\phi$ at a precise point $x$.
-Hence, we sometimes write the smearing of $\phi$ with some test function $f\in C^\infty_0(M)$, given by
-\begin{equation*}
-\phi(f) = \int_M \phi f
-\end{equation*}
-We can then construct $\mathscr{A}(M,g)$ by starting with the free *-algebra generated by unit element $\mathbf{1}$ and elements $\phi(f)$ with $f\in C^\infty_0(M)$ and imposing the following relations \\
-\begin{enumerate}
-\item \textbf{Linearity} $\phi(c_1 f_1 + c_2 f_2) = c_1 \phi(f_1) + c_2 \phi(f_2)$ for $c_1, c_2 \in \mathbb{C}$
-%
-\item \textbf{Klein-Gordon equation} $\phi\big( (\Box_g - m^2)f \big) = 0$
-%
-\item \textbf{Hermitian field} $\phi(f)^* = \phi(\bar{f})$
-%
-\item \textbf{Canonical commutation relation (CCR)} $[\phi(f_1), \phi(f_2)] = iE(f_1, f_2) \mathbf{1}$, where $E = E^+ - E^-$ and $E^\pm$ are distributions satisfying $(\Box_g - m^2)E^\pm(x,y) = \delta(x,y)$ with appropriate supports (which define the advanced and retarded operators).
-\end{enumerate}
-%
-We define a \textbf{physical state} $\omega$ as a linear map
-$\omega: \mathscr{A}(M,g) \rightarrow \mathbb{C}$ satisfying the normalization condition $\omega(\mathbf{1}) = 1$ and the positivity $\omega(a^*a) \geq 0$ for $a\in\mathscr{A}(M,g)$.
-A physical state could simply be considered as an expectation value functional. 
-For a given state $\omega$, there is an associated Hilbert space $(\mathscr{H}_\omega, \langle \cdot, \cdot \rangle)$, a representation $\pi : \mathscr{A}(M,g)\rightarrow \mathrm{End}(\mathscr{H}_\omega)$ and a non-trivial vector $\Psi \in \mathscr{H}_\omega$ such that for $a \in \mathscr{A}(M,g)$
-\begin{equation*}
-\omega(a) = \frac{\langle \Psi, \pi(a)\Psi\rangle}{\langle \Psi, \Psi \rangle}
-\end{equation*}
-by the GNS-construction (see \eg\cite{bar2009quantum}).
-For what concerns this project, we consider the expectation value the vacuum $(1+1)$-current as a physical state.
-The definition of such a state will be given later. \\\\
-%
-In order to adopt the point-splitting formalism, 
-we consider the \textbf{2-point functions} (or more precisely, 2-point distributions) constructed with the physical state $\omega$, 
-\ie the distribution $W$ defined by (smeared) 
-\begin{equation*}
-W_2(f, g ) \equiv \omega(\phi(f) \phi(g))
-\end{equation*}
-It should be noted that $W_2(x,y)$ is defined only in sense of distribution because of the divergence when the coinciding-point limit $x\rightarrow y$ is applied.
-For most of physically relevant states, the divergent term at the coinciding-point limit of the two-point function is of \textbf{Hadamard form} (cf~\cite{Hollands2014}).
+\paragraph{Renormalized vacuum current expectation value}
+We explain here the renormalization scheme of the expectation value of the vacuum current proposed in~\cite{Zahn2015}.
+For most of physically relevant states, the divergent term of the two-point function at the coinciding-point limit of the two-point function coincides and is of \textbf{Hadamard form} (cf~\cite{Hollands2014}).
 These states are called \textbf{Hadamard states}.
 In a globally hyperbolic space-time $(M,g)$ (see~\cite{Wald2010} for definition), 
-the singular structure of Hadamard state is preserved, 
+the singular structure of a Hadamard state is preserved, 
 \ie if a state is of Hadamard form in the neighborhood of a point, it is globally Hadamard state~\cite{Fulling1978}.
-The singular part at the coinciding-point limit of a Hadamard state is called \textbf{Hadamard parametrix}.  \\\\
+The singular part of a Hadamard state at the coinciding-point limit is called \textbf{Hadamard parametrix}.  \\\\
 %
-However, as we are interested in QED in this report, the above-mentioned theory is not applicable. 
-In particular, the fermionic nature of electron should not be supposed to obey the commutation relation but rather the \textbf{canonical anti-commutation relation} (CAR).
-With the same notation as for the commutation relation, 
-for a Dirac field $\psi$, the anti-commutation relation is defined by
-\begin{equation*}
-\{\psi(f_1), \bar{\psi}(f_2)\} = i S(f_1, f_2) \mathbb{1}
-\end{equation*}
-where $\{\cdot, \cdot\}$ is the anti-commutator and $S$ is the difference between the advanced and retarded propagators of the Dirac operator (with mass m) $i\slashed{\nabla} - m$.
-Also, the fields are supposed to verify Dirac equation instead of just Klein-Gordon equation. 
 The preservation of Hadamard form in a globally hyperbolic space-time is generalized to Dirac fields in~\cite{Sahlmann2000}.
-Since the sigular structure of a Hadamard state depends only on local geometric data, the subtraction of the Hadamard parametrix from a Hadamard state can be used as a method of renormalization.
+Since the sigular structure of a Hadamard state depends only covariantly on local geometric data, the subtraction of the Hadamard parametrix from a Hadamard state can be used as a method of renormalization.
 This provides us a motivation to define the vacuum current as a Hadamard state.
 \\\\
 Inspired by the classical expression of the current in QED\footnote{
@@ -197,13 +141,7 @@ To give a mathematically rigorous statement of this relation,
 the notion of \textbf{wave front set} is needed. 
 We refer to~\cite{Radzikowski1996} for more details.
 }.
-To be more precise, 
-by frequency we mean the co-vector corresponding to the time component of the coordinate in the Fourier space.
-One can associate this quantity to the "energy" of a given mode. 
-In addition, we should recall the distributional nature of the Dirac field that we use here. 
-Hence, the first equation of~\cref{vacuum-hadamardcond} should be understood in the sense of distribution,
-while the second one is smeared with some test sections $u$ and $\bar{v}$. 
-As the singular part of the state, the Hadamard parametrix $H$, is known, we define the vacuum expectation of the current density by 
+Now, we have a Hadamard state and as the singular part of the state, the Hadamard parametrix $H$, is known, we define the vacuum expectation of the current density by 
 \begin{equation}\label{vacuum-currentexpression}
 \lim_{y \rightarrow x} \gamma^A_B \big(
 \omega(\psi^B(x)\bar{\psi}_A(y)) - H^B_A (x, y)\big)
@@ -216,7 +154,7 @@ Here, we will just give the main idea of the computation of Hadamard parametrice
 For more detailed mathematical aspects, one can refer to~\cite{Bar2008}. \\\\
 %
 We can construct the Hadamard parametrix $H$ by using the characterization~\cref{vacuum-hadamardcond}. 
-The first step of the construction is thus to identify the singularity of the retarded and advanced propagators of the Dirac operator $i\slashed{\nabla} - m$, where $\slashed{\nabla} = \gamma^\mu(\partial_\mu + ieA^\mu)$ for the external vector potential $A^\mu$. 
+The first step of the construction is thus to identify the singularity of the retarded and advanced propagators of the Dirac operator $i\slashed{\nabla} - m$, where $\slashed{\nabla} = \gamma^\mu(\partial_\mu + ieA^\mu)$, for the external vector potential $A^\mu$. 
 We know how to calculate the retarded and advanced propagators of 
 \begin{equation*}
 P = (i\slashed{\nabla} - m)(-i\slashed{\nabla} -m) 
@@ -229,7 +167,7 @@ we can verify easily that
 S^{\textrm{ret/adv}} = (-i\slashed{\nabla} - m)\Delta^{\textrm{ret/adv}} 
 \end{equation*}
 is in the kernel of the Dirac operator $i\slashed{\nabla} - m$.
-In particular, it is shown in~\cite{Bar2008} that $\Delta^{\mathrm{ret/adv}}$ can be expressed in terms of \textit{Riesz distribution} $\{R_j^{\mathrm{ret/adv}}\}_j$.
+In particular, it is shown in~\cite{Bar2008} that $\Delta^{\mathrm{ret/adv}}$ can be expressed in terms of \textit{Riesz distributions} $\{R_j^{\mathrm{ret/adv}}\}_j$.
 The crucial point of the construction of Hadamard parametrix of~\cite{Zahn2015} is to find distributions $T_j^{\pm}$ which are of positive/negative frequency in their first/second argument such that
 \begin{equation*}
 T_j^+ - T_j^- = 2\pi i(R_j^{\mathrm{adv}} - R_j^{\mathrm{ret}})
@@ -239,6 +177,7 @@ and
 \begin{equation}\label{intro-hh}
 H^+(x,y) - H^-(x,y) = i S(x,y)
 \end{equation}
+where $S = S^{\mathrm{adv}} - S^{\mathrm{ret}}$
 As a consequence, for any state $\omega$ with Hadamard two-point function, the following relations hold
 \begin{equation}\label{intro-renormalization}
 \begin{split}
@@ -246,11 +185,32 @@ As a consequence, for any state $\omega$ with Hadamard two-point function, the f
 \omega(\bar{\psi}_A(y)\psi^B(x)) = &- H^-(x,y)^B_A - R^B_A(x,y)
 \end{split}
 \end{equation}
-where $R$ is smooth and determined up to terms vanishing at coinciding-point limit. 
+where $R$ is smooth and determined up to terms vanishing at least as fast as $(x-y)^2 \log(x-y)^2$ at coinciding-point limit. 
 %
-%
-%
-%
+\paragraph{Hadamard parametrix}
+We give hereunder the off-diagonal components\footnote{
+In effect, since the gamma matrices that we choose here are off-diagonal, only the off-diagonal will be used when we calculate the vacuum current.
+}
+ of the Hadamard parametrix found in~\cite{Zahn2015} for the following representations of gamma matrices
+\begin{equation*}
+\gamma^0 = \begin{pmatrix}
+0 & 1 \\
+1 & 0 \end{pmatrix}  \quad  \gamma^1 = \begin{pmatrix}
+0  & 1 \\
+-1 & 0
+\end{pmatrix}
+\end{equation*}
+which describes the case of a spin-$\frac 1 2$ massless particle with charge $+e$ in $(1+1)$-dimension in presence of a potential under static gauge $A^\mu(x) = (Ex^1, 0)$, where $E$ is a constant electric field and $x^1$ is the spatial coordinate
+\begin{equation}\label{vacuum-hadamardparametrix}
+\begin{split}
+& H^\pm (x, y)^1_2 = \frac{-i}{2\pi}\frac{1-\frac i 2 e E(x^1 + y^1)(x^0-y^0) 
+- \frac 1 8 (eE)^2(x^1 + y^1)^2(x^0 - y^0)^2}{x^0 - y^0 + x^1 - y^1 \mp i \epsilon}  + R^\pm(x,y)^{1}_2\\
+& H^\pm (x, y)^2_1 = \frac{-i}{2\pi}\frac{1-\frac i 2 e E(x^1 + y^1)(x^0-y^0) 
+- \frac 1 8 (eE)^2(x^1 + y^1)^2(x^0 - y^0)^2}{x^0 - y^0 - x^1 + y^1 \mp i \epsilon} + R^\pm(x,y)^{2}_1
+\end{split}
+\end{equation}
+where $R^\pm(x,y)$ are smooth two-point functions vanishing when $y\rightarrow x$
+
 
 
 
