@@ -8,7 +8,9 @@ H \phi = i \begin{pmatrix}
 \end{equation}
 First of all, we should decide on which Hilbert space the Hamiltonian $H$ acts.
 If we can show that $H$ has a self-adjoint extension for this Hilbert space, 
-we know that the problem has unitary time evolution solutions which can be expressed in terms of the self-adjoint extension of $H$.\\\\
+we know that the problem has unitary time evolution solutions which can be expressed in terms of the self-adjoint extension of $H$.
+In that case, we are able to write the solution as $\phi = \phi_0 e^{-iHt}$ with $\phi_0$ being the initial data.
+\\\\
 %
 The Hilbert space on which we are going to work is $\mathcal{H} = L^{2}(I_-, \mathbb{C}^2) \oplus L^{2}(I_+, \mathbb{C}^2)$,  where $I_- = [-\frac{L}{2}, 0)$ and $I_+ = (0, \frac{L}{2}]$.
 The inner product of this Hilbert space is the sum of the usual $L^2$ inner products on $I_+$ and $I_-$, namely
@@ -20,7 +22,6 @@ To start, we encode the boundary condition~\cref{vacuum-bagboundcond} and the ma
 \begin{equation*}
 \mathrm{Dom}(H) = \Big \{\phi \enskip \big\vert \enskip \phi \in W^{1,2}(I_-, \mathbb{C}^2) \oplus W^{1,2}(I_+, \mathbb{C}^2), \enskip \phi \textrm{ verifies~\cref{vacuum-bagboundcond} and~\cref{nef-matching2}} \Big \}
 \end{equation*} 
-where the matching condition at 0 is given in \cref{nef-matching2}\\\\
 Let $ \phi = \begin{pmatrix} \phi_L \\ \phi_R \end{pmatrix}, \psi = \begin{pmatrix} \psi_L \\ \psi_R \end{pmatrix} \in \mathrm{Dom}(H)$
 \begin{equation}\label{sa-hamiltonian}
 \begin{split}
@@ -58,7 +59,7 @@ $H$ is symmetric.
 \\\\
 It would be more complicated to find the right domain of self-adjointness of $H$.
 However, the exact domain of self-adjointness is not what interests us the most. 
-To prove the well-posedness of the problem, it suffices to show that $H$ is \textit{essentially self-adjointness}, \ie possesses a self-adjoint extension.
+To prove the well-posedness of the problem, it suffices to show that $H$ is \textit{essentially self-adjoint}, \ie possesses a self-adjoint extension.
 A basic criterion of essential self-adjointness is given by~\cite{Reed1981}
 \begin{theorem}
 Let $T$ be a symmetric operator on a Hilbert space $ \mathcal{H}$. The 3 following statement are equivalent 
@@ -69,7 +70,7 @@ Let $T$ be a symmetric operator on a Hilbert space $ \mathcal{H}$. The 3 followi
 \end{enumerate} 
 \end{theorem}
 We denote  $\mathcal{K}_{\pm} = \ker (i \mp H^*)$ for the deficiency subspaces of $H$. The corollary of the Theorem X.2 of~\cite{Reed1975} states that $\dim \mathcal{K}_+ = \dim \mathcal{K}_-$ is a necessary and sufficient condition such that $H$ possesses an self-adjoint extension (all closed extension of $H$ is self-adjoint if this two numbers are equal to zero). \\\\
-We start by calculate $\mathcal{K}_-$. Let $\phi \in \mathcal{K}_-$. Then $- i \phi = H^* \phi$. As $H$ is symmetric, this implies, for $\phi = \begin{pmatrix} \phi_L \\  \phi_R \end{pmatrix}$, 
+We start by calculating $\mathcal{K}_-$. Let $\phi \in \mathcal{K}_-$. Then $- i \phi = H^* \phi$. As $H$ is symmetric, this implies, for $\phi = \begin{pmatrix} \phi_L \\  \phi_R \end{pmatrix}$, 
 \begin{equation}
 i \begin{pmatrix} \phi_L \\ \phi_R \end{pmatrix} = 
 i \begin{pmatrix} 1 & 0  \\ 0  &  -1 \end{pmatrix} 
@@ -92,11 +93,9 @@ g_- = -i f_- e^{-L} \\
 g_+ = i f_+ e^L
 \end{cases}
 \end{equation}
-We have found that the matching condition at $x=0$ gives a linear transformation, namely, $\phi(0^+) = T\phi(0^-)$ with $T = \frac{1}{D}\begin{pmatrix} A & C \\ C^* & A \end{pmatrix}$. 
-With the boundary conditions, this implies
+The matching condition~\cref{nef-matching} and the boundary condition~\cref{vacuum-bagboundcond} imply
 \begin{equation}
 f_+ \begin{pmatrix} 1 \\ ie^L \end{pmatrix}
-= f_- T \begin{pmatrix} 1 \\ -ie^{-L} \end{pmatrix}
 = f_- \begin{pmatrix} \frac{A}{D} - i\frac{C}{D} e^{-L}  \\
 \frac{C^*}{D} - i \frac{A}{D} e^{-L} \end{pmatrix}
 \end{equation}

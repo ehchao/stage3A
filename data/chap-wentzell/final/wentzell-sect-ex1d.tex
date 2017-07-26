@@ -1,6 +1,6 @@
 \section{Vacuum polarization in $\mathcal{M} = \mathbb R \times [-L, L]$ }\label{wen-sect-ex1d}
-We give an explicit example to see how this boundary condition can affect the solution. 
-In particular, we calculte the vacuum polarization by using the method introduced in~\cref{chap-vacuum}\\\\
+We give an explicit example to see how this boundary condition can affect vacuum polarization. 
+In particular, we calculte the vacuum polarization in using the method introduced in~\cref{chap-vacuum}\\\\
 We choose for this example
 \begin{equation*}
 \gamma^0 = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \quad
@@ -10,7 +10,7 @@ We then have
 \begin{equation*}
  \mathcal{P}_\pm = \frac 1 2  \begin{pmatrix} 1 & \mp i \\ \pm i & 1 \end{pmatrix}
 \end{equation*}
-Let $\Phi = (\phi, \phi_|)$ where $\phi = \begin{pmatrix} \phi_L \\ \phi_R \end{pmatrix}$ be a solution of~\cref{wen-maineq}. 
+Let $\Phi = (\phi, \phi_|)$, where $\phi = \begin{pmatrix} \phi_L \\ \phi_R \end{pmatrix}$, be a solution of~\cref{wen-maineq}. 
 It is easy to verify that $\phi_L$ and $\phi_R$ are of form
 \begin{equation*}
 \phi_L = f e^{-ik(x^0 - x^1)} \quad
@@ -45,12 +45,12 @@ The second equation of~\cref{wen-bound1d} implies
 2kL + 2\arctan{ck} = \big( n +\frac 1 2 \big) \pi \quad\textrm{for $n \in \mathbb Z$}
 \end{equation}
 A solution of~\cref{wen-k1d1} should satisfy
+\footnote{We can notice that this correspond to~\cref{wen-tan}.}
 \begin{equation}\label{wen-mode1d}
 \exists n\in \mathbb{Z}\quad
 kL - \big(\frac{n}{2} + \frac 1 4 \big) \pi \in \big[-\frac{\pi}{2}, \frac{\pi}{2}\big] \quad
 \tan\Big( \big(\frac{n}{2}+\frac 1 4 \big)\pi -kL \Big) = ck
 \end{equation}
-It is easy to show that this correspond to~\cref{wen-tan}.
 Since for a given $n$, we can prove that there exists a unique $k$ verifying~\cref{wen-mode1d}\footnote{
 For a given $n$, 
 \begin{equation*}
@@ -120,7 +120,8 @@ Let $b\in\mathbb{R}$
 \begin{equation*}
 \sum_{n=1}^{+\infty} e^{i(n - \frac 1 2+\frac b n)z} = \frac i z  + \mathcal{O}(z^{\frac 1 2})
 \end{equation*}
-when $z\rightarrow 0 $
+when $z\rightarrow 0 $. 
+The terms in $\mathcal{O}(z^{\frac 1 2})$ contains terms involving $z^k \ln z$ for $k\geq 1$.
 \end{lemma}
 \begin{proof}
 \begin{equation*}
@@ -137,7 +138,7 @@ e^{i(n-\frac 1 2)z} \frac{1}{n^2(k+2)!}\big(\frac{ib}{n}z\big)^k
 \end{split}
 \end{equation*}
 The last term of the last line is uniformly convergent.
-We conclude the proof with the known equalities
+We conclude the proof with the known asymptotic expressions
 \begin{equation}\label{wen-lem1n}
 \begin{split}
 & \sum_{n=1}^{+\infty}e^{i(n - \frac 1 2 )z} = 
@@ -179,28 +180,28 @@ Let $m,l\in\mathbb{N}$ such that $l > m \geq N$
 \end{split}
 \end{equation*}
 Since the last line is a uniformly convergent series for $z \in \mathbb{R}$, it could be made small by taking $m$ and $l$ big enough.
-Hence, the series of our lemma converges normally, which implies that it converges uniformly.
-We can invert the summation and the limit and we obtain the expected result.
+Hence, the series that we are dealing with converges uniformly.
+We can invert the summation and the limit and we obtain the result.
 %
 \item We compute
 \begin{equation*}
 \begin{split}
-\sum_{n=1}^{+\infty} n\big(e^{i(n-\frac 1 2 + \frac b n + a_n)z} - e^{i(n-\frac 1 2 + \frac b n)z} = &
-\sum_{n=1}^{+\infty} i n a_n e^{i(n-\frac 1 2 + \frac b n)}z + \sum_{k=1}^{+\infty}\frac{(ia_nz)^{k+1}}{(k+1)!}
+\sum_{n=1}^{+\infty} n\big(e^{i(n-\frac 1 2 + \frac b n + a_n)z} - e^{i(n-\frac 1 2 + \frac b n)z}\big) = &
+\sum_{n=1}^{+\infty} i n a_n e^{i(n-\frac 1 2 + \frac b n)z}z + \sum_{n=1}^{+\infty}\sum_{k=1}^{+\infty}\frac{(ia_nz)^{k+1}}{(k+1)!}e^{i(n-\frac 1 2 + \frac b n)z}
 \end{split}
 \end{equation*}
 The last term converges uniformly and equals to 0 when we take the $z\rightarrow 0$ limit.
 The first term equals to
 \begin{equation*}
-\sum_{n=1}^{+\infty} \frac{S}{n}e^{i(n-\frac 1 2 +\frac b n)z}z 
-+ \sum_{n=1}^{+\infty}n\big(a_n - \frac{ S}{ n^2}\big) e^{i(n-\frac 1 2 +\frac b n)}z
+i\Big(\sum_{n=1}^{+\infty} \frac{S}{n}e^{i(n-\frac 1 2 +\frac b n)z}z 
++ \sum_{n=1}^{+\infty}n\big(a_n - \frac{ S}{ n^2}\big) e^{i(n-\frac 1 2 +\frac b n)}z \Big)
 \end{equation*}
-The second term of the above expression converges uniformly and we can prove that the first term equals to 0 at $z\rightarrow 0$ limit by using~\cref{wen-lem1n}.
+The second term of the above expression converges uniformly and we can prove that the first term equals to 0 at the $z\rightarrow 0$ limit by using~\cref{wen-lem1n}.
 \end{enumerate}
 \end{proof}
 Now, let us compute the vacuum two-point function, given by~\cref{vacuum-hadamardstate}.
-As one can find in the discussion in~\cref{chap-vacuum}, the Hadamard parametrix of in the bulk remains the same. 
-The divergent terms when calculating the vacuum polarization are given by~\cref{vacuum-hadamardparametrix}. \\\\
+We can show that we still have a Hadamard state if we put the bulk field properly normalized in the total Hilbert space $\mathcal{H}$ in the expression of the two-point function.\\\\
+%
 The boundary component $\phi_|$ is (cf~\cref{wen-saw2bound})
 \begin{equation*}
 \begin{split}
@@ -241,14 +242,14 @@ Thus, the square of the norm of the renormalization constants ($|f| = |g|$) beha
 |f_n|^2 = 
 \frac{1}{4L}\Big( 1 - \frac{4}{\pi^2C n^2} + \mathcal{O}\big(\frac{1}{n^3}\big) \Big)
 \end{equation*}
-By adapting time-splitting $x^0 - y^0 = t$, the two-point functions are
+By adapting time-splitting $x^0 - y^0 = t$, the off-diagonal components of the two-point function are
 \begin{equation*}
 \omega(\phi^1(x)\phi^\dagger_1(y)) = \omega(\phi^2(x)\phi^\dagger_2(y)) = 
  \sum_{k_n>0} |f_n|^2 e^{-ik_nt}
 \end{equation*} 
 One might expect that there is no vacuum charge because there is no external electric field. 
-Although it is not obvious to make such a conclusion from the expressions of the two-point functions, 
-this expectation can be proven correct by using the symmetry of the spectrum.
+Although it is not obvious to make such a conclusion from the expression of the two-point function, 
+this conjecture can be proven correct by using the symmetry of the spectrum.
 By~\cref{wen-k1d1}, we know that if $k$ is a mode, $-k$ should also be a mode.
 By definition~\cref{vacuum-hadamardstate}, we have
 \begin{equation*}
@@ -309,7 +310,7 @@ Using~\cref{vacuum-stressenergy} for
 z = x^0 - y^0 - x^1 + y^1-i\varepsilon  ,\quad
 w = x^0 - y^0 + x^1 - y^1-i\varepsilon
 \end{equation*}
-Using
+and
 \begin{equation*}
 \sum_{n=1}^{+\infty} n e^{-i(n+\frac b n )(t - i\varepsilon)}
 = -\frac{1}{(t-i\varepsilon)^2} - \frac{1}{12}-b + \mathcal{O}(t-i\varepsilon)
@@ -331,7 +332,7 @@ We compute
 +\mathcal{O}\big((t-i\varepsilon)^{\frac{1}{2}}\big)
 \end{split}
 \end{equation*}
-With a similar calculation as in~\cref{wen-lemmacvu}, both infinite sums appearing at the last two lines converge uniformly.
+With a similar calculation as in~\cref{wen-lemmacvu}, both infinite sums appearing in the last two lines converge uniformly.
 The singular terms of the stress-energy tensor are cancelled out as expected and the renormalized stress-energy tensor components are
 \begin{equation*}
 T_{00} = T_{11}= - 2 \sum_{n \geq 1} \Big( |f_n|^2 k_n - 
@@ -350,9 +351,9 @@ For $c \rightarrow 0$, we refind the 1+1 dimensional Casimir vacuum energy densi
   \caption{The dependence on $\frac{c}{L}$ of $4L^2T_{00}$}\label{plotex1d}
 \end{figure}
 %
-
-
-
+\begin{remark}
+From the sign of $L^2 T_{00}$, one can notice that the Casimir force obtained from our model becomes repulsive when $\frac c L$ is greater than a certain critical value between $0.1$ and $1$.
+\end{remark}
 
 
 

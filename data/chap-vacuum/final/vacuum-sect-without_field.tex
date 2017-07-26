@@ -1,3 +1,6 @@
+In this chapter, we will study the vacuum polarization in 1+1 dimension for both confined and non-confined cases.
+In each discussion,
+we compute the vacuum current and charge densities as well as the stress energy tensor without and with external fields. \\\\
 We choose the following representations for the Dirac gamma matrices for this chapter
 \begin{equation*}
 \gamma^0 = \begin{pmatrix}
@@ -10,7 +13,7 @@ We choose the following representations for the Dirac gamma matrices for this ch
 %
 \section{Vacuum polarization in a confined space without external electric field}\label{sect-nef}
 We consider a massless Dirac field in $1+1$-dimensional space-time spatially confined in the region $[-\frac L 2 , \frac L 2 ]$.
-Denoting $\phi = \gamma^0\psi$, the Dirac equation of the massless field
+Denoting $\phi = \gamma^0\psi$, the free massless Dirac equation
 \begin{equation*}
 i\gamma^\mu\partial_\mu \psi = 0
 \end{equation*}
@@ -38,7 +41,7 @@ i \phi_L
 As shown in~\cite{Zahn2015}, when there is no external electric field, no polarization occurs,
 \ie the expectation values of current and charge densities both vanish. 
 However, it is curious to know if vacuum current and charge would be created when there is an extremly localized electric field.
-Inspired by~\cref{vacuum-kondohamiltonian}, we introduce a delta potential term at $x^1 = 0$.
+Inspired by~\cref{vacuum-kondohamiltonian}, we introduce a potential term with singularity at $x^1 = 0$ in the same manner.
 We can write down the equation of motion of the problem as following
 \begin{equation}\label{nef-Dirac}
 i \partial_0 \phi = 
@@ -60,7 +63,7 @@ In effect, the Kondo potential (the second term of the \rhs of~\cref{vacuum-kond
 \end{equation*}
 with real coefficients.
 }
-By denoting $\phi =
+By writing $\phi =
 \begin{pmatrix}
 \phi_L \\
 \phi_R
@@ -72,7 +75,7 @@ i \partial_0 \phi_L = -i\partial_1 \phi_L + (v_3 \phi_L + v_- \phi_R) \delta(x^1
 i \partial_0 \phi_R = i\partial_1 \phi_R + (v_+ \phi_L - v_3 \phi_R) \delta(x^1)
 \end{cases}
 \end{equation}
-The presence of a delta potential might impose some matching condition at the singular point (See \eg Appendix J of~\cite{albeverio1988solvable}).
+The presence of a delta potential might impose some matching condition at the singular point.
 Let us consider now the matching condition at $x^1=0$.
 A spinor field $\phi$ verifying~\cref{nef-Dirac} should not be continuous at $x^1 = 0$. 
 By integrating~\cref{nef-Dirac} over $[-\epsilon, \epsilon]$ and taking the limite for $\epsilon \rightarrow 0$,
@@ -111,8 +114,8 @@ D = 1-\frac{1}{4}\Sigma + iv_3
 %
 However, because of the $\delta$-function in \cref{nef-Dirac}, 
 the well-posedness of the problem is not guaranteed,
-\ie it is uncertain if the system has a unitary time evolution solution~\cite{Reed1981}.
-This aspect will be tackled in the next subsection.
+some aspects of unbounded operator theory should be investigated~\cite{Reed1981}.
+This will be tackled in the next subsection.
 %
 \input{data/chap-vacuum/final/vacuum-subsect-sa}
 \input{data/chap-vacuum/final/vacuum-subsect-hadamard}

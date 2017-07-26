@@ -25,7 +25,7 @@ we take
 \mathcal{D} = \Big\{\eta \in C^{\infty}_0(\mathcal{M}, \mathbb{C}^2) \enskip\big\vert \enskip -c^{-1}\gamma^0\mathcal{P}_-\eta\vert_{\partial\mathcal{M}} + i\gamma^0\gamma^1\partial_1\mathcal{P}_+\eta\vert_{\partial \mathcal{M}}= i\partial_0\mathcal{P}_+\eta\vert_{\partial\mathcal{M}} \Big\}
 \end{equation*}
 for the space of test functions. 
-Then, for any function $f \in W^{0,2}(\mathcal{M}, \mathbb{C}^2)$, we define the corresponding distribution $T_f$ by
+Then, for any function $f \in L^{2}(\mathcal{M}, \mathbb{C}^2)$, we define the corresponding distribution $T_f$ by
 \begin{equation*}
 \forall \psi\in \mathcal{D}, \enskip \langle T_f, \psi\rangle = \int_{\mathcal{M}} f^\dagger \psi
 \end{equation*}
@@ -77,6 +77,8 @@ $\phi$ is a weak solution of the first equation of \cref{wen-maineq} if and only
 \end{equation*}
 for all $\eta \in \mathcal{D}$.
 Let $\eta = \begin{pmatrix} \eta_1 \\ \eta_2\end{pmatrix} \in \mathcal{D}$. 
+Meanwhile, because $\phi$ does not depend on $x^1$, the terms in $\phi\partial_1 \eta$ will simply vanish when the integration is applied.
+For simplicity, we suppose furthurmore that $\eta$ is only a function of $x^0$ and $x^2$.
 Then
 \begin{equation*}
 -c^{-1 }\gamma^0\mathcal{P}_-\eta\vert_{\partial\mathcal{M}} + i\gamma^0\gamma^1\partial_1\mathcal{P}_+\eta\vert_{\partial\mathcal{M}} = i\mathcal{P}_+\partial_0\eta\vert_{\partial\mathcal{M}}
@@ -122,7 +124,7 @@ As a result,
 However, if $c<0$, the solution on the boundary $\phi_|$ will increase exponentially with time, which is not physically acceptable. 
 In effect, the shock wave (singular part of \cref{wen-shock}) reaches at the boundary only at $t = x^0 = 0$.
 Afterward, there is no in-coming wave from the bulk to the boundary. 
-After absorbing the shock wave entering the boundary $\delta(x^0+x^2)$,
+After absorbing the shock wave $\delta(x^0+x^2)$ entering the boundary,
 the boundary can only radiate energy and diminish the amplitude of the boundary field. 
 This example shows again why $c$ must be chosen non-negative.
 

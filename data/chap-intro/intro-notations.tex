@@ -1,23 +1,17 @@
-%The index 0 represents the temporal component.
-\section*{Notations and convention}
-In all discussions of this report, we work on Minkowski space-times with signature $(+, -,\ldots, -)$.
+\section*{General notations and convention}
+In all the discussions of this report, we work on Minkowski space-times with signature $(+, -,\ldots, -)$.
 We denote $\delta^A_B$ without argument for the Kronecker delta and $\delta(x)$ with argument for the Dirac delta distribution.
+$\Theta(x)$ will be use for the Heaviside step function.
 $c^*$ represents the complex conjugate of $c\in\mathbb{C}$. 
 Meanwhile, $T^*$ represents the adjoint of $T$ if $T$ is an operator.
-As in general case, $\bar{\psi}$ is the Dirac adjoint of $\psi$.
+As usual, $\bar{\psi}$ is the Dirac adjoint of $\psi$.
 By Hamiltonian, we refer to the Hamiltonian of a dynamical system.
-\\\\ 
-When talking about manifold with boundary, we consider a $(d+1)$-dimensional manifold $\mathcal{M}$ for the bulk with a $d$-dimensional boundary $\partial \mathcal{M}$ which is supposed to be static.
-We denote by $M$ an equal-time hypersurface of $\mathcal{M}$.
-As we work with spinor fields, $\mathcal{M}$ and $\partial \mathcal{M}$ are required to be spin manifolds. 
-A good review on the notions of spin structure can be find in~\cite{Trautman2007}.
-\footnote{
-Such a structure on a given manifold exists if and only if the second Stiefel-Whitney class of its bundle vanishes (see~\eg Chap. 2 of \cite{Lawson1989} or~\cite{Alagia1985} for extension to pseudo-Riemannian manifolds).}
-%
-The indice 0 will correspond to the time component.
+For a manifold $M$ on which we can define Sobolev spaces (cf \eg\cite{Hebey1996},~\cite{Eichhorn1996}), 
+we denote by $W^{n,m}(M)$ the Sobolev space composed of $n$-times differentiable functions $u\in L^m(M)$ whose derivatives of order lower than $n$ are also in $L^m(M)$.
+\\\\
 We denote $\gamma^\mu$ for $\mu = 0, \ldots, d$ for the generators of the Clifford algebra\footnote{
-For simplicity, we will sometimes call this generators gamma matrices in this report.
-} in the bulk, which should satisfy
+For simplicity, we will sometimes call these generators gamma matrices in this report.
+}, which should satisfy
 \begin{equation*}
 \{ \gamma^\mu, \gamma^\nu \} = \eta^{\mu\nu}
 \end{equation*} 
@@ -28,19 +22,4 @@ Also, we choose a Hermitian representation for $\gamma^0$ and anti-Hermitian rep
 (\gamma^0)^\dagger = \gamma^0 \quad
 (\gamma^i)^\dagger = -\gamma^i
 \end{equation*}
-Like in many literatures, Greek letters are used for both spatial and temporal components, whereas Latin letters are only used for spatial ones.
-With shorthand notations, the generators of the induced Clifford algebra on the boundary $\partial \mathcal{M}$ will also be denoted by $\gamma^\alpha$ for $\alpha = 0 ,\ldots, d-1$. 
-However, we specify that the Greek letters $\mu$ and $\nu$ will be used for the indices of bulk terms (taking values in $\llbracket 0, d \rrbracket$) and the Greek letters $\alpha$ and $\beta$ will be used for the indices of boundary terms (taking values in $\llbracket 0, d-1 \rrbracket$).
-Analogously, the Latin letters $i $ and $j$ will be used for bulk terms and $a$ and $b$ will be used for boundary terms. \\\\
-%
-We denote the spinor representation spaces of $\mathcal{M}$ and $\partial \mathcal{M}$ by $E$ and $F$ respectively.
-For certain manifolds, we can define the Sobolev spaces on them (\cite{Hebey1996}, \cite{Eichhorn1996}).
-We suppose that $\mathcal{M}$ and $\partial\mathcal{M}$ belong to these categories of manifold.\footnote{
-We might encounter some difficulties defining the Sobolev spaces for the boundaries. Meanwhile, the boundaries of these two cases are in effect "open manifolds", \ie, without boundary and compact connected component. 
-According to~\cite{Eichhorn1996}, it is possible to define Sobolev spaces which are also Banach spaces for them.
-Then, when working with $L^2$-norm, we have Hilbert space structures since the inner products will be well-defined.  
-}
-In the following text, if not specified, the Sobolev space $W^{m,n}(\mathcal{M})$ on manifold $\mathcal{M}$ represents $W^{m,n}(\mathcal{M}, E)$.
-On the other hand, $W^{m,n}(\partial \mathcal{M})$ represents $W^{m,n}(\partial \mathcal{M}, F)$.
-This notation is also applicable to the $L^2$ spaces.
-%
+Like in many literatures, Greek letters are used for both spatial and temporal components, whereas Latin letters are only used for spatial ones. \\
