@@ -1,10 +1,13 @@
 \documentclass[11pt, oneside]{report}   	% use "amsart" instead of "article" for AMSLaTeX format
+%notitlepage puts the abstracts in different languages on the same page
 \usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
 \geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
 %\geometry{landscape}                		% Activate for for rotated page geometry
 %\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
 \usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
-								% TeX will automatically convert eps --> pdf in pdflatex		
+								% TeX will automatically convert eps --> pdf in pdflatex	
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}	
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{amsthm}
@@ -16,6 +19,7 @@
 \usepackage{stmaryrd}
 \usepackage{slashed}
 \usepackage{color}
+%\usepackage[ngerman,french,english]{babel}
 
 \graphicspath{{images/}}
 
@@ -54,8 +58,13 @@
 \title{Boundary and matching conditions for quantized Dirac fields}
 \author{En-hung CHAO}
 %\date{}							% Activate to display a given date or no date
+\usepackage[colorinlistoftodos]{todonotes}
+
 \begin{document}
-\maketitle
+
+%\maketitle
+%title page
+\include{data/titlepage}
 
 \tableofcontents
 
@@ -67,6 +76,7 @@
 \appendix
 \include{data/chap-appendix/chap-QFTCST}
 
+\addcontentsline{toc}{chapter}{Bibliography} 
 \bibliography{biblio}
 \bibliographystyle{unsrt}
 
