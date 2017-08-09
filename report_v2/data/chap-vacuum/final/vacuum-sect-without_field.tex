@@ -1,6 +1,6 @@
 In this chapter, we will study the vacuum polarization in 1+1 dimension for both confined and non-confined cases.
-In each discussion,
-we compute the vacuum current and charge densities as well as the stress energy tensor without and with external fields. \\\\
+%In each discussion,
+%we compute the vacuum current and charge densities as well as the stress energy tensor without and with external fields. \\\\
 We choose the following representations for the Dirac gamma matrices for this chapter
 \begin{equation*}
 \gamma^0 = \begin{pmatrix}
@@ -11,15 +11,23 @@ We choose the following representations for the Dirac gamma matrices for this ch
 \end{pmatrix}
 \end{equation*}
 %
-\section{Vacuum polarization in a confined space without external electric field}\label{sect-nef}
+\section{Vacuum polarization in a confined space}\label{sect-nef}
 We consider a massless Dirac field in $1+1$-dimensional space-time spatially confined in the region $[-\frac L 2 , \frac L 2 ]$.
-Denoting $\phi = \gamma^0\psi$, the free massless Dirac equation
+We introduce a static constant electric field whose electromagnetic potential components are 
 \begin{equation*}
-i\gamma^\mu\partial_\mu \psi = 0
+(A_0, A_1) = (E x^1, 0)
+\end{equation*}
+Denoting $\phi = \gamma^0\psi$, the equation of motion of a massless fermionic field in such an external potential 
+\begin{equation*}
+i\gamma^\mu\partial_\mu \psi = i\gamma^\mu\partial_\mu \psi = eEx^0 x^1 \psi
 \end{equation*}
 can be written as
 \begin{equation*}
 i\partial_0\phi = i \begin{pmatrix} -1 & 0 \\ 0 & 1 \end{pmatrix}\partial_1\phi
++ eEx^1\phi
++ \begin{pmatrix}
+v_3 & v_- \\ v_+ & -v_3
+\end{pmatrix}\delta(x^1)\phi
 \end{equation*}
 %
 As for the boundary condition on $x^1 = \pm \frac L 2$, we impose the bag boundary condition~\cite{Chodos1974}, \ie 

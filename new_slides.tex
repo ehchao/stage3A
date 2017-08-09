@@ -341,11 +341,61 @@ where $D^+(\mathcal{S}_0)$ is the future domain of dependence of $\mathcal{S}_0$
 \end{frame}
 %%%%%%%%%%%%%%%%%%
 \begin{frame}[shrink=30]
-\frametitle{Conclusion}
+\frametitle{\small{Generalization of Wentzell boundary condition for massless fermions}}
 \framesubtitle{}
 
 \begin{itemize}
-\item To summarize
+
+\item<1-> Shock-wave solution in $\mathcal{M} = \mathbb{R}^{1,1}\times\mathbb{R}_+$ $\Phi = (\phi, \phi_|)$
+where
+\begin{equation*}
+\phi = \begin{pmatrix}
+i \big(\delta(x^0 - x^2) + \delta(x^0 + x^2) - 4c^{-1}\Theta(x^0-x^2)e^{- \frac{x^0-x^2}{c}} \big) \\
+\delta({x^0 - x^2}) - \delta(x^0 + x^2) - 4c^{-1}\Theta(x^0-x^2)e^{- \frac{x^0-x^2}{c}} \end{pmatrix}
+\end{equation*}
+\begin{equation*}
+\phi_| = \mathcal{P}_+ \phi\vert_{\partial \mathcal{M}} = 
+\begin{pmatrix} 0 \\ -4c^{-1}e^{- \frac{x^0}{c}} \Theta(x^0) \end{pmatrix}
+\end{equation*}
+
+
+\item<2-> Vacuum energy density in $\mathcal{M} = \mathbb{R}\times\mathbb{R}_+$ under our boundary condition
+	%\begin{itemize}
+	%\item<3-> The spectrum is discrete and symmetric wrt 0
+	%\begin{equation*}
+	%2kL + 2\arctan ck = \big(n + \frac 1 2 \big)\pi \quad\mathrm{for } n\in\mathbb{Z}
+	%\end{equation*}
+	%\item<4->
+	%$\rho = 0$
+	%\item<3-> Relation between energy density $T_{00}$ and the coupling constant 
+		
+	\includegraphics[scale=0.5]{T00}\centering
+
+	%\end{itemize}
+
+
+\end{itemize}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[shrink=30]
+\frametitle{Conclusion and perspectives}
+\framesubtitle{}
+
+\begin{itemize}
+\item<1-> To summarize
+	\begin{itemize}
+	\item<2-> A Kondo-type potential creates discontiunuous background vacuum charge and energy densities.
+	\item<3-> Dynamical problems of free massless fermions are well-posed under a more generalized version of the bag boundary condition.
+	\item<4-> In some mannifolds, solutions to dynamical problems of free massless fermions verify the causal propagation property.
+	\item<5-> The influence of the coupling constant of the Wentzell boundary condition over the energy density has been shown for 1+1 dimension.
+	\end{itemize}
+\item<6-> Outlooks
+	\begin{itemize}
+	\item Generalzation of the same type of studies on boundary condition to vector fields and gauge fields
+	\item Generalization to the massive case where the causal propagation property is supposed to be more widely valid.
+	\end{itemize}
 \end{itemize}
 \end{frame}
 \end{document}

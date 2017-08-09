@@ -1,0 +1,151 @@
+\subsection{Non-linear equation}
+We put the gauge field part into the action~\cref{wen-action} and use covariant derivative instead. 
+The total action is now
+\begin{equation*}
+\begin{split}
+\mathcal{S} = & \frac{1}{2}i\int_M \bar{\psi} \gamma^\mu (\partial_\mu+i A_\mu) \psi - (\partial_\mu - iA_\mu) \bar{\psi} \gamma^\mu \psi 
++ \frac{1}{2}\int_{\partial M} ic \bar{\psi} \gamma^\alpha (\partial_\alpha+iA_\alpha) (1 - i \gamma^\bot) \psi
++ \bar{\psi} \psi \\ 
+%
+& - \frac 1 4 \int_M F^{\mu\nu}F_{\mu\nu} - \frac 1 4 \int_{\partial M} F^{\alpha\beta}F_{\alpha\beta}
+\end{split}
+\end{equation*}
+From this action, we can derive a system of equations containing the equations of motion of the Dirac fields as~\cref{wen-motion} and the equations coupling the matter field to the gauge field.
+The coupling equations of motion are
+\begin{equation}\label{ym-coupling}
+\begin{cases}
+\nabla^A_\mu F^{\mu\nu} = \psi^\dagger\gamma^0\gamma^\nu\psi \\
+%
+\nabla^{\bar{A}}_\alpha \bar{F}^{\alpha\beta} = \psi_|^\dagger\gamma^0\gamma^\beta\psi_| -c^{-1}\bar{F}_{\nu\beta}n^\nu 
+\end{cases}
+\end{equation}
+It could be shown that the tangential component of the current term in the bulk is equal to the current term on the boundary as long as we have $\mathcal{P}_+\phi\vert_{\partial M} = \phi_|$. 
+In effect, this condition implies
+\begin{equation}\label{ym-current}
+\phi = 2 \phi_| - i\gamma^\bot\phi
+\end{equation}
+Multiplying~\cref{ym-current} by $(\gamma^j\phi)^\dagger\gamma^0$ on the left, we have
+\begin{equation}\label{ym-current1}
+(\gamma^j\phi)^\dagger\gamma^0\phi = 2(\gamma^j\phi)^\dagger\gamma^0\phi_| - i(\gamma^j\phi)^\dagger\gamma^0\gamma^\bot\phi
+\end{equation}
+Taking the adjoint of~\cref{ym-current} multiplied by $\gamma^0$ and multiplying by $\gamma^j\phi$ on the right, we get
+\begin{equation}\label{ym-current2}
+(\gamma^0\phi)^\dagger\gamma^j\phi = 2\phi^\dagger_|\gamma^0\gamma^j\phi - i\phi^\dagger\gamma^\bot\gamma^0\gamma^j\phi
+\end{equation}
+%perhaps put earlier?
+\begin{remark}
+Choosing $j = \bot$, one gets from~\cref{ym-current1} and~\cref{ym-current2}
+\begin{equation}\label{ym-current3}
+\phi^\dagger\gamma^0\gamma^\bot\phi = i\phi^\dagger(\mathcal{P}_+\gamma^0 - \gamma^0\mathcal{P}_+)\phi  
+\end{equation}
+In terms of $\psi = \gamma^0\phi$, we can write the \textbf{in-coming} current normal to the boundary as
+\begin{equation}\label{ym-current3}
+J^\bot = i\psi^\dagger(\gamma^0\mathcal{P}_- - \mathcal{P}_-\gamma^0 )\psi
+\end{equation}
+We can also check that the current on the boundary is not conserved but is consistent with the current coming from the bulk. 
+The boundary current density can be expressed as
+\begin{equation*}
+J_|^\alpha = i c \psi^\dagger_|\gamma^0\gamma^\alpha\psi_|
+\end{equation*}
+We recall the equation of motion of the Dirac field on the boundary in terms of $\psi$
+\begin{equation*}
+i\gamma^\alpha\partial_\alpha\psi_| = -c^{-1}\mathcal{P}_+\psi
+\end{equation*}
+Hence, the on-shell divergence of the current density is
+\begin{equation*}
+\begin{split}
+\partial_\alpha J_|^\alpha  = & c\big((\partial_\alpha\psi_|^\dagger)\gamma^0\gamma^\alpha\psi_| + \psi_|^\dagger\gamma^0\gamma^\alpha(\partial_\alpha\psi) \big)\\
+= &
+-i\psi^\dagger\vert_{\partial M}\mathcal{P}_+ \gamma^0\psi_| + i\psi_|^\dagger\gamma^0 \mathcal{P}_+\psi\vert_{\partial M} \\
+= & -J^\bot
+\end{split}
+\end{equation*}
+\end{remark}
+%check the stress tensor energy for the elm field
+\begin{remark}
+The same verification of consistency can be done for the vector field here.  
+The stress-energy tensor of the vector field on the boundary is given by
+\begin{equation*}
+\bar{T}^{\alpha\beta} = c\big( \bar{F}^{\alpha\gamma}\bar{F}^{\beta}_{\enskip\gamma}
+- \frac 1 4 \eta^{\alpha\beta}\bar{F}^{\gamma\delta}\bar{F}_{\gamma\delta} \big)
+\end{equation*}
+Its divergence is 
+\begin{equation*}
+\begin{split}
+\partial_\alpha \bar{T}^{\alpha\beta} = & c\big(
+(\partial_\alpha \bar{F}^{\alpha\gamma})\bar{F}^{\beta}_{\enskip\gamma} +
+\bar{F}^{\alpha\gamma}(\partial_\alpha\bar{F}^{\beta}_{\enskip\gamma})
+- \frac 1 4 \eta^{\alpha\beta}\partial_\alpha(\bar{F}^{\gamma\delta}\bar{F}_{\gamma\delta}) \big)\\
+\underset{\textrm{on-shell}}= & 
+- F^{\bot\alpha}\bar{F}^\beta_{\enskip\alpha}
+\end{split}
+\end{equation*}
+The last two terms on the right hand side of the first line are cancelled out by symmetry and the first Bianchi identity that $\bar{F}$ satisfies.
+It is then obvious that
+\begin{equation*}
+\partial_\alpha \bar{T}^{\alpha\beta} = -T^{\bot\beta}\vert_{\partial M}
+\end{equation*}
+\end{remark}
+%Some little discovery
+\begin{remark}
+%As one might notice,~\cref{ym-coupling} also imposes some condition on the current density.
+%As an example, take $M = \mathbb{R}_+\times \mathbb{R}_+\times\mathbb{R}^{d-1}$.
+Suppose that we have $\psi = \gamma^0\phi$ such that $\phi\in \cap_{k\in\mathbb{N}^*}\Delta^k$ where $\Delta$ is the Hamiltonian~\cref{wen-hamiltonian}.
+We can show that the~\cref{ym-coupling} is consistent with this solution for $\psi$.
+Since we work with flat space-time, 
+the difference between the two equations of~\cref{ym-coupling} reads
+\begin{equation*}
+\begin{split}
+\partial_\bot F^{\bot \mu}\vert_{\partial M} = & \psi^\dagger\gamma^0\gamma^\mu\psi - \psi^\dagger\gamma^0\gamma^\mu\psi_| + c^{-1} F^{\bot \mu} \\
+= & \psi^\dagger\mathcal{P}_+\gamma^0\gamma^\mu\psi + c^{-1}F^{\bot \mu }\vert_{\partial M}
+\end{split}
+\end{equation*}
+Its divergence is
+\begin{equation}\label{ym-consist1}
+\begin{split}
+\partial_\mu(\partial_\bot F^{\bot \mu})\vert_{\partial M} = & \partial_\mu(\psi^\dagger\mathcal{P}_+\gamma^0\gamma^\mu\psi) + c^{-1}\partial_\mu F^{\bot \mu}\vert_{\partial M} \\
+\underset{\textrm{on-shell}}{=} & 
+i(\partial_\bot\psi^\dagger\gamma^0\mathcal{P}_+\psi)\vert_{\partial M} - 
+i(\psi^\dagger\mathcal{P}_+\gamma^0\partial_\bot\psi)\vert_{\partial M}
+- c^{-1} \psi^\dagger\gamma^0\gamma^\bot\psi \\
+%= & \Re (i\partial_\bot \psi^\dagger\gamma^0\mathcal{P}_+\psi)\vert_{\partial M} - c^{-1} J^\bot \\
+\end{split}
+\end{equation}
+On the other hand
+\begin{equation}\label{ym-consist2}
+\begin{split}
+(\partial_\bot\partial_\mu F^{\bot \mu})\vert_{\partial M} = & -\partial_\bot J^\bot\vert_{\partial M} \\
+= & -\partial_\bot \psi^\dagger\gamma^0\gamma^\bot\psi 
+-\psi^\dagger\gamma^0\gamma^\bot\partial_\bot\psi
+\end{split}
+\end{equation}
+Equaling~\cref{ym-consist1} and~\cref{ym-consist2} and using
+\begin{equation*}
+\phi\in\dom(\Delta^2) \quad\Rightarrow\quad 
+\mathcal{P}_+(\partial_\bot\psi\vert_{\partial M} - c^{-1} \psi\vert_{\partial M})
+\end{equation*}
+we find
+\begin{equation*}
+\begin{split}
+0 = &
+i \big( \partial_\bot\psi^\dagger\gamma^0\mathcal{P}_-\psi 
+- \psi^\dagger\mathcal{P}_-\gamma^0\partial_\bot\psi \big)\vert_{\partial M}  
+-c^{-1}J^\bot \\
+= &
+i c^{-1}\big( \psi^\dagger\mathcal{P}_+\gamma^0\psi 
+- \psi^\dagger\gamma^0\mathcal{P}_+\psi \big)\vert_{\partial M} 
+-c^{-1}J^\bot
+\end{split}
+\end{equation*}
+We find again the expression of $J_\bot$~\cref{ym-current3}.
+\end{remark}
+
+
+
+
+
+
+
+
+
+

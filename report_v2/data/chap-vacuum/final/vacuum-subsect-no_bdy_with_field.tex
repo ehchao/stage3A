@@ -1,0 +1,26 @@
+\subsection{With electric field}
+By simple calculation, we can verify that the electric field $E$ doesn't involve in the normalization coefficient of any eigenvector $ | k \rangle$. The result that we have got in \cref{sect-nbnef} suggests to take the orthonormal basis consisting of
+\begin{equation}
+\begin{split}
+& | k_{(1)} \rangle = \frac{|D|}{\sqrt{2\pi}A}\bigg( \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}
+\Theta(-x^1) + 
+\frac{1}{D}\begin{pmatrix} A & 0 \\  0 & C^* \end{pmatrix} \Theta(x^1) \bigg)
+\begin{pmatrix} e^{ikx^1 - i\frac{eE}{8}(x^1)^2}  \\ e^{-ikx^1 + i\frac{eE}{8}(x^1)^2} \end{pmatrix}   \\
+& | k_{(2)} \rangle = \frac{1}{\sqrt{2\pi}}
+\Bigg( \begin{pmatrix} -\frac{\beta e^{i\eta}}{\alpha} & 0 \\ 0 & 1 \end{pmatrix}
+\Theta(-x^1) + 
+\frac{1}{D}\begin{pmatrix} -A\frac{\beta e^{i\eta}}{\alpha} + C  & 0\\ 0&  -C^*\frac{\beta e^{i\eta}}{\alpha} + A  \end{pmatrix} \Theta(x^1) \Bigg)
+\begin{pmatrix} e^{ikx^1 -i\frac{eE}{2}(x^1)^2}  \\  e^{-ikx^1 +i\frac{eE}{2}(x^1)^2}  \end{pmatrix}  
+\end{split}
+\end{equation}
+The two-point functions are (up to terms vanishing at coinciding point limit)
+\begin{equation*}
+\omega(\psi^2(x)\bar{\psi}_1(y)) =  \omega(\phi^1(x)\phi^\dagger_1(y)) \\ = -\frac{1}{2\pi}\frac{i}{x^0 - y^0 - x^1 + y^1 - i\epsilon} \Big(1 -  i\frac{eE}{2}\big((x^1)^2 - (y^1)^2 \big) \Big) 
+\end{equation*}
+\begin{equation*}
+\omega(\psi^1(x)\bar{\psi}_2(y))   =  \omega(\phi^2(x)\phi^\dagger_2(y)) = -\frac{1}{2\pi}\frac{i}{x^0 - y^0 - x^1 + y^1 - i\epsilon} \Big(1 + i\frac{eE}{2}\big((x^1)^2 - (y^1)^2 \big) \Big)
+\end{equation*}
+Since they are the same as in~\cite{Zahn2015}, the current density and the charge density is the same as in the case where there is no Kondo type delta potential, namely, no current and with charge density 
+\begin{equation}\label{vacuum-charge_nbdy}
+\rho = \frac{1}{\pi} e^2 E x^1
+\end{equation}

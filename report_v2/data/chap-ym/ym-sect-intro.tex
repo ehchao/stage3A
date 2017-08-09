@@ -1,0 +1,33 @@
+\paragraph{Convention} 
+For this chapter, we work on Minkowski space-time with metric signature $(-, \ldots, +)$
+\section{Motivation}
+It is curious to know if the system studied in~\cref{chap-wentzell} can be coupled with a gauge field by Yang-Mills theory. 
+Studies on the well-posedness of the problem derived from the Yang-Mills' action have been done in many papers in detailed mathematical aspects. 
+The well-posedness of Yang-Mills field coupled with Dirac field satisfying the bag boundary condition has been presented in~\cite{Sinatycki1993}, with certain boundary condition on the gauge fields.
+In this work, I will use certain method from~\cite{Sinatycki1993} to study another type of possible boundary condition. \\\\
+%
+We start by investigate the equations of motion (field part) derived from the following action
+\begin{equation}\label{ym-action}
+\mathcal{S}_{YM} = -\frac 1 4 \int_M F^{\mu\nu} F_{\mu\nu} 
+-\int_{\partial M} \frac 1 4 c\ F^{\alpha\beta} F_{\alpha\beta}
+\end{equation}
+where 
+\begin{equation*}
+F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu + [A_\mu, A\nu]
+\end{equation*}
+for a certain potential $A$. $[\cdot, \cdot]$ is the anti-commutator. The coupling constant is reduced to 1 here. The $2$-form $F$ can also be expressed in a more compact way
+\begin{equation*}
+F = \dd A + A \wedge A
+\end{equation*}
+where $\dd$ is the exterior derivative on $M$ and $\wedge$ is the exterior product.\\\\
+As suggested in the litterature~\cite{Tao2003}, 
+we choose to work with the temporal gauge ($A_0 = 0$). 
+We get the following system of linearized equations by applying variational method to the action
+\begin{equation}
+\begin{split}
+& \partial_0 A = E, \quad \partial_0 E = \delta A_{df} \\
+& \partial_0 \bar{A} = \bar{E} , \quad \partial \bar{E} = \delta \bar{A}_{df} - c^{-1}\partial_\bot A\vert_{\partial M}
+\end{split}
+\end{equation}
+where the Helmholtz-Hodge decomposition is used and $df$ means the divergence-free part.
+%TODO add reference and more precisions.

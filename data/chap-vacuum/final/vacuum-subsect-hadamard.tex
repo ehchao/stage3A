@@ -17,7 +17,7 @@ The space of eigenvectors for eigenvalue $k$ is spanned by
 %
 Let us look for solutions for the eigenvalue $k$.
 Suppose that for the region $x^1<0$, 
- $\phi_L = f e^{-ik(x^0 - x^1)}$ and $\phi_R = g e^{-ik(x^0+x^1)}$, where $f$ and $g$ are complex numbers that we have to determine. 
+ $\phi_L = f e^{ik x^1}$ and $\phi_R = g e^{-ikx^1}$, where $f$ and $g$ are complex numbers that we have to determine. 
 According to \cref{nef-matching2}, the components of the solution in the region $x^1 > 0$ should be $\phi_L = \frac{1}{D} (Af+Cg) e^{-ik(x^0 - x^1)}$ and $\phi_R = \frac{1}{D}(C^* f + Ag ) e^{-ik(x^0 + x^1)}$. 
 Note that the solution on the whole space $x^1 \in [-\frac{L}{2}, \frac{L}{2}] - \{0\}$ is totally determined by $f$ and $g$ due to the matching condition \cref{nef-matching}. \\\\
 The boundary condition implies
@@ -49,7 +49,11 @@ kL =  \textrm{Arg}(A - iC e^{ikL}) + \big(n+\frac{1}{2} \big)\pi   \quad \textrm
 \end{equation}
 The case $|C| =0$ is relatively easy to deal with. Let us focus on the cases where $|C| \neq 0$. We should consider separately \cref{nef-kn1} for $n$ odd and $n$ even because of the $2\pi$-periodicity of the exponential term. \\\\
 Let us start with the case where $n$ is even. 
-For $C = |C| e^{i\eta} \neq 0 $, it follows\footnote{
+For 
+\begin{equation*}
+C = |C| e^{i\eta} \neq 0 
+\end{equation*}
+it follows\footnote{
 For $\alpha, \beta, \theta \in \mathbb{R}$, assuming that $\alpha + \beta \cos \theta > 0$, $\alpha + \beta e^{i \theta} = \alpha + \beta \cos \theta + i\beta \sin \theta = (\alpha^2 + \beta^2 + 2\alpha \beta \cos \theta) e^{i \delta}$ with $\delta = \arctan \frac{\beta\sin\theta}{\alpha + \beta\cos\theta}$  
 } 
 \begin{equation}
@@ -158,7 +162,7 @@ For $A =1, B= 2$, with $z =x^0 - y^0 - x^1 +y^1$,~\cref{vacuum-calculhadamard} b
 \bigg)
 \end{split}
 \end{equation*}
-Developping the term in the parenthesis up to $\mathcal{O}(1)$, we get
+Developping the term in the parenthesis up to $\mathcal{O}(z^0)$, we get
 \begin{equation}
 \begin{split}
 & \frac{1}{\alpha - \beta \sin (\theta - \eta)}

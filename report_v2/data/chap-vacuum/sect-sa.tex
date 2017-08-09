@@ -1,0 +1,102 @@
+\section{Self-adjointness of the Hamiltonian}
+In this section, we study the self-adjointness of the Hamiltonian in which the Kondo potential is involved. The Hilbert space in which we are going to work is $L^{2}(I_-, \mathbb{C}^2) \oplus L^{2}(I_+, \mathbb{C}^2)$,  where $I_- = [-\frac{L}{2}, 0)$ and $I_+ = (0, \frac{L}{2}]$, with $I = [-\frac{L}{2}, \frac{L}{2}]$. The Hamiltonian as an operator on this space is defined as
+\begin{equation}
+H \phi = i \begin{pmatrix}
+-1  &  0 \\
+0  &  1  \end{pmatrix} \partial_1 \phi 
+\end{equation}
+To start, we choose for the domain of $H$ as 
+$\mathrm{Dom}(H) = \Big \{\phi  \mid \phi \in L^{2}(I_-, \mathbb{C}^2) \oplus L^{2}(I_+, \mathbb{C}^2), \enskip -i \gamma^1 \phi\vert_{\pm \frac{L}{2}} = \pm \phi \vert_{ \pm \frac{L}{2} }, \enskip \phi \textrm{ verifies the matching condition at 0} \Big \}$, where the matching condition at 0 is given in \cref{nef-matching}\\\\
+Let $ \phi = \begin{pmatrix} \phi_L \\ \phi_R \end{pmatrix}, \psi = \begin{pmatrix} \psi_L \\ \psi_R \end{pmatrix} \in \mathrm{Dom}(H)$
+\begin{equation}\label{sa-hamiltonian}
+\begin{split}
+\langle \psi, H \phi \rangle = & i \int_{I_-} ( - \psi_L^* \partial \phi_L + \psi_R^* \partial \phi_R )
++ i \int_{I_+} ( - \psi_L^* \partial \phi_L + \psi_R^* \partial \phi_R ) \\
+= & i \big[-\psi_L^* \phi_L + \psi_R^* \phi_R \big]^{0^-}_{-\frac{L}{2}} + i \big[-\psi_L^* \phi_L + \psi_R^* \phi_R \big]_{0^+}^{\frac{L}{2}} \\
+& - i \int_{I_-} ( - \partial \psi_L^* \phi_L + \partial \psi_R^*  \phi_R ) - i \int_{I_+} ( - \partial \psi_L^* \phi_L + \partial \psi_R^*  \phi_R ) 
+\end{split}
+\end{equation}
+The boundary condition implies
+\begin{equation*}
+- \psi_L^*(\pm \frac{L}{2}) \phi_L(\pm \frac{L}{2}) + \psi_R^*(\pm \frac{L}{2}) \phi_R(\pm \frac{L}{2}) =0
+\end{equation*}
+The matching condition at $x = 0$ gives
+\begin{equation*}
+\begin{split}
+\big[ \psi^*_L\phi_L] ^{0^+}_{0^-} & = \frac{1}{|D|^2}(A \psi^*(0^-) + C^*\psi^*_R(0^-))(A \phi_L(0^-) + C\phi_R(0^-)) - \psi^*_L(0^-)\phi^*_L(0^-) \\
+& = \frac{|C|^2}{|D|^2}\big(\psi_L(0^-)^*\phi_L(0^-) + \psi_R^*(0^-) \phi_R(0^-)\big) +
+\frac{2A}{|D|^2}\Re{C\psi_L^* \phi_R} \\
+& = \big[ \psi^*_R\phi_R] ^{0^+}_{0^-}
+\end{split}
+\end{equation*}
+Hence, \cref{sa-hamiltonian} implies that $H^* = H$ and $\mathrm{Dom}(H^*) \supset \mathrm{Dom}(H)$ 
+\\\\
+A basic criterion of self-adjointness is given in~\cite{Reed1981}
+\begin{theorem}
+Let $T$ be a symmetric operator on a Hilbert space $ \mathcal{H}$. The 3 following statement are equivalent 
+\begin{enumerate}
+\item $T$ is self-adjoint
+\item $T$ is closed and $\ker(T^* \pm i) = \{0\}$
+\item $\ran(T \pm i ) = \mathcal{H}$
+\end{enumerate} 
+\end{theorem}
+We denote  $\mathcal{K}_{\pm} = \ker (i \mp H^*)$ for the deficiency subspaces of $H$. The corollary of the Theorem X.2 of~\cite{Reed1975} states that $\dim \mathcal{K}_+ = \dim \mathcal{K}_-$ is a necessary and sufficient condition such that $H$ possesses an self-adjoint extension (all closed extension of $H$ is self-adjoint if this two numbers are equal to zero). \\\\
+We start by calculate $\mathcal{K}_-$. Let $\phi \in \mathcal{K}_-$. Then $- i \phi = H^* \phi$. As $H$ is symmetric, this implies, for $\phi = \begin{pmatrix} \phi_L \\  \phi_R \end{pmatrix}$, 
+\begin{equation}
+i \begin{pmatrix} \phi_L \\ \phi_R \end{pmatrix} = 
+i \begin{pmatrix} 1 & 0  \\ 0  &  -1 \end{pmatrix} 
+\begin{pmatrix}  \phi_L  \\  \phi_R \end{pmatrix}
+\end{equation} 
+Thus, $\phi$ could be written as
+\begin{equation}
+\begin{pmatrix} \phi_L \\ \phi_R \end{pmatrix} = 
+\Theta(-x) \begin{pmatrix} f_- e^x  \\ g_-  e^{-x} \end{pmatrix} + 
+\Theta(x) \begin{pmatrix} f_+ e^x  \\ g_+  e^{-x} \end{pmatrix}
+\end{equation}
+The boundary condition gives
+\begin{equation}
+\begin{cases}
+-i g_- e^{\frac{L}{2}} = - f_- e^{-\frac{L}{2}} \\
+-ig_+e^{-\frac{L}{2}} = f_+ e^{\frac{L}{2}}
+\end{cases} \quad \Leftrightarrow
+\begin{cases}
+g_- = -i f_- e^{-L} \\
+g_+ = i f_+ e^L
+\end{cases}
+\end{equation}
+We have found that the matching condition at $x=0$ gives a linear transformation, namely, $\phi(0^+) = T\phi(0^-)$ with $T = \frac{1}{D}\begin{pmatrix} A & C \\ C^* & A \end{pmatrix}$. 
+With the boundary conditions, this implies
+\begin{equation}
+f_+ \begin{pmatrix} 1 \\ ie^L \end{pmatrix}
+= f_- T \begin{pmatrix} 1 \\ -ie^L \end{pmatrix}
+= f_- \begin{pmatrix} \frac{A}{D} - i\frac{C}{D} e^{-L}  \\
+\frac{C^*}{D} - i \frac{A}{D} e^{-L} \end{pmatrix}
+\end{equation}
+$f_+$ and $f_-$ are non-vanishing if and only if 
+\begin{equation}
+\begin{split}
+& ie^L = \frac{C^* - iA e^{-L}}{A - iC e^{-L}} \\
+\Leftrightarrow \quad & 1 = \frac{C^* - iA e^{-L}}{iA + C e^{-L}} \\
+\Leftrightarrow \quad & 2i A \cosh L = -C + C^*
+\end{split}
+\end{equation}
+%For $C = -iv_- = -iv_1 - v_2$ and $A = 1 + \frac{1}{4}(v_1^2 + v_2^2 + v_3^2)$, this requires
+This condition is not verified in general, as the $v_i$ do not depend on $L$, in which case we get $\dim \mathcal{K}_- = 0$. \\
+For $\mathcal{K}_+$, it suffices to replace $L$ by $-L$ in the above calculation. Therefore, besides certain specific potentials, $H$ is essentially self-adjoint.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

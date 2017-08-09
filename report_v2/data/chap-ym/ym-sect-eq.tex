@@ -1,0 +1,148 @@
+\section{Equation of motion}
+Given $M$ a $(d +1)$-dimensional smooth complete Lorentzian spin manifold with boundary. 
+We suppose furthermore that the torsion of $\{M,d\}$ is reduced to $\{0\}$ and that we can define Sobolev spaces corresponding to all order of derivatives on $M$. 
+Let us now derive the equations of motion from the action~\cref{ym-action}.
+A variation $A \rightarrow A + \delta A$ leads to $\mathcal{S}_{YM} \rightarrow \mathcal{S}_{YM} + \delta\mathcal{S}_{YM}$ where
+%
+\begin{equation*}
+\begin{split}
+\delta \mathcal S_{YM} = & -\frac 1 2 \Big(
+ \langle \dd \delta A, \dd A +A\wedge A  \rangle_{L^2(M)} +  
+ \langle \delta A \wedge A, \dd A + A\wedge A \rangle_{L^2(M)} + 
+ \langle A \wedge \delta A , \dd A + A\wedge A \rangle_{L^2(M)}  \\ & + 
+ c (\langle \dd \delta A, \dd A +A\wedge A\rangle_{L^2(\partial M)}+
+ \langle \delta A \wedge A, \dd A + A\wedge A  \rangle_{L^2(\partial M)} + 
+ \langle A \wedge \delta A , \dd A + A\wedge A \rangle_{L^2(\partial M)} 
+ )
+ \Big) \\
+ %
+ \underset{\textrm{\cref{ym-stokes}}}{=} & - \frac{1}{2} \Big(
+ \langle \delta A_t, (\dd A + A\wedge A)_n \rangle_{L^2(\partial M)} +
+ \langle \delta A, \dd^c (\dd A + A\wedge A) \rangle_{L^2(M)} + 
+ \langle \delta A \wedge A,  \dd A + A \wedge A \rangle_{L^2(M)} \\ &+
+ \langle A \wedge \delta A,  \dd A + A \wedge A \rangle_{L^2(M)}  +
+ \langle \delta A, \dd^c (\dd A + A\wedge A) \rangle_{L^2(\partial M)} + 
+ \langle \delta A \wedge A, \dd A + A \wedge A \rangle_{L^2(\partial M)} \\&+
+ \langle A \wedge \delta A, \dd A + A \wedge A \rangle_{L^2(\partial M)}
+ \Big) \\
+ %
+\underset{\textrm{\cref{ym-wedge}}}{=} & - \frac 1 2 \Big(
+\langle \delta A, (\dd^c + [A, \cdot ])(\dd A+ A \wedge A) \rangle_{L^2(M)} \\ &+
+c \big( c^{-1}\langle \delta A_t, (\dd A + A\wedge A)_n \rangle_{L^2(\partial M)} +
+\langle \delta A, (\dd^c + [A, \cdot ])(\dd A+ A \wedge A) \rangle_{L^2(\partial M)} \big)
+\Big)
+\end{split}
+\end{equation*}
+To compute the codifferential of 2-forms, the dimension of the space should be taken into account. In the bulk, we have
+\begin{equation*}
+\begin{split}
+\dd^c F_{\mu\nu} \dd x^\mu \wedge \dd x^\nu = & (-1)^{d+3} \star \dd \star (F_{\mu\nu} \dd x^\mu \wedge \dd x^\nu ) \\
+%
+= & \frac{(-1)^{d+3}}{2 (d-1)!} \star \dd \Big( F_{\mu\nu} \varepsilon^{\mu\nu}_{\enskip \lambda_1\cdots \lambda_{d-1}} \bigwedge_{i} \dd x^{\lambda_i} \Big) \\
+%
+= & \frac{(-1)^{d+1}}{2 (d-1)!} \star \Big( \partial_\sigma F_{\mu\nu} \varepsilon^{\mu\nu}_{\enskip \lambda_1\cdots \lambda_{d-1}} \enskip \dd x^\sigma\wedge \big(\bigwedge_{i} \dd x^{\lambda_i} \big)  \Big) \\
+%
+= & \frac{1}{2(d-1)!} \star \Big( \partial_\sigma F_{\mu\nu} \varepsilon^{\mu\nu}_{\enskip \lambda_1\cdots \lambda_{d-1}} \enskip \big(\bigwedge_{i} \dd x^{\lambda_i} \big) \wedge \dd x^\sigma \Big) \\
+%
+= & \frac{1}{2(d-1)!d !} \enskip  \partial^\sigma F_{\mu\nu} \varepsilon^{\mu\nu}_{\enskip \lambda_1\cdots \lambda_{d-1}} \varepsilon^{\lambda_1 \cdots\lambda_d}_{\enskip\enskip\enskip\enskip \sigma\eta} \enskip \dd x^\eta \\
+%
+= & - \partial^\mu F_{\mu\nu} \dd x^\nu
+\end{split}
+\end{equation*}
+Motivated by this computation, we propose to study the following system of equations of motion
+\begin{equation}\label{ym-motion1}
+\begin{cases}
+\partial^\mu F_{\mu\nu} +  [A^\mu, F_{\mu\nu}] = 0 \quad\textrm{ in $M$}\\
+%
+\partial^\alpha \bar F_{\alpha\beta} +  [\bar A^\alpha, \bar F_{\alpha\beta}] = 
+ - c^{-1} F_{\nu\beta}n^\nu
+\quad\textrm{ on $\partial M$}
+\end{cases}
+\end{equation}
+where the quantities with bar live on the boundary and $n$ is the unit \textbf{in-coming} vector normal to $\partial M$\\
+Compared to the original work of C.N. Yang and R. L. Mills~\cite{Yang1954}, there is a supplementary source term in the equation of motion on the boundary due to the field of the bulk.\\\\
+Denote $E_i = F_{0i}$ and $\bar E_a = \bar F_{0a} $. 
+We choose the temporal gauge for the following calculation, \ie $A_0 = 0$
+We can split~\cref{ym-motion1} into the dynamical system 
+\begin{equation}\label{ym-dyn}
+\begin{cases}
+\partial_0 A_i = E_i \\
+\partial_0 E_i =  \partial_j F_{ji} + [A_j, F_{ji}] \\
+\partial_0 \bar A_a = \bar E_a \\
+\partial_0 \bar E_a =  \partial_b \bar F_{ba} +  [\bar A_b, \bar F_{ba}] + c^{-1} F_{\nu a} n^\nu \\
+\end{cases}
+\end{equation}
+and the constraint equation
+\begin{equation}\label{ym-const}
+\begin{cases}
+\partial_i E_i  = - [A_i, E_i] \\
+\partial_a \bar E_a = - [\bar A_a , \bar E_a]  + c^{-1} E_{b}n^b
+\end{cases}
+\end{equation}
+where repeated latin indices are summed (since the Minkowski metric is $g_{ij} = \delta_{ij}$ under our convention). \\\\
+Before defining the Hamiltonian of the system, we have to ensure that if a data $(A, E, \bar A, \bar E)$ satisfies~\cref{ym-const} at a given moment and is a solution of~\cref{ym-dyn}, then its evolution will always satisfy~\cref{ym-const}.
+This consequence is general enough~\cite{Arnowitt1962}. \\\\
+%
+We define the covariant derivative corresponding to the field $A$ by 
+\begin{equation*}
+\nabla^A_\mu \equiv \partial_\mu + [A_\mu, \cdot]
+\end{equation*}
+With this notation, the constraint equations~\cref{ym-const} become
+\begin{equation*}
+\begin{cases}
+\nabla^A_i E_i = 0 \\
+%
+\nabla^{\bar{A}}_i \bar E_i = - c^{-1} E_b n^b 
+\end{cases}
+\end{equation*}
+In the bulk, we compute
+\begin{equation*}
+\begin{split}
+\frac{d}{dt}\nabla^A_j E^j = & \partial_0 \nabla^A_j E^j  \\
+= & \partial_0(\partial_j E^j + [A_j , E^j])  \\
+= & \partial_j (\partial^i F_{ij} + [A^i, F_{ij}]) + [E_j, E^j] + [A_j, \partial^i F_{ij} + [A^i, F_{ij}]] \\
+= & \partial^j\partial^i F_{ij}  + [A^i, \partial^j F_{ij}] + [A^j, \partial^i F_{ij}] + [\partial^j A^i, F_{ij}]+ [A^j, [A^i, F_{ij}]]
+\end{split}
+\end{equation*}
+Since $F$ is anti-symmetric, the first three terms vanish. 
+And we have 
+\begin{equation}
+[\partial^j A^i, F_{ij}] = \frac 1 2 \big( [F^{ji}, F_{ij}] - [[A^j, A^i], F_{ij}] \big)
+\end{equation}
+\begin{equation}
+\begin{split}
+&[A^j, [A^i, F_{ij}]] = - [A^i, [A^j, F_{ij}]]
+= [A^j, [F_{ij}, A^i]] + [F_{ij}, [A^i, A^j]] \\
+ \quad\Leftrightarrow\quad &
+[A^j, [A^i, F_{ij}]] = \frac 1 2 [F_{ij}, [A^i, A^j]]
+\end{split}
+\end{equation}
+The sum of the last two terms vanishes. \\\\
+On the boundary, on the contrary, the preservation of the constraint equation is not automatically guaranteed. As we can see,
+\begin{equation*}
+\begin{split}
+\frac{d}{dt}\nabla^{\bar A}_a \bar{E}^a = & 
+ c^{-1}\big(\partial_a F_{ja}+ [\bar{A}_a, F_{ja}]\big) n^j
+\end{split}
+\end{equation*}
+However, with the domain of the Hamiltonian of the dynamical system~\cref{ym-dyn} that we will write in the next subsection,~\cref{ym-const} can be preserved by choosing Cauchy data such that $A_t = \bar A$.
+%%%%%%%%%%
+\input{data/chap-ym/ym-subsect-eqlin}
+\input{data/chap-ym/ym-subsect-eqnonlin}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

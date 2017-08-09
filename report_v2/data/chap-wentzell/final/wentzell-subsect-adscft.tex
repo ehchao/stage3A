@@ -1,0 +1,37 @@
+Before showing the main results, 
+we give a brief description of the AdS/CFT correspondance by using the example of a massless scalar field from~\cite{Witten1998} and~\cite{Skenderis2002}. 
+%
+\paragraph{AdS/CFT correspondance in scalar field case}
+The metric of the $(d+1)$-AdS space-time can be identified as the open unit ball $B_{d+1}$ in a Euclidean space $\mathbb{R}^{d+1}$ with coordinates $y_0, \ldots, y_d$ such that $\sum_{i=0}^d y_i^2 <1$ with the metric
+\begin{equation*}
+ds^2 = \frac{4\sum_{i=0}^d dy_i^2}{(1 - |y|^2)^2}
+\end{equation*}
+We can include the infinity boundary by taking the closure of the unit ball $B_{d+1}$. 
+As one can notice, the singularity of the metric at infinity ($|y|^2 = 1$) can be resolved by studying the conformal transformation of the metric, 
+\ie by replacing $ds^2$ by $d\tilde{s}^2$ which is defined by
+\begin{equation*}
+d\tilde{s}^2 = (1 - |y|^2) ds^2
+\end{equation*}
+We consider a field theory with the action of a massless scalar field $\phi$
+\begin{equation}\label{wen-adscft1}
+\mathcal{S}[\phi] = \frac 1 2 \int_{B_{d+1}} \dd^{d+1} y \sqrt{g} |\dd \phi|^2
+\end{equation}
+where $g$ is the absolute value of the determinant of the metric tensor.
+By doing integration by part to~\cref{wen-adscft1}, we find
+\begin{equation*}
+\mathcal{S}[\phi] = -\int_{B_{d+1}} \sqrt{g} \phi D_i D^i \phi + 
+\lim_{\epsilon\rightarrow 0}\int_{T_\epsilon}  \sqrt{h} \phi (\vec{n}\cdot\vec{\nabla})\phi
+\end{equation*}
+where $T_\epsilon$ is a family of surfaces parametrized by $\epsilon$ and converges to the boundary of $B_{d+1}$ when $\epsilon\rightarrow 0$ and $h$ is the absolute value of the determinant of the induced metric on the boundary.
+The first term of the \rhs vanishes on-shell and the action can be written in terms of the boundary field $\phi_0$
+\begin{equation*}
+\mathcal{S}[\phi] \sim \int \dd \mathbf{x} \dd \mathbf{x}' 
+\frac{\phi_0(\mathbf{x})\phi_0(\mathbf{x}')}{|\mathbf{x} - \mathbf{x}'|^{2d}}
+\end{equation*}
+Consider a field $\mathcal{O}$ whose source is the boundary field $\phi$. 
+It is defined by~\cite{Gubser1998}
+\begin{equation*}
+\mathcal{S}[\phi] = \int \dd \mathbf{x} \phi_0(\mathbf{x})\mathcal{O}(\mathbf{x})
+\end{equation*}
+It could then be shown by the prescription of the section 2 of~\cite{Skenderis2002} that the two-point function of the operator $\mathcal{O}$ is a multiple of $|\mathbf{x} - \mathbf{x}'|^{-2d}$, which agrees with the two-point function of the $d$-dimensional conformal field theory~\cite{Qualls2015}. \\\\
+%

@@ -1,0 +1,159 @@
+\subsection{Linearized system}
+Let us begin by studying~\cref{ym-dyn} up to first order in $A$ and $\bar{A}$. 
+We define the operator $G_L$ with
+\begin{equation}
+G_L (A, E, \bar{A}, \bar{E}) = (E, -\dd^c \dd A, \bar{E}, -\dd^c \dd \bar{A} + c^{-1} dA_\bot)
+\end{equation}
+where $dA_\bot$ is the 1-form with components $(dA_\bot)_j = (dA)_{kj}n^k\vert_{\partial \Sigma}$ with $n$ unit vector normal to the boundary (inward directed). \\\\
+%
+%\color{red} Because of the complexity of YM, I decided to work on U(1) gauge rather than non-abelian cases for this report. The system is thus linearized \\\\
+%\color{black}
+%
+We denote for the Hilbert space\footnote{
+The space $\Omega^k_{p,q}(M)$ defined in~\cref{ym-pw} is a Banach space (see~\cite{Mazya2009} p. 200)
+}
+\begin{equation*}
+\mathcal{H} = \Omega^{1}_{2,2}(\Sigma)\times L^2(\Sigma) \times \Omega^{1}_{2,2}(\partial \Sigma) \times L^2(\Sigma) 
+\end{equation*}
+%Naturally, $\mathcal{H}$ is equipped 
+with the norm associated to the inner product
+\begin{equation}\label{ym-norm1}
+\begin{split}
+\| (A,E,\bar{A},\bar{E}) \|^2_{\mathcal{H}} = &
+\| A\|^2_{L^2(\Sigma)} + \|\dd A\|^2_{L^2(\Sigma)}  + \| E \|^2_{L^2(\Sigma)} \\ & +
+\| \bar{A}\|^2_{L^2(\partial \Sigma)} + \|\dd \bar{A}\|^2_{L^2(\partial \Sigma)}  + \| \bar{E} \|^2_{L^2(\partial \Sigma)}
+\end{split}
+\end{equation}
+where $\Sigma$ is an equal-time hypersurface of $M$. 
+%Meanwhile, for our convenience, another norm (associated to an inner product) will be given in the following. 
+\\\\
+%
+As we assume that the torsion of $M$ is reduced to $\{0\}$, we can apply the Hodge-Kodaira decomposition~\cref{ym-kodaira}, \ie for a 1-form $B$, we have (analogous for $\partial M$)
+\begin{equation*}
+B = B_c + B_d
+\quad\textrm{where}\quad
+B_d\in\im d
+\quad\textrm{and}\quad
+B_c\in\im d^c\oplus\big(L^2(M,\Lambda^k)\cap\ker(d d^c+d^c d)\big)
+\end{equation*}
+In particular, $d B_d = 0$. 
+We thus have 
+\begin{equation*}
+\begin{split}
+\langle (A_1,E_1,\bar{A}_1,\bar{E}_1), G_L(A_2,E_2,\bar{A}_2,\bar{E}_2) \rangle_{\mathcal{H}} = &
+\langle A_{1c}, E_{2c} \rangle_{L^2(\Sigma)} + \langle A_{1d}, E_{2d} \rangle_{L^2(\Sigma)} \\
+&+ \langle d A_{1c}, d E_{2c} \rangle_{L^2(\Sigma)}
++ \langle E_{1c}, -d^c d A_{2c}\rangle_{L^2(\Sigma)} 
+ + \textrm{boundary terms}
+\end{split}
+\end{equation*}
+$G_L$ does not seems to be symmetric in $\mathcal{H}$ with the corresponding inner product. 
+However, we can construct a suitable Hilbert space by imposing conditions on the regularity of forms. 
+The approach which is going to be introduced might seem very restrictive but can be easily adapted to the initial data.\\\\
+The main idea is to find a Hilbert space in which $\| \cdot \|_{L^2(\Sigma)}$ and $\| d \cdot \|_{L^2(\Sigma)}$ are equivalent. 
+By our assumption on the torsion and~\cref{ym-pw}, we know that
+\begin{equation*}
+\exists C' \quad
+\forall \theta \in \Omega^1_{2,2}(\Sigma) \quad
+\exists\xi\in\ker d\quad
+\| \theta - \xi \|_{L^2(\Sigma)}\leq C' \| d \theta \|_{L^2(\Sigma)}
+\end{equation*}
+Therefore, for a constant $C_1 > C'$, the open set $\big\{\theta\in\Omega^1_{2,2}(\Sigma) \enskip \big/\enskip \|\theta \|_{L^2(\Sigma)} < C_1\|d \theta \|_{L^2(\Sigma)} \big\} \neq \emptyset$.\footnote{ 
+It should be noted that $C_1 \geq C'$ is only a sufficient condition here. 
+The point here is that one should choose a constant $C_1$ such that we have a non-empty set for the wanted estimation.
+}
+On the other hand, since the exterior derivative $d$ is a continuous map, in any compact of $\Sigma$, there exists a constant $C_2 >0$, $\| d \theta \|_{L^2(\Sigma)} \leq C_2 \| \theta \|_{L^2(\Sigma)}$. 
+By these observations, we define 
+\begin{equation*}
+\begin{split}
+\mathcal{G} = \mathcal{H}_{C_1, C_2} \equiv\big\{ (A,E,\bar{A},\bar{E}) \in \mathcal{H} \enskip/\enskip &
+C_2 \|A\|_{L^2(\Sigma)} \leq \| d A \|_{L^2(\Sigma)} \leq C_1\| A\|_{L^2({\Sigma})} \\
+& C_2 \|\bar{A}\|_{L^2(\partial\Sigma)} \leq \| d \bar{A} \|_{L^2(\partial\Sigma)} \leq C_1\| \bar{A}\|_{L^2({\partial\Sigma})} \big\}
+\end{split}
+\end{equation*}
+$\mathcal{G}$ is a Hilbert space because it is a closed sub-space of $\mathcal{H}$. 
+With this definition, we can see that the norms $\|\cdot\|_{L^2(\Sigma)}$ and $\|d\cdot\|_{L^2(\Sigma)}$ are equivalent (analogous for the boundary norms).
+Hence, we will work on the Hilbert space $(\mathcal{G}, \langle\cdot , \cdot\rangle_{\mathcal{G}})$, where the norm associated to the inner product is
+\begin{equation*}
+\|(A,E,\bar{A},\bar{E})\|^2_{\mathcal{G}} = 
+\| dA\|^2_{L^2(\Sigma)} + \|E\|^2_{L^2(\Sigma)} +c\| dA\|^2_{L^2(\partial \Sigma)} + c\|E\|^2_{L^2(\partial \Sigma)}
+\end{equation*}
+Now, we define
+\begin{equation*}
+\dom G_L = \{ (A,E,\bar{A},\bar{E}) \in \mathcal{G} / A\in W^{2,2}(\Sigma) \enskip
+\bar{A}\in W^{2,2}(\partial \Sigma) \enskip
+E \in W^{1,2}(\Sigma) \enskip
+\bar{E} \in W^{1,2}(\partial \Sigma)
+E = \bar{E}\}
+\end{equation*}
+Let $(A,E,\bar{A},\bar{E}) \in \dom G_L$, we compute
+\begin{equation*}
+\begin{split}
+\langle (A_1,E_1,\bar{A}_1,\bar{E}_1), & G_L(A_2,E_2,\bar{A}_2,\bar{E}_2) \rangle_{\mathcal{G}} \\ =& 
+\langle d A_{1c}, d E_{2c} \rangle_{L^2(\Sigma)} + \langle E_{1c}, -d^c dA_{2c}\rangle_{L^2(\Sigma)} \\
+& + c \langle d\bar{A}_{1c}, d\bar{E}_{2c}\rangle_{L^2(\partial \Sigma)} 
++ c \langle \bar{E}_{1c}, -d^c d \bar{A}_{2c} + c^{-1}d A_{2,\bot} \rangle_{L^2(\partial \Sigma)} \\
+%
+= & \langle d^cdA_{1c}, E_{2c} \rangle_{L^2( \Sigma)} - \langle d E_{1c}, dA_{2c} \rangle_{L^2(\Sigma)}
++c \langle d^cd\bar{A}_{1c}, \bar{E}_{2c} \rangle_{L^2(\partial \Sigma)} - c \langle d \bar{E}_{1c}, d\bar{A}_{2c} \rangle_{L^2(\partial\Sigma)} \\
+& -\langle (dA_{1c})_\bot , E_{2c} \rangle_{L^2(\partial \Sigma)} 
+-\langle (dA_{2c})_\bot , {E}_{1c} \rangle_{L^2(\partial \Sigma)} 
++\langle (dA_{2c})_\bot , \bar{E}_{1c} \rangle_{L^2(\partial \Sigma)}  \\
+%
+\underset{\dom G_L}{=} &
+\langle d^cdA_{1c}, E_{2c} \rangle_{L^2( \Sigma)} - \langle d E_{1c}, dA_{2c} \rangle_{L^2(\Sigma)}
++c \langle d^cd \bar{A}_{1c}, \bar{E}_{2c} \rangle_{L^2(\partial \Sigma)} - c \langle d \bar{E}_{1c}, d\bar{A}_{2c} \rangle_{L^2(\partial\Sigma)} \\
+& -\langle (dA_{1c})_\bot , E_{2c} \rangle_{L^2(\partial \Sigma)} \\
+%
+= &
+-\langle G_L(A_1,E_1,\bar{A}_1,\bar{E}_1), (A_2,E_2,\bar{A}_2,\bar{E}_2) \rangle_{\mathcal{G}} 
++ \langle (dA_{1c})_\bot , \bar{E}_{2c}-E_{2c} \rangle_{L^2(\partial \Sigma)} 
+\end{split}
+\end{equation*}
+%
+\color{red}
+Claim: 
+\begin{equation*}
+L^2(\partial \Sigma) \in \im\Big(
+n^j\big(d \cdot \big)_j\big\vert_{L^2(M)} \Big)
+\end{equation*}
+\begin{proof}
+Idea ($\mathbb{R}^d$ case) : 
+Let $f\in L^2(\partial \Sigma)$. 
+Find $A \in L^(\Sigma)$ such that 
+\begin{equation*}
+f_a + \partial_a A_\bot\vert_{\partial \Sigma} = \partial_\bot A_j\vert_{\partial \Sigma}
+\end{equation*}
+One possible choice is 
+\begin{equation*}
+A_a = 0 \quad,\quad
+A_\bot = i e^{i\Pi_b\int_0^{x_b} f_a} e^{-(x^{d})^{2}}
+\end{equation*}
+How to generalize to arbitrary manifolds under our assumptions?
+\end{proof}
+\color{black}
+%
+As a result, $G_L$ is skew-adjoint with the given domain.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
