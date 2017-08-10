@@ -82,29 +82,8 @@ By expanding
 -\frac{1}{\big(\theta - \frac \pi 2\big)} = 
 C\Big( \big(\frac n 2 + \frac 1 4 \big)\pi - \theta \Big) +  \frac{1}{3}\big(\theta - \frac{\pi}{2}\big) + \mathcal{O}\Big(\big(\theta - \frac \pi 2 \big)^2\Big)
 \end{equation}
-The following lemma will be useful
-\begin{lemma}\label{wen-mode1dlem}
-Let $a$ be a function of $x$ and $b \in\mathbb{R}$.
-Suppose that $a $ satisfies
-\begin{equation*}
--\frac 1 x = a + bx + \mathcal{O}(x^2)
-\end{equation*}
-Then, the following holds
-\begin{equation*}
-x = -\frac 1 a + \mathcal{O}(x^3)
-\end{equation*}
-\end{lemma}
-\begin{proof}
-Since $a = \mathcal{O}(\frac 1 x) $, 
-\begin{equation*}
-\begin{split}
--x =  \frac{1}{a + bx + \mathcal{O}(x^2)} 
-= \frac 1 a \big(1 + \frac b a x + \mathcal{O}(x^2)\big) 
-=  \frac 1 a +  \mathcal{O}(x^3)
-\end{split}
-\end{equation*}
-\end{proof}
-Therefore, by~\cref{wen-mode1dlem},~\cref{wen-modetheta2} reads
+Therefore,
+the asymptotic behavior of $\theta-\frac \pi 2$ when $n\rightarrow + \infty$ is given by
 \begin{equation*}
 \begin{split}
 \theta - \frac{\pi}{ 2} = &  -\frac{2}{\pi C n}\Big( 1 + \mathcal{O}\big( \frac{ 1}{ n}\big) \Big)
@@ -114,91 +93,6 @@ Hence, when $n\rightarrow +\infty$,
 \begin{equation*}
 k_n = \frac 1 L \Big( \big( \frac n 2 - \frac 1 4 \big)\pi + \frac{2}{\pi C n}+ \mathcal{O}\big(\frac{1}{n^2}\big) \Big)
 \end{equation*}
-Two more lemmas will be needed for our calculation of vacuum polarization.
-\begin{lemma}
-Let $b\in\mathbb{R}$
-\begin{equation*}
-\sum_{n=1}^{+\infty} e^{i(n - \frac 1 2+\frac b n)z} = \frac i z  + \mathcal{O}(z^{\frac 1 2})
-\end{equation*}
-when $z\rightarrow 0 $. 
-The terms in $\mathcal{O}(z^{\frac 1 2})$ contains terms involving $z^k \ln z$ for $k\geq 1$.
-\end{lemma}
-\begin{proof}
-\begin{equation*}
-\begin{split}
-\sum_{n=1}^{+\infty} e^{i(n - \frac 1 2 +\frac b n)z} = & 
-\sum_{n=1}^{+\infty} \sum_{k=0}^{+\infty} e^{i(n - \frac 1 2)z} \frac{1}{k!}\big(\frac{ib}{n}z\big)^k \\
-%
-= & \sum_n e^{i(n-\frac 1 2 )z} + \sum_n \frac{ibz}{n}e^{i(n-\frac 1 2 )z} + \sum_{n=1}^{+\infty} \sum_{k=2}^{+\infty} e^{i(n-\frac 1 2)z} \frac{1}{k!}\big(\frac{ib}{n}z\big)^k  \\
-%
-= & \sum_n e^{i(n-\frac 1 2)z} + \sum_n \frac{ibz}{n}e^{i(n-\frac 1 2)z} - 
-\bigg(\sum_{n=1}^{+\infty} \sum_{k=0}^{+\infty} 
-e^{i(n-\frac 1 2)z} \frac{1}{n^2(k+2)!}\big(\frac{ib}{n}z\big)^k 
-\bigg)b^2z^2
-\end{split}
-\end{equation*}
-The last term of the last line is uniformly convergent.
-We conclude the proof with the known asymptotic expressions
-\begin{equation}\label{wen-lem1n}
-\begin{split}
-& \sum_{n=1}^{+\infty}e^{i(n - \frac 1 2 )z} = 
-\frac i z  + \mathcal{O}(z) \\
-%
-& \sum_{n=1}^{+\infty}\frac 1 n e^{i(n-\frac 1 2)z} =
-\frac{i\pi}{2} - \ln z + \mathcal{O}(z^\frac{1}{2})
-\end{split}
-\end{equation}
-\end{proof}
-%
-\begin{lemma}\label{wen-lemmacvu}
-Let $(a_n)$ be a sequence such that $a_n = \frac{S}{n^2}+\mathcal{O}\big(\frac{1}{n^2})$ when $n\rightarrow+\infty$ and $b\in\mathbb{R}$. Then
-\begin{enumerate}[font=\normalfont]
-\item 
-$
-\lim_{z\rightarrow 0}\sum_{n=1}^{+\infty} e^{i(n-\frac 1 2+\frac{b}{n}+a_n)z } - e^{i(n-\frac 1 2+\frac{b}{n})z }=0
-$
-%converges uniformly.
-\item 
-$
-\lim_{z\rightarrow 0}\sum_{n=1}^{+\infty}n\big( e^{i(n-\frac 1 2+\frac{b}{n}+a_n)z } - e^{i(n-\frac 1 2+\frac{b}{n})z }\big)=0
-$
-\end{enumerate}
-\end{lemma}
-\begin{proof}
-\begin{enumerate}
-\item Since $a_n =  \mathcal{O}\big(\frac{1}{n^2}\big)$, 
-there exists $ K > 0$ such that $ \exists N \in\mathbb{N}, \forall n\geq N, \| a_n\| \leq \frac{K}{n^2}$ \\\\
-Let $m,l\in\mathbb{N}$ such that $l > m \geq N$
-\begin{equation*}
-\begin{split}
-\sum_{n=m}^{l}  | e^{i(n - \frac 1 2+\frac{b}{n}+a_n)z } - e^{i(n-\frac 1 2+\frac{b}{n})z } | = & 
-\sum_{n=m}^{l} | e^{ia_n z} - 1 | \\
-%
-\leq & \sum_{n=m}^{l}\sum_{k=1}^{+\infty}\frac{1}{k!}| a_n z |^k \\
-%
-\leq & \sum_{n=m}^l \sum_{k=1}^{+\infty}\frac{1}{k!n^2}(Kz)^k
-\end{split}
-\end{equation*}
-Since the last line is a uniformly convergent series for $z \in \mathbb{R}$, it could be made small by taking $m$ and $l$ big enough.
-Hence, the series that we are dealing with converges uniformly.
-We can invert the summation and the limit and we obtain the result.
-%
-\item We compute
-\begin{equation*}
-\begin{split}
-\sum_{n=1}^{+\infty} n\big(e^{i(n-\frac 1 2 + \frac b n + a_n)z} - e^{i(n-\frac 1 2 + \frac b n)z}\big) = &
-\sum_{n=1}^{+\infty} i n a_n e^{i(n-\frac 1 2 + \frac b n)z}z + \sum_{n=1}^{+\infty}\sum_{k=1}^{+\infty}\frac{(ia_nz)^{k+1}}{(k+1)!}e^{i(n-\frac 1 2 + \frac b n)z}
-\end{split}
-\end{equation*}
-The last term converges uniformly and equals to 0 when we take the $z\rightarrow 0$ limit.
-The first term equals to
-\begin{equation*}
-i\Big(\sum_{n=1}^{+\infty} \frac{S}{n}e^{i(n-\frac 1 2 +\frac b n)z}z 
-+ \sum_{n=1}^{+\infty}n\big(a_n - \frac{ S}{ n^2}\big) e^{i(n-\frac 1 2 +\frac b n)}z \Big)
-\end{equation*}
-The second term of the above expression converges uniformly and we can prove that the first term equals to 0 at the $z\rightarrow 0$ limit by using~\cref{wen-lem1n}.
-\end{enumerate}
-\end{proof}
 Now, let us compute the vacuum two-point function, given by~\cref{vacuum-hadamardstate}.
 We can show that we still have a Hadamard state if we put the bulk field properly normalized in the total Hilbert space $\mathcal{H}$ in the expression of the two-point function.\\\\
 %
@@ -332,7 +226,7 @@ We compute
 +\mathcal{O}\big((t-i\varepsilon)^{\frac{1}{2}}\big)
 \end{split}
 \end{equation*}
-With a similar calculation as in~\cref{wen-lemmacvu}, both infinite sums appearing in the last two lines converge uniformly.
+Both infinite sums appearing in the last two lines converge uniformly.
 The singular terms of the stress-energy tensor are cancelled out as expected and the renormalized stress-energy tensor components are
 \begin{equation*}
 T_{00} = T_{11}= - 2 \sum_{n \geq 1} \Big( |f_n|^2 k_n - 

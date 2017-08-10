@@ -1,11 +1,12 @@
 \section{Well-posedness of the problem}\label{wen-sect-saw}
 \subsection{Self-adjointness $\Delta$}
 We are going to use tools of functional analysis to prove that the Cauchy problem is well-posed for certain types of initial data.
-We define the Hilbert space $\mathcal{H} = L^{2}(M,E)\oplus L^{2}(\partial M, \mathcal{P}_+ E)$,
-\footnote{
+We define the Hilbert space 
+\begin{equation*}
+\mathcal{H} = L^{2}(M,E)\oplus L^{2}(\partial M, \mathcal{P}_+ E)
+\end{equation*}
 One should note the projection which is taken here on the boundary bundle.
 This is used to ensure that we have a Hilbert space for the following computations.
-}
 ,where $M$ is an equal-time hypersurface of $\mathcal{M}$ and $\partial M = M\cap \partial \mathcal{M}$,
 with inner product
 \begin{equation}\label{wen-innerpdt}
@@ -47,122 +48,35 @@ Then, for any $ \Psi = (\psi, \psi_|)\in\dom(\Delta)$
 & + (\phi^\dagger\vert_{\partial M} - \phi_|^\dagger)\mathcal{P}_+ \gamma^0 \psi\vert_{\partial M}
 \end{split}
 \end{equation}
-In the above calculation, we have implicitly assumed that $(\phi, \phi_|)\in W^{1,2}\times W^{1,2}(\partial M)$.
+In the above calculation, we have implicitly assumed that $(\phi, \phi_|)\in W^{1,2}(M)\times W^{1,2}(\partial M)$.
 $\Delta$ is symmetric because~\cref{wentzell-proof-sa} equals $\langle \Delta\Phi, \Psi\rangle_\mathcal{H}$ if $\Phi$ is furthermore an element in $\dom(\Delta)$.
 In particular, the last line of~\cref{wentzell-proof-sa} can be rearranged as $\langle\Omega,\Phi\rangle_\mathcal{H}$ for some $\Omega\in\mathcal{H}$ if and only if the last term of~\cref{wentzell-proof-sa} disappears, \ie
 $\mathcal{P}_+\phi\vert_{\partial M} - \phi_| = 0$.
 Hence, the domain of $\Delta^*$ is contained in the domain of $\Delta$, which implies the self-adjointness of $\Delta$.\\\\
-%The second term of the last line vanishes if and only if $\mathcal{P}_+\phi \vert_{\partial M} - \phi_|= 0$, which shows the self-adjointness of $\Delta$. \\\\
-%If for all $k\in\mathbb{N}$, the inital data $\Phi_0\in\dom(\Delta^k)$, the Cauchy problem has a unique solution $\Phi(t) = \Phi_0 e^{-i\Delta t}$.
 By the self-adjointness of $\Delta$, it follows that 
 \begin{proposition}\label{wen-propwellposedness}
 The Cauchy problem~\cref{wen-maineq} with initial data $\Phi_0\in\dom(\Delta)$ has a unique solution $\Phi(t) = e^{-i\Delta t}\Phi_0 $
 \end{proposition}
-Let us determine $\dom (\Delta^k)$ now. 
-To start, for $k =2$,
-\begin{equation}\label{wen-deltak}
-\begin{split}
-\Delta^2 \Phi & =  
-\begin{pmatrix} i \gamma^0 \gamma^j \partial_j & 0 \\
-- c^{-1} \gamma^0 \mathcal{P}_- \cdot \vert_{\partial M} & i \gamma^0 \gamma^a \partial_a \end{pmatrix}
-\begin{pmatrix}   i \gamma^0 \gamma^j \partial_j \phi \\
-- c^{-1} \gamma^0 \mathcal{P}_- \phi\vert_{\partial M} + i \gamma^0 \gamma^a \partial_a  \phi_| \end{pmatrix} \\
-&= 
-\begin{pmatrix} (i\gamma^0\gamma^j\partial_j)^2 \phi \\
--c^{-1}\gamma^0\mathcal{P}_- \big( (i\gamma^0\gamma^j\partial_j \phi)\vert_{\partial M}\big)
--c^{-1}i \gamma^0\gamma^a\partial_a \mathcal{P}_+ \gamma^0 \mathcal{P}_-(\phi\vert_{\partial M})
-+ (i\gamma^0\gamma^a\partial_a)^2\phi_| \end{pmatrix}
-\\
-\end{split}
-\end{equation}
-One finds that for $\Phi \in \dom(\Delta)$, $\Delta \Phi \in \dom \Delta$ if and only if
-\begin{equation*}
-\begin{split}
-&\mathcal{P}_+\Big( ( i\gamma^0\gamma^j \partial_j \phi ) \vert_{\partial M} +
- c^{-1}\gamma^0 \mathcal{P}_- ( \phi \vert_{\partial M})
-- i \gamma^0 \gamma^a \partial_a \mathcal{P}_+\phi _| \Big) \\
-\underset{\Phi\in \dom(\Delta)}{ = }& 
-\mathcal{P}_+\Big( (i\gamma^0\gamma^\bot \partial_\bot\phi)\vert_{\partial M} +
-c^{-1}\gamma^0 \mathcal{P}_- ( \phi \vert_{\partial M}) \Big) \\ 
-= & 
-\gamma^0\mathcal{P}_-\big(- \partial_\bot \phi \vert_{\partial M} + c^{-1} \phi\vert_{\partial M}\big)
-\\ = & 0
-\end{split}
-\end{equation*}
-The fact that $\partial M = \{x^\bot = 0\}$ is used to coincide the tangential derivatives evaluated on the static boundary.
-Continuing the calculation of \cref{wen-deltak}, we get
-\begin{equation}\label{wen-delta2}
-\Delta^2 \Phi = \begin{pmatrix} (i \gamma^0 \gamma^j\partial_j)^2 & 0 \\ 
-- c^{-1}\mathcal{P}_+( \partial_\bot \cdot\vert_{\partial M} ) & 
-(i \gamma^0 \gamma^a \partial_a)^2 \end{pmatrix}
-\begin{pmatrix} \phi \\ \phi_| \end{pmatrix}
-\end{equation}
-with domain 
-\begin{equation*}
-\dom(\Delta^2) = \Big\{ (\phi, \phi_|) \in W^{2,2}(M)\times W^{2,2}(\partial M) \big\vert\enskip \mathcal{P}_- \Big(\partial_\bot\phi\vert_{\partial M} - c^{-1} (\phi\vert_{\partial M}) \Big) = 0 \Big\} \cap \dom(\Delta)
-\end{equation*} 
-%For $k = 3$, 
-%we check the domain
-%\begin{equation*}
-%\dom(\Delta^3) = \big\{ (\phi, \phi_|)\in W^{3,2}(M)\times W^{3,2}(\partial M) \big\vert \enskip \mathcal{P}_+(\partial_\bot^2 \phi\vert_{\partial M} - c^{-1}\partial_\bot \phi\vert_{\partial M} ) = 0 \big\} 
-%\cap \dom(\Delta^2)
-%\end{equation*}
-%Let us prove the following proposition for the domain of $\Delta^k$.
-%\begin{proposition}
-%Let $k \in \mathbb{N}^*$. Then
-%\begin{equation*}
-%\begin{split}
-%& \dom (\Delta^{2k} )  =
-%\big\{ (\phi, \phi_|)\in W^{2k,2}(M)\times W^{2k,2}(\partial M) \big\vert \enskip \mathcal{P}_-\big( \partial_\bot^{2k-1}\phi\vert_{\partial M} - c^{-1}\partial_\bot^{2k-2}\phi\vert_{\partial M}\big) \big\} 
-%\cap \dom(\Delta^{2k - 1})  \\
-%& \dom (\Delta^{2k+1} )  =
-%\big\{ (\phi, \phi_|)\in W^{2k+1,2}(M)\times W^{2k+1,2}(\partial M) \big\vert \enskip \mathcal{P}_+\big( \partial_\bot^{2k}\phi\vert_{\partial M} - c^{-1}\partial_\bot^{2k-1}\phi\vert_{\partial M}\big) \big\}  \cap \dom(\Delta^{2k })
-%\end{split}
-%\end{equation*}
-%\end{proposition}
-%\begin{proof}
-%We prove the proposition by induction.
-%The claim holds for $k =1$ as we have already shown. 
-%Let $k \in \mathbb{N}$ and suppose that the claim holds for $\forall n \in \llbracket 1, k-1 \rrbracket $. 
-%It is easy to show that $\Delta^{2m}$ takes the form
-%\begin{equation*}
-% \Delta^{2m}  = 
-%\begin{pmatrix} (\partial^j\partial_j)^m & 0 \\
-%\star & (\partial^a \partial_a)^m\end{pmatrix}
-%\end{equation*}
-%For $\Phi = (\phi, \phi_|)$
-%\begin{equation*}
-%\begin{split}
-%\Phi \in \dom(\Delta^{2k}) \quad &\Leftrightarrow \quad
-%\Phi \in W^{2k,2}(M)\times W^{2k,2}(\partial M) \enskip \mathrm{and}\enskip \Delta^{2k-2}\Phi \in \dom(\Delta^{2}) \\
-%&\Leftrightarrow \quad 
-%\mathcal{P}_{-}\big(\partial_\bot(\partial_j\partial^j)^{k-1}\phi\vert_{\partial M} - c^{-1}(\partial_j\partial^j)^{k-1}\phi\vert_{\partial M} \big) = 0
-%\end{split}
-%\end{equation*}
-%and
-%\begin{equation*}
-%\begin{split}
-%\Phi \in \dom(\Delta^{2k+1}) \quad &\Leftrightarrow \quad
-%\Phi \in W^{2k+1,2}(M)\times W^{2k+1,2}(\partial M) \enskip \mathrm{and}\enskip \Delta^{2k-2}\Phi \in \dom(\Delta^{3}) \\
-%&\Leftrightarrow \quad 
-%\mathcal{P}_{+}\big(\partial_\bot^2(\partial_j\partial^j)^{k-1}\phi\vert_{\partial M} - c^{-1}\partial^\bot(\partial_j\partial^j)^{k-1}\phi\vert_{\partial M} \big) = 0
-%\end{split}
-%\end{equation*}
-%By the hypothesis of induction, 
-%the claim still holds for $k$.
-%\end{proof}
 %-----------------
-%By denoting
-%\begin{equation*}
-%\mathcal{K} = \cap_{k\in \mathbb{N}^*} \dom(\Delta^k)
-%\end{equation*}
-%we give the following proposition
-%%%%%%%%
+\subsection{Examples}
 %%%%%%%%
 \subsection{Causal propagation}\label{wen-subsect-causal}
 As a complement for~\cref{wen-propwellposedness},
 we would like to show that on certain manifolds $\mathcal{M}$, 
 the solution of~\cref{wen-maineq} propagates causally, \ie depending smoothly and causally on the initial data.
+More explicitly, 
+we would like to prove the following proposition.
+\begin{proposition}
+Let $k \in \mathbb{N}^*$.
+Suppose that the initial data $\Phi_0 = (\phi, \phi_|)$ satisfies~\cref{wen-hilbertnorm}.
+With the same notations and the same conditions as in \cref{wen-propcau}, 
+the smooth solution $\Phi$ depends continuously on the initial data $(\phi, \phi_|)$ in the sense that
+\begin{equation*}
+\big\| \frac{\partial^k}{\partial t^k} \Phi\big\|_{\mathcal{H}(\mathcal{S}_1)}
+\leq
+\big\| \Phi\big\|_{\mathcal{H}^{k}(\mathcal{S}_0)}
+\end{equation*}
+\end{proposition}
 Consider an element $\Phi \in \mathcal{K}$.
 As the time evolution of the system is given by
 \begin{equation*}
@@ -288,7 +202,7 @@ $n^\mu T_{\mu 0 }\geq 0$ and $s^\alpha T_{\alpha 0 }\geq 0$.
 We obtain \cref{wen-causal} by replacing $T_{00}$ and $T_{| 00}$ by their expression in terms of $\phi$
 \end{proof}
 %
-The last step of proving of causal propagation consists in constructing suitable Hilbert spaces such that we can make sense of "smooth dependence". 
+The last step of proving causal propagation consists in constructing suitable Hilbert spaces such that we can make sense of "smooth dependence". 
 We denote 
 \begin{equation*}
 \mathcal{H}^k(M) = \cap_{s=1}^{k} \dom(\Delta^s)
@@ -299,13 +213,13 @@ We note that, by the unitary time evolution,
 \big\|\Delta^m\Phi(t) \big\| =
 \big\|\Delta^m \Phi(0) \big\|
 \end{equation*} 
-we have
-\begin{equation*}
- \Big\|\frac{\partial^{m}}{\partial t^{m}} \Phi \Big\|^2 = 
- \langle \Delta^{m-1}\Phi(0), \Delta^{2}(\Delta^{m-1} \Phi(0))\rangle_{\mathcal{H}(M)} 
-\end{equation*}
-If we can bound~\cref{wen-tobebounded} at instant $t$ by the Cauchy data at instant $0$, 
-the higher time-derivatives of $\Phi$ can also be bounded by the Cauchy data at instant $0$.\\\\
+%we have
+%\begin{equation*}
+% \Big\|\frac{\partial^{m}}{\partial t^{m}} \Phi \Big\|^2 %= 
+% \langle \Delta^{m-1}\Phi(0), \Delta^{2}(\Delta^{m-1} \Phi(0))\rangle_{\mathcal{H}(M)} 
+%\end{equation*}
+%If we can bound~\cref{wen-tobebounded} at instant $t$ by the Cauchy data at instant $0$, 
+%the higher time-derivatives of $\Phi$ can also be bounded by the Cauchy data at instant $0$.\\\\
 We consider the following map from $\mathcal{H}^k(M)$ to $\mathbb{R}_+$
 \begin{equation}\label{wen-hilbertnorm}
 \| \cdot \|_{\mathcal{H}^k(M)} = \| \Delta^k \cdot \|_{\mathcal{H}(M)}
@@ -313,18 +227,9 @@ We consider the following map from $\mathcal{H}^k(M)$ to $\mathbb{R}_+$
 This map does not define a norm on $\mathcal{H}^k(M)$ because of the 0-modes of $\dom(\Delta)$ ($\ker \Delta \neq \{0\}$).
 However, 
 if 0 is an isolated point of the spectrum of $\Delta$, $\Delta^k \Phi$ does not vanish for all $k\in\mathbb{N}$.
-We summarize this discussion on causal propagation by the following proposition.
-\begin{proposition}
-Let $k \in \mathbb{N}^*$.
-Suppose that the initial data $\Phi_0 = (\phi, \phi_|)$ satisfies~\cref{wen-hilbertnorm}.
-With the same notations and the same conditions as in \cref{wen-propcau}, 
-the smooth solution $\Phi$ depends continuously on the initial data $(\phi, \phi_|)$ in the sense that
-\begin{equation*}
-\big\| \frac{\partial^k}{\partial t^k} \Phi\big\|_{\mathcal{H}(\mathcal{S}_1)}
-\leq
-\big\| \Phi\big\|_{\mathcal{H}^{k}(\mathcal{S}_0)}
-\end{equation*}
-\end{proposition}
+In effect, 
+if $\Delta^k \Phi = 0$ for a certain $k>0$,
+then $\Delta^{k-1}\Phi\in\ker\Delta$, which is forbidden because $0$ is not in the spectrum of $\Delta$.
 %
 \begin{remark}
 As we will see, $M = \mathbb{R}^{d-1}\times[-L,L]$ is an example where 0 is an isolated point of the sepctrum of $\Delta$. 
@@ -332,11 +237,11 @@ The problem has solutions which propagates causally in this case.
 \end{remark}
 %%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%
-\section{Plane wave solutions in two simple cases}
-We will discuss two simple cases, $M = \mathbb{R}^{d-1} \times \mathbb{R}_+$ at first and $M = \mathbb{R}^{d-1} \times [-L, L]$ later in this section. 
+%\section{Plane wave solutions in two simple cases}
+%We will discuss two simple cases, $M = \mathbb{R}^{d-1} \times \mathbb{R}_+$ at first and $M = \mathbb{R}^{d-1} \times [-L, L]$ later in this section. 
 %%%%%%%
-\input{data/chap-wentzell/final/wentzell-subsect-sa1}
-\input{data/chap-wentzell/final/wentzell-subsect-sa2}
+%\input{data/chap-wentzell/final/wentzell-subsect-sa1}
+%\input{data/chap-wentzell/final/wentzell-subsect-sa2}
 
 
 

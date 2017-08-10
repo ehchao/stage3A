@@ -31,35 +31,58 @@ T_{00}(x,y) =
 & \frac{i}{2}\Big(\nabla_{x^1} \big( \omega(\phi^B(x) \phi^\dagger_A(y))\zeta^A_C - H^+(x,y) \big)
 - \nabla_{y^1} \big( \omega( \phi^B(x) \phi^\dagger_A(y))\zeta^A_C - H^+(x,y) \big)
 \Big)\delta_B^C  \\
-= & \frac{i}{2} \big( (-\xi'(z) - \xi'(w)) - \xi'(z) - \xi'(w) + \frac{i}{\pi z^2} + \frac{i}{\pi w^2} \big)   \\
+= & \frac{i}{2} \big( (-\xi_E'(z) - \xi_E'(w)) - \xi_E'(z) - \xi_E'(w) + \frac{i}{\pi z^2} + \frac{i}{\pi w^2} \big)   \\
 T_{11}(x,y) =
 & \frac{i}{2}\Big(\nabla_{x^0} \big( \omega(\phi^B(x) \phi^\dagger_A(y))\delta^A_C - H^+(x,y) \big)
 - \nabla_{y^0} \big( \omega( \phi^B(x) \phi^\dagger_A(y))\delta^A_C - H^+(x,y) \big)
 \Big)\delta_B^C  \\
-= & - \frac{i}{2}\big( \xi'(z) + \xi'(w) + \xi'(z) + \xi'(w) - \frac{i}{\pi z^2} - \frac{i}{\pi w^2}\big) \\
+= & - \frac{i}{2}\big( \xi_E'(z) + \xi_E'(w) + \xi_E'(z) + \xi_E'(w) - \frac{i}{\pi z^2} - \frac{i}{\pi w^2}\big) \\
 T_{01}(x,y) = 
 & \frac{i}{4}\Big(\nabla_{x^0} \big( \omega(\phi^B(x) \phi^\dagger_A(y))(\zeta_1)^A_C - H^+(x,y) \big) + \nabla_{x^1} \big( \omega(\phi^B(x) \phi^\dagger_A(y))\delta^A_C - H^+(x,y) \big)  \\
 & - \nabla_{y^0} \big( \omega( \phi^B(x) \phi^\dagger_A(y))\zeta^A_C - H^+(x,y) \big)
 - \nabla_{y^1} \big( \omega( \phi^B(x) \phi^\dagger_A(y))\delta^A_C - H^+(x,y) \big)
 \Big)\delta_B^C \\
-= & \frac{i}{4}\Big( \big( \xi'(z) - \xi'(w) \big) + \big(- \xi'(z) + \xi'(w) \big) - \big( - \xi'(z) + \xi'(w) \big) - \big( \xi'(z) - \xi'(w) \big) \Big) \\
+= & \frac{i}{4}\Big( \big( \xi_E'(z) - \xi_E'(w) \big) + \big(- \xi_E'(z) + \xi_E'(w) \big) - \big( - \xi_E'(z) + \xi_E'(w) \big) - \big( \xi_E'(z) - \xi_E'(w) \big) \Big) \\
 = & 0
 \end{split}
 \end{equation}
 where $z = x^0 - y^0 - x^1 + y^1$ and $w = x^0 - y^0 + x^1 - y^1$ \\
 Taking the coinciding point limit, we find
-\begin{equation*}
-T_{\mu\nu} = \frac{ \pi}{2 L^2} \big( -\frac{1}{3} + \frac{(\theta - \pi)^2}{\pi^2}\big)\begin{pmatrix}
-1  & 0 \\ 0  &  1
+\begin{equation}\label{vacuum-T-with-field}
+T_{\mu\nu}(x) = 
+\bigg( \frac{\pi}{2L^2}\big( -\frac{1}{3} + \frac{(\theta - \pi)^2}{\pi^2}\big) + \frac{e^2E^2(x^1)^2}{2 \pi} \bigg)
+\begin{pmatrix}
+1 & 0 \\ 0 & 1
 \end{pmatrix}
-\end{equation*}
-This expression is valid for $x\in[-\frac L 2 , \frac L 2] - \{0\}$.\\\\
-%
-We can verify that when the potential is turned off, \ie $v_3, v_+, v_- \rightarrow 0$, $\theta \rightarrow \frac 1 2 \pi$.
+\end{equation}
+in the region $[-\frac L 2, 0)$.
+In $(0, \frac L 2 ]$, 
+it suffices to replace $\xi_E$ by $\xi_E$ introduced in the last section.
+It is straightforward to verify that we have exactly the same expression for the stress-energy tensor in both region.
+\\\\
+When the Kondo-type potential is turned off, \ie $v_3, v_+, v_- \rightarrow 0$, $\theta \rightarrow \frac 1 2 \pi$.
 We obtain the same Casimir energy as calculated in~\cite{Sundberg2003}, \ie
 \begin{equation*}
 T_{\mu\nu} = -\frac{\pi}{24L^2}\begin{pmatrix} 1 & 0 \\ 0 & 1\end{pmatrix}
 \end{equation*}
+We observe that the presence of a Kondo potential in a confined space creates opposite vacuum charges in $[-\frac L 2, 0)$ and $(0, \frac L 2]$.
+According to~\cref{vacuum-density_without_field}, 
+this background polarization vanishes if and only if the parameter $C = 0$. 
+In terms of coefficients of the Kondo potential in~\cref{nef-Dirac},
+this corresponds to $v_+ = v_- = 0$.
+In this case, the Kondo potential is not only Hermitian but diagonal in our system of coordinate. \\\\
+%
+We cite here the charge density and the stress-energy tensor obtained in~\cite{Zahn2015} for the same configuration as the ours except that there is no Kondo-type potential
+\begin{equation*}
+\begin{split}
+& \rho = \frac 1 \pi e^2 Ex^1 \\
+& T_{\mu\nu} = - \big( \frac{\pi}{24L^2} - \frac{e^2 E^2 (x^1)^2}{2\pi}\big) \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}
+\end{split}
+\end{equation*}
+Compared to these results,
+there are only constant shifts in both charge density and stress-energy tensor in presence of the Kondo-type potential.
+One can notice that the condition $C = 0$ ($\theta = \frac \pi 2$ not only leads to a vanishing vacuum charge density but also allows to obtain the same stress-energy tensor as in~\cite{Zahn2015}.
+
 
 
 

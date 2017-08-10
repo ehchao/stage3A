@@ -1,0 +1,93 @@
+Let us determine $\dom (\Delta^k)$ now. 
+To start, for $k =2$,
+\begin{equation}\label{wen-deltak}
+\begin{split}
+\Delta^2 \Phi & =  
+\begin{pmatrix} i \gamma^0 \gamma^j \partial_j & 0 \\
+- c^{-1} \gamma^0 \mathcal{P}_- \cdot \vert_{\partial M} & i \gamma^0 \gamma^a \partial_a \end{pmatrix}
+\begin{pmatrix}   i \gamma^0 \gamma^j \partial_j \phi \\
+- c^{-1} \gamma^0 \mathcal{P}_- \phi\vert_{\partial M} + i \gamma^0 \gamma^a \partial_a  \phi_| \end{pmatrix} \\
+&= 
+\begin{pmatrix} (i\gamma^0\gamma^j\partial_j)^2 \phi \\
+-c^{-1}\gamma^0\mathcal{P}_- \big( (i\gamma^0\gamma^j\partial_j \phi)\vert_{\partial M}\big)
+-c^{-1}i \gamma^0\gamma^a\partial_a \mathcal{P}_+ \gamma^0 \mathcal{P}_-(\phi\vert_{\partial M})
++ (i\gamma^0\gamma^a\partial_a)^2\phi_| \end{pmatrix}
+\\
+\end{split}
+\end{equation}
+One finds that for $\Phi \in \dom(\Delta)$, $\Delta \Phi \in \dom \Delta$ if and only if
+\begin{equation*}
+\begin{split}
+&\mathcal{P}_+\Big( ( i\gamma^0\gamma^j \partial_j \phi ) \vert_{\partial M} +
+ c^{-1}\gamma^0 \mathcal{P}_- ( \phi \vert_{\partial M})
+- i \gamma^0 \gamma^a \partial_a \mathcal{P}_+\phi _| \Big) \\
+\underset{\Phi\in \dom(\Delta)}{ = }& 
+\mathcal{P}_+\Big( (i\gamma^0\gamma^\bot \partial_\bot\phi)\vert_{\partial M} +
+c^{-1}\gamma^0 \mathcal{P}_- ( \phi \vert_{\partial M}) \Big) \\ 
+= & 
+\gamma^0\mathcal{P}_-\big(- \partial_\bot \phi \vert_{\partial M} + c^{-1} \phi\vert_{\partial M}\big)
+\\ = & 0
+\end{split}
+\end{equation*}
+The fact that $\partial M = \{x^\bot = 0\}$ is used to coincide the tangential derivatives evaluated on the static boundary.
+Continuing the calculation of \cref{wen-deltak}, we get
+\begin{equation}\label{wen-delta2}
+\Delta^2 \Phi = \begin{pmatrix} (i \gamma^0 \gamma^j\partial_j)^2 & 0 \\ 
+- c^{-1}\mathcal{P}_+( \partial_\bot \cdot\vert_{\partial M} ) & 
+(i \gamma^0 \gamma^a \partial_a)^2 \end{pmatrix}
+\begin{pmatrix} \phi \\ \phi_| \end{pmatrix}
+\end{equation}
+with domain 
+\begin{equation*}
+\dom(\Delta^2) = \Big\{ (\phi, \phi_|) \in W^{2,2}(M)\times W^{2,2}(\partial M) \big\vert\enskip \mathcal{P}_- \Big(\partial_\bot\phi\vert_{\partial M} - c^{-1} (\phi\vert_{\partial M}) \Big) = 0 \Big\} \cap \dom(\Delta)
+\end{equation*} 
+For $k = 3$, 
+we check the domain
+\begin{equation*}
+\dom(\Delta^3) = \big\{ (\phi, \phi_|)\in W^{3,2}(M)\times W^{3,2}(\partial M) \big\vert \enskip \mathcal{P}_+(\partial_\bot^2 \phi\vert_{\partial M} - c^{-1}\partial_\bot \phi\vert_{\partial M} ) = 0 \big\} 
+\cap \dom(\Delta^2)
+\end{equation*}
+Let us prove the following proposition for the domain of $\Delta^k$.
+\begin{proposition}
+Let $k \in \mathbb{N}^*$. Then
+\begin{equation*}
+\begin{split}
+& \dom (\Delta^{2k} )  =
+\big\{ (\phi, \phi_|)\in W^{2k,2}(M)\times W^{2k,2}(\partial M) \big\vert \enskip \mathcal{P}_-\big( \partial_\bot^{2k-1}\phi\vert_{\partial M} - c^{-1}\partial_\bot^{2k-2}\phi\vert_{\partial M}\big) \big\} 
+\cap \dom(\Delta^{2k - 1})  \\
+& \dom (\Delta^{2k+1} )  =
+\big\{ (\phi, \phi_|)\in W^{2k+1,2}(M)\times W^{2k+1,2}(\partial M) \big\vert \enskip \mathcal{P}_+\big( \partial_\bot^{2k}\phi\vert_{\partial M} - c^{-1}\partial_\bot^{2k-1}\phi\vert_{\partial M}\big) \big\}  \cap \dom(\Delta^{2k })
+\end{split}
+\end{equation*}
+\end{proposition}
+\begin{proof}
+We prove the proposition by induction.
+The claim holds for $k =1$ as we have already shown. 
+Let $k \in \mathbb{N}$ and suppose that the claim holds for $\forall n \in \llbracket 1, k-1 \rrbracket $. 
+It is easy to show that $\Delta^{2m}$ takes the form
+\begin{equation*}
+ \Delta^{2m}  = 
+\begin{pmatrix} (\partial^j\partial_j)^m & 0 \\
+\star & (\partial^a \partial_a)^m\end{pmatrix}
+\end{equation*}
+For $\Phi = (\phi, \phi_|)$
+\begin{equation*}
+\begin{split}
+\Phi \in \dom(\Delta^{2k}) \quad &\Leftrightarrow \quad
+\Phi \in W^{2k,2}(M)\times W^{2k,2}(\partial M) \enskip \mathrm{and}\enskip \Delta^{2k-2}\Phi \in \dom(\Delta^{2}) \\
+&\Leftrightarrow \quad 
+\mathcal{P}_{-}\big(\partial_\bot(\partial_j\partial^j)^{k-1}\phi\vert_{\partial M} - c^{-1}(\partial_j\partial^j)^{k-1}\phi\vert_{\partial M} \big) = 0
+\end{split}
+\end{equation*}
+and
+\begin{equation*}
+\begin{split}
+\Phi \in \dom(\Delta^{2k+1}) \quad &\Leftrightarrow \quad
+\Phi \in W^{2k+1,2}(M)\times W^{2k+1,2}(\partial M) \enskip \mathrm{and}\enskip \Delta^{2k-2}\Phi \in \dom(\Delta^{3}) \\
+&\Leftrightarrow \quad 
+\mathcal{P}_{+}\big(\partial_\bot^2(\partial_j\partial^j)^{k-1}\phi\vert_{\partial M} - c^{-1}\partial^\bot(\partial_j\partial^j)^{k-1}\phi\vert_{\partial M} \big) = 0
+\end{split}
+\end{equation*}
+By the hypothesis of induction, 
+the claim still holds for $k$.
+\end{proof}

@@ -1,16 +1,16 @@
 \subsection{Without electric field}\label{sect-nbnef}
-In this section we study the case without external electral field.
-In lack of boundary condition, we expect to find a generalized orthonormal basis of the Hilbert space composed of eigenvectors (for eigenvalue $k$) of type
+%In this section we study the case without external electral field.
+In lack of boundary, we expect to find a generalized orthonormal basis of the Hilbert space composed of eigenvectors (for eigenvalue $k$) of type
 \begin{equation}
 \begin{split}
 & | k_{(1)} \rangle = \bigg( \begin{pmatrix} f & 0 \\ 0 & 0 \end{pmatrix}
 \Theta(-x^1) + 
 \frac{1}{D}\begin{pmatrix} Af & 0 \\  0 & C^* f \end{pmatrix} \Theta(x^1) \bigg)
-\begin{pmatrix} e^{ikx^1}  \\ e^{-ikx^1} \end{pmatrix}   \\
+\begin{pmatrix} e^{ikx^1-i\frac{eE}{8}(x^1)^2}  \\ e^{-ikx^1+i\frac{eE}{8}(x^1)^2} \end{pmatrix}   \\
 & | k_{(2)} \rangle = \bigg( \begin{pmatrix} g& 0 \\ 0 & h \end{pmatrix}
 \Theta(-x^1) + 
 \frac{1}{D}\begin{pmatrix} Ag + Ch  & 0\\ 0&  C^*g + Ah  \end{pmatrix} \Theta(x^1) \bigg)
-\begin{pmatrix} e^{ikx^1}  \\  e^{-ikx^1}  \end{pmatrix}  
+\begin{pmatrix} e^{ikx^1-i\frac{eE}{8}(x^1)^2}  \\  e^{-ikx^1+i\frac{eE}{8}(x^1)^2}  \end{pmatrix}  
 \end{split}
 \end{equation}
 where $f,g,h \in \mathbb{C}$.
@@ -79,7 +79,18 @@ We have thus found a generalized orthonormal basis for our Hilbert space
 \begin{pmatrix} e^{ikx^1}  \\  e^{-ikx^1}  \end{pmatrix}  
 \end{split}
 \end{equation}
-Let us calculate the two point functions associated with these eigenvectors now. In the region $x<0$, we have
+Let us calculate the two point functions associated with these eigenvectors now. In the region $x<0$, the relevant components of the two-point function are (up to terms vanishing at coinciding point limit)
+\begin{equation*}
+\omega(\psi^2(x)\bar{\psi}_1(y)) =  \omega(\phi^1(x)\phi^\dagger_1(y)) \\ = -\frac{1}{2\pi}\frac{i}{x^0 - y^0 - x^1 + y^1 - i\epsilon} \Big(1 -  i\frac{eE}{2}\big((x^1)^2 - (y^1)^2 \big) \Big) 
+\end{equation*}
+\begin{equation*}
+\omega(\psi^1(x)\bar{\psi}_2(y))   =  \omega(\phi^2(x)\phi^\dagger_2(y)) = -\frac{1}{2\pi}\frac{i}{x^0 - y^0 - x^1 + y^1 - i\epsilon} \Big(1 + i\frac{eE}{2}\big((x^1)^2 - (y^1)^2 \big) \Big)
+\end{equation*}
+Since they are the same as in~\cite{Zahn2015}, the current density and the charge density is the same as in the case where there is no Kondo type delta potential, namely, no current and with charge density 
+\begin{equation}\label{vacuum-charge_nbdy}
+\rho = \frac{1}{\pi} e^2 E x^1
+\end{equation}
+
 \begin{equation*}
 \begin{split}
 \omega(\psi^2(x)\bar{\psi}_1(y)) & =  \omega(\phi^1(x)\phi^\dagger_1(y)) \\
