@@ -1,10 +1,10 @@
 \subsection{Vacuum charge and current in the spatially bounded case}
-From now on, we work on the self-adjoint extension of the Hamiltonian of the problem~\cref{nef-Dirac}.
+From now on, we work on the self-adjoint extension of $H$.
 Let $\phi_k$ be an eigenfunction for eigenvalue $k$ of the Hamiltonian $H$. 
 First of all, 
 let us find the expression of $\phi_k$ in the region $[-\frac{L}{2}, 0)$.
 Once this has been done, 
-we can find the expression of $\phi_k$ in the other region by the matching condition.
+we can find the expression of $\phi_k$ in $[-\frac L 2, 0)$ by the matching condition.
 We check that in the region $[-\frac{L}{2}, 0)$, 
 $\phi_k$ can be written as 
 \begin{equation}\label{nef-boundCond}
@@ -19,7 +19,7 @@ $\phi_k$ can be written as
 $}
 \end{equation}
 for $f, g\in \mathbb{C}$. 
-The matching condition at $x^1 = 0$ is the same as \cref{nef-matching2}. 
+The matching condition~\cref{nef-matching2} at $x^1 = 0$ requires
 \begin{equation}
 \begin{cases}
 g = fe^{i(kL + \frac{\pi}{2}) - i\frac{eE}{8}L^2}  \\
@@ -28,19 +28,14 @@ g = \frac{A + iC^* e^{-ikL + i\frac{eE}{8}L^2 }}{A - iC e^{ikL - i\frac{eE}{8}L^
 \end{equation}
 which implies $|f| = |g|$ and
 \begin{equation}\label{nef-kn1}
-kL = \textrm{Arg}(A - i|C| e^{ikL + i\eta_E}) + (n + \frac{1}{2}) \quad n\in \mathbb{Z}
+kL = \textrm{Arg}(A - i|C| e^{ikL + i\eta_E}) + (n + \frac{1}{2})\pi \quad n\in \mathbb{Z}
 \end{equation}
 where
 \begin{equation*}
 \eta_E = \textrm{Arg } C - \frac{eE}{8}L^2 
 \end{equation*}
-The case $|C| =0$ is relatively easy to deal with. Let us focus on the cases where $|C| \neq 0$. We should consider separately \cref{nef-kn1} for $n$ odd and $n$ even because of the $2\pi$-periodicity of the exponential term. \\\\
-Let us start with the case where $n$ is even. 
-For 
-\begin{equation*}
-C = |C| e^{i\eta_E} \neq 0 
-\end{equation*}
-it follows\footnote{
+The case $|C| =0$ is relatively easy to deal with. Let us focus on the cases where $|C| \neq 0$. We should consider separately \cref{nef-kn1} for $n$ odd and $n$ even because of the $2\pi$-periodicity of the exponential. \\\\
+Since\footnote{
 For $\alpha, \beta, \theta \in \mathbb{R}$, assuming that $\alpha + \beta \cos \theta > 0$, $\alpha + \beta e^{i \theta} = \alpha + \beta \cos \theta + i\beta \sin \theta = (\alpha^2 + \beta^2 + 2\alpha \beta \cos \theta) e^{i \delta}$ with $\delta = \arctan \frac{\beta\sin\theta}{\alpha + \beta\cos\theta}$  
 } 
 \begin{equation}
@@ -67,7 +62,10 @@ kL = \arccos \big(-\frac{|C|\sin\eta_E}{A}\big)
 \end{equation*}
 For all even $n$, the corresponding mode $k_n$ is equal to this value modulo $2 \pi$. \\
 For odd $n$, the calculation is similar.
-We try to find $k$ such that $kL - \pi \in [0, \pi]$, which gives $kL = 2\pi - \arccos \big(-\frac{|C|}{A}\big)$. 
+We try to find $k$ such that $kL - \pi \in [0, \pi]$, which gives 
+\begin{equation*}
+kL = 2\pi - \arccos \big(-\frac{|C|}{A}\big)
+\end{equation*} 
 And thus for all odd $n$, the corresponding mode $k_n$ is equal to this value modulo $2 \pi$.\\
 To sum up, the possible values of $k$ are given by
 \begin{equation*}
@@ -77,7 +75,7 @@ where
 \begin{equation*}
 \theta = \arccos\bigg( \frac{-|C| \sin \eta_E}{A} \bigg)
 \end{equation*}
-The coefficients $f_{n}$ and $g_{n}$ for the mode $k_{ n}$ can be determined by using the normalization condition  $\int_{[-\frac{L}{2}, \frac{L}{2}]}\phi^\dagger \phi = 1$. 
+The coefficients $f_{n}$ and $g_{n}$ for the mode $k_{ n}$ can be determined in using the normalization condition  $\int_{[-\frac{L}{2}, \frac{L}{2}]}\phi^\dagger \phi = 1$. 
 In the region $[-\frac{L}{2}, 0)$ , $\phi^\dagger \phi = | f |^2 + | g |^2$. Whereas in the region $(0, \frac{L}{2}]$, 
 \begin{equation}\label{nef-norm1}
 \begin{split}
@@ -96,7 +94,7 @@ By the first equation of \cref{nef-boundCond}, the last term of~\cref{nef-norm1}
 4\frac{A |C|}{|D|^2}| f|^2\Re\{e ^{-i(kL + \frac{\pi}{2} - \eta_E)}\} = 
 - 4\frac{A |C|}{|D|^2}| f|^2\sin( kL - \eta_E) 
 \end{equation*}
-Hence, the normalization condition and \cref{nef-boundCond2} imply
+Hence
 \begin{equation*}
  | f_{n} | =  \sqrt{\frac{1}{L(\alpha - \beta \sin (k_{n} L - \eta_E))}}  
 \end{equation*}
@@ -105,7 +103,7 @@ where
 \alpha = 1+\frac{A^2 + |C|^2}{|D|^2} \quad,\quad
 \beta = \frac{2 A |C|}{|D|^2}
 \end{equation*}
-We have thus found an eigenvector for the eigenvalue $k_n$
+We have thus found an eigenfunction for eigenvalue $k_n$
 \begin{equation*} 
 \begin{split}
 \phi_{k_{n}} = 
@@ -126,37 +124,35 @@ e^{- ik_{n} x^1 + i\frac{eE}{2}(x^1)^2}
 \end{split}
 \end{equation*}
 Let us compute now the vacuum 1+1 current~\cref{vacuum-currentexpression}.
-As we will multiply the two-point function defined in~\cref{vacuum-hadamardstate} by $\gamma^i$, 
+As we will trace the two-point function defined in~\cref{vacuum-hadamardstate} by $\gamma^i$, 
 only the off-diagonal terms of the two-point function should be considered.
-In terms of $\phi$, these terms are expressed as
+In terms of $\phi$, 
+the two-point function~\cref{vacuum-hadamardstate} becomes
 \begin{equation}\label{vacuum-calculhadamard}
 \omega(\psi^B(x) \bar{\psi_A}(y)) = 
 (\gamma^0)^B_C \omega(\phi^C(x) \phi^\dagger_A(y)) = (\gamma^0)^B_C
 \int_{E_k > 0} \phi^C(x) \phi^\dagger_A(y) e^{-i(x^0 - y^0) E_k} \dd k
 %\quad \textrm{for $A = 1,2$}
 \end{equation}
-Let us begin by considering the region $x^1, y^1 < 0$. 
-For $A =1, B= 2$, with $z =x^0 - y^0 - x^1 +y^1$,~\cref{vacuum-calculhadamard} becomes
+Let us calculate explicitly the two-point function~\cref{vacuum-calculhadamard} in the region $[-\frac L 2,0)$. 
+For $A =1, B= 2$, 
+with 
+\begin{equation*}
+z =x^0 - y^0 - x^1 +y^1
+\end{equation*}
+\cref{vacuum-calculhadamard} becomes
 \begin{equation*}
 \begin{split}
-& \sum_{2p \geq 0} \frac{e^{-i(\theta + 2p\pi)\frac{z}{L}}}{L(\alpha - \beta \sin (\theta - \eta_E))} 
-+ \sum_{2p+1 \geq 0} \frac{e^{-i(- \theta + (2p+2)\pi)\frac{z}{L}}}{L(\alpha + \beta \sin (\theta + \eta_E))}\\
+& \sum_{2p \geq 0} \frac{e^{-i(\theta + 2p\pi)\frac{z}{L}+ \frac{ieE}{2}(x^1 - y^1)(x^1+y^1)} }{L(\alpha - \beta \sin (\theta - \eta_E))} 
++ \sum_{2p+1 \geq 0} \frac{e^{-i(- \theta + (2p+2)\pi)\frac{z}{L}+ \frac{ieE}{2}(x^1 - y^1)(x^1+y^1)}}{L(\alpha + \beta \sin (\theta + \eta_E))}\\
 %
 =& 
-\frac{1}{2i L\sin\frac{\pi}{L}z} \bigg( \frac{e^{i(-\theta + \pi)\frac{z}{L}}}{\alpha - \beta \sin (\theta - \eta_E)}
-+ \frac{e^{i(\theta - \pi) \frac{z}{L}}}{\alpha + \beta \sin (\theta + \eta_E)}
+\frac{1}{2i L\sin\frac{\pi}{L}z} \bigg( \frac{e^{i(-\theta + \pi)\frac{z}{L}+ \frac{ieE}{2}(x^1 - y^1)(x^1+y^1)}}{\alpha - \beta \sin (\theta - \eta_E)}
++ \frac{e^{i(\theta - \pi) \frac{z}{L}+ \frac{ieE}{2}(x^1 - y^1)(x^1+y^1)}}{\alpha + \beta \sin (\theta + \eta_E)}
 \bigg)
 \end{split}
 \end{equation*}
-Developping the term in the parenthesis up to $\mathcal{O}(z^0)$, we get
-\begin{equation}
-\begin{split}
-& \frac{1}{\alpha - \beta \sin (\theta - \eta_E)}
-   + \frac{1}{\alpha + \beta \sin (\theta + \eta_E)} \\
-= & \frac{2(\alpha + \beta \sin \eta_E \cos \theta)}{(\alpha + \beta \sin \eta_E \cos \theta)^2 - \beta^2 \sin^2 \theta \cos^2 \eta_E} \\
-= & \frac{2(\alpha - \beta \frac{|C|}{A} \sin^2 \eta_E)}{\alpha^2 - \beta^2 + \beta^2 \sin^2 \eta_E (1 + \frac{|C|^2}{A^2}) - 2 \alpha \beta \frac{|C|}{A} \sin^2 \eta_E} \\
-\end{split}
-\end{equation}
+Using\footnote{
 As
 \begin{equation*}
 \begin{split}
@@ -168,54 +164,49 @@ As
 \end{split}
 \end{equation*}
 we have
+\begin{equation*}
+\begin{split}
+& \frac{1}{\alpha - \beta \sin (\theta - \eta_E)}
+   + \frac{1}{\alpha + \beta \sin (\theta + \eta_E)} \\
+= & \frac{2(\alpha + \beta \sin \eta_E \cos \theta)}{(\alpha + \beta \sin \eta_E \cos \theta)^2 - \beta^2 \sin^2 \theta \cos^2 \eta_E} \\
+= & \frac{2(\alpha - \beta \frac{|C|}{A} \sin^2 \eta_E)}{\alpha^2 - \beta^2 + \beta^2 \sin^2 \eta_E (1 + \frac{|C|^2}{A^2}) - 2 \alpha \beta \frac{|C|}{A} \sin^2 \eta_E} \\
+=& 1
+\end{split}
+\end{equation*}
+}
 \begin{equation}\label{nef-lourdeur}
 \frac{1}{\alpha - \beta \sin (\theta - \eta_E)}
    + \frac{1}{\alpha + \beta \sin (\theta + \eta_E)} 
 = 1
 \end{equation}
-%Therefore, the singularity of $\mathcal{O}(z^{-1})$ is the same as for the Hadamard parametrix of the vacuum case.\\\\
-We calculate now the vacuum polarization in the region $[-\frac{L}{2}, 0)$. Since
+and
 \begin{equation*}
 \frac{1}{2i \sin \frac{\pi}{L}z } = \frac{-iL}{2 \pi z} - \frac{i \pi z}{12L} + \mathcal{O}(z^3) 
 \end{equation*}
-With $z = x^0 - y^0 - x^1 + y^1$, we define
-\begin{equation}
-\begin{split}
-\xi_E(z, x^1, y^1) = & \Big( \frac{-i}{2 \pi z} - \frac{i \pi z}{12L^2} + \mathcal{O}(z^3) \Big)
-\Big( \frac{1}{\alpha - \beta\sin(\theta - \eta_E)}e^{i\frac{(-\theta + \pi)z}{L} + \frac{ieE}{2}((x^1)^2 - (y^1)^2)} + \\
-& \frac{1}{\alpha + \beta\sin(\theta + \eta_E)}e^{i\frac{(\theta - \pi) z}{L} + \frac{ieE}{2}((x^1)^2 - (y^1)^2)} \Big)  \\
-= & \Big( \frac{-i}{2 \pi z} - \frac{i \pi z}{12L^2} + \mathcal{O}(z^3) \Big)
-\Big( 1 + \frac{i(-\theta + \pi)\frac{z}{L}}{\alpha - \beta\sin(\theta - \eta_E)} + \frac{i(\theta - \pi)\frac{z}{L}}{\alpha + \beta\sin(\theta + \eta_E)}  \\
-& + \frac{1}{2}\Big(\frac{(-\theta + \pi)^2}{\alpha - \beta \sin (\theta - \eta_E)}  
-+ \frac{(\theta - \pi)^2}{\alpha + \beta \sin (\theta + \eta_E)} \Big)\frac{z^2}{L^2} \\
-& + \frac{ieE}{2}(x^1 - y^1)(x^1 + y^1) - \frac{e^2 E^2}{8}(x^1 - y^1)^2 (x^1 + y^1)^2
-+ \mathcal{O}(z^3)  \Big)  \\
-= & \frac{-i}{2 \pi z} + \frac{1}{2\pi L}\Big( \frac{\beta \sin \theta \cos \eta_E}{\alpha + \beta \sin \eta_E \cos \theta}\Big) (-\theta + \pi) + \frac{eE}{4 \pi}\frac{(x^1 - y^1)(x^1 + y^1)}{z}     \\
-& + \frac{i\pi}{4 L^2}\big( -\frac{1}{3} + \frac{(\theta - \pi)^2}{\pi^2}\big)z
-+ \frac{i e^2 E^2}{16 \pi z} (x^1 - y^1)^2 (x^1 + y^1)^2
-+ \mathcal{O}(z^2)
-\end{split}
-\end{equation}
-In the region $[-\frac{L}{2}, 0)$, the components of the two-point function becomes
+In the region $[-\frac{L}{2}, 0)$, we have, up to terms of higher order,
 \begin{equation*}
 \begin{split}
 \omega(\psi^2(x) \bar{\psi_1}(y)) = 
-\omega(\phi^1(x) \phi^\dagger_1(y)) = \xi_E(x^0 - y^0 - x^1 + y^1, x^1, y^1) \\
- \omega(\psi^1(x) \bar{\psi_2}(y)) = 
-\omega(\phi^2(x) \phi^\dagger_2(y)) = \xi_E(x^0 - y^0 + x^1 - y^1, x^1, y^1)
+\omega(\phi^1(x) \phi^\dagger_1(y)) = \xi_E(x^0 - y^0 - x^1 + y^1, x^1, y^1) 
 \end{split}
 \end{equation*}
-Similarly, by defining 
-\begin{equation}
+where $\xi_E$ is defined by
+\begin{equation}\label{vacuum-xie}
 \begin{split}
-\chi_E(z, x^1, y^1) = 
-& \frac{-i}{2 \pi z} + \frac{1}{2\pi L}\Big( \frac{\beta \sin \theta \cos \eta_E}{\alpha + \beta \sin \eta_E \cos \theta}\Big) (\theta - \pi) + \frac{eE}{4 \pi}\frac{(x^1 - y^1)(x^1 + y^1)}{z}     \\
-& + \frac{i\pi}{4 L^2}\big( -\frac{1}{3} + \frac{(\theta - \pi)^2}{\pi^2}\big)z
+\xi_E(z, x^1, y^1)
+= & \frac{-i}{2 \pi z} + \frac{1}{2\pi L}\Big( \frac{\beta \sin \theta \cos \eta_E}{\alpha + \beta \sin \eta_E \cos \theta}\Big) (-\theta + \pi) 
+\Big(1+ \frac{ieE}{2}(x^1 - y^1)(x^1 + y^1) \Big) \\
+& + \frac{eE}{4 \pi}\frac{(x^1 - y^1)(x^1 + y^1)}{z}     
++ \frac{i\pi}{4 L^2}\big( -\frac{1}{3} + \frac{(\theta - \pi)^2}{\pi^2}\big)z
 + \frac{i e^2 E^2}{16 \pi z} (x^1 - y^1)^2 (x^1 + y^1)^2
-+ \mathcal{O}(z^2)
 \end{split}
 \end{equation}
-We have the expressions for the components of the two-point function in the region $(0, \frac{L}{2}]$
+Analogously, for $A=2,B=1$, we have, up to terms of higher order,
+\begin{equation*}
+ \omega(\psi^1(x) \bar{\psi_2}(y)) = 
+\omega(\phi^2(x) \phi^\dagger_2(y)) = \xi_E(x^0 - y^0 + x^1 - y^1, x^1, y^1)
+\end{equation*}
+Similarly, we have the expressions of the components of the two-point function up to terms of higher order in the region $(0, \frac{L}{2}]$
 \begin{equation*}
 \begin{split}
 \omega(\psi^2(x) \bar{\psi_1}(y)) = 
@@ -224,8 +215,20 @@ We have the expressions for the components of the two-point function in the regi
 \omega(\phi^2(x) \phi^\dagger_2(y)) = \chi_E(x^0 - y^0 + x^1 - y^1, x^1, y^1)
 \end{split}
 \end{equation*}
-We subtract then from the above the Hadamard parametrix~\cref{vacuum-hadamardparametrix} and trace them with the gamma matrices in order to get the vacuum charge and current densities.
-In the whole region $[-\frac L 2, \frac L 2] - \{0\}$ 
+where $\chi_E$ is defined by
+\begin{equation}\label{vacuum-chie}
+\begin{split}
+\chi_E(z, x^1, y^1) = 
+& \frac{-i}{2 \pi z} + \frac{1}{2\pi L}\Big( \frac{\beta \sin \theta \cos \eta_E}{\alpha + \beta \sin \eta_E \cos \theta}\Big) (\theta - \pi)\Big(1+ \frac{ieE}{2}(x^1 - y^1)(x^1 + y^1) \Big) \\
+&+ \frac{eE}{4 \pi}\frac{(x^1 - y^1)(x^1 + y^1)}{z}  
++ \frac{i\pi}{4 L^2}\big( -\frac{1}{3} + \frac{(\theta - \pi)^2}{\pi^2}\big)z
++ \frac{i e^2 E^2}{16 \pi z} (x^1 - y^1)^2 (x^1 + y^1)^2
++ \mathcal{O}(z^2)
+\end{split}
+\end{equation}
+To sum up,
+subtracting the Hadamard parametrix~\cref{vacuum-hadamardparametrix} and tracing with the gamma matrices, 
+the expression of the vacuum charge density defined by~\cref{vacuum-currentexpression} is
 \begin{equation}\label{vacuum-rho-with-field}
 \rho(x) = \frac{e}{\pi L}\Big( \frac{\beta \sin \theta \cos \eta_E}{\alpha + \beta \sin \eta_E \cos \theta}\Big) (-\theta + \pi)
 \Big(\Theta(- x^1) - \Theta(x^1))\Big) + \frac{e^2 E}{\pi} x^1

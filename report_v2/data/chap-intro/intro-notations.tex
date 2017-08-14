@@ -1,7 +1,7 @@
 \section*{General notations and convention}
-In all the discussions of this report, we work on Minkowski space-times with signature $(+, -,\ldots, -)$.
+Throughout this report, we work on Minkowski space-times with metric signature $(+, -,\ldots, -)$.
 We denote $\delta^A_B$ without argument for the Kronecker delta and $\delta(x)$ with argument for the Dirac delta distribution.
-$\Theta(x)$ will be use for the Heaviside step function.
+$\Theta(x)$ will be used for the Heaviside step function.
 $c^*$ represents the complex conjugate of $c\in\mathbb{C}$. 
 Meanwhile, $T^*$ represents the adjoint of $T$ if $T$ is an operator.
 As usual, $\bar{\psi}$ is the Dirac adjoint of $\psi$.
@@ -9,17 +9,18 @@ By Hamiltonian, we refer to the Hamiltonian of a dynamical system.
 For a manifold $M$ on which we can define Sobolev spaces (cf \eg\cite{Hebey1996},~\cite{Eichhorn1996}), 
 we denote by $W^{n,m}(M)$ the Sobolev space composed of $n$-times differentiable functions $u\in L^m(M)$ whose derivatives of order lower than $n$ are also in $L^m(M)$.
 \\\\
-We denote $\gamma^\mu$ for $\mu = 0, \ldots, d$ for the generators of the Clifford algebra\footnote{
+We denote by $\gamma^\mu$ for $\mu = 0, \ldots, d$ a set of generators of Clifford algebra\footnote{
 For simplicity, we will sometimes call these generators gamma matrices in this report.
-}, which should satisfy
-\begin{equation*}
-\{ \gamma^\mu, \gamma^\nu \} = \eta^{\mu\nu}
-\end{equation*} 
-where $\eta = \mathrm{diag}(1, -1 ,\ldots, -1)$.
-Also, we choose a Hermitian representation for $\gamma^0$ and anti-Hermitian representations for the other $\gamma^i$, 
+}
+such that $\gamma^0$ is chosen Hermitian and $\gamma^i$ are anti-Hermitian.
 \ie
 \begin{equation*}
 (\gamma^0)^\dagger = \gamma^0 \quad
 (\gamma^i)^\dagger = -\gamma^i
 \end{equation*}
+$\gamma^\mu$ should satisfy the anti-commutation relation
+\begin{equation*}
+\{ \gamma^\mu, \gamma^\nu \} = \eta^{\mu\nu}
+\end{equation*} 
+where $\eta = \mathrm{diag}(1, -1 ,\ldots, -1)$. \\\\
 Like in many literatures, Greek letters are used for both spatial and temporal components, whereas Latin letters are only used for spatial ones. \\

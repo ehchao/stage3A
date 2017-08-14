@@ -1,35 +1,37 @@
 %%%%%%%%%%%%%%%%%%
-In this chapter,
-we generalize the so called Wentzell boundary condition~\cite{Zahn2016} to the massless free fermion case. 
+In this chapter, we are going to establish the so-called Wentzell boundary condition for massless fermions~\cite{Zahn2016}.
+As we will see, this boundary condition is a gerneralized version of the bag boundary condition~\cite{Chodos1974}
 We start our studies by proving the well-posedness of the dynamical problem under this boundary condition. 
 Later on, we will prove the causal propagation property on certain types of manifold.
-Then, we study two simple examples of bulk by finding explicit smooth solutions.
-An example of shock-wave solution will be given afterwards and we close the chapter with an explicit computation of the vacuum charge density and the vacuum stress-energy tensor in the 1+1 dimensional case under this boundary condition. 
+At the end of the chapter, 
+we discuss the vacuum polarization and the stress-energy tensor under this boundary condition in the 1+1 dimensional case.
 \\\\
-We consider a $(d+1)$-dimensional manifold $\mathcal{M}$ (always in Minkowski space-time) for the bulk with a $d$-dimensional time-like boundary $\partial \mathcal{M}$ which is supposed to be static.
+We consider a $(d+1)$-dimensional manifold $\mathcal{M} = \mathbb{R}\times M$, where $M$ represents the spatial slices (always in Minkowski space-time), for the bulk with a static $d$-dimensional time-like boundary $\partial \mathcal{M}$.
 We assume that we can define Sobolev spaces on $\mathcal{M}$ and $\partial \mathcal{M}$.
-We denote by $M$ an equal-time hypersurface of $\mathcal{M}$.
 %As we work with spinor fields, $\mathcal{M}$ and $\partial \mathcal{M}$ are required to be spin manifolds. 
 %A good review on the notions of spin structure can be find in~\cite{Trautman2007}.\footnote{
 %Such a structure on a given manifold exists if and only if the second Stiefel-Whitney class of its bundle vanishes (see~\eg Chap. 2 of \cite{Lawson1989} or~\cite{Alagia1985} for extension to pseudo-Riemannian manifolds).}
 %
 With shorthand notations, the generators of the induced Clifford algebra on the boundary $\partial \mathcal{M}$ will also be denoted by $\gamma^\alpha$ for $\alpha = 0 ,\ldots, d-1$. 
 However, we specify that the Greek letters $\mu$ and $\nu$ will be used for the bulk terms (taking values in $\llbracket 0, d \rrbracket$) and the Greek letters $\alpha$ and $\beta$ will be used for the boundary terms (taking values in $\llbracket 0, d-1 \rrbracket$).
-Analogously, the Latin letters $i $ and $j$ will be used for the bulk terms and $a$ and $b$ will be used for the boundary terms. \\\\
-%
-We denote the spinor representation spaces of $\mathcal{M}$ and $\partial \mathcal{M}$ by $E$ and $F$ respectively.
-We suppose that we can define Sobolev spaces on both $\mathcal{M}$ and $\partial\mathcal{M}$.\footnote{
-We might encounter some difficulties defining the Sobolev spaces for the boundaries. Meanwhile, the boundaries of the two special cases that we are going to study are in effect "open manifolds", \ie, without boundary and compact connected component. 
-According to~\cite{Eichhorn1996}, it is possible to define Sobolev spaces which are also Banach spaces for them.
-Then, when working with $L^2$-norm, we have Hilbert space structures since the inner products will be well-defined.  
-}
-In the following text, if not specified, the Sobolev space $W^{m,n}(\mathcal{M})$ on manifold $\mathcal{M}$ represents $W^{m,n}(\mathcal{M}, E)$.
-On the other hand, $W^{m,n}(\partial \mathcal{M})$ represents $W^{m,n}(\partial \mathcal{M}, F)$.
-This notation is also applicable to the $L^2$ spaces.
+Analogously, the Latin letters $i $ and $j$ will be used for the bulk terms and $a$ and $b$ will be used for the boundary terms. 
+The spinor representation space of $\mathcal{M}$ will be denoted by $E$.
+%We suppose that we can define Sobolev spaces on both $\mathcal{M}$ and $\partial\mathcal{M}$.\footnote{
+%We might encounter some difficulties defining the Sobolev spaces for the boundaries. Meanwhile, the boundaries of the two special cases that we are going to study are in effect "open manifolds", \ie, without boundary and compact connected component. 
+%According to~\cite{Eichhorn1996}, it is possible to define Sobolev spaces which are also Banach spaces for them.
+%Then, when working with $L^2$-norm, we have Hilbert space structures since the inner products will be well-defined.  
+%}
+%In the following text, if not specified, the Sobolev space $W^{m,n}(\mathcal{M})$ on manifold $\mathcal{M}$ represents $W^{m,n}(\mathcal{M}, E)$.
+%On the other hand, $W^{m,n}(\partial \mathcal{M})$ represents $W^{m,n}(\partial \mathcal{M}, F)$.
+%This notation is also applicable to the $L^2$ spaces.
 %
 %%%%%%%%%%%%%%%%
 \section{The action of the problem}
-Combining the boundary actions of~\cite{Henningson1998} and~\cite{Contino2005}, we propose to study the following action
+Among the literatures on AdS/CFT correspondence for Dirac fields,
+\cite{Henningson1998} and~\cite{Contino2005} propose two different boundary actions that one could add to the total action.
+It is of interest to study the physics behind the mixte of both boundary actions. 
+For this purpose,
+we consider the following action
 \begin{equation}\label{wen-action}
 \mathcal{S} = \frac{1}{2}i\int_{\mathcal{M}} \bar{\psi} \gamma^\mu \partial_\mu \psi - \partial_\mu \bar{\psi} \gamma^\mu \psi 
 + \frac{1}{2}\int_{\partial \mathcal{M}} ic \bar{\psi} \gamma^\alpha \partial_\alpha (1 - i \gamma^\bot) \psi
@@ -40,7 +42,7 @@ $\gamma^\bot$ here represents the component perpendicular to $\partial \mathcal{
 As we will see later, the supplementary $\frac 1 2 (1-i\gamma^\bot)$ acts as a projector on the boundary.
 \\\\
 We suppose $\partial(\partial \mathcal{M}) = \emptyset$.
-By variational method, we can derive the equation of motion in the bulk and on the boundary
+By variational method, the equations of motion in the bulk and on the boundary obtained from this action are
 \begin{equation}\label{wen-motion}
 \begin{cases}
 i \gamma^\mu \partial_\mu \psi = 0  \quad \textrm{in $\mathcal{M}$}\\
@@ -48,7 +50,10 @@ i \gamma^\alpha \partial_\alpha (1 - i\gamma^\bot) \psi = - c^{-1}(1 + i\gamma^{
 \end{cases}
 \end{equation}
 From~\cref{wen-motion}, we see that when $c \rightarrow 0$, the boundary condition becomes the bag condition. 
-We define $\phi = \gamma^0 \psi$. 
+In terms of 
+\begin{equation*}
+\phi = \gamma^0 \psi
+\end{equation*}
 \cref{wen-motion} can be written as 
 \begin{equation}\label{wen-maineq}
 \begin{cases}
@@ -74,7 +79,7 @@ More generally, for any space-like unit vector $n_j$,
 \begin{equation*}
 \mathcal{P}_\pm = \frac{1}{2}(1 \pm i n_j\gamma^j) 
 \end{equation*}
-are Hermitian projectors since 
+are Hermitian projectors, since 
 \begin{equation*}
 \mathcal{P}_\pm^\dagger = 
 \frac{1}{2}(1 \mp i (n_j \gamma^j)^\dagger)=
@@ -106,9 +111,9 @@ i \gamma^0 \slashed{\partial}  & 0 \\
 where $\slashed{\partial} = \gamma^j\partial_j$ for
 $j \in \llbracket 1 , d \rrbracket$ and $\slashed{\partial}_| = h^{ab} \gamma_{a} \partial_{b}$ with $h$ being the induced metric on the boundary.
 For simplicity, we will work on flat boundaries.
-We choose a coordinate system where $n^\perp = n_d$.
+We choose a coordinate system with $n^\perp = n_d$.
 Under this choice,
-$\partial_|$ can be written in a more concise way
+$\partial_|$ can be written in a simpler way
 \begin{equation*}
 \slashed \partial_| = \gamma^a\partial_a \quad\mathrm{for}\quad 
 a \in \llbracket 1, \ldots, d-1 \rrbracket

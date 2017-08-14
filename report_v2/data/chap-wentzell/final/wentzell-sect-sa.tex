@@ -1,25 +1,26 @@
 \section{Well-posedness of the problem}\label{wen-sect-saw}
 \subsection{Self-adjointness $\Delta$}
-We are going to use tools of functional analysis to prove that the Cauchy problem is well-posed for certain types of initial data.
+We are going to use the tools of functional analysis to prove that the Cauchy problem is well-posed for certain types of initial data.
 We define the Hilbert space 
 \begin{equation*}
 \mathcal{H} = L^{2}(M,E)\oplus L^{2}(\partial M, \mathcal{P}_+ E)
 \end{equation*}
-One should note the projection which is taken here on the boundary bundle.
-This is used to ensure that we have a Hilbert space for the following computations.
-,where $M$ is an equal-time hypersurface of $\mathcal{M}$ and $\partial M = M\cap \partial \mathcal{M}$,
 with inner product
 \begin{equation}\label{wen-innerpdt}
 \langle \cdot, \cdot \rangle _\mathcal{H} = \langle \cdot, \cdot \rangle _{L^2(M)} + c \langle \cdot, \cdot \rangle _{L^2(\partial M)}
 \end{equation}
-In order to have a self-adjoint operator, we define $\Delta$ on the domain
+One should notice that only a subspace of $E$ is considered for $\partial M$.
+This is used to ensure that we have a Hilbert space for the following discussions.
+We will show that $\Delta$ is self-adjoint with domain\footnote{
+For simplicity,
+we denote $W^{n,m}(M,E)$ (resp. $W^{n,m}(\partial M, \mathcal{P}_+E)$)}
 \begin{equation*}
-\dom( \Delta) = \{ \Phi = (\phi, \phi_|) \in W^{1,2}(M)\times W^{1,2}(
+\mathcal{D} \equiv \{ \Phi = (\phi, \phi_|) \in W^{1,2}(M)\times W^{1,2}(
 \partial M)\enskip | \enskip \mathcal{P}_+\phi \vert_{\partial M} - \phi_| = 0 \}
 \end{equation*}
 Let us find the domain of $\Delta^*$.  
 Let $\Phi = (\phi, \phi_|) \in \dom(\Delta^*)$.
-Then, for any $ \Psi = (\psi, \psi_|)\in\dom(\Delta)$
+Then, for any $ \Psi = (\psi, \psi_|)\in\mathcal{D}$
 \begin{equation}\label{wentzell-proof-sa}
 \begin{split}
 \langle \Delta^*\Phi, \Psi \rangle_\mathcal{H} =
@@ -52,13 +53,20 @@ In the above calculation, we have implicitly assumed that $(\phi, \phi_|)\in W^{
 $\Delta$ is symmetric because~\cref{wentzell-proof-sa} equals $\langle \Delta\Phi, \Psi\rangle_\mathcal{H}$ if $\Phi$ is furthermore an element in $\dom(\Delta)$.
 In particular, the last line of~\cref{wentzell-proof-sa} can be rearranged as $\langle\Omega,\Phi\rangle_\mathcal{H}$ for some $\Omega\in\mathcal{H}$ if and only if the last term of~\cref{wentzell-proof-sa} disappears, \ie
 $\mathcal{P}_+\phi\vert_{\partial M} - \phi_| = 0$.
-Hence, the domain of $\Delta^*$ is contained in the domain of $\Delta$, which implies the self-adjointness of $\Delta$.\\\\
+Hence, the domain of $\Delta^*$ is contained in $\mathcal{D}$, which implies the self-adjointness of $\Delta$.\\\\
 By the self-adjointness of $\Delta$, it follows that 
 \begin{proposition}\label{wen-propwellposedness}
-The Cauchy problem~\cref{wen-maineq} with initial data $\Phi_0\in\dom(\Delta)$ has a unique solution $\Phi(t) = e^{-i\Delta t}\Phi_0 $
+The Cauchy problem~\cref{wen-maineq} with initial data $\Phi_0\in\mathcal{D}$ has a unique solution $\Phi(t) = e^{-i\Delta t}\Phi_0 $
 \end{proposition}
 %-----------------
-\subsection{Examples}
+The self-adjointness being proven, 
+we can find a generalized orthonormal basis of $\mathcal{H}$ consisting of eigenfunctions of $Delta$.
+The cases for $M = \mathbb{R}^{d-1}\times\mathbb{R}_+$ and $M = \mathbb{R}^{d-1}\times [-L, L]$ have been studied in~\cref{wen-subsect1} and~\cref{wen-subsect-saw2}.
+%%%%%%%%
+\begin{remark}
+The assumption $c>0$ ensures the positivity of $\|\cdot\|_\mathcal{H}$. 
+%However, in some models $c$ could be chosen negative.
+\end{remark}
 %%%%%%%%
 \subsection{Causal propagation}\label{wen-subsect-causal}
 As a complement for~\cref{wen-propwellposedness},
@@ -66,17 +74,43 @@ we would like to show that on certain manifolds $\mathcal{M}$,
 the solution of~\cref{wen-maineq} propagates causally, \ie depending smoothly and causally on the initial data.
 More explicitly, 
 we would like to prove the following proposition.
-\begin{proposition}
-Let $k \in \mathbb{N}^*$.
-Suppose that the initial data $\Phi_0 = (\phi, \phi_|)$ satisfies~\cref{wen-hilbertnorm}.
-With the same notations and the same conditions as in \cref{wen-propcau}, 
-the smooth solution $\Phi$ depends continuously on the initial data $(\phi, \phi_|)$ in the sense that
-\begin{equation*}
+\begin{proposition}\label{wen-prop-causal}
+Suppose that 0 is an isolated point of the spectrum of $\Delta$. 
+Let $\Sigma_0$ and $\Sigma_1$ be two equal-time surfaces.
+Let $\Phi_0 = (\phi_0, \phi_{|0})\in W^{\infty,2}(M)\times W^{\infty,2}(\partial M)$ be the initial data of the problem such that
+\begin{equation}\label{wen-domaindeltak}
+\begin{split}
+& \mathcal{P}_-\big( \partial_\bot^{2k-1}\phi\vert_{\partial M} - c^{-1}\partial_\bot^{2k-2}\phi\vert_{\partial M}\big) = 0  \\
+& \mathcal{P}_+\big( \partial_\bot^{2k}\phi\vert_{\partial M} - c^{-1}\partial_\bot^{2k-1}\phi\vert_{\partial M}\big) =0  
+\end{split}
+\end{equation}
+for all $k\in\mathbb{N}$.
+Then, the solution $\Phi$ of the problem depends smoothly and causally on the initial data $\Phi_0$ in the sense that for any $\mathcal{S}_0 \subset \Sigma_0$
+\begin{equation}\label{wen-causaldependence}
 \big\| \frac{\partial^k}{\partial t^k} \Phi\big\|_{\mathcal{H}(\mathcal{S}_1)}
 \leq
 \big\| \Phi\big\|_{\mathcal{H}^{k}(\mathcal{S}_0)}
-\end{equation*}
+\end{equation}
+for any $k\in\mathbb{N}$ and $\mathcal{S}_1 \in D^+(\mathcal{S}_0)\cap\Sigma_1$, where $D^+(\mathcal{S}_0)$ is the future domain of dependence of $\mathcal{S}_0$.
+Here, the \rhs of the inequality represents the norm of the restriction of $\frac{\partial^k}{\partial t^k} \Phi$ on $\mathcal{S}_1$ and the \lhs is defined by $\|\Delta^k \Phi\|_{\mathcal{H}(\mathcal{S}_0)}$  
 \end{proposition}
+Let us take a pause and analyse the elements of~\cref{wen-prop-causal} in a more detailed way.
+The relation~\cref{wen-causaldependence} that we try to prove states that we can control the time derivative of any order the data by the data in the causal past.
+The condition~\cref{wen-domaindeltak} actually demands $\Phi$ to be in $\cap_{k\in\mathcal{N}^*}\dom(\Delta^k)$.
+This requirement allows us to make sense of the map
+from $\mathcal{H}^k(M) = \cap_{s=1}^{k} \dom(\Delta^s)$ to $\mathbb{R}_+$
+\begin{equation}\label{wen-hilbertnorm}
+\| \cdot \|_{\mathcal{H}^k(M)} = \| \Delta^k \cdot \|_{\mathcal{H}(M)}
+\end{equation}
+In general, this map does not define a norm on $\mathcal{H}^k(M)$ because of the 0-modes of $\dom(\Delta)$ ($\ker \Delta \neq \{0\}$).
+However, 
+if 0 is an isolated point of the spectrum of $\Delta$, $\Delta^k \Phi$ does not vanish for all $k\in\mathbb{N}$.
+In effect, 
+if $\Delta^k \Phi = 0$ for a certain $k>0$,
+then $\Delta^{k-1}\Phi\in\ker\Delta$, which is forbidden because $0$ is not in the spectrum of $\Delta$.
+Therefore, under these assumptions, 
+\cref{wen-hilbertnorm} does define a norm.
+%
 Consider an element $\Phi \in \mathcal{K}$.
 As the time evolution of the system is given by
 \begin{equation*}
@@ -202,37 +236,10 @@ $n^\mu T_{\mu 0 }\geq 0$ and $s^\alpha T_{\alpha 0 }\geq 0$.
 We obtain \cref{wen-causal} by replacing $T_{00}$ and $T_{| 00}$ by their expression in terms of $\phi$
 \end{proof}
 %
-The last step of proving causal propagation consists in constructing suitable Hilbert spaces such that we can make sense of "smooth dependence". 
-We denote 
-\begin{equation*}
-\mathcal{H}^k(M) = \cap_{s=1}^{k} \dom(\Delta^s)
-\end{equation*}
-We note that, by the unitary time evolution, 
-\begin{equation*}
-\big\|\partial_t^m \Phi(t) \big\|= 
-\big\|\Delta^m\Phi(t) \big\| =
-\big\|\Delta^m \Phi(0) \big\|
-\end{equation*} 
-%we have
-%\begin{equation*}
-% \Big\|\frac{\partial^{m}}{\partial t^{m}} \Phi \Big\|^2 %= 
-% \langle \Delta^{m-1}\Phi(0), \Delta^{2}(\Delta^{m-1} \Phi(0))\rangle_{\mathcal{H}(M)} 
-%\end{equation*}
-%If we can bound~\cref{wen-tobebounded} at instant $t$ by the Cauchy data at instant $0$, 
-%the higher time-derivatives of $\Phi$ can also be bounded by the Cauchy data at instant $0$.\\\\
-We consider the following map from $\mathcal{H}^k(M)$ to $\mathbb{R}_+$
-\begin{equation}\label{wen-hilbertnorm}
-\| \cdot \|_{\mathcal{H}^k(M)} = \| \Delta^k \cdot \|_{\mathcal{H}(M)}
-\end{equation}
-This map does not define a norm on $\mathcal{H}^k(M)$ because of the 0-modes of $\dom(\Delta)$ ($\ker \Delta \neq \{0\}$).
-However, 
-if 0 is an isolated point of the spectrum of $\Delta$, $\Delta^k \Phi$ does not vanish for all $k\in\mathbb{N}$.
-In effect, 
-if $\Delta^k \Phi = 0$ for a certain $k>0$,
-then $\Delta^{k-1}\Phi\in\ker\Delta$, which is forbidden because $0$ is not in the spectrum of $\Delta$.
-%
+To conclude, 
+\cref{wen-prop-causal} is just a corollary of~\cref{wen-propcau} by using the unitary time evolution of $\Phi = e^{-i\Delta t}\Phi_0$.
 \begin{remark}
-As we will see, $M = \mathbb{R}^{d-1}\times[-L,L]$ is an example where 0 is an isolated point of the sepctrum of $\Delta$. 
+As shown in~\cref{wen-subsect-saw2}, $M = \mathbb{R}^{d-1}\times[-L,L]$ is an example where 0 is an isolated point of the sepctrum of $\Delta$. 
 The problem has solutions which propagates causally in this case.
 \end{remark}
 %%%%%%%%%%%%%%%

@@ -1,13 +1,9 @@
 \subsection{Well-posedness of the problem~\cref{nef-Dirac}}\label{vacuum-subsect-sa}
-We would like to prove that~\cref{nef-Dirac} possesses indeed unitary time evolution solutions by functional analysis for unbounded operators~\cite{Reed1975}.
+%We would like to prove that~\cref{nef-Dirac} possesses indeed unitary time evolution solutions by functional analysis for unbounded operators~\cite{Reed1975}.
+The aim of this subsection is to porve that the Hamiltonian $H$ of~\cref{nef-Dirac} has indeed a unique self-adjoint extension.
 For simplicity, 
 we suppose that $E = 0$.
-The Hamiltonian $H$ of the dynamical system~\cref{nef-Dirac} as an operator is defined as
-\begin{equation}
-H \phi = i \begin{pmatrix}
--1  &  0 \\
-0  &  1  \end{pmatrix} \partial_1 \phi 
-\end{equation}
+The discussion of this subsection can be easily extended to the case of non-vanishing external electric field.\\\\
 First of all, we should decide on which Hilbert space the Hamiltonian $H$ acts.
 If we can show that $H$ has a self-adjoint extension for this Hilbert space, 
 we know that the problem has unitary time evolution solutions which can be expressed in terms of the self-adjoint extension of $H$.
@@ -60,18 +56,9 @@ Hence,
 $H$ is symmetric. 
 \\\\
 It would be more complicated to find the right domain of self-adjointness of $H$.
-However, the exact domain of self-adjointness is not what interests us the most. 
+However, the exact domain of self-adjointness is not relevant for our discussion.
 To prove the well-posedness of the problem, it suffices to show that $H$ is \textit{essentially self-adjoint}, \ie possesses a self-adjoint extension.
 Even better, an essentially self-adjoint operator has always a unique self-adjoint extension.
-%A basic criterion of essential self-adjointness is given by~\cite{Reed1981}
-%\begin{theorem}
-%Let $T$ be a symmetric operator on a Hilbert space $ \mathcal{H}$. The 3 following statement are equivalent 
-%\begin{enumerate}
-%\item $T$ is essentially self-adjoint
-%\item $\ker(T^* \pm i) = \{0\}$
-%\item $\ran(T \pm i )$ are dense
-%\end{enumerate} 
-%\end{theorem}
 A common way to prove the essential self-adjointness of a symmetric operator is by the argument of deficiency coefficients.
 Let us explain the idea.
 All symmetric operators are closable~\cite{Reed1981}, 
@@ -80,7 +67,7 @@ have closed extensions.
 Instead of considering the operator $H$ above-defined, 
 we consider its closed extension.
 We denote  $\mathcal{K}_{\pm} = \ker (i \mp H^*)$ for the deficiency subspaces of $H$. 
-The corollary of the Theorem X.2 of~\cite{Reed1975} states that $\dim \mathcal{K}_+ = \dim \mathcal{K}_-$ is a necessary and sufficient condition such that $H$ has an self-adjoint extension. \\\\
+The corollary of the Theorem X.2 of~\cite{Reed1975} states that $\dim \mathcal{K}_+ = \dim \mathcal{K}_-$ is a necessary and sufficient condition such that $H$ is essentially self-adjoint. \\\\
 We start by calculating $\mathcal{K}_-$. Let $\phi \in \mathcal{K}_-$. Then $- i \phi = H^* \phi$. As $H$ is symmetric, this implies, for $\phi = \begin{pmatrix} \phi_L \\  \phi_R \end{pmatrix}$, 
 \begin{equation}
 i \begin{pmatrix} \phi_L \\ \phi_R \end{pmatrix} = 
@@ -93,8 +80,8 @@ Thus, $\phi$ could be written as
 \Theta(-x) \begin{pmatrix} f_- e^x  \\ g_-  e^{-x} \end{pmatrix} + 
 \Theta(x) \begin{pmatrix} f_+ e^x  \\ g_+  e^{-x} \end{pmatrix}
 \end{equation}
-Therefore, $\dim\mathcal{K}_- = 4$.
-By the same calculation, $\dim\mathcal{K}_+ = 4$, which implies the existence of the self-adjoint extension of $H$.
+%Therefore, $\dim\mathcal{K}_- = 4$.
+%By the same calculation, $\dim\mathcal{K}_+ = 4$, which implies the existence of the self-adjoint extension of $H$.
 %The boundary condition gives
 %\begin{equation}
 %\begin{cases}
@@ -106,22 +93,33 @@ By the same calculation, $\dim\mathcal{K}_+ = 4$, which implies the existence of
 %g_+ = i f_+ e^L
 %\end{cases}
 %\end{equation}
-%The matching condition~\cref{nef-matching} and the boundary condition~\cref{vacuum-bagboundcond} imply
-%\begin{equation}
-%f_+ \begin{pmatrix} 1 \\ ie^L \end{pmatrix}
-%= f_- \begin{pmatrix} \frac{A}{D} - i\frac{C}{D} e^{-L}  %\\
-%\frac{C^*}{D} - i \frac{A}{D} e^{-L} \end{pmatrix}
-%\end{equation}
-%$f_+$ and $f_-$ are non-vanishing if and only if 
-%\begin{equation}
-%\begin{split}
-%& \frac A D - i\frac C D e^{-L} =  -ie^{-L}\big(\frac{ C^*}{ D} -i \frac A D e^{-L}\big) \\
-%\Leftrightarrow & \quad 2i A \cosh L = -C + C^*
-%\end{split}
-%\end{equation}
-%This equation can not hold since $A > |C|$.
-%As a consequence, $\dim\mathcal{K}_- = 0$. 
-%For $\mathcal{K}_+$, it suffices to replace $L$ by $-L$ in the above calculation and we will find $\dim\mathcal{K}_+ = 0$. 
+The matching condition~\cref{nef-matching} and the boundary condition~\cref{vacuum-bagboundcond} imply\footnote{
+In effect, by integration by parts, we can show that $\psi\in\dom(H^*)$ iff 
+\begin{equation*}\begin{split}
+&\Big(-\psi^\dagger_L\big(\frac L 2 \big) + i\psi_R^\dagger\big(\frac L 2\big) \Big)\phi_L\big(\frac L 2\big)
+-\Big(-\psi_L\big(\frac{-L}{ 2} \big) + i\psi_R^\dagger\big(\frac{ -L}{ 2}\big) \Big)\phi_L\big(\frac{ -L}{ 2}\big) \\
+&+\Big(\frac{A}{|D|} \psi_L^\dagger(0^+) - \psi_L^\dagger(0^-) + \frac{C^*}{|D|}\psi_R^\dagger(0^+)\Big)\phi_L(0^-) 
++ \Big(\frac{A}{|D|} \psi_R^\dagger(0^+) - \psi_R^\dagger(0^-) + \frac{C}{|D|}\psi_L^\dagger(0^+)\Big)\phi_R(0^-) =0
+\end{split}
+\end{equation*}
+for any $\phi\in\dom(H)$.
+Therefore, an element of $\dom(H^*)$ also satisfy~\cref{nef-matching} and~\cref{vacuum-bagboundcond}.
+}
+\begin{equation}
+f_+ \begin{pmatrix} 1 \\ ie^L \end{pmatrix}
+= f_- \begin{pmatrix} \frac{A}{D} - i\frac{C}{D} e^{-L}  \\
+\frac{C^*}{D} - i \frac{A}{D} e^{-L} \end{pmatrix}
+\end{equation}
+$f_+$ and $f_-$ are non-vanishing if and only if 
+\begin{equation}
+\begin{split}
+& \frac A D - i\frac C D e^{-L} =  -ie^{-L}\big(\frac{ C^*}{ D} -i \frac A D e^{-L}\big) \\
+\Leftrightarrow & \quad 2i A \cosh L = -C + C^*
+\end{split}
+\end{equation}
+This equation can not hold since $A > |C|$.
+As a consequence, $\dim\mathcal{K}_- = 0$. 
+For $\mathcal{K}_+$, it suffices to replace $L$ by $-L$ in the above calculation and we will find $\dim\mathcal{K}_+ = 0$. 
 %Therefore,
 %$H$ possesses self-adjoint extension.
 

@@ -10,14 +10,19 @@ We then have
 \begin{equation*}
  \mathcal{P}_\pm = \frac 1 2  \begin{pmatrix} 1 & \mp i \\ \pm i & 1 \end{pmatrix}
 \end{equation*}
-Let $\Phi = (\phi, \phi_|)$, where $\phi = \begin{pmatrix} \phi_L \\ \phi_R \end{pmatrix}$, be a solution of~\cref{wen-maineq}. 
+As in~\cref{chap-vacuum}, 
+we look for normalized eigenfunctions for each possible eigenvalue $k$.
+Let $\Phi_k = (\phi, \phi_|)$, where $\phi = \begin{pmatrix} \phi_L \\ \phi_R \end{pmatrix}$,
+be a normalized eigenfunction of $\Delta$ for eigenvalue $k$. 
 It is easy to verify that $\phi_L$ and $\phi_R$ are of form
 \begin{equation*}
-\phi_L = f e^{-ik(x^0 - x^1)} \quad
-\phi_R = g e^{-ik(x^0 + x^1)}
+\phi_L = f e^{ik x^1} \quad
+\phi_R = g e^{-ik x^1}
 \end{equation*}
 where $f, g\in\mathbb C$ are constants which have to be determined. \\\\
-By the discussion in~\cref{wen-subsect-saw2} and~\cref{wen-saw2bound}, $\phi$ must satisfy
+The boundary equation implies that\footnote{
+cf~\cref{wen-subsect-saw2} for a detailed explanation.
+} 
 \begin{equation*}
 \begin{cases}
 \begin{pmatrix} 1 & i \\ -i & 1 \end{pmatrix}(c^{-1} \phi - \partial_1 \phi)\vert_{x^1 = -L} = 0 \\
@@ -25,7 +30,7 @@ By the discussion in~\cref{wen-subsect-saw2} and~\cref{wen-saw2bound}, $\phi$ mu
 \begin{pmatrix} 1 & -i \\ i & 1 \end{pmatrix}(c^{-1} \phi + \partial_1 \phi)\vert_{x^1 = L} = 0
 \end{cases}
 \end{equation*}
-In terms of components, this system of equations is equivalent to
+This provides the relation between $f$, $g$ and $k$
 \begin{equation*}
 \begin{cases}
 f(c^{-1} - ik)e^{-ikL} + ig(c^{-1} + ik)e^{ikL} = 0 \\
@@ -89,14 +94,15 @@ the asymptotic behavior of $\theta-\frac \pi 2$ when $n\rightarrow + \infty$ is 
 \theta - \frac{\pi}{ 2} = &  -\frac{2}{\pi C n}\Big( 1 + \mathcal{O}\big( \frac{ 1}{ n}\big) \Big)
 \end{split}
 \end{equation*}
-Hence, when $n\rightarrow +\infty$, 
+Hence, we obtain the asymptotic behavior of $k_n$ when $n\rightarrow +\infty$, 
 \begin{equation*}
 k_n = \frac 1 L \Big( \big( \frac n 2 - \frac 1 4 \big)\pi + \frac{2}{\pi C n}+ \mathcal{O}\big(\frac{1}{n^2}\big) \Big)
 \end{equation*}
-Now, let us compute the vacuum two-point function, given by~\cref{vacuum-hadamardstate}.
-We can show that we still have a Hadamard state if we put the bulk field properly normalized in the total Hilbert space $\mathcal{H}$ in the expression of the two-point function.\\\\
+We compute now the two-point function in the bulk, given by~\cref{vacuum-hadamardstate}\footnote{
+We can show that the bulk two-point function is of Hadamard form in using the fact that $\sum_{k}|\Phi_k\rangle\langle\Phi_k| = \mathbb{1}_{\mathcal{H}} = \mathbb{1}_{L^2(M)}\oplus\mathbb{1}_{L^2(\partial M)}$ where $|\Phi_k\rangle$ are the properly normalized eigenfunctions of $\Delta$ 
+}.\\\\
 %
-The boundary component $\phi_|$ is (cf~\cref{wen-saw2bound})
+The boundary component $\phi_|$ can be decomposed into (cf~\cref{wen-saw2bound})
 \begin{equation*}
 \begin{split}
 \phi_| = & \mathbf{1}_{\{x^1 = L\}} \mathcal{P}_-\phi + \mathbf{1}_{\{x^1 = -L\}} \mathcal{P}_+\phi \\
@@ -136,14 +142,14 @@ Thus, the square of the norm of the renormalization constants ($|f| = |g|$) beha
 |f_n|^2 = 
 \frac{1}{4L}\Big( 1 - \frac{4}{\pi^2C n^2} + \mathcal{O}\big(\frac{1}{n^3}\big) \Big)
 \end{equation*}
-By adapting time-splitting $x^0 - y^0 = t$, the off-diagonal components of the two-point function are
+To calculate the vacuum polarization, we can simply adapt the = time-splitting $x^0 - y^0 = t$, the off-diagonal components of the two-point function are
 \begin{equation*}
 \omega(\phi^1(x)\phi^\dagger_1(y)) = \omega(\phi^2(x)\phi^\dagger_2(y)) = 
  \sum_{k_n>0} |f_n|^2 e^{-ik_nt}
 \end{equation*} 
 One might expect that there is no vacuum charge because there is no external electric field. 
 Although it is not obvious to make such a conclusion from the expression of the two-point function, 
-this conjecture can be proven correct by using the symmetry of the spectrum.
+this can be proven in using the symmetry of the spectrum of $\Delta$.
 By~\cref{wen-k1d1}, we know that if $k$ is a mode, $-k$ should also be a mode.
 By definition~\cref{vacuum-hadamardstate}, we have
 \begin{equation*}
@@ -185,9 +191,10 @@ Hence, by~\cref{intro-hh},~\cref{intro-renormalization} and~\cref{vacuum-hadamar
 %Before introducing electromagnetic field, one would expect to also get a vanishing vacuum polarization under such a boundary condition, which has been shown here.\\\\
 %%%%%%%%%%%
 %%%%%%%%%%%
-To calculate the stress-energy tensor, we choose the point-splitting in both temporal and spatial direction as in~\cref{chap-vacuum}. 
-In order to do the derivation term by term in the infinite sum appearing in the state, we use the $i\varepsilon$ prescription as in~\cite{Zahn2017}. 
-Namely, we consider the two-point functions with $\varepsilon >0$
+To calculate the stress-energy tensor, we choose the point-splitting in both temporal and spatial direction as in~\cref{chap-vacuum}.
+We use the $i\varepsilon$ prescription as in~\cite{Zahn2017}.
+Namely,
+we consider the two-point functions with $\varepsilon >0$
 \begin{equation*}
 \begin{split}
 & \omega(\phi^1(x)\phi_1^\dagger(y)) = 
@@ -197,6 +204,7 @@ Namely, we consider the two-point functions with $\varepsilon >0$
 \sum_{k_n>0} |f_n|^2 e^{-ik_n(x^0 - y^0 + x^1 - y^1-i\varepsilon)}
 \end{split}
 \end{equation*}
+These series converge uniformly so that we can derivate them term by term.
 %
 Using~\cref{vacuum-stressenergy} for 
 \begin{equation*}

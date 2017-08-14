@@ -1,6 +1,7 @@
-In this chapter, we will study the vacuum polarization in 1+1 dimension for both confined and non-confined cases.
-%In each discussion,
-%we compute the vacuum current and charge densities as well as the stress energy tensor without and with external fields. \\\\
+Based on the work of Zahn and Schlemmer~\cite{Zahn2015} on the vacuum polarization in the 1+1 spatially confined space-time $\mathbb{R}\times[-\frac{L}{2}, \frac L 2]$ in the presence of an external constant electric field $E$,
+we investigate the consequence of introducing a Kondo-type potential inspired by~\cref{vacuum-kondohamiltonian}.
+We will compute the vacuum polarization and the stress-energy tensor with the prescription introduced in~\cite{Zahn2015}.
+The non-confined case will also be treated in order to compare with the limit when $L\rightarrow +\infty$.\\\\
 We choose the following representations for the Dirac gamma matrices for this chapter
 \begin{equation*}
 \gamma^0 = \begin{pmatrix}
@@ -12,22 +13,24 @@ We choose the following representations for the Dirac gamma matrices for this ch
 \end{equation*}
 %
 \section{Vacuum polarization in a confined space}\label{sect-nef}
-We consider a massless Dirac field in $1+1$-dimensional space-time spatially confined in the region $[-\frac L 2 , \frac L 2 ]$.
-We introduce a static constant electric field whose electromagnetic potential components are 
+%We consider a massless Dirac field in $1+1$-dimensional space-time spatially confined in the region $[-\frac L 2 , \frac L 2 ]$.
+%We introduce a static constant electric field whose electromagnetic potential components are 
+We choose the static gauge such that the electromagnetic 1+1 potential is
 \begin{equation*}
 (A_0, A_1) = (E x^1, 0)
 \end{equation*}
-Denoting $\phi = \gamma^0\psi$, the equation of motion of a massless fermionic field in such an external potential 
+Denoting 
 \begin{equation*}
-i\gamma^\mu\partial_\mu \psi = i\gamma^\mu\partial_\mu \psi = eEx^0 x^1 \psi
+\phi = \gamma^0\psi
+\end{equation*} 
+the equation of motion of a massless fermionic field in such an external potential 
+\begin{equation*}
+i\gamma^\mu\partial_\mu \psi = eE\gamma^0 x^1 \psi
 \end{equation*}
 can be written as
 \begin{equation*}
 i\partial_0\phi = i \begin{pmatrix} -1 & 0 \\ 0 & 1 \end{pmatrix}\partial_1\phi
 + eEx^1\phi
-+ \begin{pmatrix}
-v_3 & v_- \\ v_+ & -v_3
-\end{pmatrix}\delta(x^1)\phi
 \end{equation*}
 %
 As for the boundary condition on $x^1 = \pm \frac L 2$, we impose the bag boundary condition~\cite{Chodos1974}, \ie 
@@ -47,20 +50,21 @@ i \phi_L
 \end{equation}
 %
 As shown in~\cite{Zahn2015}, when there is no external electric field, no polarization occurs,
-\ie the expectation values of current and charge densities both vanish. 
-%However, it is curious to know if vacuum current and charge would be created when there is an extremly localized electric field.
-Inspired by~\cref{vacuum-kondohamiltonian}, we introduce a potential term with singularity at $x^1 = 0$ in the same manner.
-We can write down the equation of motion of the problem as following
+\ie both the expectation values of current and charge densities vanish. 
+Now, we introduce a potential term with singularity at $x^1 = 0$ in the same form as~\cref{vacuum-kondohamiltonian}.
+Namely, we are interested in the Dirac fields obeying the following equation of motion
 \begin{equation}\label{nef-Dirac}
-i \partial_0 \phi = 
+i \partial_0 \phi \equiv H\phi =
 \begin{pmatrix} 
 -1 & 0 \\
 0 & 1 
-\end{pmatrix} i \partial_1 \phi +
+\end{pmatrix} i \partial_1 \phi 
++ eE\phi
++
 \begin{pmatrix}
 v_3 & v_- \\
 v_+ & -v_3
-\end{pmatrix} \delta(x_1) \phi
+\end{pmatrix} \delta(x^1) \phi
 \end{equation}
 where $v_3, v_+ + v_- \in \mathbb{R}$ and $ v_+ - v_-\in i \mathbb{R}$.\footnote{
 In effect, the Kondo potential (the second term of the \rhs of~\cref{vacuum-kondohamiltonian}) is expressed as linear combination of the Pauli matrices
@@ -71,7 +75,7 @@ In effect, the Kondo potential (the second term of the \rhs of~\cref{vacuum-kond
 \end{equation*}
 with real coefficients.
 }
-By writing $\phi =
+In terms of the components of $\phi =
 \begin{pmatrix}
 \phi_L \\
 \phi_R
@@ -83,7 +87,7 @@ i \partial_0 \phi_L = -i\partial_1 \phi_L + (v_3 \phi_L + v_- \phi_R) \delta(x^1
 i \partial_0 \phi_R = i\partial_1 \phi_R + (v_+ \phi_L - v_3 \phi_R) \delta(x^1)
 \end{cases}
 \end{equation}
-The presence of a delta potential might impose some matching condition at the singular point.
+The presence of a delta distribution might impose some matching condition at the singular point.
 Let us consider now the matching condition at $x^1=0$.
 A spinor field $\phi$ verifying~\cref{nef-Dirac} should not be continuous at $x^1 = 0$. 
 By integrating~\cref{nef-Dirac} over $[-\epsilon, \epsilon]$ and taking the limite for $\epsilon \rightarrow 0$,
@@ -118,11 +122,11 @@ A = 1+ \frac{1}{4}\Sigma \quad, \quad
 C = -iv_-  \quad, \quad
 D = 1-\frac{1}{4}\Sigma + iv_3
 \end{equation*}
-%\input{data/chap-vacuum/final/vacuum-subsect-consistency}
 %
+If the Kondo-type potential were not present in~\cref{nef-Dirac}, 
+we can solve the equation of motion by exploiting the self-adjointness of the Hamiltonian $H$.
 However, because of the $\delta$-function in \cref{nef-Dirac}, 
-the well-posedness of the problem is not guaranteed,
-some aspects of unbounded operator theory should be investigated~\cite{Reed1981}.
+the well-posedness of the problem is not guaranteed and some aspects of unbounded operator theory should be investigated~\cite{Reed1981}.
 This will be tackled in the next subsection.
 %
 \input{data/chap-vacuum/final/vacuum-subsect-sa}
