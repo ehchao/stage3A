@@ -1,4 +1,6 @@
 \\\\
+A simliar justification of the well-posedness of the problem as in~\cref{vacuum-subsect-sa} will be more difficult.
+With the matching condition encoded in the domain, we assume simply that the Hamiltonian of the problem is self-adjoint on some Hilbert space.
 In lack of boundary, we expect to find a generalized orthonormal basis of the Hilbert space composed of eigenfunctions (for eigenvalue $k$) of type
 \begin{equation}
 \begin{split}
@@ -85,24 +87,15 @@ Let us calculate the two point functions associated with these eigenvectors now.
 \begin{equation*}
 \omega(\psi^1(x)\bar{\psi}_2(y))   =  \omega(\phi^2(x)\phi^\dagger_2(y)) = -\frac{1}{2\pi}\frac{i}{x^0 - y^0 - x^1 + y^1 - i\epsilon} \Big(1 + i\frac{eE}{2}\big((x^1)^2 - (y^1)^2 \big) \Big)
 \end{equation*}
-Since they are the same as in~\cite{Zahn2015}, the current density and the charge density is the same as in the case where there is no Kondo type delta potential, namely, no current and with charge density 
-\begin{equation}\label{vacuum-charge_nbdy}
-\rho = \frac{1}{\pi} e^2 E x^1
-\end{equation}
-
+%Since they are the same as in~\cite{Zahn2015}, the current density and the charge density is the same as in the case where there is no Kondo type delta potential, namely, no current and with charge density 
+%\begin{equation}\label{vacuum-charge_nbdy}
+%\rho = \frac{1}{\pi} e^2 E x^1
+%\end{equation}
+Subtracting the Hadamard parametrix and tracing with gamma matrices, we yield 
 \begin{equation*}
-\begin{split}
-\omega(\psi^2(x)\bar{\psi}_1(y)) & =  \omega(\phi^1(x)\phi^\dagger_1(y)) \\
-& = \int_{k > 0} \frac{|D|^2}{2\pi A^2} e^{-ik(x^0 - y^0 - x^1 + y^1)} \dd k + \int_{k>0} \frac{1}{2\pi}  \frac{\beta^2}{\alpha^2} e^{-ik(x^0 - y^0 - x^1 + y^1)} \dd k\\
-& = -\frac{1}{2\pi}\frac{i}{x^0 - y^0 - x^1 + y^1 - i\epsilon} 
-\end{split}
+\rho = \frac 1 \pi e^2 E x^1
 \end{equation*}
-\begin{equation*}
-\omega(\psi^1(x)\bar{\psi}_2(y))   =  \omega(\phi^2(x)\phi^\dagger_2(y)) = -\frac{1}{2\pi}\frac{i}{x^0 - y^0 - x^1 + y^1 - i\epsilon} 
-\end{equation*}
-Subtracting the Hadamard parametrix and tracing with gamma matrices, we yield 0 for both current and charge density, which is expected when the external electric field is missing.
-
-
+which is in agreement with the $L\rightarrow +\infty$ limit of the confined case.
 
 
 

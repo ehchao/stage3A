@@ -13,9 +13,9 @@ We choose the following representations for the Dirac gamma matrices for this ch
 \end{equation*}
 %
 \section{Vacuum polarization in a confined space}\label{sect-nef}
-%We consider a massless Dirac field in $1+1$-dimensional space-time spatially confined in the region $[-\frac L 2 , \frac L 2 ]$.
+We consider in this chapter a massless Dirac field in $1+1$-dimensional space-time spatially confined in the region $[-\frac L 2 , \frac L 2 ]$.
 %We introduce a static constant electric field whose electromagnetic potential components are 
-We choose the static gauge such that the electromagnetic 1+1 potential is
+We introduce an external electric field $E$ and choose the static gauge such that the electromagnetic 1+1 potential is
 \begin{equation*}
 (A_0, A_1) = (E x^1, 0)
 \end{equation*}
@@ -49,12 +49,10 @@ i \phi_L
 \end{pmatrix} \eval{\pm \frac{L}{2}}
 \end{equation}
 %
-As shown in~\cite{Zahn2015}, when there is no external electric field, no polarization occurs,
-\ie both the expectation values of current and charge densities vanish. 
 Now, we introduce a potential term with singularity at $x^1 = 0$ in the same form as~\cref{vacuum-kondohamiltonian}.
-Namely, we are interested in the Dirac fields obeying the following equation of motion
+Namely, we deal with the Dirac fields obeying the following equation of motion
 \begin{equation}\label{nef-Dirac}
-i \partial_0 \phi \equiv H\phi =
+i \partial_0 \phi = H\phi \equiv
 \begin{pmatrix} 
 -1 & 0 \\
 0 & 1 
@@ -87,10 +85,10 @@ i \partial_0 \phi_L = -i\partial_1 \phi_L + (v_3 \phi_L + v_- \phi_R) \delta(x^1
 i \partial_0 \phi_R = i\partial_1 \phi_R + (v_+ \phi_L - v_3 \phi_R) \delta(x^1)
 \end{cases}
 \end{equation}
-The presence of a delta distribution might impose some matching condition at the singular point.
+The presence of a delta distribution might impose a matching condition at the singular point.
 Let us consider now the matching condition at $x^1=0$.
 A spinor field $\phi$ verifying~\cref{nef-Dirac} should not be continuous at $x^1 = 0$. 
-By integrating~\cref{nef-Dirac} over $[-\epsilon, \epsilon]$ and taking the limite for $\epsilon \rightarrow 0$,
+Integrating~\cref{nef-Dirac} over $[-\epsilon, \epsilon]$ and taking the limite for $\epsilon \rightarrow 0$,
 we have the matching condition
 \begin{equation}\label{nef-matching}
 \begin{cases}
@@ -127,7 +125,7 @@ If the Kondo-type potential were not present in~\cref{nef-Dirac},
 we can solve the equation of motion by exploiting the self-adjointness of the Hamiltonian $H$.
 However, because of the $\delta$-function in \cref{nef-Dirac}, 
 the well-posedness of the problem is not guaranteed and some aspects of unbounded operator theory should be investigated~\cite{Reed1981}.
-This will be tackled in the next subsection.
+This will be tackled in the next section.
 %
 \input{data/chap-vacuum/final/vacuum-subsect-sa}
 \input{data/chap-vacuum/final/vacuum-subsect-hadamard}

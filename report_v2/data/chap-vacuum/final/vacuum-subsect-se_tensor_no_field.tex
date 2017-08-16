@@ -1,4 +1,4 @@
-\subsection{Stress-energy tensor}
+\section{Stress-energy tensor}
 In an analogous way,
 we can compute the stress-energy tensor in using the same renormalization prescription by point-splitting \wrt the Hadamard parametrix~\cite{Dappiaggi2009}.
 In particular, in our configuration of confined space, one would expect that a correct way to define vacuum polarization will allow us to rediscover the Casimir effect~\cite{Casimir1948}.
@@ -61,29 +61,48 @@ In $(0, \frac L 2 ]$,
 it suffices to replace $\xi_E$ by $\chi_E$ defined by~\cref{vacuum-chie}.
 It is straightforward to verify that we have exactly the same expression for the stress-energy tensor in both region.
 \\\\
-When the Kondo-type potential is turned off, \ie $v_3, v_+, v_- \rightarrow 0$, $\theta \rightarrow \frac 1 2 \pi$.
+When the electric field and the Kondo-type potential are turned off, \ie $v_3, v_+, v_- \rightarrow 0$, $\theta \rightarrow \frac 1 2 \pi$.
 We obtain the same Casimir energy as calculated in~\cite{Sundberg2003}, \ie
 \begin{equation*}
 T_{\mu\nu} = -\frac{\pi}{24L^2}\begin{pmatrix} 1 & 0 \\ 0 & 1\end{pmatrix}
 \end{equation*}
-We observe that the presence of a Kondo potential in a confined space creates opposite vacuum charges in $[-\frac L 2, 0)$ and $(0, \frac L 2]$.
-According to~\cref{vacuum-density_without_field}, 
-this background polarization vanishes if and only if the parameter $C = 0$. 
-In terms of coefficients of the Kondo potential in~\cref{nef-Dirac},
-this corresponds to $v_+ = v_- = 0$.
-In this case, the Kondo potential is not only Hermitian but diagonal in our system of coordinate. \\\\
+%We observe that the presence of a Kondo potential in a confined space creates opposite vacuum charges in $[-\frac L 2, 0)$ and $(0, \frac L 2]$.
+%According to~\cref{vacuum-density_without_field}, 
+%this background polarization vanishes if and only if the parameter $C = 0$. 
+%In terms of coefficients of the Kondo potential in~\cref{nef-Dirac},
+%this corresponds to $v_+ = v_- = 0$.
+%In this case, the Kondo potential is not only Hermitian but diagonal in our system of coordinate. \\\\
 %
-We cite here the charge density and the stress-energy tensor obtained in~\cite{Zahn2015} for the same configuration as the ours except that there is no Kondo-type potential
+Contrary to the vacuum polarization in the presence of a Kondo-type potential, 
+the vacuum stress-energy tensor is continuous.
+The stress-energy tensor of~\cite{Zahn2015} is
 \begin{equation*}
-\begin{split}
-& \rho = \frac 1 \pi e^2 Ex^1 \\
-& T_{\mu\nu} = - \big( \frac{\pi}{24L^2} - \frac{e^2 E^2 (x^1)^2}{2\pi}\big) \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}
-\end{split}
+T_{\mu\nu} = - \big( \frac{\pi}{24L^2} - \frac{e^2 E^2 (x^1)^2}{2\pi}\big) \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}
 \end{equation*}
-Compared to these results,
-there are only constant shifts in both charge density and stress-energy tensor in presence of the Kondo-type potential.
-One can notice that the condition $C = 0$ ($\theta = \frac \pi 2$ not only leads to a vanishing vacuum charge density but also allows to obtain the same stress-energy tensor as in~\cite{Zahn2015}.
-
+Compared to the above result, there is just a constant shift.
+This shift is, as in the case of the vacuum polarization, due to the non-vanishing value of $C$\footnote{
+$\theta\rightarrow \frac \pi 2$ as $C\rightarrow 0$
+}, 
+\ie the interaction between spinors of different chiralities.
+%For $E=0$, we obtain the vacuum energy density of the system. 
+%Interestingly, the presence of the Kondo-type potential can change this value.
+%C0
+%We cite here the charge density and the stress-energy tensor obtained in~\cite{Zahn2015} for the same configuration as the ours except that there is no Kondo-type potential
+%\begin{equation*}
+%\begin{split}
+%& \rho = \frac 1 \pi e^2 Ex^1 \\
+%& T_{\mu\nu} = - \big( \frac{\pi}{24L^2} - \frac{e^2 E^2 (x^1)^2}{2\pi}\big) \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}
+%\end{split}
+%\end{equation*}
+%Compared to these results,
+%there are only constant shifts in both charge density and stress-energy tensor in presence of the Kondo-type potential.
+%One can notice that the condition $C = 0$ ($\theta = \frac \pi 2$ not only leads to a vanishing vacuum charge density but also allows to obtain the same stress-energy tensor as in~\cite{Zahn2015}.
+\begin{remark}
+The case of a non-confined space-time is partially treated in~\cref{appendix-vac}. 
+We show how this kind of calculation could be done for non-discrete energy levels. 
+We yield indeed the same result for the vacuum polarization as 
+However, the self-adjointness of the Hamiltonian of the problem is assumed but not proven in that case.
+\end{remark}
 
 
 

@@ -1,9 +1,8 @@
-\subsection{Well-posedness of the problem~\cref{nef-Dirac}}\label{vacuum-subsect-sa}
-%We would like to prove that~\cref{nef-Dirac} possesses indeed unitary time evolution solutions by functional analysis for unbounded operators~\cite{Reed1975}.
+\section{Well-posedness of the problem~\cref{nef-Dirac}}\label{vacuum-subsect-sa}
 The aim of this subsection is to porve that the Hamiltonian $H$ of~\cref{nef-Dirac} has indeed a unique self-adjoint extension.
 For simplicity, 
 we suppose that $E = 0$.
-The discussion of this subsection can be easily extended to the case of non-vanishing external electric field.\\\\
+The discussion of this subsection can be easily extended to the case of non-vanishing external electric fields.\\\\
 First of all, we should decide on which Hilbert space the Hamiltonian $H$ acts.
 If we can show that $H$ has a self-adjoint extension for this Hilbert space, 
 we know that the problem has unitary time evolution solutions which can be expressed in terms of the self-adjoint extension of $H$.
@@ -15,10 +14,21 @@ The inner product of this Hilbert space is the sum of the usual $L^2$ inner prod
 \begin{equation*}
 \langle \cdot, \cdot\rangle_{\mathcal{H} } = \langle \cdot, \cdot\rangle_{L^{2}(I_-, \mathbb{C}^2)} +\langle \cdot, \cdot\rangle_{L^{2}(I_+, \mathbb{C}^2)}
 \end{equation*}
-% with $I = [-\frac{L}{2}, \frac{L}{2}]$. 
-To start, we encode the boundary condition~\cref{vacuum-bagboundcond} and the matching condition at $x^1 = 0$~\cref{nef-matching2} in the domaine of $H$ 
+The main difficulty would be to find the exact domain of self-adjointness of $H$ on $\mathcal{H}$.
+However, the exact domain of self-adjointness is not relevant for our discussion.
+To prove the well-posedness of the problem, it suffices to show that $H$ is \textit{essentially self-adjoint},
+\ie the closure of $H$ is self-adjoint.
+An essentially self-adjoint operator has always a unique self-adjoint extension, which ensures the unicity of the solution of the problem.
+A common way to prove the essential self-adjointness of a symmetric operator is by the argument of deficiency indices.\\\\
+%
+To start, we try to define a domain on which $H$ is symmetric.
+At least, we should encode the boundary condition~\cref{vacuum-bagboundcond} and the matching condition at $x^1 = 0$~\cref{nef-matching2} in the domaine of $H$.
+Let us show that $H$ is symmetric with the following domain\footnote{
+The matching~\cref{nef-matching2} assumes that the left-hand and right-hand limit exist. 
+A function $\phi\in\dom(H)$ can thus be extended to a piecewise continous function on $[-\frac L 2, \frac L 2]$ and it will be in $\mathcal{H}$ by the compacity of $[-\frac L 2, \frac L 2]$.
+} 
 \begin{equation*}
-\mathrm{Dom}(H) = \Big \{\phi \enskip \big\vert \enskip \phi \in W^{1,2}(I_-, \mathbb{C}^2) \oplus W^{1,2}(I_+, \mathbb{C}^2), \enskip \phi \textrm{ verifies~\cref{vacuum-bagboundcond} and~\cref{nef-matching2}} \Big \}
+\mathrm{Dom}(H) = \Big \{\phi \enskip \big\vert \enskip \phi \in C^{1}(I_-, \mathbb{C}^2) \oplus C^{1}(I_+, \mathbb{C}^2), \enskip \phi \textrm{ verifies~\cref{vacuum-bagboundcond} and~\cref{nef-matching2}} \Big \}
 \end{equation*} 
 Let $ \phi = \begin{pmatrix} \phi_L \\ \phi_R \end{pmatrix}, \psi = \begin{pmatrix} \psi_L \\ \psi_R \end{pmatrix} \in \mathrm{Dom}(H)$
 \begin{equation}\label{sa-hamiltonian}
@@ -55,20 +65,10 @@ Hence,
 \end{equation*}
 $H$ is symmetric. 
 \\\\
-It would be more complicated to find the right domain of self-adjointness of $H$.
-However, the exact domain of self-adjointness is not relevant for our discussion.
-To prove the well-posedness of the problem, it suffices to show that $H$ is \textit{essentially self-adjoint}, \ie possesses a self-adjoint extension.
-Even better, an essentially self-adjoint operator has always a unique self-adjoint extension.
-A common way to prove the essential self-adjointness of a symmetric operator is by the argument of deficiency coefficients.
-Let us explain the idea.
-All symmetric operators are closable~\cite{Reed1981}, 
-\ie
-have closed extensions.
-Instead of considering the operator $H$ above-defined, 
-we consider its closed extension.
+%It would be more complicated to find the right domain of self-adjointness of $H$.
 We denote  $\mathcal{K}_{\pm} = \ker (i \mp H^*)$ for the deficiency subspaces of $H$. 
-The corollary of the Theorem X.2 of~\cite{Reed1975} states that $\dim \mathcal{K}_+ = \dim \mathcal{K}_-$ is a necessary and sufficient condition such that $H$ is essentially self-adjoint. \\\\
-We start by calculating $\mathcal{K}_-$. Let $\phi \in \mathcal{K}_-$. Then $- i \phi = H^* \phi$. As $H$ is symmetric, this implies, for $\phi = \begin{pmatrix} \phi_L \\  \phi_R \end{pmatrix}$, 
+The corollary of the Theorem X.2 of~\cite{Reed1975} states that $\dim \mathcal{K}_+ = \dim \mathcal{K}_- = 0$ is a necessary and sufficient condition such that $H$ is essentially self-adjoint. \\\\
+We start by calculating $\dim\mathcal{K}_-$. Let $\phi \in \mathcal{K}_-$. Then $- i \phi = H^* \phi$. As $H$ is symmetric, this implies, for $\phi = \begin{pmatrix} \phi_L \\  \phi_R \end{pmatrix}$, 
 \begin{equation}
 i \begin{pmatrix} \phi_L \\ \phi_R \end{pmatrix} = 
 i \begin{pmatrix} 1 & 0  \\ 0  &  -1 \end{pmatrix} 
@@ -119,9 +119,7 @@ $f_+$ and $f_-$ are non-vanishing if and only if
 \end{equation}
 This equation can not hold since $A > |C|$.
 As a consequence, $\dim\mathcal{K}_- = 0$. 
-For $\mathcal{K}_+$, it suffices to replace $L$ by $-L$ in the above calculation and we will find $\dim\mathcal{K}_+ = 0$. 
-%Therefore,
-%$H$ possesses self-adjoint extension.
+For $\mathcal{K}_+$, it suffices to replace $L$ by $-L$ in the above calculation and we will find $\dim\mathcal{K}_+ = 0$, which shows the essential self-adjointness of $H$ and concludes on the well-posedness of the problem.
 
 
 

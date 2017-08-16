@@ -60,12 +60,14 @@ The Cauchy problem~\cref{wen-maineq} with initial data $\Phi_0\in\mathcal{D}$ ha
 \end{proposition}
 %-----------------
 The self-adjointness being proven, 
-we can find a generalized orthonormal basis of $\mathcal{H}$ consisting of eigenfunctions of $Delta$.
-The cases for $M = \mathbb{R}^{d-1}\times\mathbb{R}_+$ and $M = \mathbb{R}^{d-1}\times [-L, L]$ have been studied in~\cref{wen-subsect1} and~\cref{wen-subsect-saw2}.
+we can find a generalized orthonormal basis of $\mathcal{H}$ consisting of eigenfunctions of $\Delta$.
+As examples, the cases for $M = \mathbb{R}^{d-1}\times\mathbb{R}_+$ and $M = \mathbb{R}^{d-1}\times [-L, L]$ have been treated in~\cref{wen-subsect1} and~\cref{wen-subsect-saw2}.
 %%%%%%%%
 \begin{remark}
 The assumption $c>0$ ensures the positivity of $\|\cdot\|_\mathcal{H}$. 
-%However, in some models $c$ could be chosen negative.
+In the classic level, it seems that negative $c$ will lead to some physical difficulties. 
+In our configuration, we allow the boundary to carry energy.
+The example of~\cref{appendix-wen-shockwave} shows that we might have boundary fields whoose energy increase infinitely.
 \end{remark}
 %%%%%%%%
 \subsection{Causal propagation}\label{wen-subsect-causal}
@@ -96,7 +98,9 @@ Here, the \rhs of the inequality represents the norm of the restriction of $\fra
 \end{proposition}
 Let us take a pause and analyse the elements of~\cref{wen-prop-causal} in a more detailed way.
 The relation~\cref{wen-causaldependence} that we try to prove states that we can control the time derivative of any order the data by the data in the causal past.
-The condition~\cref{wen-domaindeltak} actually demands $\Phi$ to be in $\cap_{k\in\mathcal{N}^*}\dom(\Delta^k)$.
+The condition~\cref{wen-domaindeltak} actually demands $\Phi$ to be in $\cap_{k\in\mathcal{N}^*}\dom(\Delta^k)$\footnote{
+This can be easily proven by mathematical induction.
+}.
 This requirement allows us to make sense of the map
 from $\mathcal{H}^k(M) = \cap_{s=1}^{k} \dom(\Delta^s)$ to $\mathbb{R}_+$
 \begin{equation}\label{wen-hilbertnorm}
@@ -134,15 +138,17 @@ taking into account the fact that $\Phi\in\dom(\Delta^2)$, one gets
 where $\nabla$ is the gradient.
 We will prove the following proposition as in~\cite{Zahn2016}
 \begin{proposition}\label{wen-propcau}
-Let $\Sigma_0$ and $\Sigma_1$ two equal-time surfaces. 
-Then, for $\Phi = (\phi, \phi_|) \in \mathcal{K}$ any smooth solution of \cref{wen-maineq} for smooth initial data $(\phi_0, \phi_{|0}) \in C^\infty(M) \times C^\infty(\partial M)$ on a Cauchy surface $\mathcal{S}_0 \subset \Sigma_0$,
+With the same notations as in~\cref{wen-prop-causal},
+%Let $\Sigma_0$ and $\Sigma_1$ two equal-time surfaces. 
+%Then, for $\Phi = (\phi, \phi_|) \in \mathcal{K}$
+% any smooth solution of \cref{wen-maineq} for smooth initial data $(\phi_0, \phi_{|0}) \in C^\infty(M) \times C^\infty(\partial M)$ on a Cauchy surface $\mathcal{S}_0 \subset \Sigma_0$,
 the following relation holds
 \begin{equation}\label{wen-causal}
 \big\| \frac{\partial}{\partial t} \Phi \big\|_{\mathcal{H}(\mathcal{S}_1)}^2
 \leq 
 \big\| \frac{\partial}{\partial t} \Phi \big\|_{\mathcal{H}(\mathcal{S}_0)}^2
 \end{equation}
-for any $\mathcal{S}_1 \in D^+(\mathcal{S}_0)\cap\Sigma_1$, where $D^+(\mathcal{S}_0)$ is the future domain of dependence of $\mathcal{S}_0$.
+%for any $\mathcal{S}_1 \in D^+(\mathcal{S}_0)\cap\Sigma_1$, where $D^+(\mathcal{S}_0)$ is the future domain of dependence of $\mathcal{S}_0$.
 \end{proposition}
 \begin{proof}
 As in~\cite{Zahn2016} we introduce the following quantities
@@ -182,7 +188,7 @@ On the other hand,
 \end{split}
 \end{equation*}
 $T_{\mu\nu}$ is thus conserved on-shell. \\\\
-From the expression of $\Delta^2$ \cref{wen-delta2}, 
+From the expression of $\Delta^2$ (cf~\cref{wen-domaindeltak}), 
 \begin{equation*}
 \Box_|\mathcal{P}_+ \phi_| = c^{-1}\mathcal{P}_+\partial_\bot \phi\vert_{\partial M}
 \end{equation*}

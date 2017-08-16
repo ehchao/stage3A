@@ -1,4 +1,4 @@
-\subsection{Vacuum charge and current in the spatially bounded case}
+\section{Vacuum charge and current in the spatially bounded case}
 From now on, we work on the self-adjoint extension of $H$.
 Let $\phi_k$ be an eigenfunction for eigenvalue $k$ of the Hamiltonian $H$. 
 First of all, 
@@ -45,7 +45,6 @@ For $\alpha, \beta, \theta \in \mathbb{R}$, assuming that $\alpha + \beta \cos \
 = & \arctan \bigg( \frac{|C| \sin(kL - \frac{\pi}{2} + \eta_E)}{A + | C| \cos(kL - \frac{\pi}{2} + \eta_E) }\bigg)
 \end{split}
 \end{equation}
-We want to find $k$ such that $kL \in [0, \pi]$ in order to coincide it with the allowed values of $\arctan$.
 Therefore, by \cref{nef-kn1}, $k$ must satisfy
 \begin{equation}\label{nef-arctan}
 \begin{split}
@@ -56,7 +55,8 @@ Therefore, by \cref{nef-kn1}, $k$ must satisfy
 A \cos kL + |C| \sin\eta_E= 0
 \end{split}
 \end{equation}
-Hence,
+We want to find $k$ such that $kL \in [0, \pi]$ in order to coincide it with the allowed values of $\arctan$.
+In this case, the only allowed value for $kL$ is given by
 \begin{equation*}
 kL = \arccos \big(-\frac{|C|\sin\eta_E}{A}\big)
 \end{equation*}
@@ -124,7 +124,7 @@ e^{- ik_{n} x^1 + i\frac{eE}{2}(x^1)^2}
 \end{split}
 \end{equation*}
 Let us compute now the vacuum 1+1 current~\cref{vacuum-currentexpression}.
-As we will trace the two-point function defined in~\cref{vacuum-hadamardstate} by $\gamma^i$, 
+As we will trace the two-point function defined in~\cref{vacuum-hadamardstate} by $\gamma^\mu$, 
 only the off-diagonal terms of the two-point function should be considered.
 In terms of $\phi$, 
 the two-point function~\cref{vacuum-hadamardstate} becomes
@@ -233,5 +233,10 @@ the expression of the vacuum charge density defined by~\cref{vacuum-currentexpre
 \rho(x) = \frac{e}{\pi L}\Big( \frac{\beta \sin \theta \cos \eta_E}{\alpha + \beta \sin \eta_E \cos \theta}\Big) (-\theta + \pi)
 \Big(\Theta(- x^1) - \Theta(x^1))\Big) + \frac{e^2 E}{\pi} x^1
 \end{equation}
-and the current density is zero. 
+and the current density is zero. \\\\
+%
+Compared to~\cite{Zahn2015} for the same configuration without the Kondo-type potential, 
+we see that the Kondo-type potential creates an offset on the charge density between the two regions seperated by the singular point.
+When $E\rightarrow 0$, the first term of the \lhs of~\cref{vacuum-rho-with-field} does not vanish if $|C| \neq 0$.
+Concretely, this explains that the interaction between spinors of different chiralities due to the Kondo-type potential (the off-diagonal terms) leads to a background polarization before the introduction of the electric field.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
