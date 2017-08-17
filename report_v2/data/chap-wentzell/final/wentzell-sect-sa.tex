@@ -5,16 +5,15 @@ We define the Hilbert space
 \begin{equation*}
 \mathcal{H} = L^{2}(M,E)\oplus L^{2}(\partial M, \mathcal{P}_+ E)
 \end{equation*}
-with inner product
+with inner product\footnote{
+For simplicity,
+we denote $W^{n,m}(M,E)$ (resp. $W^{n,m}(\partial M, \mathcal{P}_+E)$) by $W^{n,m}(M)$ (resp. $W^{n,m}(\partial M)$)}
 \begin{equation}\label{wen-innerpdt}
 \langle \cdot, \cdot \rangle _\mathcal{H} = \langle \cdot, \cdot \rangle _{L^2(M)} + c \langle \cdot, \cdot \rangle _{L^2(\partial M)}
 \end{equation}
 One should notice that only a subspace of $E$ is considered for $\partial M$.
 This is used to ensure that we have a Hilbert space for the following discussions.
-We will show that $\Delta$ is self-adjoint with domain\footnote{
-For simplicity,
-we denote $W^{n,m}(M,E)$ (resp. $W^{n,m}(\partial M, \mathcal{P}_+E)$)}
-\begin{equation*}
+We will show that $\Delta$ is self-adjoint with domain\begin{equation*}
 \mathcal{D} \equiv \{ \Phi = (\phi, \phi_|) \in W^{1,2}(M)\times W^{1,2}(
 \partial M)\enskip | \enskip \mathcal{P}_+\phi \vert_{\partial M} - \phi_| = 0 \}
 \end{equation*}
@@ -67,7 +66,7 @@ As examples, the cases for $M = \mathbb{R}^{d-1}\times\mathbb{R}_+$ and $M = \ma
 The assumption $c>0$ ensures the positivity of $\|\cdot\|_\mathcal{H}$. 
 In the classic level, it seems that negative $c$ will lead to some physical difficulties. 
 In our configuration, we allow the boundary to carry energy.
-The example of~\cref{appendix-wen-shockwave} shows that we might have boundary fields whoose energy increase infinitely.
+The example of~\cref{appendix-wen-shockwave} shows that we might have boundary fields whoose energies increase infinitely.
 \end{remark}
 %%%%%%%%
 \subsection{Causal propagation}\label{wen-subsect-causal}
@@ -245,8 +244,8 @@ We obtain \cref{wen-causal} by replacing $T_{00}$ and $T_{| 00}$ by their expres
 To conclude, 
 \cref{wen-prop-causal} is just a corollary of~\cref{wen-propcau} by using the unitary time evolution of $\Phi = e^{-i\Delta t}\Phi_0$.
 \begin{remark}
-As shown in~\cref{wen-subsect-saw2}, $M = \mathbb{R}^{d-1}\times[-L,L]$ is an example where 0 is an isolated point of the sepctrum of $\Delta$. 
-The problem has solutions which propagates causally in this case.
+As shown in~\cref{wen-subsect-saw2}, $M = [-L,L]$ is an example where 0 is an isolated point of the sepctrum of $\Delta$. 
+The problem has solutions which propagate causally in this case.
 \end{remark}
 %%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%

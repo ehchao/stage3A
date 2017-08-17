@@ -1,6 +1,6 @@
 \section{Vacuum charge and current in the spatially bounded case}
 From now on, we work on the self-adjoint extension of $H$.
-Let $\phi_k$ be an eigenfunction for eigenvalue $k$ of the Hamiltonian $H$. 
+Let $\phi_k$ be a normalized eigenfunction for eigenvalue $k$ of the Hamiltonian $H$. 
 First of all, 
 let us find the expression of $\phi_k$ in the region $[-\frac{L}{2}, 0)$.
 Once this has been done, 
@@ -124,14 +124,14 @@ e^{- ik_{n} x^1 + i\frac{eE}{2}(x^1)^2}
 \end{split}
 \end{equation*}
 Let us compute now the vacuum 1+1 current~\cref{vacuum-currentexpression}.
-As we will trace the two-point function defined in~\cref{vacuum-hadamardstate} by $\gamma^\mu$, 
+As we will trace the two-point function defined in~\cref{vacuum-hadamardstate} with $\gamma^\mu$, 
 only the off-diagonal terms of the two-point function should be considered.
 In terms of $\phi$, 
 the two-point function~\cref{vacuum-hadamardstate} becomes
 \begin{equation}\label{vacuum-calculhadamard}
 \omega(\psi^B(x) \bar{\psi_A}(y)) = 
 (\gamma^0)^B_C \omega(\phi^C(x) \phi^\dagger_A(y)) = (\gamma^0)^B_C
-\int_{E_k > 0} \phi^C(x) \phi^\dagger_A(y) e^{-i(x^0 - y^0) E_k} \dd k
+\int_{E_k > 0} \phi^C_k(x) \phi^\dagger_{k,A}(y) e^{-i(x^0 - y^0) E_k} \dd k
 %\quad \textrm{for $A = 1,2$}
 \end{equation}
 Let us calculate explicitly the two-point function~\cref{vacuum-calculhadamard} in the region $[-\frac L 2,0)$. 
@@ -235,8 +235,19 @@ the expression of the vacuum charge density defined by~\cref{vacuum-currentexpre
 \end{equation}
 and the current density is zero. \\\\
 %
-Compared to~\cite{Zahn2015} for the same configuration without the Kondo-type potential, 
+We cite here the vacuum charge density found in~\cite{Zahn2015} for the same configuration without Kondo-type potential
+\begin{equation*}
+\rho(x) = \frac{e^2 E}{\pi}x^1
+\end{equation*}
+and the vacuum current density is also 0.
+Compared to~\cite{Zahn2015}, 
 we see that the Kondo-type potential creates an offset on the charge density between the two regions seperated by the singular point.
 When $E\rightarrow 0$, the first term of the \lhs of~\cref{vacuum-rho-with-field} does not vanish if $|C| \neq 0$.
 Concretely, this explains that the interaction between spinors of different chiralities due to the Kondo-type potential (the off-diagonal terms) leads to a background polarization before the introduction of the electric field.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{remark}
+The case of a non-confined space-time is partially treated in~\cref{appendix-vac}. 
+We show how this kind of calculation could be done for non-discrete energy levels. 
+We yield indeed the same result for the vacuum polarization as taking the $L\rightarrow+\infty$ limit in~\cref{vacuum-rho-with-field}. 
+However, the self-adjointness of the Hamiltonian of the problem is assumed but not proven for that case.
+\end{remark}
