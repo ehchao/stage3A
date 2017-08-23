@@ -13,19 +13,19 @@ the corresponding two-point functions have the same singularity structure at the
 %which has the same singularity structure, locally and covariantly out of geometric data. 
 %The subtraction of the Hadamard parametrix from such a two-point function will leave a smooth term which can be regarded as the renormalized value of the state at the coinciding-point limit.
 A brief introduction of some basic notions of QFT on curved space-times which will be helpful to understand the renormalization prescription used in~\cite{Zahn2015} is given in~\cref{appendix-qftcst}.
-The precise definition of the vacuum polarization that we adapt will be given after a fast explanation of the renormalization scheme.
-In this report, we are interested in how matching conditions and boundary conditions could affect vacuum polarization calculated in using this renormalization method. 
+The precise definition of vacuum polarization obtained under this prescription will be given after a fast explanation of the renormalization scheme.
+In this report, we are interested in how matching and boundary conditions could affect the vacuum polarization calculated in using this renormalization method. 
 For simplicity,
-we will only consider massless spin-$\frac 1 2$ fermions.
+we will only consider the case of massless spin-$\frac 1 2$ fermions.
 \\\\
 %
 %Kondo
 In the case where singular potentials are present, 
 matching conditions at the singular points of the potentials should be imposed (see \eg Appendix J of~\cite{albeverio1988solvable}).
-In~\cref{chap-vacuum}, we propose to study the vacuum polarization in 
-$(1+1)$-dimensional space-times in presence of a Kondo-type potential, inspired by the Hamiltonian used to describe the \textit{Kondo effect}.
+In~\cref{chap-vacuum}, we propose to study the vacuum polarization in a
+$1+1$-dimensional space-time in the presence of a Kondo-type potential, inspired by the Hamiltonian used to describe the \textit{Kondo effect}.
 Since 1930's, people have observed anomalies in electrical resistance for some materials when temperature decreases. 
-Rather than having a decreasing resistance when temperature gets down,
+Rather than having decreased resistances when temperature gets down,
 the resistances of some materials increase. 
 A satisfactory explanation is that this phenomenon would be due to the existence of magnetic impurities in the material. 
 Kondo's paper~\cite{Kondo1964} treats this phenomenon as a result of interactions between the spins of conduction electrons and impurities.
@@ -39,15 +39,16 @@ where $\psi$ and $\psi^\dagger$ are the annihilation and creation operators,
 $\alpha$ is the index for spin (up or down), 
 $\vec{S}$ is the spin of the impurity,
 $\vec{\sigma}$ represents the vector of Pauli matrices and $\lambda_K$ is the Kondo coupling constant (positive for anti-ferromagnetic and negative for ferromagnetic).
-By simplicity, we will only consider the vacuum polarization due to massless spin-$\frac 1 2$ particles. \\\\
+%By simplicity, we will only consider the vacuum polarization due to massless spin-$\frac 1 2$ particles. 
+\\\\
 %
-On the other hand, boundary conditions could determine how the energy level is quantized.
+On the other hand, boundary conditions could determine how energy levels are quantized.
 A popular choice of boundary condition is the \textit{bag boundary condition}~\cite{Chodos1974}.
 The bag boundary condition is commonly used when studying the confinement of quarks~\cite{Hasenfratz1978}.
 In the configuration of the bag boundary condition, the boundary can be static or not. 
-The physical requirement is that the out-going current vanishes on the boundary.
+The physical consequence is that the out-going current vanishes on the boundary.
 %\cite{Chodos1974} shows that this kind of boundary condition can be used for different types of field (scalar, Dirac and gauge fields). 
-In our case, we are interested in Dirac fields in a confined space with static time-like boundary.
+In our case, we are interested in Dirac fields in a confined space with a static time-like boundary.
 The bag boundary condition is represented by the following relation on the Dirac field $\psi$ 
 \begin{equation}\label{wen-bagboundcond}
 i n_\mu\gamma^\mu \psi = \psi
@@ -77,12 +78,12 @@ a strong coupling of the quantum field theory on the boundary corresponds to a w
 For instance,~\cite{Skenderis2002} gives some examples of calculating renormalized correlation functions\footnote{
 See~\eg\cite{Peskin1995} for the definition.
 } in quantum field theory by performing computations on the gravity side.
-The strong couplings in QCD might be better understood in using the holography principle. 
+The strong couplings in QCD might be better understood in using the holographic principle. 
 Based on the observation of the IR-UV connection~\cite{Susskind1998}, 
 \ie the fact that the ultraviolet divergence in the boundary theory corresponds to the infrared divergence in the bulk theory, 
 we can renormalize a theory by undergoing the holographic renormalization procedure~\cite{Skenderis2002}. 
-The technique consists in adding a boundary action which plays the role of counter term in the renormalization process.
-\cite{Zahn2016} studies the holographic relation between a massive scalar field on d+1-dimensional Minkowski space-time with d-dimensional time-like boundary in considering the following action
+The technique consists in adding a boundary action which plays the role of the counter term in the renormalization process.
+\cite{Zahn2016} studies the holographic relation between a massive scalar field on d+1-dimensional Minkowski space-times $M$ with d-dimensional time-like boundary $\partial M$ in considering the following action
 \begin{equation}\label{intro-actionzahn}
 \mathcal{S} = \mathcal{S}_{\mathrm{bulk}} + \mathcal{S}_{\mathrm{bdy}} = 
 -\frac 1 2 \int_M g^{\mu\nu} \partial_\mu \phi \partial_{\nu} + 
@@ -90,7 +91,7 @@ The technique consists in adding a boundary action which plays the role of count
 \end{equation}
 where $c>0$.
 In particular, this action leads to  a more general boundary condition called Wentzell boundary condition.
-The time evolution and the quantization of field have been discussed and the well-posedness of the problem derived from this action has been proven.
+The time evolution and the field quantization have been discussed and the well-posedness of the problem derived from this action has been proven.
 By saying that a problem is well posed, we mean that the problem has a unique solution when the initial data on a Cauchy surface is given.
 \cref{intro-actionzahn} is in a similar form to the action used in holographic renormalization for scalar fields~\cite{Skenderis2002}. 
 However, in the case of holographic renormalization for scalar fields, the bulk theory and the boundary theory may have different masses.
@@ -224,7 +225,7 @@ In effect, since the gamma matrices that we choose here are off-diagonal, only t
 -1 & 0
 \end{pmatrix}
 \end{equation*}
-for the case of spin-$\frac 1 2$ massless fields with charge $+e$ in $(1+1)$-dimension in the presence of an external potential under static gauge $A^\mu(x) = (Ex^1, 0)$, where $E$ is a constant electric field and $x^1$ is the spatial coordinate
+for the case of spin-$\frac 1 2$ massless fields with charge $+e$ in $(1+1)$-dimension in the presence of an external potential under the static gauge $A^\mu(x) = (Ex^1, 0)$, where $E$ is a constant electric field and $x^1$ is the spatial coordinate
 \begin{equation}\label{vacuum-hadamardparametrix}
 \begin{split}
 & H^\pm (x, y)^1_2 = \frac{-i}{2\pi}\frac{1-\frac i 2 e E(x^1 + y^1)(x^0-y^0) 

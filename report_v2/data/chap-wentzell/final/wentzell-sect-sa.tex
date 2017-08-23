@@ -1,6 +1,6 @@
 \section{Well-posedness of the problem}\label{wen-sect-saw}
 \subsection{Self-adjointness $\Delta$}
-We are going to use the tools of functional analysis to prove that the Cauchy problem is well-posed for certain types of initial data.
+We are going to use the tools of functional analysis to prove that the Cauchy problem~\cref{wen-maineq} is well-posed for certain types of initial data.
 We define the Hilbert space 
 \begin{equation*}
 \mathcal{H} = L^{2}(M,E)\oplus L^{2}(\partial M, \mathcal{P}_+ E)
@@ -49,7 +49,7 @@ Then, for any $ \Psi = (\psi, \psi_|)\in\mathcal{D}$
 \end{split}
 \end{equation}
 In the above calculation, we have implicitly assumed that $(\phi, \phi_|)\in W^{1,2}(M)\times W^{1,2}(\partial M)$.
-$\Delta$ is symmetric because~\cref{wentzell-proof-sa} equals $\langle \Delta\Phi, \Psi\rangle_\mathcal{H}$ if $\Phi$ is furthermore an element in $\dom(\Delta)$.
+$\Delta$ is symmetric because~\cref{wentzell-proof-sa} equals $\langle \Delta\Phi, \Psi\rangle_\mathcal{H}$ if $\Phi$ is furthermore an element of $\dom(\Delta)$.
 In particular, the last line of~\cref{wentzell-proof-sa} can be rearranged as $\langle\Omega,\Phi\rangle_\mathcal{H}$ for some $\Omega\in\mathcal{H}$ if and only if the last term of~\cref{wentzell-proof-sa} disappears, \ie
 $\mathcal{P}_+\phi\vert_{\partial M} - \phi_| = 0$.
 Hence, the domain of $\Delta^*$ is contained in $\mathcal{D}$, which implies the self-adjointness of $\Delta$.\\\\
@@ -78,7 +78,7 @@ we would like to prove the following proposition.
 \begin{proposition}\label{wen-prop-causal}
 Suppose that 0 is an isolated point of the spectrum of $\Delta$. 
 Let $\Sigma_0$ and $\Sigma_1$ be two equal-time surfaces.
-Let $\Phi_0 = (\phi_0, \phi_{|0})\in W^{\infty,2}(M)\times W^{\infty,2}(\partial M)$ be the initial data of the problem such that
+Let $\Phi_0 = (\phi_0, \phi_{|0})\in W^{\infty,2}(M)\times W^{\infty,2}(\partial M)$ be the initial data of the problem~\cref{wen-maineq} such that
 \begin{equation}\label{wen-domaindeltak}
 \begin{split}
 & \mathcal{P}_-\big( \partial_\bot^{2k-1}\phi\vert_{\partial M} - c^{-1}\partial_\bot^{2k-2}\phi\vert_{\partial M}\big) = 0  \\
