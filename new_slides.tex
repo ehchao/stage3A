@@ -63,7 +63,7 @@
 
 \begin{frame}
 \titlepage%
-\centerline{supervised by Jochen Zahn (Unisit{\"a} Leipzig)}
+\centerline{supervised by Jochen Zahn (Unisit{\"a}t Leipzig)}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -74,7 +74,7 @@
 \begin{enumerate}
 
 \item Introduction
-\item Vacuum polarization in the presence of a Kondo-type delta potential
+\item Vacuum polarization in the presence of a Kondo-type potential
 \item Generalization of Wentzell boundary condition for massless fermions
 \item Conclusion
 
@@ -87,7 +87,7 @@
 \framesubtitle{}
 
 \begin{itemize}
-\item<1-> Well-posedness of the system under the matching and boundary conditions: unitary time evolution and causal propagation
+\item<1-> Well-posedness of Cauchy problem with the matching and boundary conditions
 \item<2-> Vacuum polarization 
 	\begin{itemize}
 		\item Define the vacuum expectation of the current density as a Hadamard state
@@ -103,8 +103,8 @@
 \begin{itemize}
 %
 \item<1-> 
-The equation of motion for a massless spin-$\frac 1 2$ fermion in the presence of a Kondo potential \\
-\tiny\color{blue}[J. Erdmenger, C. Hoyos, A. O?Bannon and J. Wu, JHEP
+The equation of motion for a massless spin-$\frac 1 2$ fermion in the presence of a Kondo-type potential in $\mathbb{R}\times[-\frac L 2 , \frac{L}{2}]$\\
+\tiny\color{blue}[J. Erdmenger, C. Hoyos, A. O'Bannon and J. Wu, JHEP
 , 12:086, 2013]\color{black}\normalsize
 
 \begin{equation*}
@@ -128,7 +128,7 @@ where $\phi = \gamma^0\psi$ for some Dirac field $\psi$,  $v_3, v_+ + v_- \in \m
 \end{equation*}
 
 %
-\item<4-> In the confined case, the problem $i\partial_0\phi = H\phi$ is well-posed since $H$ is an essentially self-adjoint operator of the Hilbert space
+\item<4-> In the confined case, the problem $i\partial_0\phi = H\phi$ is well posed since $H$ is an essentially self-adjoint operator of the Hilbert space
 \begin{equation*}
 \mathcal{H} = L^{2}\Big(\big[-\frac L 2, 0\big), \mathbb{C}^2\Big) \oplus L^{2}\Big(\big(0,\frac L 2\big], \mathbb{C}^2\Big) 
 \quad,\quad
@@ -137,7 +137,7 @@ where $\phi = \gamma^0\psi$ for some Dirac field $\psi$,  $v_3, v_+ + v_- \in \m
 
  on the domain
 \begin{equation*}
-\mathrm{Dom}(H) = \Big \{\phi \enskip \big\vert \enskip \phi \in W^{1,2}(I_-, \mathbb{C}^2) \oplus W^{1,2}(I_+, \mathbb{C}^2), \enskip \phi \textrm{ b.d.c + m.c.} \Big \}
+\mathrm{Dom}(H) = \Big \{\phi \enskip \big\vert \enskip \phi \in C^{1}(I_-, \mathbb{C}^2) \oplus C^{1}(I_+, \mathbb{C}^2), \enskip \phi \textrm{ b.d.c + m.c.} \Big \}
 \end{equation*} 
 
 
@@ -145,7 +145,7 @@ where $\phi = \gamma^0\psi$ for some Dirac field $\psi$,  $v_3, v_+ + v_- \in \m
 \end{frame}
 %%%%%%%%%%%%%%%%%%
 \begin{frame}[shrink=30]
-\frametitle{\small{Vacuum polarization in the presence of a Kondo-type delta potential}}
+\frametitle{\small{Vacuum polarization in the presence of a Kondo-type potential}}
 \framesubtitle{Definition of vacuum current and stress-energy tensor}
 
 \begin{itemize}
@@ -189,7 +189,7 @@ T_{00}(x,y) =
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[shrink=30]
-\frametitle{\small{Vacuum polarization in the presence of a Kondo-type delta potential}}
+\frametitle{\small{Vacuum polarization in the presence of a Kondo-type potential}}
 \framesubtitle{}
 
 \begin{itemize}
@@ -287,7 +287,7 @@ is a Hermitian projector.
 
 \end{frame}
 %%%%%%%%%%%%%%%%%%
-\begin{frame}[shrink=30]
+\begin{frame}[shrink=40]
 \frametitle{\small{Generalization of Wentzell boundary condition for massless fermions}}
 \framesubtitle{}
 
@@ -304,26 +304,32 @@ $\Rightarrow$ unitary time evolution.
 \newline
 
 \item<2-> \textbf{Causal propagation}\\
-We denote
-\begin{equation*}
-\mathcal{H}^k(M) = \cap_{s=0}^{k} \dom(\Delta), 
-\quad
-\| \cdot \|_{\mathcal{H}^k(M)} = \| \Delta^k \cdot \|_{\mathcal{H}(M)}
-\end{equation*}
+%We denote
+%\begin{equation*}
+%\mathcal{H}^k(M) = \cap_{s=0}^{k} \dom(\Delta), 
+%\quad
+%\| \cdot \|_{\mathcal{H}^k(M)} = \| \Delta^k \cdot \|_{\mathcal{H}(M)}
+%\end{equation*}
 
-\begin{proposition}
-Let $\Sigma_0$ and $\Sigma_1$ two equal-time surfaces.
-Let $k \in \mathbb{N}^*$.
-Suppose that the initial data $\Phi_0 = (\phi, \phi_|)\enskip\slashed{\in} \ker \Delta$.
-%With the same notations and the same conditions as in \cref{wen-propcau}, 
-The smooth solution $\Phi$ depends continuously on the initial data $(\phi, \phi_|)$ on a Cauchy surface $\mathcal{S}_0 \subset \Sigma_0$ in the sense that
-\begin{equation*}
+\begin{proposition}\label{wen-prop-causal}
+Suppose that 0 is an isolated point of the spectrum of $\Delta$. 
+Let $\Sigma_0$ and $\Sigma_1$ be two equal-time surfaces.
+Let $\Phi_0 = (\phi_0, \phi_{|0})\in W^{\infty,2}(M)\times W^{\infty,2}(\partial M)$ be the initial data of the problem such that
+\begin{equation}\label{wen-domaindeltak}
+\begin{split}
+& \mathcal{P}_-\big( \partial_\bot^{2k-1}\phi\vert_{\partial M} - c^{-1}\partial_\bot^{2k-2}\phi\vert_{\partial M}\big) = 0  \\
+& \mathcal{P}_+\big( \partial_\bot^{2k}\phi\vert_{\partial M} - c^{-1}\partial_\bot^{2k-1}\phi\vert_{\partial M}\big) =0  
+\end{split}
+\end{equation}
+for all $k\in\mathbb{N}$.
+Then, the solution $\Phi$ of the problem depends smoothly and causally on the initial data $\Phi_0$ in the sense that for any $\mathcal{S}_0 \subset \Sigma_0$
+\begin{equation}
 \big\| \frac{\partial^k}{\partial t^k} \Phi\big\|_{\mathcal{H}(\mathcal{S}_1)}
 \leq
 \big\| \Phi\big\|_{\mathcal{H}^{k}(\mathcal{S}_0)}
-\end{equation*}
-for any $\mathcal{S}_1 \in D^+(\mathcal{S}_0)\cap\Sigma_1$
-where $D^+(\mathcal{S}_0)$ is the future domain of dependence of $\mathcal{S}_0$.
+\end{equation}
+for any $k\in\mathbb{N}$ and $\mathcal{S}_1 \in D^+(\mathcal{S}_0)\cap\Sigma_1$, where $D^+(\mathcal{S}_0)$ is the future domain of dependence of $\mathcal{S}_0$.
+Here, the rhs of the inequality represents the norm of the restriction of $\frac{\partial^k}{\partial t^k} \Phi$ on $\mathcal{S}_1$ and the lhs is defined by $\|\Delta^k \Phi\|_{\mathcal{H}(\mathcal{S}_0)}$  
 \end{proposition}
 
 \item<3-> Two examples 
@@ -359,7 +365,7 @@ i \big(\delta(x^0 - x^2) + \delta(x^0 + x^2) - 4c^{-1}\Theta(x^0-x^2)e^{- \frac{
 \end{equation*}
 
 
-\item<2-> Vacuum energy density in $\mathcal{M} = \mathbb{R}\times\mathbb{R}_+$ under our boundary condition
+\item<2-> Vacuum energy density in $\mathcal{M} = \mathbb{R}\times [-L, L] $ under our boundary condition
 	%\begin{itemize}
 	%\item<3-> The spectrum is discrete and symmetric wrt 0
 	%\begin{equation*}
@@ -379,21 +385,21 @@ i \big(\delta(x^0 - x^2) + \delta(x^0 + x^2) - 4c^{-1}\Theta(x^0-x^2)e^{- \frac{
 \end{frame}
 %%%%%%%%%%%%%%%%%%
 
-\begin{frame}[shrink=30]
+\begin{frame}[shrink=0]
 \frametitle{Conclusion and perspectives}
 \framesubtitle{}
 
 \begin{itemize}
 \item<1-> To summarize
 	\begin{itemize}
-	\item<2-> A Kondo-type potential creates discontiunuous background vacuum charge and energy densities.
-	\item<3-> Dynamical problems of free massless fermions are well-posed under a more generalized version of the bag boundary condition.
-	\item<4-> In some mannifolds, solutions to dynamical problems of free massless fermions verify the causal propagation property.
+	\item<2-> A Kondo-type potential creates a discontiunuous background vacuum charge density and shifts the vacuum energy density by a constant.
+	\item<3-> Wentzell boundary condition can be generalized to the case of massless fermions.
+	\item<4-> The causal propagation property of free massless fermions with Wentzell boundary condition holds on certain manifolds.
 	\item<5-> The influence of the coupling constant of the Wentzell boundary condition over the energy density has been shown for 1+1 dimension.
 	\end{itemize}
 \item<6-> Outlooks
 	\begin{itemize}
-	\item Generalzation of the same type of studies on boundary condition to vector fields and gauge fields
+	\item Generalzation of Wentzell boundary condition to vector fields and gauge fields
 	\item Generalization to the massive case where the causal propagation property is supposed to be more widely valid.
 	\end{itemize}
 \end{itemize}
